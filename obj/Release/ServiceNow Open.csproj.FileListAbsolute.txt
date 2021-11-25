@@ -67,7 +67,6 @@ D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowO
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.application
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.pdb
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNow Open.csproj.AssemblyReference.cache
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\MainWindow.g.cs
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\App.g.cs
