@@ -25,7 +25,7 @@ namespace ServiceNow
         }
     }
 
-    // Test comment
+    
     public class ServiceNowItem
     {
         bool _isIncident = false;
