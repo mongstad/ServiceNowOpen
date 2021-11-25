@@ -38,3 +38,24 @@ X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.exe
 X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.pdb
 X:\Programming\CSharp\ServiceNow Open\bin\Debug\now-agent-icon.ico
 X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen_Content.g.cs
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Debug\now-agent-icon.ico
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Debug\ServiceNowOpen.exe.config
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Debug\ServiceNowOpen.exe.manifest
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Debug\ServiceNowOpen.application
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Debug\ServiceNowOpen.exe
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Debug\ServiceNowOpen.pdb
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\MainWindow.g.cs
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\App.g.cs
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen_Content.g.cs
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen_MarkupCompile.cache
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen_MarkupCompile.lref
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\MainWindow.baml
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.g.resources
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.Properties.Resources.resources
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNow Open.csproj.GenerateResource.cache
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNow Open.csproj.CoreCompileInputs.cache
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.exe.manifest
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.application
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.exe
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.pdb

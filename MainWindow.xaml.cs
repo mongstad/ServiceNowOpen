@@ -491,6 +491,13 @@ namespace ServiceNowOpen
                     }
                 }
             }
+
+
+            if( e.Key == Key.Enter  || e.OriginalSource is System.Windows.Controls.TextBlock)
+            {
+                OpenSelectedItemInBrowser();
+            }
+            
         }
 
         private void listViewRecentlyOpenedItems_MouseDoubleClick(object sender, MouseButtonEventArgs e)
