@@ -1,0 +1,63 @@
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Release\ServiceNowOpen.exe.config
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Release\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Release\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Release\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Release\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\MainWindow.g.cs
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\App.g.cs
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen_MarkupCompile.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen_MarkupCompile.lref
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\MainWindow.baml
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen.g.resources
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen.Properties.Resources.resources
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNow Open.csproj.GenerateResource.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNow Open.csproj.CoreCompileInputs.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Release\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNow Open\bin\Release\now-agent-icon.ico
+X:\Programming\CSharp\ServiceNow Open\bin\Release\ServiceNowOpen.exe.config
+X:\Programming\CSharp\ServiceNow Open\bin\Release\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNow Open\bin\Release\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNow Open\bin\Release\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNow Open\bin\Release\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Release\MainWindow.g.cs
+X:\Programming\CSharp\ServiceNow Open\obj\Release\App.g.cs
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen_Content.g.cs
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen_MarkupCompile.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen_MarkupCompile.lref
+X:\Programming\CSharp\ServiceNow Open\obj\Release\MainWindow.baml
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen.g.resources
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen.Properties.Resources.resources
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNow Open.csproj.GenerateResource.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNow Open.csproj.CoreCompileInputs.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNow Open\obj\Release\ServiceNow Open.csproj.AssemblyReference.cache
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\bin\Release\now-agent-icon.ico
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\bin\Release\ServiceNowOpen.exe.config
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\bin\Release\ServiceNowOpen.exe.manifest
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\bin\Release\ServiceNowOpen.application
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\bin\Release\ServiceNowOpen.exe
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\bin\Release\ServiceNowOpen.pdb
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\MainWindow.g.cs
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\App.g.cs
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen_Content.g.cs
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen_MarkupCompile.cache
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen_MarkupCompile.lref
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\MainWindow.baml
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.g.resources
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.Properties.Resources.resources
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNow Open.csproj.GenerateResource.cache
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNow Open.csproj.CoreCompileInputs.cache
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.exe.manifest
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.application
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.exe
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.pdb
+D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNow Open.csproj.AssemblyReference.cache

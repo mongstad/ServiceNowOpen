@@ -1,0 +1,39 @@
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpenItem.exe.config
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpenItem.exe.manifest
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpenItem.application
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpenItem.exe
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpenItem.pdb
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.SuggestedBindingRedirects.cache
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\MainWindow.g.cs
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\App.g.cs
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem_MarkupCompile.cache
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem_MarkupCompile.lref
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\MainWindow.baml
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.g.resources
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.Properties.Resources.resources
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.GenerateResource.cache
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.CoreCompileInputs.cache
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.exe.manifest
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.application
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.exe
+C:\Users\2909090\OneDrive - Universitetet i Stavanger\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.pdb
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.SuggestedBindingRedirects.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\MainWindow.g.cs
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\App.g.cs
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\MainWindow.baml
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.Properties.Resources.resources
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.GenerateResource.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.CoreCompileInputs.cache
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNow Open.exe.config
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNow Open.exe.manifest
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNow Open.application
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNow Open.exe
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNow Open.pdb
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpenItem.csproj.AssemblyReference.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open_MarkupCompile.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open_MarkupCompile.lref
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.g.resources
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.exe.manifest
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.application
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.exe
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.pdb

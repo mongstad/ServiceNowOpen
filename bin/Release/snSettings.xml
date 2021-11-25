@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MinimizeToTray>true</MinimizeToTray>
+  <RecentItems>
+    <RecentItems>
+      <RecentlyOpenedItem>
+        <Item />
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=</Url>
+        <DateTimeOpened>24.11.2021 16:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item />
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=</Url>
+        <DateTimeOpened>24.11.2021 16:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item />
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=</Url>
+        <DateTimeOpened>24.11.2021 16:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFADFS</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADFS</Url>
+        <DateTimeOpened>24.11.2021 16:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSF</Url>
+        <DateTimeOpened>24.11.2021 16:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADSFDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFDF</Url>
+        <DateTimeOpened>24.11.2021 16:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADF</Url>
+        <DateTimeOpened>22.11.2021 23:11</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSF</Url>
+        <DateTimeOpened>22.11.2021 23:11</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADSFDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFDF</Url>
+        <DateTimeOpened>22.11.2021 23:11</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>AFDAFD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=AFDAFD</Url>
+        <DateTimeOpened>22.11.2021 23:08</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L10734</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10734</Url>
+        <DateTimeOpened>22.11.2021 22:42</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item />
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=</Url>
+        <DateTimeOpened>22.11.2021 19:42</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L10045</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10045</Url>
+        <DateTimeOpened>22.11.2021 19:42</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFADFS</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADFS</Url>
+        <DateTimeOpened>22.11.2021 19:13</DateTimeOpened>
+      </RecentlyOpenedItem>
+    </RecentItems>
+  </RecentItems>
+  <FreeTextSearch>false</FreeTextSearch>
+  <SliderPosition>100</SliderPosition>
+  <TopMost>false</TopMost>
+  <Opacity>1</Opacity>
+  <Top>742</Top>
+  <Left>1123</Left>
+</Settings>

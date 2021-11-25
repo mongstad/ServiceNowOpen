@@ -1,0 +1,40 @@
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\MainWindow.g.cs
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\App.g.cs
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen_MarkupCompile.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen_MarkupCompile.lref
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpen.exe.config
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNowOpenItem\bin\Debug\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\MainWindow.baml
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen.g.resources
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen.Properties.Resources.resources
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.csproj.GenerateResource.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNow Open.csproj.CoreCompileInputs.cache
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNowOpenItem\obj\Debug\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNow Open\bin\Debug\ServiceNowOpen.exe.config
+X:\Programming\CSharp\ServiceNow Open\bin\Debug\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNow Open\bin\Debug\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNow Open\bin\Debug\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNow Open\bin\Debug\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\MainWindow.g.cs
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\App.g.cs
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen_MarkupCompile.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen_MarkupCompile.lref
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\MainWindow.baml
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.g.resources
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.Properties.Resources.resources
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNow Open.csproj.GenerateResource.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNow Open.csproj.CoreCompileInputs.cache
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.exe.manifest
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.application
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.exe
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen.pdb
+X:\Programming\CSharp\ServiceNow Open\bin\Debug\now-agent-icon.ico
+X:\Programming\CSharp\ServiceNow Open\obj\Debug\ServiceNowOpen_Content.g.cs
