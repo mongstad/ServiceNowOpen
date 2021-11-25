@@ -24,6 +24,8 @@ namespace ServiceNow
             //set { _recentlyOpenedItems = value; }
         }
     }
+
+    // Test comment
     public class ServiceNowItem
     {
         bool _isIncident = false;
