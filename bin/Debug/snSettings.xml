@@ -4,6 +4,11 @@
   <RecentItems>
     <RecentItems>
       <RecentlyOpenedItem>
+        <Item>ADFADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADF</Url>
+        <DateTimeOpened>26.11.2021 23:33</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
         <Item>L11734</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
         <DateTimeOpened>25.11.2021 22:21</DateTimeOpened>
@@ -96,9 +101,9 @@
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>99.6539792387543</SliderPosition>
+  <SliderPosition>75.806228373702382</SliderPosition>
   <TopMost>false</TopMost>
-  <Opacity>1</Opacity>
-  <Top>505</Top>
-  <Left>835</Left>
+  <Opacity>0.85</Opacity>
+  <Top>845</Top>
+  <Left>1461</Left>
 </Settings>

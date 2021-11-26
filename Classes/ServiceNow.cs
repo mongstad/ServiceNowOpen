@@ -7,6 +7,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Xml.Serialization;
 using System.Collections.ObjectModel;
+using System.Drawing;
+using Color = System.Windows.Media.Color;
+using System.Windows.Media;
 
 namespace ServiceNow
 {
@@ -550,4 +553,101 @@ namespace ServiceNow
         }
 
     }
+
+    public class ServiceNowTheme
+    {
+
+        System.Windows.Media.Brush _titlebarcolor;
+        System.Windows.Media.Brush _menucolor;
+        System.Windows.Media.Brush _centercontentcolor;
+
+
+        private const string _menudefaultcolor = "#1C1C1F";
+        private const string _titlebardefaultcolor = "#1C2C4D";
+        private const string _mainwindowdefaultcolor = "#1E2330";
+
+        public ServiceNowTheme()
+        {
+
+        }
+
+        public string DefaultTitleBarColor
+        {
+            get{ return _titlebardefaultcolor; }
+        }
+
+        public string DefaultMenuColor
+        {
+            get{ return _menudefaultcolor; }
+        }
+
+        public string MainWindowDefaultColor
+        {
+            get{ return _mainwindowdefaultcolor; }
+        }
+
+        public System.Windows.Media.Brush ConvertRGBToBackgroundColor(byte r, byte g , byte b )
+        {
+
+            System.Windows.Media.Color newColor = System.Windows.Media.Color.FromRgb(r, g, b);
+            System.Windows.Media.Brush brush = new SolidColorBrush(newColor);
+            return brush;
+
+        }
+
+        //public void SetLeftMenuColorValue(double r, double g, double b)
+        //{
+        //    _leftmenucolor = ConvertFromRGBToHex((byte)r, (byte)g,(byte)b);
+        //}
+
+        //public void SetMainWindowColorValue(double r, double g, double b)
+        //{
+        //    _mainwindowcolor = ConvertFromRGBToHex((byte)r, (byte)g, (byte)b);
+        //}
+
+        public System.Windows.Media.Brush TitlebarColor
+        {
+            get { return _titlebarcolor; }
+            set { _titlebarcolor = value; }
+        }
+
+        public System.Windows.Media.Brush MenuColor
+        {
+            get { return _menucolor; }
+            set { _menucolor = value; }
+        }
+
+        public System.Windows.Media.Brush MainWindowColor
+        {
+            get { return _centercontentcolor; }
+            set { _centercontentcolor = value; }
+        }
+
+        public void ResetToDefaultTheme()
+        {
+       
+        }
+        
+        public string ConvertFromRGBToHex(byte r, byte g, byte b)
+        {
+            Color myColor = Color.FromRgb(r, g, b);
+            string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
+            return hex;
+        }
+
+        public System.Drawing.Color ConvertFromHexToRGB(string hexcolorvalue)
+        {
+
+            System.Drawing.Color _color = System.Drawing.ColorTranslator.FromHtml(hexcolorvalue);
+         
+            return _color;
+
+        }
+
+        
+
+    }
+
+   
+
 }
