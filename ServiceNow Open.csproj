@@ -177,6 +177,7 @@
     <Resource Include="Images\openinbrowser.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\palette.png" />
     <Content Include="now-agent-icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

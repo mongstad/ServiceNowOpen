@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <MinimizeToTray>true</MinimizeToTray>
+  <MinimizeToTray>false</MinimizeToTray>
   <RecentItems>
     <RecentItems>
       <RecentlyOpenedItem>
@@ -97,8 +97,8 @@
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>99.6539792387543</SliderPosition>
-  <TopMost>true</TopMost>
+  <TopMost>false</TopMost>
   <Opacity>1</Opacity>
-  <Top>831</Top>
-  <Left>1447</Left>
+  <Top>505</Top>
+  <Left>835</Left>
 </Settings>
