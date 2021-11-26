@@ -649,7 +649,7 @@
                 <Slider x:Name="sliderOpacityValue" Height="15" Width="300" VerticalAlignment="top" Margin="10,0,0,0" ValueChanged="sliderOpacityValue_ValueChanged" Maximum="100" Value="100" Interval="36" ></Slider>
                 
             </StackPanel>
-            <CheckBox Visibility="Visible" x:Name="chkMinimizeToSystemTray" Content="Minimize to system tray" Grid.Row="2" Grid.Column="1" 
+            <CheckBox Visibility="Visible" x:Name="chkMinimizeToSystemTray" Content="Hide when minimized" Grid.Row="2" Grid.Column="1" 
                       Foreground="AliceBlue" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                         FontSize="14"      FontFamily="Bahnschrift SemiCondensed"    VerticalContentAlignment="Center" 
                       HorizontalContentAlignment="Left" Checked="chkMinimize_Checked" Unchecked="chkMinimize_Unchecked">
