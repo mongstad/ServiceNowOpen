@@ -48,20 +48,14 @@ namespace ServiceNowOpen
             }
 
             LoadSettings();
-            LoadTheme();
+
+            //TODO Fix backgroundcolor on buttons and images when changing sliders
+            //TODO Add option to change text color
+            //TODO Add option to switch between white or black button icons (images)
+            SetRGBSliderValues();
+            SetWindowColors();
             SetNotifyIconSettings();
             SetVersionInfo();
-
-
-        }
-
-        private void LoadTheme()
-        {
-            
-            SetRGBSliderValues();
-
-            
-
 
         }
 
@@ -166,7 +160,9 @@ namespace ServiceNowOpen
                 chkBoxAlwaysOnTop.IsChecked = snSettings.TopMost;
                 chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
                 chkMinimizeToSystemTray.IsChecked = snSettings.MinimizeToTray;
-               
+                serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertStringToBrush(snSettings.CenterWindowBrushString);
+                serviceNowTheme.MenuBackground = serviceNowTheme.ConvertStringToBrush(snSettings.MenuBrushString);
+                serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertStringToBrush(snSettings.TitleBarBrushString);
 
                foreach(RecentlyOpenedItem item in snSettings.RecentItems.RecentItems)
                 {
@@ -218,9 +214,6 @@ namespace ServiceNowOpen
             
             CloseApplication();
         }
-
-
-        
 
         private void WindowGotMiniMizedActions()
         {
@@ -383,6 +376,10 @@ namespace ServiceNowOpen
             settingsServiceNow.SliderPosition = sliderOpacityValue.Value;
             settingsServiceNow.RecentItems = recentlyOpenedItems;
             settingsServiceNow.MinimizeToTray = (bool)chkMinimizeToSystemTray.IsChecked;
+            BrushConverter brushConverter = new BrushConverter();
+            settingsServiceNow.TitleBarBrushString = brushConverter.ConvertToString(serviceNowTheme.TitleBarBackground);
+            settingsServiceNow.MenuBrushString= brushConverter.ConvertToString(serviceNowTheme.MenuBackground);
+            settingsServiceNow.CenterWindowBrushString = brushConverter.ConvertToString(serviceNowTheme.CenterWindowBackground);
             settingsServiceNow.Save();
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -539,7 +536,7 @@ namespace ServiceNowOpen
          
         }
 
-        private void imgOpenInBrowser_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ImgOpenInBrowser_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
             OpenSelectedItemInBrowser();
@@ -578,7 +575,7 @@ namespace ServiceNowOpen
         
         }
 
-        private void listViewRecentlyOpenedItems_KeyDown(object sender, KeyEventArgs e)
+        private void ListViewRecentlyOpenedItems_KeyDown(object sender, KeyEventArgs e)
         {
        
 
@@ -620,7 +617,7 @@ namespace ServiceNowOpen
             ProcessMinimizeToTrayState();
         }
 
-        private void chkMinimize_Unchecked(object sender, RoutedEventArgs e)
+        private void ChkMinimize_Unchecked(object sender, RoutedEventArgs e)
         {
             ProcessMinimizeToTrayState();
         }
@@ -655,55 +652,71 @@ namespace ServiceNowOpen
             SetRGBSliderValues();
         }
 
-        private void sliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            SetWindowColors();
+            SetWindowColorsToSelectSliderColor();
         }
 
-        private void sliderBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SliderBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
-            SetWindowColors();
-
-        }
-
-        private void sliderGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-            SetWindowColors();
+            SetWindowColorsToSelectSliderColor();
 
         }
 
-        private void SetWindowColors()
+        private void SliderGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
+            SetWindowColorsToSelectSliderColor();
+
+        }
+
+        private void SetWindowColorsToSelectSliderColor()
+        {
+            
             if(radioTitleButton.IsChecked == true)
             {
-                serviceNowTheme.TitlebarColor = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                gridTitleGrid.Background = serviceNowTheme.TitlebarColor;
+                serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+                gridTitleGrid.Background = serviceNowTheme.TitleBarBackground;
             }
 
             if(radioCenterContentButton.IsChecked == true)
             {
-                serviceNowTheme.MainWindowColor = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                gridMasterContentGrid.Background = serviceNowTheme.MainWindowColor;
+                serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+                gridMasterContentGrid.Background = serviceNowTheme.CenterWindowBackground;
             }
 
             if(radioMenuButton.IsChecked == true)
             {
-                serviceNowTheme.MenuColor = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                stackPanelMenu.Background = serviceNowTheme.MenuColor;
+                serviceNowTheme.MenuBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+                stackPanelMenu.Background = serviceNowTheme.MenuBackground;
             }
 
 
         }
 
-        private void imgTheme_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ImgTheme_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             gridMainContent.Visibility = Visibility.Hidden;
             gridHistoryContent.Visibility = Visibility.Hidden;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Visible;
+        }
+
+        private void BtnResetToDefault_Click(object sender, RoutedEventArgs e)
+        {
+            serviceNowTheme.ResetToDefaultTheme();
+            SetWindowColors();
+            SetRGBSliderValues();
+
+
+        }
+
+        private void SetWindowColors()
+        {
+            gridMasterContentGrid.Background = serviceNowTheme.CenterWindowBackground;
+            stackPanelMenu.Background = serviceNowTheme.MenuBackground;
+            gridTitleGrid.Background = serviceNowTheme.TitleBarBackground;
         }
     }
 }

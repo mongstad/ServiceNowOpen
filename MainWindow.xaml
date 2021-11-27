@@ -595,7 +595,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -663,7 +663,7 @@
 
                 <ListView ItemsSource="{Binding RecentItems}" Style="{DynamicResource listRecentlyOpenedItemsStyle}"  Name="listViewRecentlyOpenedItems" 
                           Height="80" Width="330" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="16" FontFamily="Bahnschrift SemiCondensed" Foreground="Black" 
-                          SelectionMode="Single" KeyDown="listViewRecentlyOpenedItems_KeyDown" MouseDoubleClick="listViewRecentlyOpenedItems_MouseDoubleClick">
+                          SelectionMode="Single" KeyDown="ListViewRecentlyOpenedItems_KeyDown" MouseDoubleClick="listViewRecentlyOpenedItems_MouseDoubleClick">
 
                     <ListView.ItemTemplate>
 
@@ -709,7 +709,7 @@
                 <Button Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" x:Name="btnOpenInBrowser" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
                          Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0">
 
-                    <Image Source="\Images\openinbrowser.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser" MouseLeftButtonDown="imgOpenInBrowser_MouseLeftButtonDown">
+                    <Image Source="\Images\openinbrowser.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser" MouseLeftButtonDown="ImgOpenInBrowser_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="OpenInBrowrserButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -762,7 +762,7 @@
                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" 
                       FontFamily="Bahnschrift SemiCondensed" VerticalContentAlignment= "Center"
                       HorizontalContentAlignment="Left" Checked="chkMinimize_Checked" 
-                      Unchecked="chkMinimize_Unchecked">
+                      Unchecked="ChkMinimize_Unchecked">
 
 
                 </CheckBox>
@@ -790,7 +790,7 @@
                      BorderBrush="Transparent"
                     Style="{DynamicResource btnMenuStyle}"
                     >
-                <Image Source="\Images\palette.png" MouseLeftButtonDown="imgTheme_MouseLeftButtonDown" Name="imgTheme">
+                <Image Source="\Images\palette.png" MouseLeftButtonDown="ImgTheme_MouseLeftButtonDown" Name="imgTheme">
 
                         <Image.Triggers>
                             <EventTrigger x:Name="PaletteAnimation" RoutedEvent="MouseLeftButtonDown">
@@ -819,8 +819,8 @@
         </Grid>
         <!--#endregion End Settings Content Grid-->
 
-        
-        <Grid Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,10,0,0" x:Name="gridColorPalette">
+        <!--#region Theme Start-->
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -830,21 +830,23 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"></RowDefinition>
                 <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="12*"></RowDefinition>
+                <RowDefinition Height="11*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border Background="Transparent"
                     BorderBrush="AliceBlue"
                     BorderThickness="1" 
                     Grid.Row="1"
-                    Grid.RowSpan="2"
+                    Grid.RowSpan="3"
                     Grid.Column="1" 
                     Grid.ColumnSpan="2" 
                     CornerRadius="4" 
-                    Height="85"
+                    Height="80"
                     Width="250"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top" 
-                    Padding="20,20,0,0"/>
+                    Padding="20,20,0,0"
+                    />
             <TextBlock Text="Theme" 
                        Foreground="AliceBlue" 
                       
@@ -852,8 +854,10 @@
                        FontSize="18"
                        FontFamily="Bahnschrift SemiCondensed"
                        Grid.Column="0"/>
-
-            <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left">
+            
+            
+            <!--#region Radiobuttons-->
+            <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <RadioButton Content="Title Bar"
                              Foreground="AliceBlue"
                              FontSize="14"
@@ -882,8 +886,10 @@
                              Checked="RadioCenterContentButton_Checked"
                             />
             </StackPanel>
+            <!--#endregion-->
 
-            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
+            <!--#region Red Green Blue text-->
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="top">
                 <TextBlock Text="Red" 
                        Foreground="AliceBlue" 
                        Height="20"
@@ -908,7 +914,10 @@
                        Grid.Column="0"/>
 
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="2">
+            <!--#endregion-->
+            
+            <!--#region RGB Sliders-->
+            <StackPanel Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Slider Width="175"
                         HorizontalAlignment="Left"
                         Height="20"
@@ -918,7 +927,7 @@
                         Maximum="255"
                         Interval="1"
                         Name="sliderRed"
-                        ValueChanged="sliderRed_ValueChanged"
+                        ValueChanged="SliderRed_ValueChanged"
                          />
                 <Slider Width="175"
                         HorizontalAlignment="Left"
@@ -929,7 +938,7 @@
                         Maximum="255"
                         Interval="1"
                         Name="sliderGreen"
-                        ValueChanged="sliderGreen_ValueChanged"/>
+                        ValueChanged="SliderGreen_ValueChanged"/>
                     
                 <Slider Width="175"
                         HorizontalAlignment="Left"
@@ -940,9 +949,30 @@
                         Maximum="255"
                         Interval="1"
                         Name="sliderBlue"
-                        ValueChanged="sliderBlue_ValueChanged"/>
+                        ValueChanged="SliderBlue_ValueChanged"/>
             </StackPanel>
+            <!--#endregion-->
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" Margin="0,10,30,0">
+               
+                <Button Width="auto" 
+                        Height="20"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        VerticalAlignment="Center"
+                        Content="Reset to default"
+                        FontFamily="Bahnschrift SemiCondensed"
+                        Foreground="AliceBlue"
+                        FontSize="14"
+                        Name="btnResetToDefault"
+                        Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" Click="BtnResetToDefault_Click">
+
+                </Button>
+            </StackPanel>
+            
         </Grid>
+        
+        <!--#endregion Theme End-->
 
     </Grid>
 </Window>

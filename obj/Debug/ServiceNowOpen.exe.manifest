@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServiceNowOpen.exe" size="207872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServiceNowOpen.exe" size="210944">
       <assemblyIdentity name="ServiceNowOpen" version="1.0.0.67" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>isXTiCBFGSdnnGYo3JzCE5DdlADuMaGkA5E3yQV1f0g=</dsig:DigestValue>
+        <dsig:DigestValue>BLd4sSCmpP1S4kJy0evVwnT9Ly0X5HyeVTiLEW2GYnU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

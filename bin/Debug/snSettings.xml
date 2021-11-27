@@ -1,109 +1,16 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <MinimizeToTray>false</MinimizeToTray>
+  <MinimizeToTray>true</MinimizeToTray>
+  <TitleBarBrushString>#FFCE0013</TitleBarBrushString>
+  <MenuBrushString>#FF1C1C1F</MenuBrushString>
+  <CenterWindowBrushString>#FF1E2330</CenterWindowBrushString>
   <RecentItems>
-    <RecentItems>
-      <RecentlyOpenedItem>
-        <Item>ADFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADF</Url>
-        <DateTimeOpened>26.11.2021 23:33</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>25.11.2021 22:21</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>25.11.2021 22:21</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>25.11.2021 22:21</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>25.11.2021 22:20</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>25.11.2021 22:20</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>25.11.2021 22:20</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>25.11.2021 22:20</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>25.11.2021 22:19</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>25.11.2021 22:19</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>25.11.2021 22:19</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>25.11.2021 22:18</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>25.11.2021 22:18</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>22.11.2021 02:02</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>22.11.2021 02:02</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>22.11.2021 02:02</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L13413</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L13413</Url>
-        <DateTimeOpened>22.11.2021 02:01</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>LAPTOPOD9I2KWTX.UIS.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOPOD9I2KWTX.UIS.NO</Url>
-        <DateTimeOpened>22.11.2021 02:00</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L11734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11734</Url>
-        <DateTimeOpened>22.11.2021 02:00</DateTimeOpened>
-      </RecentlyOpenedItem>
-    </RecentItems>
+    <RecentItems />
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>75.806228373702382</SliderPosition>
+  <SliderPosition>88.581314878892726</SliderPosition>
   <TopMost>false</TopMost>
-  <Opacity>0.85</Opacity>
-  <Top>845</Top>
-  <Left>1461</Left>
+  <Opacity>0.9</Opacity>
+  <Top>849</Top>
+  <Left>1458</Left>
 </Settings>
