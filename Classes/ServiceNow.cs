@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Media;
 using System.Xml.Serialization;
-using System.Collections.ObjectModel;
+using Brush = System.Windows.Media.Brush;
+using Color = System.Windows.Media.Color;
+using BrushConverter = System.Windows.Media.BrushConverter;
 
 namespace ServiceNow
 {
@@ -444,28 +444,42 @@ namespace ServiceNow
         bool _freetextsearch = false;
         bool _minimizetotray = false;
         RecentlyOpenedItems _recentlyopeneditems = new RecentlyOpenedItems();
-
-        public Settings(double windowopacity, double windowVerticalPosition, double windowHorizontalPosition, double sliderposition, bool topmost, bool freetextsearch, RecentlyOpenedItems recentitems, bool minimizetotray)
-        {
-            _opacity = windowopacity;
-            _top = windowVerticalPosition;
-            _left = windowHorizontalPosition;
-            _sliderPosition = sliderposition;
-            _topmost = topmost;
-            _freetextsearch = freetextsearch;
-            _recentlyopeneditems = recentitems;
-            _minimizetotray = minimizetotray;
-        }
+        string _titlebarbrush = "";
+        string _menubrush = "";
+        string _centerwindowbrush = "";
 
         public Settings()
         {
 
+            BrushConverter brushConv = new BrushConverter();
+            
+
         }
+
+       
 
         public bool MinimizeToTray
         {
             get { return _minimizetotray; }
-            set { _minimizetotray = value; }
+            set { _minimizetotray = value;}
+        }
+
+        public string TitleBarBrushString
+        {
+            get { return _titlebarbrush; }
+            set{ _titlebarbrush = value; }
+        }
+
+        public string MenuBrushString
+        {
+           get{ return _menubrush; }
+           set{ _menubrush = value; }
+        }
+
+        public string CenterWindowBrushString
+        {
+            get { return _centerwindowbrush; }
+            set { _centerwindowbrush = value; }
         }
         public RecentlyOpenedItems RecentItems
         {
@@ -510,19 +524,18 @@ namespace ServiceNow
 
         public void Save()
         {
-            try
-            {
-                //TODO Write and append Recently Opened Items to its own file. Sort them by date on load.
-                using (FileStream fs = new FileStream("snSettings.xml", FileMode.Create))
+                      
+                
+                
+                using(FileStream fs = new FileStream("snSettings.xml", FileMode.Create))
                 {
                     XmlSerializer xml = new XmlSerializer(typeof(Settings));
                     xml.Serialize(fs, this);
                 }
-            }
-            catch (Exception ex)
-            {
+         
 
-            }
+
+
         }
 
         public Settings Load()
@@ -550,4 +563,130 @@ namespace ServiceNow
         }
 
     }
+
+    public class ServiceNowTheme
+    {
+
+        Brush _titlebarbackground;
+        Brush _menubackground;
+        Brush _centerwindowbackground;
+
+        private const string _menudefaulthexcolor = "#1C1C1F";
+        private const string _titlebardefaulthexcolor = "#1C2C4D";
+        private const string _mainwindowdefaulthexcolor = "#1E2330";
+
+        public ServiceNowTheme()
+        {
+
+        }
+
+        public string TitleBarDefaultHexColor
+        {
+            get{ return _titlebardefaulthexcolor; }
+        }
+
+        public string MenuDefaultHexColor
+        {
+            get{ return _menudefaulthexcolor; }
+        }
+
+        public string CenterWindowDefaultHexColor
+        {
+            get{ return _mainwindowdefaulthexcolor; }
+        }
+
+       
+        public Brush ConvertStringToBrush(string brushstring)
+        {
+            BrushConverter brushConverter = new BrushConverter();   
+            Brush getBrush = (Brush)brushConverter.ConvertFromString(brushstring);
+            return getBrush;
+        }
+
+        public Brush TitleBarBackground
+        {
+            get { return _titlebarbackground; }
+            set { _titlebarbackground = value; }
+        }
+
+       
+
+        public Brush MenuBackground
+        {
+            get { return _menubackground; }
+            set { _menubackground = value; }
+        }
+
+        public Brush CenterWindowBackground
+        {
+            get { return _centerwindowbackground; }
+            set { _centerwindowbackground = value; }
+        }
+
+        public void ResetToDefaultTheme()
+        {
+            System.Drawing.Color titleColor = ConvertFromHexToRGB(TitleBarDefaultHexColor);
+            Color defaultTitleColor = new Color();
+            defaultTitleColor.R = titleColor.R;
+            defaultTitleColor.G = titleColor.G;
+            defaultTitleColor.B = titleColor.B;
+            defaultTitleColor.A = titleColor.A;
+            Brush titleBrush = new SolidColorBrush(defaultTitleColor);
+            titleBrush.Opacity = 1;
+            _titlebarbackground = titleBrush;
+
+            System.Drawing.Color menuColor = ConvertFromHexToRGB(MenuDefaultHexColor);
+            Color defaultMenuColor = new Color();
+            defaultMenuColor.R = menuColor.R;
+            defaultMenuColor.G = menuColor.G;
+            defaultMenuColor.B = menuColor.B;
+            defaultMenuColor.A = menuColor.A;
+            Brush menuBrush = new SolidColorBrush(defaultMenuColor);
+            menuBrush.Opacity = 1;  
+            _menubackground = menuBrush;
+
+            System.Drawing.Color centerWindowColor = ConvertFromHexToRGB(CenterWindowDefaultHexColor);
+            Color defaultcenterWindowColor = new Color();
+            defaultcenterWindowColor.R = centerWindowColor.R;
+            defaultcenterWindowColor.G = centerWindowColor.G;
+            defaultcenterWindowColor.B = centerWindowColor.B;
+            defaultcenterWindowColor.A = centerWindowColor.A;
+            Brush centerWindowBrush = new SolidColorBrush(defaultcenterWindowColor);
+            centerWindowBrush.Opacity = 1;
+            _centerwindowbackground = centerWindowBrush;
+
+            
+            
+
+        }
+
+        public Brush ConvertRGBToBackgroundColor(byte r, byte g, byte b)
+        {
+
+            Color newColor = System.Windows.Media.Color.FromRgb(r, g, b);
+            Brush brush = new SolidColorBrush(newColor);
+            return brush;
+
+        }
+
+        public string ConvertFromRGBToHex(byte r, byte g, byte b)
+        {
+            Color myColor = Color.FromRgb(r, g, b);
+            string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
+            return hex;
+        }
+
+        public System.Drawing.Color ConvertFromHexToRGB(string hexcolorvalue)
+        {
+
+            System.Drawing.Color _color = System.Drawing.ColorTranslator.FromHtml(hexcolorvalue);
+         
+            return _color;
+
+        }
+
+    }
+
+   
+
 }

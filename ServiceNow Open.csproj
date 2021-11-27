@@ -30,7 +30,7 @@
     <PublisherName>Johnny Mongstad</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>68</ApplicationRevision>
+    <ApplicationRevision>70</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -177,6 +177,9 @@
     <Resource Include="Images\openinbrowser.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\palette.png" />
+    <Resource Include="Images\reset.png" />
+    <Resource Include="Images\checkmark.png" />
     <Content Include="now-agent-icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

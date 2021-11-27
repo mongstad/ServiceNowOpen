@@ -341,12 +341,103 @@
         <SolidColorBrush x:Key="ListBox.Static.Border1" Color="#FFABADB3"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Background1" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Border1" Color="#FFD9D9D9"/>
+        <Style x:Key="FocusVisual4">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+        <Style x:Key="chkBoxRounderCornerStyle" TargetType="{x:Type CheckBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual4}"/>
+            <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="checkBoxBorder" CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <Grid x:Name="markGrid">
+                                    <Path x:Name="optionMark" Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z " Fill="{StaticResource OptionMark.Static.Glyph}" Margin="1" Opacity="0" Stretch="None"/>
+                                    <Rectangle x:Name="indeterminateMark" Fill="{StaticResource OptionMark.Static.Glyph}" Margin="2" Opacity="0"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#5454ff"/>
+                                <!--<Setter Property="Background" TargetName="border" Value="#1C1C1F"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#5454ff"/>-->
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
        
 
         <!--#endregion Recently Opened Items Button Style-->
 
     </Window.Resources>
-    <Grid Background="#1E2330">
+    <Grid Background="#1E2330"
+          Name="gridMasterContentGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="8*"></ColumnDefinition>
@@ -365,7 +456,15 @@
         </Grid.Effect>
 
         <!--Title grid starts here-->
-        <Grid x:Name="gridTitleGrid" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Width="450" HorizontalAlignment="Left" Background="#1C2C4D" MouseLeftButtonDown="gridTitleGrid_MouseLeftButtonDown">
+        <Grid x:Name="gridTitleGrid" 
+              Grid.Column="0" 
+              Grid.Row="0" 
+              Grid.ColumnSpan="2" 
+              Width="450" 
+              HorizontalAlignment="Left" 
+              Background="#1C2C4D" 
+              MouseLeftButtonDown="gridTitleGrid_MouseLeftButtonDown">
+            
             <TextBlock x:Name="txtTitle" Text="ServiceNow" FontFamily="Bahnschrift SemiCondensed" Foreground="White" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"
                            Margin="10,0,0,0" Grid.ColumnSpan="2" />
             <StackPanel Orientation="Horizontal" Margin="0,0,10,0"  Grid.Column="1"   HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -429,7 +528,7 @@
         </Grid>
 
         <!--#region Left menu starts here-->
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu">
 
             <Button Name="btnHome" Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
                     Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="btnHome_Click">
@@ -496,7 +595,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -505,7 +604,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Background="#1E2330">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                 <TextBlock Text="Open" Foreground="White" 
                        HorizontalAlignment="Left" Height="30" 
                        VerticalAlignment="Center"  FontFamily="Bahnschrift SemiCondensed"
@@ -516,7 +615,7 @@
                      Name="txtItem" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
                      TextChanged="txtItem_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="txtItem_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
                 <Button Style="{DynamicResource btnOKStyle}" Width="30" Height="30"  Background="Transparent" Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
-                    <Image x:Name="imgOkBtn" Source="Images\check.png" MouseLeftButtonDown="imgOkBtn_MouseLeftButtonDown">
+                    <Image x:Name="imgOkBtn" Source="Images\checkmark.png" MouseLeftButtonDown="imgOkBtn_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="ButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -533,10 +632,10 @@
             </StackPanel>
 
             <StackPanel Grid.Column="0" Grid.Row="2" Margin="10,0,0,0">
-                <CheckBox x:Name="chkBoxFreeTextSearch" Content="Use free text search" Foreground="AliceBlue"
+                <CheckBox x:Name="chkBoxFreeTextSearch" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Use free text search" Foreground="AliceBlue"
                           FontSize="14" FontFamily="Bahnschrift SemiCondensed" VerticalContentAlignment="Center"
                           HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
-                <CheckBox x:Name="chkBoxAlwaysOnTop" Content="Always on top" Foreground="AliceBlue"
+                <CheckBox x:Name="chkBoxAlwaysOnTop" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Always on top" Foreground="AliceBlue"
                           Margin="0,5,0,0" Checked="chkBoxAlwaysOnTop_Checked" VerticalContentAlignment="Center"
                           HorizontalAlignment="Left" HorizontalContentAlignment="Left"
                           Unchecked="chkBoxAlwaysOnTop_Unchecked" FontSize="14" FontFamily="Bahnschrift SemiCondensed"/>
@@ -564,7 +663,7 @@
 
                 <ListView ItemsSource="{Binding RecentItems}" Style="{DynamicResource listRecentlyOpenedItemsStyle}"  Name="listViewRecentlyOpenedItems" 
                           Height="80" Width="330" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="16" FontFamily="Bahnschrift SemiCondensed" Foreground="Black" 
-                          SelectionMode="Single" KeyDown="listViewRecentlyOpenedItems_KeyDown" MouseDoubleClick="listViewRecentlyOpenedItems_MouseDoubleClick">
+                          SelectionMode="Single" KeyDown="ListViewRecentlyOpenedItems_KeyDown" MouseDoubleClick="listViewRecentlyOpenedItems_MouseDoubleClick">
 
                     <ListView.ItemTemplate>
 
@@ -610,7 +709,7 @@
                 <Button Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" x:Name="btnOpenInBrowser" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
                          Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0">
 
-                    <Image Source="\Images\openinbrowser.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser" MouseLeftButtonDown="imgOpenInBrowser_MouseLeftButtonDown">
+                    <Image Source="\Images\openinbrowser.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser" MouseLeftButtonDown="ImgOpenInBrowser_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="OpenInBrowrserButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -635,36 +734,245 @@
         <!--#region Start Settings Content Grid-->
         <Grid x:Name="gridSettingsContent" Visibility="Hidden" Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
                 <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
+                
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+          
+
 
             <TextBlock Text="Settings" Foreground="AliceBlue" Margin="10,10,0,0" Grid.Row="0" FontSize="18"
                      FontFamily="Bahnschrift SemiCondensed"
                        />
 
-            <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="10,10,0,0">
+            <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="10,10,0,0" Grid.ColumnSpan="2">
                 <TextBlock Text="Opacity" Foreground="AliceBlue" Margin="0 0,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift SemiCondensed"></TextBlock>
                 <Slider x:Name="sliderOpacityValue" Height="15" Width="300" VerticalAlignment="top" Margin="10,0,0,0" ValueChanged="sliderOpacityValue_ValueChanged" Maximum="100" Value="100" Interval="36" ></Slider>
                 
             </StackPanel>
-            <CheckBox Visibility="Visible" x:Name="chkMinimizeToSystemTray" Content="Hide when minimized" Grid.Row="2" Grid.Column="1" 
-                      Foreground="AliceBlue" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
-                        FontSize="14"      FontFamily="Bahnschrift SemiCondensed"    VerticalContentAlignment="Center" 
-                      HorizontalContentAlignment="Left" Checked="chkMinimize_Checked" Unchecked="chkMinimize_Unchecked">
-                
-            </CheckBox>                  
-            <TextBlock x:Name="txtVersion" Width="100" Grid.Row="3" Grid.Column="1" Text="Version: " Foreground="AliceBlue" Margin="10,0,0,0"
+           
+                <CheckBox Style="{DynamicResource chkBoxRounderCornerStyle}" Visibility="Visible" x:Name="chkMinimizeToSystemTray"
+                      Grid.Row="3" Grid.Column="0" Foreground="AliceBlue" Margin="10,0,0,0" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" 
+                      FontFamily="Bahnschrift SemiCondensed" VerticalContentAlignment= "Center"
+                      HorizontalContentAlignment="Left" Checked="chkMinimize_Checked" 
+                      Unchecked="ChkMinimize_Unchecked">
+
+
+                </CheckBox>
+                <TextBlock Text="Hide when minimized"
+                 Margin="28,0,0,0"          Foreground="AliceBlue" 
+                VerticalAlignment="Top" Grid.Column="0" Grid.Row="3"
+                FontFamily="Bahnschrift SemiCondensed" FontSize="14"
+                TextAlignment="Left" Width="auto" HorizontalAlignment="Left">
+                    
+                </TextBlock>
+
+                <TextBlock Text ="Theme" Foreground="AliceBlue" 
+                VerticalAlignment="Top" Grid.Column="1" Grid.Row="3"
+                FontFamily="Bahnschrift SemiCondensed" FontSize="14"
+                TextAlignment="Left" Width="auto" HorizontalAlignment="Left" Margin="90,0,0,0">
+
+
+                </TextBlock>
+            <Button
+                    x:Name="btnTheme"
+                    Background="Transparent" Width="30" Height="30"
+                     Margin="135,0,0,0" Grid.Column="2" Grid.Row="2"
+                     HorizontalAlignment="Left" Grid.RowSpan ="2"
+                    VerticalAlignment="Top" 
+                     BorderBrush="Transparent"
+                    Style="{DynamicResource btnMenuStyle}"
+                    >
+                <Image Source="\Images\palette.png" MouseLeftButtonDown="ImgTheme_MouseLeftButtonDown" Name="imgTheme">
+
+                        <Image.Triggers>
+                            <EventTrigger x:Name="PaletteAnimation" RoutedEvent="MouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="1.0" To="0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+
+                    </Image>
+                </Button>
+           
+
+            <TextBlock x:Name="txtVersion" Width="100" Grid.Row="3" Grid.Column="0" Text="Version: " Foreground="AliceBlue" Margin="10,10,0,0"
                        FontSize="12" FontFamily="Bahnschrift SemiCondensed"
                        VerticalAlignment="Center" HorizontalAlignment="Left"  TextAlignment="Left">
                 
             </TextBlock>
+         
 
         </Grid>
         <!--#endregion End Settings Content Grid-->
 
-       
+        <!--#region Theme Start-->
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="11*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Background="Transparent"
+                    BorderBrush="AliceBlue"
+                    BorderThickness="1" 
+                    Grid.Row="1"
+                    Grid.RowSpan="3"
+                    Grid.Column="1" 
+                    Grid.ColumnSpan="2" 
+                    CornerRadius="4" 
+                    Height="80"
+                    Width="250"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top" 
+                    Padding="20,20,0,0"
+                    />
+            <TextBlock Text="Theme" 
+                       Foreground="AliceBlue" 
+                      
+                       Grid.Row="0" 
+                       FontSize="18"
+                       FontFamily="Bahnschrift SemiCondensed"
+                       Grid.Column="0"/>
+            
+            
+            <!--#region Radiobuttons-->
+            <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <RadioButton Content="Title Bar"
+                             Foreground="AliceBlue"
+                             FontSize="14"
+                             FontFamily="Bahnschrift SemiCondensed"
+                             Height="20"
+                             IsChecked="false"
+                             Name="radioTitleButton"
+                             Checked="RadioTitleButton_Checked"
+                           />
+                <RadioButton Content="Left Menu"
+                             Foreground="AliceBlue"
+                             FontSize="14"
+                             FontFamily="Bahnschrift SemiCondensed"
+                             Height="20"
+                             Name="radioMenuButton"
+                             IsChecked="False"
+                             Checked="RadioLeftMenuButton_Checked"
+                             />
+                <RadioButton Content="Center Content"
+                             Foreground="AliceBlue"
+                             FontSize="14"
+                             FontFamily="Bahnschrift SemiCondensed"
+                             Height="20"
+                             Name="radioCenterContentButton"
+                             IsChecked="False"
+                             Checked="RadioCenterContentButton_Checked"
+                            />
+            </StackPanel>
+            <!--#endregion-->
+
+            <!--#region Red Green Blue text-->
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="top">
+                <TextBlock Text="Red" 
+                       Foreground="AliceBlue" 
+                       Height="20"
+                       Grid.Row="0" 
+                       FontSize="14"
+                       FontFamily="Bahnschrift SemiCondensed"
+                       
+                       Grid.Column="0"/>
+                <TextBlock Text="Green" 
+                       Foreground="AliceBlue" 
+                       Height="20"
+                       Grid.Row="0" 
+                       FontSize="14"
+                       FontFamily="Bahnschrift SemiCondensed"
+                       Grid.Column="0"/>
+                <TextBlock Text="Blue" 
+                       Height="20"
+                       Foreground="AliceBlue" 
+                       Grid.Row="0" 
+                       FontSize="14"
+                       FontFamily="Bahnschrift SemiCondensed"
+                       Grid.Column="0"/>
+
+            </StackPanel>
+            <!--#endregion-->
+            
+            <!--#region RGB Sliders-->
+            <StackPanel Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Slider Width="175"
+                        HorizontalAlignment="Left"
+                        Height="20"
+                        Background="Transparent"
+                        IsEnabled="True"
+                        Minimum="0"
+                        Maximum="255"
+                        Interval="1"
+                        Name="sliderRed"
+                        ValueChanged="SliderRed_ValueChanged"
+                         />
+                <Slider Width="175"
+                        HorizontalAlignment="Left"
+                        Height="20"
+                        Background="Transparent"
+                        IsEnabled="True"
+                        Minimum="0"
+                        Maximum="255"
+                        Interval="1"
+                        Name="sliderGreen"
+                        ValueChanged="SliderGreen_ValueChanged"/>
+                    
+                <Slider Width="175"
+                        HorizontalAlignment="Left"
+                        Height="20"
+                        Background="Transparent"
+                        IsEnabled="True"
+                        Minimum="0"
+                        Maximum="255"
+                        Interval="1"
+                        Name="sliderBlue"
+                        ValueChanged="SliderBlue_ValueChanged"/>
+            </StackPanel>
+            <!--#endregion-->
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" Margin="0,10,30,0">
+               
+                <Button Width="auto" 
+                        Height="20"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        VerticalAlignment="Center"
+                        Content="Reset to default"
+                        FontFamily="Bahnschrift SemiCondensed"
+                        Foreground="AliceBlue"
+                        FontSize="14"
+                        Name="btnResetToDefault"
+                        Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" Click="BtnResetToDefault_Click">
+
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+        
+        <!--#endregion Theme End-->
 
     </Grid>
 </Window>
