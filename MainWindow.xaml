@@ -104,16 +104,16 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1E2330"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1E2330"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1E2330"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1E2330"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="#1E2330"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1E2330"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -159,12 +159,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1C1C1F"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#5454ff"/>
+                                <Setter Property="Background" TargetName="border" Value= "Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1C1C1F"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1C1C1F"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="#1C1C1F"/>
@@ -216,12 +216,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1C2C4D"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#5454ff"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1C2C4D"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1C2C4D"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background2}"/>
@@ -320,12 +320,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1E2330"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#5454ff"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#1E2330"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1E2330"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background3}"/>
@@ -472,7 +472,7 @@
                 <Button Name="btnMinimize" Style="{DynamicResource btnCloseStyle}" Width="25" Height="25" 
                     Background="Transparent" HorizontalAlignment="Right" Margin="0,0,10,0"
                     BorderBrush="Transparent" Click="btnMinimize_Click" >
-                    <Image x:Name="imgMinimize" Source="\Images\minimize.png" >
+                    <Image x:Name="imgMinimize" Source="\Images\minimize-white.png" >
 
                         <Image.Triggers>
                             <EventTrigger x:Name="MinimizeButtonAnimationButtonDown" RoutedEvent="MouseLeftButtonDown">
@@ -497,7 +497,7 @@
                 <Button Name="btnClose" Style="{DynamicResource btnCloseStyle}" Width="25" Height="25" 
                     Background="Transparent" HorizontalAlignment="Right"
                     BorderBrush="Transparent" Click="btnClose_Click" >
-                    <Image x:Name="imgClose" Source="\Images\power.png">
+                    <Image x:Name="imgClose" Source="\Images\power-white.png">
 
                         <Image.Triggers>
                             <EventTrigger x:Name="CloseButtonAnimationButtonDown" RoutedEvent="MouseLeftButtonDown">
@@ -532,7 +532,7 @@
 
             <Button Name="btnHome" Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
                     Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="btnHome_Click">
-                <Image  Name="imgHome" Source="\Images\house-64.png" Stretch="Fill" >
+                <Image  Name="imgHome" Source="\Images\home-white.png" Stretch="Fill">
 
                     <Image.Triggers>
                         <EventTrigger x:Name="MenuHomeAnimation" RoutedEvent="MouseLeftButtonDown">
@@ -552,7 +552,7 @@
             <Button Name="btnHistory" Style="{DynamicResource btnMenuStyle}"
                 BorderBrush="Transparent" 
                     Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="btnHistory_Click">
-                <Image Source="\Images\history.png" Stretch="Fill">
+                <Image Source="\Images\recentitems-white.png" Stretch="Fill">
 
                     <Image.Triggers>
                         <EventTrigger x:Name="MenuHistoryAnimation" RoutedEvent="MouseLeftButtonDown">
@@ -573,7 +573,7 @@
 
             <Button Name="btnSettings"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
                     Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="btnSettings_Click">
-                <Image Source="\Images\settings.png" Stretch="Fill">
+                <Image Source="\Images\settings-white.png" Stretch="Fill">
 
                     <Image.Triggers>
                         <EventTrigger x:Name="MenuSettingsAnimation" RoutedEvent="MouseLeftButtonDown">
@@ -595,7 +595,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -615,7 +615,7 @@
                      Name="txtItem" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
                      TextChanged="txtItem_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="txtItem_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
                 <Button Style="{DynamicResource btnOKStyle}" Width="30" Height="30"  Background="Transparent" Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
-                    <Image x:Name="imgOkBtn" Source="Images\checkmark.png" MouseLeftButtonDown="imgOkBtn_MouseLeftButtonDown">
+                    <Image x:Name="imgOkBtn" Source="Images\checkmark-white.png" MouseLeftButtonDown="imgOkBtn_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="ButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -690,7 +690,7 @@
             <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10,0,10,10" Grid.Column="1" HorizontalAlignment="Center" Width="60">
                 <Button Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" x:Name="btnCopy" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
                          Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0">
-                    <Image Source="\Images\copy.png" HorizontalAlignment="Center" x:Name="imgCopy" MouseLeftButtonDown="imgCopy_MouseLeftButtonDown">
+                    <Image Source="\Images\copy-white.png" HorizontalAlignment="Center" x:Name="imgCopy" MouseLeftButtonDown="imgCopy_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="CopyButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -709,7 +709,7 @@
                 <Button Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" x:Name="btnOpenInBrowser" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
                          Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0">
 
-                    <Image Source="\Images\openinbrowser.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser" MouseLeftButtonDown="ImgOpenInBrowser_MouseLeftButtonDown">
+                    <Image Source="\Images\openinbrowser-white.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser" MouseLeftButtonDown="ImgOpenInBrowser_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="OpenInBrowrserButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -790,7 +790,7 @@
                      BorderBrush="Transparent"
                     Style="{DynamicResource btnMenuStyle}"
                     >
-                <Image Source="\Images\palette.png" MouseLeftButtonDown="ImgTheme_MouseLeftButtonDown" Name="imgTheme">
+                <Image Source="\Images\palette-white.png" MouseLeftButtonDown="ImgTheme_MouseLeftButtonDown" Name="imgTheme">
 
                         <Image.Triggers>
                             <EventTrigger x:Name="PaletteAnimation" RoutedEvent="MouseLeftButtonDown">
@@ -820,7 +820,7 @@
         <!--#endregion End Settings Content Grid-->
 
         <!--#region Theme Start-->
-        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,10,0,0" x:Name="gridColorPalette">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -965,11 +965,14 @@
                         Foreground="AliceBlue"
                         FontSize="14"
                         Name="btnResetToDefault"
-                        Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" Click="BtnResetToDefault_Click">
+                        Style="{StaticResource btnRecentlyOpenedItemsButtonStyle}" Click="BtnResetToDefault_Click">
 
                 </Button>
             </StackPanel>
-            
+           
+
+
+
         </Grid>
         
         <!--#endregion Theme End-->
