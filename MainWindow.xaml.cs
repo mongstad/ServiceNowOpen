@@ -516,7 +516,7 @@ namespace ServiceNowOpen
         private void imgCopy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-            if (listViewRecentlyOpenedItems.Items.Count > 0)
+            if (listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >=0)
             {
                 SetSelectedItemToClipBoard();
             }
@@ -538,9 +538,12 @@ namespace ServiceNowOpen
 
         private void ImgOpenInBrowser_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
-            OpenSelectedItemInBrowser();
-          
+            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
+            {
+                OpenSelectedItemInBrowser();
+            }
+              
+            
         }
 
         private void OpenSelectedItemInBrowser()
@@ -677,19 +680,19 @@ namespace ServiceNowOpen
             if(radioTitleButton.IsChecked == true)
             {
                 serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                gridTitleGrid.Background = serviceNowTheme.TitleBarBackground;
+                SetWindowColors();
             }
 
             if(radioCenterContentButton.IsChecked == true)
             {
                 serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                gridMasterContentGrid.Background = serviceNowTheme.CenterWindowBackground;
+                SetWindowColors();
             }
 
             if(radioMenuButton.IsChecked == true)
             {
                 serviceNowTheme.MenuBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                stackPanelMenu.Background = serviceNowTheme.MenuBackground;
+                SetWindowColors();
             }
 
 
@@ -714,10 +717,19 @@ namespace ServiceNowOpen
 
         private void SetWindowColors()
         {
+            //set the background colors for the different grid and stackpanels
             gridMasterContentGrid.Background = serviceNowTheme.CenterWindowBackground;
             stackPanelMenu.Background = serviceNowTheme.MenuBackground;
             gridTitleGrid.Background = serviceNowTheme.TitleBarBackground;
+
+            //adjust styles for buttons and images
+          
+
+
+
         }
+
+       
     }
 }
 

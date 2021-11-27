@@ -30,7 +30,7 @@
     <PublisherName>Johnny Mongstad</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>70</ApplicationRevision>
+    <ApplicationRevision>71</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -139,11 +139,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\check.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
@@ -156,39 +151,48 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\now-agent-icon.png" />
+    <Resource Include="Images\servicenow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\house-64.png" />
+    <Resource Include="Images\home-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\settings.png" />
+    <Resource Include="Images\settings-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\history.png" />
+    <Resource Include="Images\recentitems-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\power.png" />
+    <Resource Include="Images\power-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\copy.png" />
+    <Resource Include="Images\copy-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\openinbrowser.png" />
+    <Resource Include="Images\openinbrowser-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\palette.png" />
-    <Resource Include="Images\reset.png" />
-    <Resource Include="Images\checkmark.png" />
+    <Resource Include="Images\palette-white.png" />
+    <Resource Include="Images\checkmark-white.png" />
+    <Resource Include="Images\checkmark-black.png" />
+    <Resource Include="Images\copy-black.png" />
+    <Resource Include="Images\copylink-black.png" />
+    <Resource Include="Images\recentitems-black.png" />
+    <Resource Include="Images\home-black.png" />
+    <Resource Include="Images\minimize-black.png" />
+    <Resource Include="Images\openinbrowser-black.png" />
+    <Resource Include="Images\palette-black.png" />
+    <Resource Include="Images\power-black.png" />
+    <Resource Include="Images\settings-black.png" />
     <Content Include="now-agent-icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\minimize.png" />
+    <Resource Include="Images\minimize-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\copylink.png" />
+    <Resource Include="Images\copylink-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

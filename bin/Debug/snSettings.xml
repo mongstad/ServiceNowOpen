@@ -1,11 +1,56 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MinimizeToTray>true</MinimizeToTray>
-  <TitleBarBrushString>#FF001D7C</TitleBarBrushString>
-  <MenuBrushString>#FF000A28</MenuBrushString>
-  <CenterWindowBrushString>#FF0033D1</CenterWindowBrushString>
+  <TitleBarBrushString>#FF005CFF</TitleBarBrushString>
+  <MenuBrushString>#FF0F009D</MenuBrushString>
+  <CenterWindowBrushString>#FF0D0D1F</CenterWindowBrushString>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ADADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADADF</Url>
+        <DateTimeOpened>27.11.2021 20:52</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADF</Url>
+        <DateTimeOpened>27.11.2021 20:52</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADF</Url>
+        <DateTimeOpened>27.11.2021 20:50</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>AFA</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=AFA</Url>
+        <DateTimeOpened>27.11.2021 20:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SADFADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SADFADF</Url>
+        <DateTimeOpened>27.11.2021 20:28</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADF</Url>
+        <DateTimeOpened>27.11.2021 20:27</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFAF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFAF</Url>
+        <DateTimeOpened>27.11.2021 20:26</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L11375</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11375</Url>
+        <DateTimeOpened>27.11.2021 18:42</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L11375</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L11375</Url>
+        <DateTimeOpened>27.11.2021 18:09</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>DAFASFD</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DAFASFD</Url>
@@ -19,9 +64,9 @@
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>52.595155709342549</SliderPosition>
-  <TopMost>false</TopMost>
-  <Opacity>0.7</Opacity>
-  <Top>834</Top>
-  <Left>1466</Left>
+  <SliderPosition>100</SliderPosition>
+  <TopMost>true</TopMost>
+  <Opacity>1</Opacity>
+  <Top>859</Top>
+  <Left>1459</Left>
 </Settings>
