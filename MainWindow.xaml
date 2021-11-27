@@ -615,7 +615,7 @@
                      Name="txtItem" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
                      TextChanged="txtItem_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="txtItem_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
                 <Button Style="{DynamicResource btnOKStyle}" Width="30" Height="30"  Background="Transparent" Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
-                    <Image x:Name="imgOkBtn" Source="Images\check.png" MouseLeftButtonDown="imgOkBtn_MouseLeftButtonDown">
+                    <Image x:Name="imgOkBtn" Source="Images\checkmark.png" MouseLeftButtonDown="imgOkBtn_MouseLeftButtonDown">
                         <Image.Triggers>
                             <EventTrigger x:Name="ButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>

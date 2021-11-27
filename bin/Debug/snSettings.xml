@@ -1,16 +1,27 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MinimizeToTray>true</MinimizeToTray>
-  <TitleBarBrushString>#FFCE0013</TitleBarBrushString>
-  <MenuBrushString>#FF1C1C1F</MenuBrushString>
-  <CenterWindowBrushString>#FF1E2330</CenterWindowBrushString>
+  <TitleBarBrushString>#FF001D7C</TitleBarBrushString>
+  <MenuBrushString>#FF000A28</MenuBrushString>
+  <CenterWindowBrushString>#FF0033D1</CenterWindowBrushString>
   <RecentItems>
-    <RecentItems />
+    <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>DAFASFD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DAFASFD</Url>
+        <DateTimeOpened>27.11.2021 10:01</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>AFDDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=AFDDF</Url>
+        <DateTimeOpened>27.11.2021 10:01</DateTimeOpened>
+      </RecentlyOpenedItem>
+    </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>88.581314878892726</SliderPosition>
+  <SliderPosition>52.595155709342549</SliderPosition>
   <TopMost>false</TopMost>
-  <Opacity>0.9</Opacity>
-  <Top>849</Top>
-  <Left>1458</Left>
+  <Opacity>0.7</Opacity>
+  <Top>834</Top>
+  <Left>1466</Left>
 </Settings>
