@@ -49,22 +49,90 @@ namespace ServiceNowOpen
 
             LoadSettings();
 
-            //TODO Fix backgroundcolor on buttons and images when changing sliders
+
             //TODO Add option to change text color
             //TODO Add option to switch between white or black button icons (images)
-            SetRGBSliderValues();
             SetWindowColors();
+            SetRGBSliderValues();
+           
             SetNotifyIconSettings();
             SetVersionInfo();
 
         }
 
+        private void LoadSettings()
+        {
+            Settings snSettings = new Settings();
+           
+            try{
+                snSettings = snSettings.Load();
+            }
+            catch(Exception ex)
+            {
+
+            }
+               
+                this.Opacity = snSettings.Opacity;
+                this.Top = snSettings.Top;
+                this.Left = snSettings.Left;
+                sliderOpacityValue.Value = snSettings.SliderPosition;
+                chkBoxAlwaysOnTop.IsChecked = snSettings.TopMost;
+                chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
+                chkMinimizeToSystemTray.IsChecked = snSettings.MinimizeToTray;
+
+                if(snSettings.CenterWindowBrushString != "")
+                {
+                    serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertStringToBrush(snSettings.CenterWindowBrushString);
+
+                }else{
+                    serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertStringToBrush(serviceNowTheme.CenterWindowDefaultHexColor);
+
+                }
+
+                if(snSettings.MenuBrushString != "")
+                {
+                    serviceNowTheme.MenuBackground = serviceNowTheme.ConvertStringToBrush(snSettings.MenuBrushString);
+
+                }else{
+                    serviceNowTheme.MenuBackground = serviceNowTheme.ConvertStringToBrush(serviceNowTheme.MenuDefaultHexColor);
+                }
+
+                if(snSettings.TitleBarBrushString != "")
+                {
+                    serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertStringToBrush(snSettings.TitleBarBrushString);
+
+                }else{
+                    serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertStringToBrush(serviceNowTheme.TitleBarDefaultHexColor);
+                }
+
+                foreach(RecentlyOpenedItem item in snSettings.RecentItems.RecentItems)
+                {
+                    recentlyOpenedItems.RecentItems.Add(item);  
+                }
+
+           
+         
+        }
+
+        private void SetWindowColors()
+        {
+            //set the background colors for the different grid and stackpanels
+            gridMasterContentGrid.Background = serviceNowTheme.CenterWindowBackground;
+            stackPanelMenu.Background = serviceNowTheme.MenuBackground;
+            gridTitleGrid.Background = serviceNowTheme.TitleBarBackground;
+
+            //adjust styles for buttons and images
+
+
+
+
+        }
         private void SetRGBSliderValues()
         {
-            if(radioTitleButton.IsChecked==true)
+            if(radioTitleButton.IsChecked == true)
             {
-              
-                
+
+
                 System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(gridTitleGrid.Background.ToString());
 
                 int intSliderRedValue = 0;
@@ -91,7 +159,7 @@ namespace ServiceNowOpen
 
             if(radioMenuButton.IsChecked == true)
             {
-                
+
                 System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(stackPanelMenu.Background.ToString());
 
                 int intSliderRedValue = 0;
@@ -147,36 +215,6 @@ namespace ServiceNowOpen
 
         }
 
-        private void LoadSettings()
-        {
-            Settings snSettings = new Settings();
-            try
-            {
-                snSettings = snSettings.Load();
-                this.Opacity = snSettings.Opacity;
-                this.Top = snSettings.Top;
-                this.Left = snSettings.Left;
-                sliderOpacityValue.Value = snSettings.SliderPosition;
-                chkBoxAlwaysOnTop.IsChecked = snSettings.TopMost;
-                chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
-                chkMinimizeToSystemTray.IsChecked = snSettings.MinimizeToTray;
-                serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertStringToBrush(snSettings.CenterWindowBrushString);
-                serviceNowTheme.MenuBackground = serviceNowTheme.ConvertStringToBrush(snSettings.MenuBrushString);
-                serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertStringToBrush(snSettings.TitleBarBrushString);
-
-               foreach(RecentlyOpenedItem item in snSettings.RecentItems.RecentItems)
-                {
-                    recentlyOpenedItems.RecentItems.Add(item);  
-                }
-
-            }
-            catch (Exception ex)
-            {
-                
-            }
-         
-        }
-
         private void SetNotifyIconSettings()
         {
 
@@ -191,6 +229,16 @@ namespace ServiceNowOpen
             menuItemExit.Click += new System.EventHandler(menuItemExit_Click);
             notifyIcon.ContextMenu = contextMenu;
 
+        }
+
+        private void SetVersionInfo()
+        {
+
+            Assembly thisAssem = typeof(MainWindow).Assembly;
+            AssemblyName thisAssemName = thisAssem.GetName();
+
+            Version ver = thisAssemName.Version;
+            txtVersion.Text += ver.ToString();
         }
 
         private void NotifyIcon_MouseDown(object Sender, System.Windows.Forms.MouseEventArgs e)
@@ -233,7 +281,6 @@ namespace ServiceNowOpen
 
             }
         }
-
 
         private void gridTitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -331,15 +378,7 @@ namespace ServiceNowOpen
             }
         }
 
-        private void SetVersionInfo()
-        {
-
-            Assembly thisAssem = typeof(MainWindow).Assembly;
-            AssemblyName thisAssemName = thisAssem.GetName();
-
-            Version ver = thisAssemName.Version;
-            txtVersion.Text += ver.ToString(); 
-        }
+     
 
         private void chkBoxAlwaysOnTop_Checked(object sender, RoutedEventArgs e)
         {
@@ -715,21 +754,7 @@ namespace ServiceNowOpen
 
         }
 
-        private void SetWindowColors()
-        {
-            //set the background colors for the different grid and stackpanels
-            gridMasterContentGrid.Background = serviceNowTheme.CenterWindowBackground;
-            stackPanelMenu.Background = serviceNowTheme.MenuBackground;
-            gridTitleGrid.Background = serviceNowTheme.TitleBarBackground;
-
-            //adjust styles for buttons and images
-          
-
-
-
-        }
-
-       
+      
     }
 }
 
