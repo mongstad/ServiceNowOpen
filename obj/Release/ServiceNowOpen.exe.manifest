@@ -4,7 +4,7 @@
   <description asmv2:iconFile="now-agent-icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ServiceNowOpen" version="1.0.0.83" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ServiceNowOpen" version="1.0.0.84" language="neutral" processorArchitecture="msil" />
     <commandLine file="ServiceNowOpen.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServiceNowOpen.exe" size="216064">
-      <assemblyIdentity name="ServiceNowOpen" version="1.0.0.83" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="ServiceNowOpen" version="1.0.0.84" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Kb/I7kcSozpZx/Of8PVOGkcbkoykyEJAfWCjIeMQ74Y=</dsig:DigestValue>
+        <dsig:DigestValue>1TiIXbGdGfE4BaKAt6d0t5/gFj7LS+Q0AycGuNaeqN4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

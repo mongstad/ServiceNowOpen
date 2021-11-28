@@ -367,22 +367,22 @@ namespace ServiceNowOpen
         private void ItemTextBox_KeyUp(object sender, KeyEventArgs e)
         {
 
-//            if(e.Key == Key.Enter)
-//            {
-//#pragma warning disable IDE0059 // Unnecessary assignment of a value
-//                Storyboard sb = new Storyboard();
-//#pragma warning restore IDE0059 // Unnecessary assignment of a value
-//                string cleanedItem = txtItem.Text.Trim();
-//                OpenItemInServiceNow(cleanedItem);
-//                sb = this.FindResource("OkClickedAnimation") as Storyboard;
-//                Storyboard.SetTarget(sb, this.imgOkBtn);
-//                sb.Begin();
-//            }
+            //            if(e.Key == Key.Enter)
+            //            {
+            //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+            //                Storyboard sb = new Storyboard();
+            //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+            //                string cleanedItem = txtItem.Text.Trim();
+            //                OpenItemInServiceNow(cleanedItem);
+            //                sb = this.FindResource("OkClickedAnimation") as Storyboard;
+            //                Storyboard.SetTarget(sb, this.imgOkBtn);
+            //                sb.Begin();
+            //            }
 
-//            if(e.Key == Key.Escape)
-//            {
-//                txtItem.Clear();
-//            }
+            if(e.Key == Key.Escape)
+            {
+                txtItem.Clear();
+            }
 
         }
 
