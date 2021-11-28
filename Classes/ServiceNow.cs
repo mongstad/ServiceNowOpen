@@ -12,7 +12,9 @@ namespace ServiceNow
 {
     public class RecentlyOpenedItems
     {
+#pragma warning disable IDE0044 // Add readonly modifier
         private ObservableCollection<RecentlyOpenedItem> _recentlyOpenedItems = new ObservableCollection<RecentlyOpenedItem>();
+#pragma warning restore IDE0044 // Add readonly modifier
         public RecentlyOpenedItems()
         {
 
@@ -75,8 +77,12 @@ namespace ServiceNow
             if (item.Length > 3)
             {
                 string threeLetterPrefix = item.Substring(0, 3);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int threeLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(3, 1), out threeLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (threeLetterPrefix.ToUpper() == "INC")
                 {
@@ -96,8 +102,12 @@ namespace ServiceNow
             if (item.Length > 2)
             {
                 string twoLetterPrefix = item.Substring(0, 2);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int twoLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(2, 1), out twoLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (twoLetterPrefix.ToUpper() == "KB")
                 {
@@ -120,8 +130,12 @@ namespace ServiceNow
             if (item.Length > 3)
             {
                 string threeLetterPrefix = item.Substring(0, 3);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int threeLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(3, 1), out threeLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (threeLetterPrefix.ToUpper() == "REQ")
                 {
@@ -141,8 +155,12 @@ namespace ServiceNow
             if (item.Length > 4)
             {
                 string fourLetterPrefix = item.Substring(0, 4);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int fourLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isFourLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(4, 1), out fourLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (fourLetterPrefix.ToUpper() == "RITM")
                 {
@@ -164,8 +182,12 @@ namespace ServiceNow
             if (item.Length > 3)
             {
                 string threeLetterPrefix = item.Substring(0, 3);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int threeLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(3, 1), out threeLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (threeLetterPrefix.ToUpper() == "PRB")
                 {
@@ -185,8 +207,12 @@ namespace ServiceNow
             if (item.Length > 4)
             {
                 string fourLetterPrefix = item.Substring(0, 4);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int fourLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(4, 1), out fourLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (fourLetterPrefix.ToUpper() == "TASK")
                 {
@@ -206,8 +232,12 @@ namespace ServiceNow
             if (item.Length > 4)
             {
                 string fourLetterPrefix = item.Substring(0, 4);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int fourLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isFourLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(4, 1), out fourLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (fourLetterPrefix.ToUpper() == "PTSK")
                 {
@@ -228,8 +258,12 @@ namespace ServiceNow
             if (item.Length > 1)
             {
                 string oneLetterPrefix = item.Substring(0, 1);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int threeLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isoneLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(1, 1), out threeLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (oneLetterPrefix.ToUpper() == "M")
                 {
@@ -251,8 +285,12 @@ namespace ServiceNow
             {
 
                 string oneLetterPrefix = item.Substring(0, 1);
+#pragma warning disable IDE0018 // Inline variable declaration
                 int oneLetterSuffix;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 bool isoneLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(1, 1), out oneLetterSuffix);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
 
                 if (oneLetterPrefix.ToUpper() == "L" || oneLetterPrefix.ToUpper() == "D")
                 {
@@ -279,8 +317,12 @@ namespace ServiceNow
         }
         private void CheckIfUserName(string item)
         {
+#pragma warning disable IDE0018 // Inline variable declaration
             int intfromString;
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             bool isStringNumber = System.Int32.TryParse(item, out intfromString);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
             if (isStringNumber)
             {
                 _isUserName = true;
@@ -404,7 +446,7 @@ namespace ServiceNow
 
         public RecentlyOpenedItem(string item, string url, DateTime time)
         {
-            //TODO Add DateTime property 
+           
             _item = item;
             _url = url;
             _datetimeopened = time.ToString("dd.MM.yyyy HH:mm");
@@ -437,6 +479,7 @@ namespace ServiceNow
     public class Settings
     {
         double _opacity = 1.0;
+        bool _inverted = false;
         double _top = -1;
         double _left = -1;
         double _sliderPosition = 100;
@@ -448,15 +491,61 @@ namespace ServiceNow
         string _menubrush = "";
         string _centerwindowbrush = "";
 
+        bool _titlebarimagesinverted = false;
+        bool _titlebartextcolorinverted = false;
+        bool _windowcontentimagesinverted = false;
+        bool _windowscontenttextcolorinverted = false;
+        bool _menupanelimagesinverted = false;
+
         public Settings()
         {
 
-            BrushConverter brushConv = new BrushConverter();
+           // BrushConverter brushConv = new BrushConverter();
             
 
         }
 
-       
+        public bool TitleBarImagesInverted
+        {
+            get { return _titlebarimagesinverted; }
+            set { _titlebarimagesinverted = value; }
+        }
+
+        public bool TitleBarTextColorInverted
+        {
+            get { return _titlebartextcolorinverted; }
+            set { _titlebartextcolorinverted = value; }
+        }
+
+        public bool WindowContentImagesInverted
+        {
+            get { return _windowcontentimagesinverted; }
+            set { _windowcontentimagesinverted = value; }
+        }
+
+        public bool WindowContentTextColorInverted
+        {
+            get { return _windowscontenttextcolorinverted; }
+            set { _windowscontenttextcolorinverted = value; }
+        }
+
+        public bool MenuPanelImagesInverted
+        {
+            get { return _menupanelimagesinverted; }
+            set{ _menupanelimagesinverted = value;}
+        }
+
+        public double Opacity 
+        {
+            get { return _opacity; }
+            set{ _opacity = value; }    
+        }
+
+        public bool Inverted
+        {
+            get { return _inverted; }
+            set{ _inverted = value; }
+        }
 
         public bool MinimizeToTray
         {
@@ -503,13 +592,7 @@ namespace ServiceNow
             set { _topmost = value; }
 
         }
-        public double Opacity
-        {
-
-            get { return _opacity; }
-            set { _opacity = value; }
-        }
-
+       
         public double Top
         {
             get { return _top; }
@@ -557,11 +640,6 @@ namespace ServiceNow
             }
         }
 
-        public void Load(string filename)
-        {
-
-        }
-
     }
 
     public class ServiceNowTheme
@@ -571,14 +649,61 @@ namespace ServiceNow
         Brush _menubackground;
         Brush _centerwindowbackground;
 
+        double _opacity = 0;
+        //bool _invertedcolors = false;
         private const string _menudefaulthexcolor = "#1C1C1F";
         private const string _titlebardefaulthexcolor = "#1C2C4D";
         private const string _mainwindowdefaulthexcolor = "#1E2330";
+
+        bool _titlebarimagesinverted = false;
+        bool _titlebartextcolorinverted = false;
+        bool _windowcontentimagesinverted = false;
+        bool _windowscontenttextcolorinverted = false;
+        bool _menupanelimagesinverted = false;
+       
 
         public ServiceNowTheme()
         {
 
         }
+
+        public double Opacity
+        {
+            get { return _opacity; }
+            set{ _opacity = value; }
+        }
+
+        public bool TitleBarButtonImagesInverted
+        {
+            get { return _titlebarimagesinverted;}
+            set{ _titlebarimagesinverted = value; }
+        }
+
+        public bool TitleBarTextColorInverted
+        {
+            get{ return _titlebartextcolorinverted;}
+            set{ _titlebartextcolorinverted = value;}
+        }
+
+        public bool WindowContentButtonImagesInverted
+        {
+        get{ return _windowcontentimagesinverted;}
+        set{ _windowcontentimagesinverted= value; }
+        }
+
+        public bool WindowContentTextColorInverted
+        {
+        get{ return _windowscontenttextcolorinverted; }
+        set{ _windowscontenttextcolorinverted = value;}
+        }
+
+        public bool MenuPanelImagesInverted
+        {
+            get{ return _menupanelimagesinverted; }
+            set{ _menupanelimagesinverted= value; }
+        }
+
+
 
         public string TitleBarDefaultHexColor
         {
@@ -626,33 +751,50 @@ namespace ServiceNow
         public void ResetToDefaultTheme()
         {
             System.Drawing.Color titleColor = ConvertFromHexToRGB(TitleBarDefaultHexColor);
-            Color defaultTitleColor = new Color();
-            defaultTitleColor.R = titleColor.R;
-            defaultTitleColor.G = titleColor.G;
-            defaultTitleColor.B = titleColor.B;
-            defaultTitleColor.A = titleColor.A;
-            Brush titleBrush = new SolidColorBrush(defaultTitleColor);
-            titleBrush.Opacity = 1;
+            Color defaultTitleColor = new Color
+            {
+                R = titleColor.R,
+                G = titleColor.G,
+                B = titleColor.B,
+                A = titleColor.A
+            };
+
+
+            Brush titleBrush = new SolidColorBrush(defaultTitleColor)
+            {
+                Opacity = 1,
+
+            };
+
             _titlebarbackground = titleBrush;
 
             System.Drawing.Color menuColor = ConvertFromHexToRGB(MenuDefaultHexColor);
-            Color defaultMenuColor = new Color();
-            defaultMenuColor.R = menuColor.R;
-            defaultMenuColor.G = menuColor.G;
-            defaultMenuColor.B = menuColor.B;
-            defaultMenuColor.A = menuColor.A;
-            Brush menuBrush = new SolidColorBrush(defaultMenuColor);
-            menuBrush.Opacity = 1;  
+            Color defaultMenuColor = new Color
+            {
+                R = menuColor.R,
+                G = menuColor.G,
+                B = menuColor.B,
+                A = menuColor.A
+            };
+
+            Brush menuBrush = new SolidColorBrush(defaultMenuColor)
+            {
+                Opacity = 1
+            };
             _menubackground = menuBrush;
 
             System.Drawing.Color centerWindowColor = ConvertFromHexToRGB(CenterWindowDefaultHexColor);
-            Color defaultcenterWindowColor = new Color();
-            defaultcenterWindowColor.R = centerWindowColor.R;
-            defaultcenterWindowColor.G = centerWindowColor.G;
-            defaultcenterWindowColor.B = centerWindowColor.B;
-            defaultcenterWindowColor.A = centerWindowColor.A;
-            Brush centerWindowBrush = new SolidColorBrush(defaultcenterWindowColor);
-            centerWindowBrush.Opacity = 1;
+            Color defaultcenterWindowColor = new Color
+            {
+                R = centerWindowColor.R,
+                G = centerWindowColor.G,
+                B = centerWindowColor.B,
+                A = centerWindowColor.A
+            };
+            Brush centerWindowBrush = new SolidColorBrush(defaultcenterWindowColor)
+            {
+                Opacity = 1
+            };
             _centerwindowbackground = centerWindowBrush;
 
             
@@ -683,6 +825,51 @@ namespace ServiceNow
          
             return _color;
 
+        }
+
+        public Brush WhiteBrush()
+        {
+            
+            Color whiteColor = new Color
+            {
+                R = 255,
+                G = 255,
+                B = 255,
+                A = 255
+
+            };
+
+            System.Windows.Media.Brush whiteBrush = new SolidColorBrush(whiteColor)
+            {
+                Opacity = 1,
+                Color = whiteColor,
+
+
+            };
+
+            return whiteBrush;
+        }
+
+        public Brush BlackBrush()
+        {
+            
+            Color blackColor = new Color
+            {
+                R = 0,
+                G = 0,
+                B = 0,
+                A = 255
+
+            };
+
+            System.Windows.Media.Brush blackBrush = new SolidColorBrush(blackColor)
+            {
+                Opacity = 1,
+                Color = blackColor,
+
+            };
+
+            return blackBrush;
         }
 
     }
