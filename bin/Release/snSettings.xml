@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TitleBarImagesInverted>true</TitleBarImagesInverted>
-  <TitleBarTextColorInverted>true</TitleBarTextColorInverted>
-  <WindowContentImagesInverted>true</WindowContentImagesInverted>
-  <WindowContentTextColorInverted>true</WindowContentTextColorInverted>
-  <MenuPanelImagesInverted>true</MenuPanelImagesInverted>
-  <Opacity>1</Opacity>
-  <Inverted>true</Inverted>
+  <TitleBarImagesInverted>false</TitleBarImagesInverted>
+  <TitleBarTextColorInverted>false</TitleBarTextColorInverted>
+  <WindowContentImagesInverted>false</WindowContentImagesInverted>
+  <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
+  <MenuPanelImagesInverted>false</MenuPanelImagesInverted>
+  <Opacity>0.8</Opacity>
+  <Inverted>false</Inverted>
   <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBrushString>#FF00FF01</TitleBarBrushString>
-  <MenuBrushString>#FF009401</MenuBrushString>
-  <CenterWindowBrushString>#FF006F01</CenterWindowBrushString>
+  <TitleBarBrushString>#FF002094</TitleBarBrushString>
+  <MenuBrushString>#FF0000FF</MenuBrushString>
+  <CenterWindowBrushString>#FF0000AC</CenterWindowBrushString>
   <RecentItems>
     <RecentItems>
       <RecentlyOpenedItem>
@@ -76,8 +76,8 @@
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>100</SliderPosition>
+  <SliderPosition>63.758389261744959</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>632</Top>
-  <Left>1270</Left>
+  <Top>703</Top>
+  <Left>1448</Left>
 </Settings>

@@ -820,6 +820,21 @@ namespace ServiceNowOpen
                 btnHistory.Content = imgRecentlyOpenedItemsButton;
                 btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
 
+                //Theme Button
+                BitmapImage bitImgThemeButton = new BitmapImage();
+                bitImgThemeButton.BeginInit();
+                bitImgThemeButton.UriSource = new Uri(@"\Images\palette-black.png", UriKind.RelativeOrAbsolute);
+                bitImgThemeButton.EndInit();
+
+                Image imgThemeButton = new Image
+                {
+                    Stretch = Stretch.Fill,
+                    Source = bitImgThemeButton
+                };
+
+                btnTheme.Content = imgThemeButton;
+                btnTheme.Background = new ImageBrush(bitImgThemeButton);
+
 
                 //Settings menu
                 BitmapImage bitImgSettingsButton = new BitmapImage();
@@ -904,20 +919,7 @@ namespace ServiceNowOpen
                 btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
 
 
-                //Theme Button
-                BitmapImage bitImgThemeButton = new BitmapImage();
-                bitImgThemeButton.BeginInit();
-                bitImgThemeButton.UriSource = new Uri(@"\Images\palette-black.png", UriKind.RelativeOrAbsolute);
-                bitImgThemeButton.EndInit();
-
-                Image imgThemeButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgThemeButton
-                };
-
-                btnTheme.Content = imgThemeButton;
-                btnTheme.Background = new ImageBrush(bitImgThemeButton);
+               
 
                 //CheckMark Button
                 BitmapImage bitImgCheckMarkButton = new BitmapImage();
@@ -972,6 +974,21 @@ namespace ServiceNowOpen
 
                 btnHistory.Content = imgRecentlyOpenedItemsButton;
                 btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
+
+                //Theme Button
+                BitmapImage bitImgThemeButton = new BitmapImage();
+                bitImgThemeButton.BeginInit();
+                bitImgThemeButton.UriSource = new Uri(@"\Images\palette-white.png", UriKind.RelativeOrAbsolute);
+                bitImgThemeButton.EndInit();
+
+                Image imgThemeButton = new Image
+                {
+                    Stretch = Stretch.Fill,
+                    Source = bitImgThemeButton
+                };
+
+                btnTheme.Content = imgThemeButton;
+                btnTheme.Background = new ImageBrush(bitImgThemeButton);
 
                 //Settings menu
                 BitmapImage bitImgSettingsButton = new BitmapImage();
@@ -1056,20 +1073,7 @@ namespace ServiceNowOpen
                 btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
 
 
-                //Theme Button
-                BitmapImage bitImgThemeButton = new BitmapImage();
-                bitImgThemeButton.BeginInit();
-                bitImgThemeButton.UriSource = new Uri(@"\Images\palette-white.png", UriKind.RelativeOrAbsolute);
-                bitImgThemeButton.EndInit();
-
-                Image imgThemeButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgThemeButton
-                };
-
-                btnTheme.Content = imgThemeButton;
-                btnTheme.Background = new ImageBrush(bitImgThemeButton);
+               
 
                 //CheckMark Button
                 BitmapImage bitImgCheckMarkButton = new BitmapImage();
@@ -1121,7 +1125,7 @@ namespace ServiceNowOpen
                 borderSliders.BorderBrush = serviceNowTheme.BlackBrush();
                 btnResetToDefault.Foreground = serviceNowTheme.BlackBrush();
                 txtSettings.Foreground = serviceNowTheme.BlackBrush();
-                txtTheme.Foreground = serviceNowTheme.BlackBrush();
+                //txtTheme.Foreground = serviceNowTheme.BlackBrush();
                 txtVersion.Foreground = serviceNowTheme.BlackBrush();
                 txtRecentlyOpenedItems.Foreground = serviceNowTheme.BlackBrush();
                 txtOpen.Foreground = serviceNowTheme.BlackBrush();
@@ -1166,7 +1170,7 @@ namespace ServiceNowOpen
                 borderSliders.BorderBrush = serviceNowTheme.WhiteBrush();
                 btnResetToDefault.Foreground = serviceNowTheme.WhiteBrush();
                 txtSettings.Foreground = serviceNowTheme.WhiteBrush();
-                txtTheme.Foreground = serviceNowTheme.WhiteBrush();
+                //txtTheme.Foreground = serviceNowTheme.WhiteBrush();
                 txtVersion.Foreground = serviceNowTheme.WhiteBrush();
                 txtRecentlyOpenedItems.Foreground = serviceNowTheme.WhiteBrush();
                 txtOpen.Foreground = serviceNowTheme.WhiteBrush();
