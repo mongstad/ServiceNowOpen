@@ -987,6 +987,7 @@ namespace ServiceNowOpen
 
                 btnSettings.Content = imgSettingsButton;
                 btnSettings.Background = new ImageBrush(bitImgSettingsButton);
+
             }
            
             if(serviceNowTheme.TitleBarButtonImagesInverted == false)
@@ -1022,7 +1023,7 @@ namespace ServiceNowOpen
                 btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
             }
            
-            if(serviceNowTheme.WindowContentTextColorInverted == false)
+            if(serviceNowTheme.WindowContentButtonImagesInverted == false)
             {
                 //Copy Button
                 BitmapImage bitImgCopyButton = new BitmapImage();

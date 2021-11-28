@@ -6,7 +6,7 @@
   <WindowContentTextColorInverted>true</WindowContentTextColorInverted>
   <MenuPanelImagesInverted>true</MenuPanelImagesInverted>
   <Opacity>1</Opacity>
-  <Inverted>false</Inverted>
+  <Inverted>true</Inverted>
   <MinimizeToTray>false</MinimizeToTray>
   <TitleBarBrushString>#FF00FF01</TitleBarBrushString>
   <MenuBrushString>#FF009401</MenuBrushString>

@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TitleBarImagesInverted>false</TitleBarImagesInverted>
+  <TitleBarTextColorInverted>false</TitleBarTextColorInverted>
+  <WindowContentImagesInverted>false</WindowContentImagesInverted>
+  <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
+  <MenuPanelImagesInverted>false</MenuPanelImagesInverted>
   <Opacity>1</Opacity>
-  <Inverted>true</Inverted>
+  <Inverted>false</Inverted>
   <MinimizeToTray>false</MinimizeToTray>
   <TitleBarBrushString>#FFDEFF00</TitleBarBrushString>
   <MenuBrushString>#FFCDFF00</MenuBrushString>
@@ -18,6 +23,6 @@
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>853</Top>
-  <Left>1459</Left>
+  <Top>767</Top>
+  <Left>1400</Left>
 </Settings>
