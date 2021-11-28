@@ -386,13 +386,7 @@ namespace ServiceNowOpen
 
         }
 
-        private void ImageOKButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-            string cleanedItem = txtItem.Text.Trim();
-            OpenItemInServiceNow(cleanedItem);
-
-        }
+      
 
         private void OpenItemInServiceNow(string item)
         {
@@ -1441,6 +1435,12 @@ namespace ServiceNowOpen
             {
                 SetSelectedItemToClipBoard();
             }
+        }
+
+        private void OKButton_Click(object sender, RoutedEventArgs e)
+        {
+            string cleanedItem = txtItem.Text.Trim();
+            OpenItemInServiceNow(cleanedItem);
         }
     }
 }

@@ -6,13 +6,39 @@
   <WindowContentTextColorInverted>true</WindowContentTextColorInverted>
   <MenuPanelImagesInverted>true</MenuPanelImagesInverted>
   <Opacity>1</Opacity>
-  <Inverted>true</Inverted>
+  <Inverted>false</Inverted>
   <MinimizeToTray>false</MinimizeToTray>
   <TitleBarBrushString>#FF00FF01</TitleBarBrushString>
   <MenuBrushString>#FF009401</MenuBrushString>
   <CenterWindowBrushString>#FF006F01</CenterWindowBrushString>
   <RecentItems>
-    <RecentItems />
+    <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ADSFAF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
+        <DateTimeOpened>28.11.2021 16:06</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADSFAF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
+        <DateTimeOpened>28.11.2021 16:06</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item />
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=</Url>
+        <DateTimeOpened>28.11.2021 16:05</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>COPY BUTTON</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=COPY BUTTON</Url>
+        <DateTimeOpened>28.11.2021 16:05</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADSFAF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
+        <DateTimeOpened>28.11.2021 16:05</DateTimeOpened>
+      </RecentlyOpenedItem>
+    </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>100</SliderPosition>

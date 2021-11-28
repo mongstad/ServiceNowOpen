@@ -595,7 +595,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -614,8 +614,8 @@
                          Padding="5,0,0,0" 
                      Name="txtItem" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
                      TextChanged="ItemTextBox_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="ItemTextBox_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
-                <Button Style="{DynamicResource btnOKStyle}" Width="30" Height="30"  Background="Transparent" Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
-                    <Image x:Name="imgOkBtn" Source="Images\checkmark-white.png" MouseLeftButtonDown="ImageOKButton_MouseLeftButtonDown">
+                <Button Style="{DynamicResource btnOKStyle}" Width="30" Click="OKButton_Click" Height="30"  Background="Transparent" Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
+                    <Image x:Name="imgOkBtn" Source="Images\checkmark-white.png">
                         <Image.Triggers>
                             <EventTrigger x:Name="ButtonAnimation" RoutedEvent="MouseLeftButtonDown">
                                 <BeginStoryboard>
@@ -657,7 +657,7 @@
         <!--#endregion-->
 
         <!--#region START Recently Opened Items Content-->
-        <Grid x:Name="gridHistoryContent" Visibility="Visible" Grid.Column="1" Grid.Row="1">
+        <Grid x:Name="gridHistoryContent" Visibility="Hidden" Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
