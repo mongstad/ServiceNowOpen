@@ -528,7 +528,106 @@
         </Grid>
 
         <!--#region Left menu starts here-->
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu">
+
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" 
+                      HorizontalScrollBarVisibility="Hidden"
+                      Grid.Column="0"
+                      Grid.Row="2">
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu" Height="180">
+
+                <Button Name="btnHome" Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
+                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="HomeButton_Click">
+                    <Image  Name="imgHome" Source="\Images\home-white.png" Stretch="Fill">
+
+                        <Image.Triggers>
+                            <EventTrigger x:Name="MenuHomeAnimation" RoutedEvent="MouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
+
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+
+                    </Image>
+                </Button>
+
+                <Button Name="btnHistory" Style="{DynamicResource btnMenuStyle}"
+                BorderBrush="Transparent" 
+                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="HistoryButton_Click">
+                    <Image Source="\Images\recentitems-white.png" Stretch="Fill">
+
+                        <Image.Triggers>
+                            <EventTrigger x:Name="MenuHistoryAnimation" RoutedEvent="MouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="1.0" To="0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+
+                    </Image>
+
+                </Button>
+
+                <Button
+                    x:Name="btnTheme"
+                    Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
+                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0"
+                    
+                    Click="ThemeButton_Click"
+                    >
+                    <Image Source="\Images\palette-white.png" Name="imgTheme">
+
+                        <Image.Triggers>
+                            <EventTrigger x:Name="PaletteAnimation" RoutedEvent="MouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="1.0" To="0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+
+                    </Image>
+                </Button>
+
+                <Button Name="btnSettings"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" Visibility="Visible"
+                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="SettingsButton_Click">
+                    <Image Source="\Images\settings-white.png" Stretch="Fill">
+
+                        <Image.Triggers>
+                            <EventTrigger x:Name="MenuSettingsAnimation" RoutedEvent="MouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
+
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                </Button>
+
+               
+
+
+            </StackPanel>
+
+        </ScrollViewer>
+       
+        <!--<StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu">
 
             <Button Name="btnHome" Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
                     Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="HomeButton_Click">
@@ -590,21 +689,23 @@
             </Button>
 
 
-        </StackPanel>
+        </StackPanel>-->
+
         <!--#endregion Left menu stops here-->
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <TextBlock x:Name="txtOpen" Text="Open" Foreground="White" 
                        HorizontalAlignment="Left" Height="30" 
                        VerticalAlignment="Center"  FontFamily="Bahnschrift SemiCondensed"
@@ -652,6 +753,8 @@
                           Unchecked="AlawaysOnTopCheckBox_Unchecked" FontSize="14" FontFamily="Bahnschrift SemiCondensed"/>
 
             </StackPanel>
+
+            
         </Grid>
 
         <!--#endregion-->
@@ -758,44 +861,20 @@
 
 
 
-            <TextBlock x:Name="txtSettings" Text="Settings" Foreground="AliceBlue" Margin="10,10,0,0" Grid.Row="0" FontSize="18"
-                     FontFamily="Bahnschrift SemiCondensed"
+            <TextBlock x:Name="txtSettings" Text="Settings (under construction)" Foreground="AliceBlue" Margin="10,10,0,0" Grid.Row="0" FontSize="18"
+                     FontFamily="Bahnschrift SemiCondensed" Grid.ColumnSpan="2"
                        />
 
-               <TextBlock x:Name="txtTheme" Text ="Theme" Foreground="AliceBlue" 
+            
+
+            <!--<TextBlock x:Name="txtTheme" Text ="Theme" Foreground="AliceBlue" 
                 VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"
                 FontFamily="Bahnschrift SemiCondensed" FontSize="14"
                 TextAlignment="Left" Width="auto" HorizontalAlignment="Left" Margin="10,0,0,0">
 
 
-                </TextBlock>
-            <Button
-                    x:Name="btnTheme"
-                    Background="Transparent" Width="30" Height="30"
-                     Margin="50,0,0,0" Grid.Column="0" Grid.Row="1"
-                     HorizontalAlignment="Left" Grid.RowSpan ="2"
-                    VerticalAlignment="Top" 
-                     BorderBrush="Transparent"
-                    Style="{DynamicResource btnMenuStyle}"
-                    Click="ThemeButton_Click"
-                    >
-                <Image Source="\Images\palette-white.png" Name="imgTheme">
-
-                        <Image.Triggers>
-                            <EventTrigger x:Name="PaletteAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="1.0" To="0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
-                </Button>
+                </TextBlock>-->
+        
            
 
             <TextBlock x:Name="txtVersion" Width="100" Grid.Row="3" Grid.Column="0" Text="Version: " Foreground="AliceBlue" Margin="10,0,0,0"
@@ -809,7 +888,7 @@
         <!--#endregion End Settings Content Grid-->
 
         <!--#region Theme Start-->
-        <Grid Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,10,0,0" x:Name="gridColorPalette">
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
