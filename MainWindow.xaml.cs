@@ -622,15 +622,7 @@ namespace ServiceNowOpen
             FocusSearchBox();
         }
 
-        private void CopyImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
-            {
-                SetSelectedItemToClipBoard();
-            }
-
-        }
+       
         private void SetSelectedItemToClipBoard()
         {
             try
@@ -645,15 +637,7 @@ namespace ServiceNowOpen
 
         }
 
-        private void ImgOpenInBrowser_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
-            {
-                OpenSelectedItemInBrowser();
-            }
-
-
-        }
+       
 
         private void OpenSelectedItemInBrowser()
         {
@@ -1443,7 +1427,21 @@ namespace ServiceNowOpen
             //}
         }
 
-       
+        private void OpenInBrowserButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
+            {
+                OpenSelectedItemInBrowser();
+            }
+        }
+
+        private void CopyButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
+            {
+                SetSelectedItemToClipBoard();
+            }
+        }
     }
 }
 
