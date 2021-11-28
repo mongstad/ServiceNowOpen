@@ -105,7 +105,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\ServiceNow.cs" />
+    <Compile Include="Classes\RecentlyOpenedItem.cs" />
+    <Compile Include="Classes\RecentlyOpenedItems.cs" />
+    <Compile Include="Classes\ServiceNowItem.cs" />
+    <Compile Include="Classes\ServiceNowTheme.cs" />
+    <Compile Include="Classes\Settings.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
