@@ -695,7 +695,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"></ColumnDefinition>
@@ -888,7 +888,7 @@
         <!--#endregion End Settings Content Grid-->
 
         <!--#region Theme Start-->
-        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,10,0,0" x:Name="gridColorPalette">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
