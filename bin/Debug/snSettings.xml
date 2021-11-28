@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Opacity>1</Opacity>
+  <Inverted>true</Inverted>
+  <MinimizeToTray>false</MinimizeToTray>
+  <TitleBarBrushString>#FFDEFF00</TitleBarBrushString>
+  <MenuBrushString>#FFCDFF00</MenuBrushString>
+  <CenterWindowBrushString>#FFBBEC00</CenterWindowBrushString>
+  <RecentItems>
+    <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ADFAD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFAD</Url>
+        <DateTimeOpened>28.11.2021 10:36</DateTimeOpened>
+      </RecentlyOpenedItem>
+    </RecentItems>
+  </RecentItems>
+  <FreeTextSearch>false</FreeTextSearch>
+  <SliderPosition>100</SliderPosition>
+  <TopMost>false</TopMost>
+  <Top>853</Top>
+  <Left>1459</Left>
+</Settings>
