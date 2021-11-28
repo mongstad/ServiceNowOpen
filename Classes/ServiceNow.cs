@@ -7,6 +7,10 @@ using System.Xml.Serialization;
 using Brush = System.Windows.Media.Brush;
 using Color = System.Windows.Media.Color;
 using BrushConverter = System.Windows.Media.BrushConverter;
+using System.Windows;
+using System.Windows.Media.Imaging;
+using System.Windows.Resources;
+using System.Windows.Navigation;
 
 namespace ServiceNow
 {
@@ -734,7 +738,57 @@ namespace ServiceNow
             set { _titlebarbackground = value; }
         }
 
-       
+        private WriteableBitmap ConvertImageColor(byte red, byte green, byte blue, byte alpha, string imagesource)
+        {
+
+            //StreamResourceInfo x = Application.GetResourceStream(new Uri(BaseUriHelper.GetBaseUri(Application), imagesource));
+            StreamResourceInfo x = Application.GetResourceStream(new Uri(imagesource));
+            BitmapDecoder dec = BitmapDecoder.Create(x.Stream, BitmapCreateOptions.None, BitmapCacheOption.Default);
+            BitmapFrame image = dec.Frames[0];
+            byte[] pixels = new byte[image.PixelWidth * image.PixelHeight * 4];
+            image.CopyPixels(pixels, image.PixelWidth * 4, 0);
+
+            var bmp = new WriteableBitmap(image.PixelWidth, image.PixelHeight, image.DpiX, image.DpiY, PixelFormats.Pbgra32, null);
+
+            for(int i = 0; i < pixels.Length / 4; ++i)
+            {
+                byte b = pixels[i * 4];
+                byte g = pixels[i * 4 + 1];
+                byte r = pixels[i * 4 + 2];
+                byte a = pixels[i * 4 + 3];
+
+
+                if((r == 255 &&
+                    g == 255 &&
+                    b == 255 &&
+                    a == 255) ||
+                (a != 0 && a != 255 &&
+                    r == g && g == b && r != 0))
+                {
+
+                    {
+
+                        r = red;
+                        g = green;
+                        b = blue;
+                        a = alpha;
+
+                        pixels[i * 4] = b;
+                        pixels[i * 4 + 1] = g;
+                        pixels[i * 4 + 2] = r;
+                        pixels[i * 4 + 3] = a;
+
+                    }
+
+                }
+
+                bmp.WritePixels(new Int32Rect(0, 0, image.PixelWidth, image.PixelHeight), pixels, image.PixelWidth * 4, 0);
+
+                // Source: https://stackoverflow.com/questions/20856424/wpf-modifying-image-colors-on-the-fly-c
+            }
+
+            return bmp;
+        }
 
         public Brush MenuBackground
         {
