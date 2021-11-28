@@ -1401,46 +1401,46 @@ namespace ServiceNowOpen
 
         private void TitleBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            if(ChkBox_InvertButtonColors.IsChecked == false)
-            {
-                serviceNowTheme.TitleBarButtonImagesInverted = false;
-                SetWhiteButtonImages();
+            //if(ChkBox_InvertButtonColors.IsChecked == false)
+            //{
+            //    serviceNowTheme.TitleBarButtonImagesInverted = false;
+            //    SetWhiteButtonImages();
               
-            }
+            //}
 
-            if(ChkBox_InvertTextColors.IsChecked == false)
-            {
-                serviceNowTheme.TitleBarTextColorInverted = false;
-                SetWhiteText();
-            }
+            //if(ChkBox_InvertTextColors.IsChecked == false)
+            //{
+            //    serviceNowTheme.TitleBarTextColorInverted = false;
+            //    SetWhiteText();
+            //}
         }
 
         private void MenuPanelCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            if(ChkBox_InvertButtonColors.IsChecked == false)
-            {
-                serviceNowTheme.MenuPanelImagesInverted = false;
-                SetWhiteButtonImages();
+            //if(ChkBox_InvertButtonColors.IsChecked == false)
+            //{
+            //    serviceNowTheme.MenuPanelImagesInverted = false;
+            //    SetWhiteButtonImages();
                 
-            }
+            //}
 
            
         }
 
         private void WindowContentCheckBox_UnChecked(object sender, RoutedEventArgs e)
         {
-            if(ChkBox_InvertButtonColors.IsChecked == false)
-            {
-                serviceNowTheme.WindowContentButtonImagesInverted = false;
-                SetWhiteButtonImages();
+            //if(ChkBox_InvertButtonColors.IsChecked == false)
+            //{
+            //    serviceNowTheme.WindowContentButtonImagesInverted = false;
+            //    SetWhiteButtonImages();
                
-            }
+            //}
 
-            if(ChkBox_InvertTextColors.IsChecked == false)
-            {
-                serviceNowTheme.WindowContentTextColorInverted = false;
-                SetWhiteText();
-            }
+            //if(ChkBox_InvertTextColors.IsChecked == false)
+            //{
+            //    serviceNowTheme.WindowContentTextColorInverted = false;
+            //    SetWhiteText();
+            //}
         }
 
        
