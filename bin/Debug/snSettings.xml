@@ -5,14 +5,19 @@
   <WindowContentImagesInverted>true</WindowContentImagesInverted>
   <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
   <MenuPanelImagesInverted>true</MenuPanelImagesInverted>
-  <Opacity>0.8</Opacity>
-  <Inverted>false</Inverted>
+  <Opacity>0.45</Opacity>
+  <Inverted>true</Inverted>
   <MinimizeToTray>true</MinimizeToTray>
-  <TitleBarBrushString>#FF020207</TitleBarBrushString>
-  <MenuBrushString>#FF000000</MenuBrushString>
-  <CenterWindowBrushString>#FF190000</CenterWindowBrushString>
+  <TitleBarBrushString>#FFFF0000</TitleBarBrushString>
+  <MenuBrushString>#FF003EFF</MenuBrushString>
+  <CenterWindowBrushString>#FF0011D8</CenterWindowBrushString>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>WWW.HW.NO</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=WWW.HW.NO</Url>
+        <DateTimeOpened>30.11.2021 22:58</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ADFAD</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFAD</Url>
@@ -21,8 +26,8 @@
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>61.467889908256893</SliderPosition>
+  <SliderPosition>16.620284683293164</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>854</Top>
-  <Left>1458</Left>
+  <Top>852</Top>
+  <Left>1461</Left>
 </Settings>

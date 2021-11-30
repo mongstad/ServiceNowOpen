@@ -467,7 +467,7 @@
 
             <TextBlock x:Name="txtTitle" Text="ServiceNow" FontFamily="Bahnschrift SemiCondensed" Foreground="White" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"
                            Margin="10,0,0,0" Grid.ColumnSpan="2" />
-            <StackPanel Orientation="Horizontal" Margin="0,0,10,0"  Grid.Column="1"   HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="0,0,15,0"  Grid.Column="1"   HorizontalAlignment="Right" VerticalAlignment="Center">
 
                 <Button Name="btnMinimize" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
                     HorizontalAlignment="Right" Margin="0,0,10,0"
@@ -555,7 +555,7 @@
                                 <Storyboard>
                                     <DoubleAnimation Storyboard.TargetName="btnHome"
                                       Storyboard.TargetProperty="Height"
-                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />       
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -568,8 +568,9 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                        
                     </Button.Triggers>
-                    
+
                 </Button>
 
 
@@ -598,6 +599,7 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                       
                     </Button.Triggers>
                 </Button>
 
@@ -626,9 +628,10 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                        
                     </Button.Triggers>
                 </Button>
-              
+
 
                 <Button Name="btnSettings"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" Visibility="Visible"
                     Height="30" Width="30" Margin="0,10,0,0" Click="SettingsButton_Click">
@@ -655,6 +658,7 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                    
                     </Button.Triggers>
                 </Button>
 
@@ -961,7 +965,7 @@
                     Grid.ColumnSpan="2" 
                     CornerRadius="4" 
                     Height="100"
-                    Width="245"
+                    Width="250"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top" 
                     Padding="20,20,0,0"
@@ -1095,7 +1099,7 @@
                         Grid.RowSpan="3" 
                         Margin="10,10,0,0">
 
-                <Slider Width="120"
+                <Slider Width="170"
                         HorizontalAlignment="Left"
                         Height="20"
                         Background="Transparent"
@@ -1106,7 +1110,7 @@
                         Name="sliderRed"
                         ValueChanged="SliderRed_ValueChanged"
                          />
-                <Slider Width="120"
+                <Slider Width="170"
                         HorizontalAlignment="Left"
                         Height="20"
                         Background="Transparent"
@@ -1117,7 +1121,7 @@
                         Name="sliderGreen"
                         ValueChanged="SliderGreen_ValueChanged"/>
 
-                <Slider Width="120"
+                <Slider Width="170"
                         HorizontalAlignment="Left"
                         Height="20"
                         Background="Transparent"
@@ -1130,7 +1134,7 @@
 
                 <Slider x:Name="sliderOpacityValue" 
                         Height="20" 
-                        Width="120"                      
+                        Width="170"                      
                         ValueChanged="SliderOpacityValue_ValueChanged" 
                         Maximum="100" 
                         Value="100" 
@@ -1139,11 +1143,10 @@
                         Background="Transparent"/>
 
 
-
             </StackPanel>
             <!--#endregion-->
 
-            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" Margin="0,10,10,0">
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" Margin="0,10,20,0">
 
 
 
@@ -1167,13 +1170,13 @@
                         Margin="0,10,0,0" Grid.ColumnSpan="3" 
                         Width="200" 
                         HorizontalAlignment="Left"/>
-           
-         
+
+
 
 
         </Grid>
 
-      
+
 
     </Grid>
 </Window>
