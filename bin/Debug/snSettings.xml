@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TitleBarImagesInverted>false</TitleBarImagesInverted>
+  <TitleBarImagesInverted>true</TitleBarImagesInverted>
   <TitleBarTextColorInverted>false</TitleBarTextColorInverted>
-  <WindowContentImagesInverted>false</WindowContentImagesInverted>
+  <WindowContentImagesInverted>true</WindowContentImagesInverted>
   <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
-  <MenuPanelImagesInverted>false</MenuPanelImagesInverted>
-  <Opacity>1</Opacity>
+  <MenuPanelImagesInverted>true</MenuPanelImagesInverted>
+  <Opacity>0.8</Opacity>
   <Inverted>false</Inverted>
-  <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBrushString>#FFDEFF00</TitleBarBrushString>
-  <MenuBrushString>#FFCDFF00</MenuBrushString>
-  <CenterWindowBrushString>#FFBBEC00</CenterWindowBrushString>
+  <MinimizeToTray>true</MinimizeToTray>
+  <TitleBarBrushString>#FF020207</TitleBarBrushString>
+  <MenuBrushString>#FF000000</MenuBrushString>
+  <CenterWindowBrushString>#FF190000</CenterWindowBrushString>
   <RecentItems>
     <RecentItems>
       <RecentlyOpenedItem>
@@ -21,8 +21,8 @@
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>100</SliderPosition>
+  <SliderPosition>61.467889908256893</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>767</Top>
-  <Left>1400</Left>
+  <Top>854</Top>
+  <Left>1458</Left>
 </Settings>

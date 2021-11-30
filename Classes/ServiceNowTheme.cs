@@ -6,6 +6,7 @@ using BrushConverter = System.Windows.Media.BrushConverter;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
+using System.Windows.Navigation;
 
 namespace ServiceNow{
   
@@ -16,6 +17,9 @@ namespace ServiceNow{
         Brush _titlebarbackground;
         Brush _menubackground;
         Brush _centerwindowbackground;
+        byte _r_menupanelbuttons = 255;
+        byte _g_menupanelbuttons = 255;
+        byte _b_menupanelbuttons = 255;
 
         double _opacity = 0;
         //bool _invertedcolors = false;
@@ -32,6 +36,26 @@ namespace ServiceNow{
 
         public ServiceNowTheme()
         {
+
+        }
+
+        public byte[] MenuPanelButtonsRGB
+        {
+          get
+            {
+                byte[] rgbArray = new byte[3];
+                rgbArray[0] = _r_menupanelbuttons;
+                rgbArray[1] = _g_menupanelbuttons;
+                rgbArray[2] = _b_menupanelbuttons;
+
+                return rgbArray;
+            }
+
+            set{
+                _r_menupanelbuttons = value[0];
+                _g_menupanelbuttons = value[1];
+                _b_menupanelbuttons = value[2];
+            }
 
         }
 
@@ -102,12 +126,12 @@ namespace ServiceNow{
             set { _titlebarbackground = value; }
         }
 
-        private WriteableBitmap ConvertImageColor(byte red, byte green, byte blue, byte alpha, string imagesource)
+        public WriteableBitmap ConvertImageColor(byte red, byte green, byte blue, byte alpha, string imagepath)
         {
-
-            //StreamResourceInfo x = Application.GetResourceStream(new Uri(BaseUriHelper.GetBaseUri(Application), imagesource));
-            StreamResourceInfo x = Application.GetResourceStream(new Uri(imagesource));
-            BitmapDecoder dec = BitmapDecoder.Create(x.Stream, BitmapCreateOptions.None, BitmapCacheOption.Default);
+            Uri uri = new Uri(imagepath, UriKind.Relative);
+            StreamResourceInfo resourceInfo = Application.GetResourceStream(uri);
+            StreamResourceInfo x = resourceInfo;
+            BitmapDecoder dec = BitmapDecoder.Create(resourceInfo.Stream, BitmapCreateOptions.None, BitmapCacheOption.Default);
             BitmapFrame image = dec.Frames[0];
             byte[] pixels = new byte[image.PixelWidth * image.PixelHeight * 4];
             image.CopyPixels(pixels, image.PixelWidth * 4, 0);

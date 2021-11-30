@@ -1,27 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
 using ServiceNow;
-using System.Threading;
-using System.Xml;
-using System.Collections.ObjectModel;
-using System.Windows.Media.Animation;
 using System.Reflection;
-using System.Drawing;
-using Color = System.Windows.Media.Color;
 using Image = System.Windows.Controls.Image;
+using System.Windows.Navigation;
+using System.Windows.Resources;
 
 namespace ServiceNowOpen
 {
@@ -75,8 +63,8 @@ namespace ServiceNowOpen
             serviceNowTheme.WindowContentTextColorInverted = snSettings.WindowContentTextColorInverted;
             serviceNowTheme.MenuPanelImagesInverted = snSettings.MenuPanelImagesInverted;
 
-            SetWhiteButtonImages();
-            SetBlackButtonImages();
+            //SetWhiteButtonImages();
+           // SetBlackButtonImages();
             SetWhiteText();
             SetBlackText();
 
@@ -118,8 +106,6 @@ namespace ServiceNowOpen
                 recentlyOpenedItems.RecentItems.Add(item);
             }
 
-
-
         }
 
         private void SetWindowColors()
@@ -132,9 +118,6 @@ namespace ServiceNowOpen
 
             //adjust styles for buttons and images
 
-
-
-
         }
         private void SetRGBSliderValues()
         {
@@ -144,33 +127,27 @@ namespace ServiceNowOpen
 
                 System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(gridTitleGrid.Background.ToString());
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
+
                 int intSliderRedValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
+
                 bool redOk = Int32.TryParse(selectedOptionColor.R.ToString(), out intSliderRedValue);
                 if(redOk)
                 {
                     sliderRed.Value = intSliderRedValue;
                 }
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
+
                 int intSliderGreenValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
+
                 bool greenOk = Int32.TryParse(selectedOptionColor.G.ToString(), out intSliderGreenValue);
                 if(greenOk)
                 {
                     sliderGreen.Value = intSliderGreenValue;
                 }
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
+
                 int intSliderBlueValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
+
                 bool blueOk = Int32.TryParse(selectedOptionColor.B.ToString(), out intSliderBlueValue);
                 if(blueOk)
                 {
@@ -183,33 +160,21 @@ namespace ServiceNowOpen
 
                 System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(stackPanelMenu.Background.ToString());
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
                 int intSliderRedValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
                 bool redOk = Int32.TryParse(selectedOptionColor.R.ToString(), out intSliderRedValue);
                 if(redOk)
                 {
                     sliderRed.Value = intSliderRedValue;
                 }
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
                 int intSliderGreenValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
                 bool greenOk = Int32.TryParse(selectedOptionColor.G.ToString(), out intSliderGreenValue);
                 if(greenOk)
                 {
                     sliderGreen.Value = intSliderGreenValue;
                 }
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
                 int intSliderBlueValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
                 bool blueOk = Int32.TryParse(selectedOptionColor.B.ToString(), out intSliderBlueValue);
                 if(blueOk)
                 {
@@ -223,33 +188,22 @@ namespace ServiceNowOpen
 
                 System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(gridMasterContentGrid.Background.ToString());
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
                 int intSliderRedValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
                 bool redOk = Int32.TryParse(selectedOptionColor.R.ToString(), out intSliderRedValue);
                 if(redOk)
                 {
                     sliderRed.Value = intSliderRedValue;
                 }
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
                 int intSliderGreenValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
+
                 bool greenOk = Int32.TryParse(selectedOptionColor.G.ToString(), out intSliderGreenValue);
                 if(greenOk)
                 {
                     sliderGreen.Value = intSliderGreenValue;
                 }
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0018 // Inline variable declaration
                 int intSliderBlueValue = 0;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
                 bool blueOk = Int32.TryParse(selectedOptionColor.B.ToString(), out intSliderBlueValue);
                 if(blueOk)
                 {
@@ -367,26 +321,12 @@ namespace ServiceNowOpen
         private void ItemTextBox_KeyUp(object sender, KeyEventArgs e)
         {
 
-            //            if(e.Key == Key.Enter)
-            //            {
-            //#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            //                Storyboard sb = new Storyboard();
-            //#pragma warning restore IDE0059 // Unnecessary assignment of a value
-            //                string cleanedItem = txtItem.Text.Trim();
-            //                OpenItemInServiceNow(cleanedItem);
-            //                sb = this.FindResource("OkClickedAnimation") as Storyboard;
-            //                Storyboard.SetTarget(sb, this.imgOkBtn);
-            //                sb.Begin();
-            //            }
-
             if(e.Key == Key.Escape)
             {
                 txtItem.Clear();
             }
 
         }
-
-      
 
         private void OpenItemInServiceNow(string item)
         {
@@ -419,8 +359,6 @@ namespace ServiceNowOpen
             }
         }
 
-
-
         private void AlwaysOnTopCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             this.Topmost = true;
@@ -450,7 +388,7 @@ namespace ServiceNowOpen
             Settings settingsServiceNow = new Settings
             {
 
-                Inverted = (bool)ChkBox_InvertButtonColors.IsChecked,
+                Inverted = (bool)ChkBox_ButtonColors.IsChecked,
                 Opacity = this.Opacity,
                 Left = this.Left,
                 Top = this.Top,
@@ -513,9 +451,6 @@ namespace ServiceNowOpen
 
             double selectedOpacityValue = GetOpacityValue();
             SetOpacity(selectedOpacityValue);
-
-
-
 
         }
 
@@ -631,8 +566,6 @@ namespace ServiceNowOpen
 
         }
 
-       
-
         private void OpenSelectedItemInBrowser()
         {
             try
@@ -735,42 +668,54 @@ namespace ServiceNowOpen
         private void SliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SetWindowColorsToSelectSliderColor();
+            ChangeButtonColor();
         }
 
         private void SliderBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
             SetWindowColorsToSelectSliderColor();
-
+            ChangeButtonColor();
         }
         private void SliderGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
             SetWindowColorsToSelectSliderColor();
-
+            ChangeButtonColor();
         }
 
         private void SetWindowColorsToSelectSliderColor()
         {
 
-            if(chkTitleBarCheckBox.IsChecked == true)
+            if(ChkBox_ButtonColors.IsChecked == true) 
             {
-                serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                SetWindowColors();
+
+              
+
+                ChangeButtonColor();
+
+
             }
 
-            if(chkWindowContentCheckBox.IsChecked == true)
+            if(chkTitleBarCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false)
+            {
+                serviceNowTheme.TitleBarBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+                
+                SetWindowColors();
+                
+            }
+
+            if(chkWindowContentCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false)
             {
                 serviceNowTheme.CenterWindowBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
                 SetWindowColors();
             }
 
-            if(chkMenuCheckBox.IsChecked == true)
+            if(chkMenuCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false)
             {
                 serviceNowTheme.MenuBackground = serviceNowTheme.ConvertRGBToBackgroundColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
                 SetWindowColors();
             }
-
 
         }
 
@@ -785,8 +730,7 @@ namespace ServiceNowOpen
 
         private void SetBlackButtonImages()
         {
-           
-           
+
             if(serviceNowTheme.MenuPanelImagesInverted == true)
             {
 
@@ -832,8 +776,8 @@ namespace ServiceNowOpen
                     Source = bitImgThemeButton
                 };
 
-                btnTheme.Content = imgThemeButton;
-                btnTheme.Background = new ImageBrush(bitImgThemeButton);
+                btnThemes.Content = imgThemeButton;
+                btnThemes.Background = new ImageBrush(bitImgThemeButton);
 
 
                 //Settings menu
@@ -937,7 +881,6 @@ namespace ServiceNowOpen
                 btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
             }
 
-
         }
 
         private void SetWhiteButtonImages()
@@ -987,8 +930,8 @@ namespace ServiceNowOpen
                     Source = bitImgThemeButton
                 };
 
-                btnTheme.Content = imgThemeButton;
-                btnTheme.Background = new ImageBrush(bitImgThemeButton);
+                btnThemes.Content = imgThemeButton;
+                btnThemes.Background = new ImageBrush(bitImgThemeButton);
 
                 //Settings menu
                 BitmapImage bitImgSettingsButton = new BitmapImage();
@@ -1072,9 +1015,6 @@ namespace ServiceNowOpen
                 btnOpenInBrowser.Content = imgOpenInBrowserButton;
                 btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
 
-
-               
-
                 //CheckMark Button
                 BitmapImage bitImgCheckMarkButton = new BitmapImage();
                 bitImgCheckMarkButton.BeginInit();
@@ -1100,12 +1040,12 @@ namespace ServiceNowOpen
                 txtTitle.Foreground = serviceNowTheme.BlackBrush();
             }
 
-            if(serviceNowTheme.MenuPanelImagesInverted == true)
-            {
-                btnHome.Foreground = serviceNowTheme.BlackBrush();
-                btnHistory.Foreground = serviceNowTheme.BlackBrush();
-                btnSettings.Foreground = serviceNowTheme.BlackBrush();
-            }
+            //if(serviceNowTheme.MenuPanelImagesInverted == true)
+            //{
+            //    btnHome.Foreground = serviceNowTheme.BlackBrush();
+            //    btnHistory.Foreground = serviceNowTheme.BlackBrush();
+            //    btnSettings.Foreground = serviceNowTheme.BlackBrush();
+            //}
 
             if(serviceNowTheme.WindowContentTextColorInverted == true)
             {
@@ -1117,7 +1057,7 @@ namespace ServiceNowOpen
                 txtGreen.Foreground = serviceNowTheme.BlackBrush();
                 txtBlue.Foreground = serviceNowTheme.BlackBrush();
                 txtOpacity.Foreground = serviceNowTheme.BlackBrush();
-                ChkBox_InvertButtonColors.Foreground = serviceNowTheme.BlackBrush();
+                ChkBox_ButtonColors.Foreground = serviceNowTheme.BlackBrush();
                 ChkBox_InvertTextColors.Foreground = serviceNowTheme.BlackBrush();
                 sliderRed.Foreground = serviceNowTheme.BlackBrush();
                 sliderGreen.Foreground = serviceNowTheme.BlackBrush();
@@ -1125,7 +1065,6 @@ namespace ServiceNowOpen
                 borderSliders.BorderBrush = serviceNowTheme.BlackBrush();
                 btnResetToDefault.Foreground = serviceNowTheme.BlackBrush();
                 txtSettings.Foreground = serviceNowTheme.BlackBrush();
-                //txtTheme.Foreground = serviceNowTheme.BlackBrush();
                 txtVersion.Foreground = serviceNowTheme.BlackBrush();
                 txtRecentlyOpenedItems.Foreground = serviceNowTheme.BlackBrush();
                 txtOpen.Foreground = serviceNowTheme.BlackBrush();
@@ -1133,7 +1072,6 @@ namespace ServiceNowOpen
                 chkMinimizeToSystemTray.Foreground = serviceNowTheme.BlackBrush();
                 chkBoxAlwaysOnTop.Foreground = serviceNowTheme.BlackBrush();
             }
-
 
 
         }
@@ -1145,12 +1083,12 @@ namespace ServiceNowOpen
                 txtTitle.Foreground = serviceNowTheme.WhiteBrush();
             }
 
-            if(serviceNowTheme.MenuPanelImagesInverted == false)
-            {
-                btnHome.Foreground = serviceNowTheme.WhiteBrush();
-                btnHistory.Foreground = serviceNowTheme.WhiteBrush();
-                btnSettings.Foreground = serviceNowTheme.WhiteBrush();
-            }
+            //if(serviceNowTheme.MenuPanelImagesInverted == false)
+            //{
+            //    btnHome.Foreground = serviceNowTheme.WhiteBrush();
+            //    btnHistory.Foreground = serviceNowTheme.WhiteBrush();
+            //    btnSettings.Foreground = serviceNowTheme.WhiteBrush();
+            //}
 
             if(serviceNowTheme.WindowContentTextColorInverted == false)
             {
@@ -1162,7 +1100,7 @@ namespace ServiceNowOpen
                 txtGreen.Foreground = serviceNowTheme.WhiteBrush();
                 txtBlue.Foreground = serviceNowTheme.WhiteBrush();
                 txtOpacity.Foreground = serviceNowTheme.WhiteBrush();
-                ChkBox_InvertButtonColors.Foreground = serviceNowTheme.WhiteBrush();
+                ChkBox_ButtonColors.Foreground = serviceNowTheme.WhiteBrush();
                 ChkBox_InvertTextColors.Foreground = serviceNowTheme.WhiteBrush();
                 sliderRed.Foreground = serviceNowTheme.WhiteBrush();
                 sliderGreen.Foreground = serviceNowTheme.WhiteBrush();
@@ -1170,7 +1108,6 @@ namespace ServiceNowOpen
                 borderSliders.BorderBrush = serviceNowTheme.WhiteBrush();
                 btnResetToDefault.Foreground = serviceNowTheme.WhiteBrush();
                 txtSettings.Foreground = serviceNowTheme.WhiteBrush();
-                //txtTheme.Foreground = serviceNowTheme.WhiteBrush();
                 txtVersion.Foreground = serviceNowTheme.WhiteBrush();
                 txtRecentlyOpenedItems.Foreground = serviceNowTheme.WhiteBrush();
                 txtOpen.Foreground = serviceNowTheme.WhiteBrush();
@@ -1180,79 +1117,7 @@ namespace ServiceNowOpen
             }
         }
 
-        //private void SetWhiteTextColor()
-        //{
-
-        //}
-
-
-        //private void SetBlackTextColor()
-        //{
-        //    //Copy Button
-        //    BitmapImage bitImgCopyButton = new BitmapImage();
-        //    bitImgCopyButton.BeginInit();
-        //    bitImgCopyButton.UriSource = new Uri(@"\Images\copy-black.png", UriKind.RelativeOrAbsolute);
-        //    bitImgCopyButton.EndInit();
-
-        //    Image imgCopyButton = new Image
-        //    {
-        //        Stretch = Stretch.Fill,
-        //        Source = bitImgCopyButton
-        //    };
-
-        //    btnCopy.Content = imgCopyButton;
-        //    btnCopy.Background = new ImageBrush(bitImgCopyButton);
-
-        //    //Open in Browser Button
-        //    BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
-        //    bitImgOpenInBrowserButton.BeginInit();
-        //    bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-black.png", UriKind.RelativeOrAbsolute);
-        //    bitImgOpenInBrowserButton.EndInit();
-
-        //    Image imgOpenInBrowserButton = new Image
-        //    {
-        //        Stretch = Stretch.Fill,
-        //        Source = bitImgOpenInBrowserButton
-        //    };
-
-        //    btnOpenInBrowser.Content = imgOpenInBrowserButton;
-        //    btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
-
-
-        //    //Theme Button
-        //    BitmapImage bitImgThemeButton = new BitmapImage();
-        //    bitImgThemeButton.BeginInit();
-        //    bitImgThemeButton.UriSource = new Uri(@"\Images\palette-black.png", UriKind.RelativeOrAbsolute);
-        //    bitImgThemeButton.EndInit();
-
-        //    Image imgThemeButton = new Image
-        //    {
-        //        Stretch = Stretch.Fill,
-        //        Source = bitImgThemeButton
-        //    };
-
-        //    btnTheme.Content = imgThemeButton;
-        //    btnTheme.Background = new ImageBrush(bitImgThemeButton);
-
-        //    //CheckMark Button
-        //    BitmapImage bitImgCheckMarkButton = new BitmapImage();
-        //    bitImgCheckMarkButton.BeginInit();
-        //    bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-black.png", UriKind.RelativeOrAbsolute);
-        //    bitImgCheckMarkButton.EndInit();
-
-        //    Image imgCheckMarkButton = new Image
-        //    {
-        //        Stretch = Stretch.Fill,
-        //        Source = bitImgCheckMarkButton
-        //    };
-
-        //    btnOK.Content = imgCheckMarkButton;
-        //    btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
-        //}
-
-
-
-        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        private void ThemesButton_Click(object sender, RoutedEventArgs e)
         {
             gridMainContent.Visibility = Visibility.Hidden;
             gridHistoryContent.Visibility = Visibility.Hidden;
@@ -1264,67 +1129,151 @@ namespace ServiceNowOpen
 
         private void MenuPanelCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            //if(ChkBox_InvertButtonColors.IsChecked == true)
-            //{
-            //    serviceNowTheme.MenuPanelImagesInverted = true;
-            //    SetBlackButtonImages();
-               
-            //}
+           
 
         }
 
         private void WindowContentCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            //if(ChkBox_InvertButtonColors.IsChecked == true)
-            //{
-            //    serviceNowTheme.WindowContentButtonImagesInverted = true;
-            //    SetBlackButtonImages();
-            //}
-
-            //if(ChkBox_InvertTextColors.IsChecked == true)
-            //{
-            //    serviceNowTheme.WindowContentTextColorInverted = true; 
-            //    SetBlackText();
-            //}
+          
 
         }
 
         private void TitleBarCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            //if(ChkBox_InvertButtonColors.IsChecked == true)
-            //{
-            //    serviceNowTheme.TitleBarButtonImagesInverted = true;
-            //    SetBlackButtonImages();
-            //}
-
-            //if(ChkBox_InvertTextColors.IsChecked == true)
-            //{
-            //    serviceNowTheme.TitleBarTextColorInverted = true;
-            //    SetBlackText();
-            //}
+            
         }
 
-        private void InvertButtonColorsCheckBox_Checked(object sender, RoutedEventArgs e)
+       
+        private void ChangeButtonColor()
         {
-            if(chkTitleBarCheckBox.IsChecked == true)
+
+            byte[] colors = new byte[3];
+            colors[0] = (byte)sliderRed.Value;
+            colors[1] = (byte)sliderGreen.Value;
+            colors[2] = (byte)sliderBlue.Value;
+            serviceNowTheme.MenuPanelButtonsRGB = colors;
+
+            if(ChkBox_ButtonColors.IsChecked == true && chkMenuCheckBox.IsChecked ==true)
             {
-                serviceNowTheme.TitleBarButtonImagesInverted = true;
+           
+                //Home Button
+                Image imgHome = new Image();
+                imgHome.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/home-white.png");
+                ImageBrush backgroundHomeImage = new ImageBrush();
+                backgroundHomeImage.ImageSource = imgHome.Source;
+                backgroundHomeImage.Stretch = Stretch.Fill;
+                backgroundHomeImage.TileMode = TileMode.None;
+                btnHome.Background = backgroundHomeImage;
+
+                //Themes Button
+                Image imgTheme = new Image();
+                imgTheme.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/paint-brush-64.png");
+                ImageBrush backgroundThemeImage = new ImageBrush();
+                backgroundThemeImage.ImageSource = imgTheme.Source;
+                backgroundThemeImage.Stretch = Stretch.Fill;
+                backgroundThemeImage.TileMode = TileMode.None;
+                btnThemes.Background = backgroundThemeImage;
+
+                //Recently Opened Items Button
+                Image imgRecentItems = new Image();
+                imgRecentItems.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/recentitems-white.png");
+                ImageBrush backgroundRecentItemsImage = new ImageBrush();
+                backgroundRecentItemsImage.ImageSource = imgRecentItems.Source;
+                backgroundRecentItemsImage.Stretch = Stretch.Fill;
+                backgroundRecentItemsImage.TileMode = TileMode.None;
+                btnHistory.Background = backgroundRecentItemsImage;
+
+              
+
+                //Settings Button
+                Image imgSettingsButton = new Image();
+                imgSettingsButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/settings-white.png");
+                ImageBrush backgroundSettingsButton = new ImageBrush();
+                backgroundSettingsButton.ImageSource = imgSettingsButton.Source;
+                backgroundSettingsButton.Stretch = Stretch.Fill;
+                backgroundSettingsButton.TileMode = TileMode.None;
+                btnSettings.Background = backgroundSettingsButton;
             }
 
-            if(chkMenuCheckBox.IsChecked == true)   
+            if(chkTitleBarCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == true)
             {
-                serviceNowTheme.MenuPanelImagesInverted = true;
+                //Power Button
+                Image imgPowerButton = new Image();
+                imgPowerButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/close.png");
+                ImageBrush backgroundPowerButton = new ImageBrush();
+                backgroundPowerButton.ImageSource = imgPowerButton.Source;
+                backgroundPowerButton.Stretch = Stretch.Fill;
+                backgroundPowerButton.TileMode = TileMode.None;
+                btnClose.Background = backgroundPowerButton;
+
+                //Minimize Button
+                Image imgMinimizeButton = new Image();
+                imgMinimizeButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/minimize-white.png");
+                ImageBrush backgroundMinimizeButton = new ImageBrush();
+                backgroundMinimizeButton.ImageSource = imgMinimizeButton.Source;
+                backgroundMinimizeButton.Stretch = Stretch.Fill;
+                backgroundMinimizeButton.TileMode = TileMode.None;
+                btnMinimize.Background = backgroundMinimizeButton;
+
             }
 
-            if(chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.WindowContentButtonImagesInverted=true;
-            }
 
-            SetBlackButtonImages();
-           // SetWhiteButtonImages();
+        }
 
-            
+        public WriteableBitmap ConvertImageColors(byte red, byte green, byte blue, byte alpha, string imagename)
+        {
+
+            StreamResourceInfo x = Application.GetResourceStream(new Uri(BaseUriHelper.GetBaseUri(this), imagename));
+          
+                BitmapDecoder dec = BitmapDecoder.Create(x.Stream, BitmapCreateOptions.None, BitmapCacheOption.Default);
+                BitmapFrame image = dec.Frames[0];
+                byte[] pixels = new byte[image.PixelWidth * image.PixelHeight * 4];
+                image.CopyPixels(pixels, image.PixelWidth * 4, 0);
+
+                var bmp = new WriteableBitmap(image.PixelWidth, image.PixelHeight, image.DpiX, image.DpiY, PixelFormats.Pbgra32, null);
+
+                for(int i = 0; i < pixels.Length / 4; ++i)
+                {
+                    byte b = pixels[i * 4];
+                    byte g = pixels[i * 4 + 1];
+                    byte r = pixels[i * 4 + 2];
+                    byte a = pixels[i * 4 + 3];
+
+
+                    if((r == 255 &&
+                        g == 255 &&
+                        b == 255 &&
+                        a == 255) ||
+                    (a != 0 && a != 255 &&
+                        r == g && g == b && r != 0))
+                    {
+
+                        {
+
+                            r = red;
+                            g = green;
+                            b = blue;
+                            a = alpha;
+
+                            pixels[i * 4] = b;
+                            pixels[i * 4 + 1] = g;
+                            pixels[i * 4 + 2] = r;
+                            pixels[i * 4 + 3] = a;
+
+                        }
+
+                    }
+
+                    bmp.WritePixels(new Int32Rect(0, 0, image.PixelWidth, image.PixelHeight), pixels, image.PixelWidth * 4, 0);
+
+                    // Source: https://stackoverflow.com/questions/20856424/wpf-modifying-image-colors-on-the-fly-c
+                }
+                
+                return bmp;
+           
+          
+
         }
 
         private void InvertButtonColorsCheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -1344,7 +1293,7 @@ namespace ServiceNowOpen
                 serviceNowTheme.WindowContentButtonImagesInverted = false;
             }
 
-            SetWhiteButtonImages();
+           // SetWhiteButtonImages();
             
         }
 
@@ -1384,46 +1333,17 @@ namespace ServiceNowOpen
 
         private void TitleBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            //if(ChkBox_InvertButtonColors.IsChecked == false)
-            //{
-            //    serviceNowTheme.TitleBarButtonImagesInverted = false;
-            //    SetWhiteButtonImages();
-              
-            //}
-
-            //if(ChkBox_InvertTextColors.IsChecked == false)
-            //{
-            //    serviceNowTheme.TitleBarTextColorInverted = false;
-            //    SetWhiteText();
-            //}
+           
         }
 
         private void MenuPanelCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            //if(ChkBox_InvertButtonColors.IsChecked == false)
-            //{
-            //    serviceNowTheme.MenuPanelImagesInverted = false;
-            //    SetWhiteButtonImages();
-                
-            //}
-
-           
+            
         }
 
         private void WindowContentCheckBox_UnChecked(object sender, RoutedEventArgs e)
         {
-            //if(ChkBox_InvertButtonColors.IsChecked == false)
-            //{
-            //    serviceNowTheme.WindowContentButtonImagesInverted = false;
-            //    SetWhiteButtonImages();
-               
-            //}
-
-            //if(ChkBox_InvertTextColors.IsChecked == false)
-            //{
-            //    serviceNowTheme.WindowContentTextColorInverted = false;
-            //    SetWhiteText();
-            //}
+           
         }
 
         private void OpenInBrowserButton_Click(object sender, RoutedEventArgs e)
@@ -1446,6 +1366,34 @@ namespace ServiceNowOpen
         {
             string cleanedItem = txtItem.Text.Trim();
             OpenItemInServiceNow(cleanedItem);
+        }
+
+        private void ChkBox_ButtonColors_Checked(object sender, RoutedEventArgs e)
+        {
+            if(chkTitleBarCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.TitleBarButtonImagesInverted = true;
+            }
+
+            if(chkMenuCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.MenuPanelImagesInverted = true;
+            }
+
+            if(chkWindowContentCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.WindowContentButtonImagesInverted = true;
+            }
+
+            // SetBlackButtonImages();
+        }
+
+
+
+
+        private void ChkBox_ButtonColors_Unchecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

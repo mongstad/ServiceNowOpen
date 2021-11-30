@@ -5,12 +5,12 @@
   <WindowContentImagesInverted>false</WindowContentImagesInverted>
   <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
   <MenuPanelImagesInverted>false</MenuPanelImagesInverted>
-  <Opacity>0.8</Opacity>
+  <Opacity>0.6</Opacity>
   <Inverted>false</Inverted>
   <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBrushString>#FF002094</TitleBarBrushString>
-  <MenuBrushString>#FF0000FF</MenuBrushString>
-  <CenterWindowBrushString>#FF0000AC</CenterWindowBrushString>
+  <TitleBarBrushString>#FF7B0000</TitleBarBrushString>
+  <MenuBrushString>#FF7B0000</MenuBrushString>
+  <CenterWindowBrushString>#FF7B0000</CenterWindowBrushString>
   <RecentItems>
     <RecentItems>
       <RecentlyOpenedItem>
@@ -76,7 +76,7 @@
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>63.758389261744959</SliderPosition>
+  <SliderPosition>33.557046979865788</SliderPosition>
   <TopMost>false</TopMost>
   <Top>703</Top>
   <Left>1448</Left>

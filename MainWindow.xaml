@@ -10,7 +10,7 @@
         Background="Transparent"
         WindowStyle="None" Activated="MainWindow1_Activated" GotFocus="MainWindow1_GotFocus" ResizeMode="NoResize" Icon="/now-agent-icon.ico">
 
-   
+
     <Window.Resources>
 
         <Storyboard x:Key="OkClickedAnimation">
@@ -159,11 +159,11 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value= "Transparent"/>
+                                <!--<Setter Property="Background" TargetName="border" Value= "Transparent"/>-->
                                 <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <!--<Setter Property="Background" TargetName="border" Value="Transparent"/>-->
                                 <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
@@ -216,11 +216,11 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <!--<Setter Property="Background" TargetName="border" Value="Transparent"/>-->
                                 <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <!--<Setter Property="Background" TargetName="border" Value="Transparent"/>-->
                                 <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
@@ -234,12 +234,12 @@
             </Setter>
         </Style>
         <!--#endregion btnCloseStyle Region END -->
-        
+
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9"/>
-        
+
         <!--#region Recently Opened Items List Style-->
         <Style x:Key="listRecentlyOpenedItemsStyle" TargetType="{x:Type ListView}">
             <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}"/>
@@ -264,7 +264,7 @@
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Background}"/>
                                 <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Border}"/>
-                                
+
                             </Trigger>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
@@ -275,10 +275,10 @@
                             </MultiTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
-                    
+
                 </Setter.Value>
             </Setter>
-            
+
         </Style>
         <Style x:Key="FocusVisual3">
             <Setter Property="Control.Template">
@@ -298,7 +298,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background3" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border3" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground3" Color="#FF838383"/>
-        
+
         <!--#region Recently Opened Items Button Style-->
         <Style x:Key="btnRecentlyOpenedItemsButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
@@ -431,7 +431,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-       
+
 
         <!--#endregion Recently Opened Items Button Style-->
 
@@ -446,7 +446,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="8*"></RowDefinition>
-          
+
 
         </Grid.RowDefinitions>
 
@@ -464,62 +464,69 @@
               HorizontalAlignment="Left" 
               Background="#1C2C4D" 
               MouseLeftButtonDown="TitleGrid_MouseLeftButtonDown">
-            
+
             <TextBlock x:Name="txtTitle" Text="ServiceNow" FontFamily="Bahnschrift SemiCondensed" Foreground="White" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"
                            Margin="10,0,0,0" Grid.ColumnSpan="2" />
             <StackPanel Orientation="Horizontal" Margin="0,0,10,0"  Grid.Column="1"   HorizontalAlignment="Right" VerticalAlignment="Center">
 
-                <Button Name="btnMinimize" Style="{DynamicResource btnCloseStyle}" Width="25" Height="25" 
-                    Background="Transparent" HorizontalAlignment="Right" Margin="0,0,10,0"
+                <Button Name="btnMinimize" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
+                    HorizontalAlignment="Right" Margin="0,0,10,0"
                     BorderBrush="Transparent" Click="MinimizeButton_Click" >
-                    <Image x:Name="imgMinimize" Source="\Images\minimize-white.png" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/minimize-white.png"></ImageBrush>
+                    </Button.Background>
 
-                        <Image.Triggers>
-                            <EventTrigger x:Name="MinimizeButtonAnimationButtonDown" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-
-                                        </DoubleAnimation>
-
-
-
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnMinimize"
+                                      Storyboard.TargetProperty="Height"
+                                      From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnMinimize"
+                                      Storyboard.TargetProperty="Width"
+                                      From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
 
-                <Button Name="btnClose" Style="{DynamicResource btnCloseStyle}" Width="25" Height="25" 
-                    Background="Transparent" HorizontalAlignment="Right"
+                <Button Name="btnClose" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
+                    HorizontalAlignment="Right"
                     BorderBrush="Transparent" Click="CloseButton_Click" >
-                    <Image x:Name="imgClose" Source="\Images\power-white.png">
-
-                        <Image.Triggers>
-                            <EventTrigger x:Name="CloseButtonAnimationButtonDown" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-
-                                        </DoubleAnimation>
-
-
-
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/close.png"></ImageBrush>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnClose"
+                                      Storyboard.TargetProperty="Height"
+                                      From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnClose"
+                                      Storyboard.TargetProperty="Width"
+                                      From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
             </StackPanel>
-           
+
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -536,97 +543,128 @@
 
             <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu" Height="180">
 
-                <Button Name="btnHome" Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
-                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="HomeButton_Click">
-                    <Image  Name="imgHome" Source="\Images\home-white.png" Stretch="Fill">
 
-                        <Image.Triggers>
-                            <EventTrigger x:Name="MenuHomeAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
+                <Button Name="btnHome"  Grid.Column="3" Grid.Row="2" Style="{DynamicResource btnMenuStyle}" BorderBrush="Transparent"
+                    Height="30" Width="30" Margin="0,10,0,0" Click="HomeButton_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/home-white.png" Stretch="Fill" TileMode ="None"/>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnHome"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />       
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnHome"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                    
                 </Button>
+
 
                 <Button Name="btnHistory" Style="{DynamicResource btnMenuStyle}"
-                BorderBrush="Transparent" 
-                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="HistoryButton_Click">
-                    <Image Source="\Images\recentitems-white.png" Stretch="Fill">
-
-                        <Image.Triggers>
-                            <EventTrigger x:Name="MenuHistoryAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="1.0" To="0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
-
+                BorderBrush="Transparent"  Grid.Column="3" Grid.Row="2"  
+                   Height="30" Width="30" Margin="0,10,0,0" Click="HistoryButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/recentitems-white.png" Stretch="Fill" TileMode ="None"/>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnHistory"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnHistory"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
 
-                <Button
-                    x:Name="btnTheme"
-                    Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
-                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0"
-                    
-                    Click="ThemeButton_Click"
-                    >
-                    <Image Source="\Images\palette-white.png" Name="imgTheme">
-
-                        <Image.Triggers>
-                            <EventTrigger x:Name="PaletteAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="1.0" To="0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
+                <Button Name="btnThemes" Style="{DynamicResource btnMenuStyle}"
+                BorderBrush="Transparent"  Grid.Column="3" Grid.Row="2"  
+                   Height="30" Width="30" Margin="0,10,0,0" Click="ThemesButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/paint-brush-64.png" Stretch="Fill" TileMode ="None"/>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnThemes"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnThemes"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
+              
 
                 <Button Name="btnSettings"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" Visibility="Visible"
-                    Background="Transparent" Height="30" Width="30" Margin="0,10,0,0" Click="SettingsButton_Click">
-                    <Image Source="\Images\settings-white.png" Stretch="Fill">
+                    Height="30" Width="30" Margin="0,10,0,0" Click="SettingsButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="\Images\settings-white.png"></ImageBrush>
+                    </Button.Background>
 
-                        <Image.Triggers>
-                            <EventTrigger x:Name="MenuSettingsAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-                    </Image>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnSettings"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnSettings"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
 
-               
+
 
 
             </StackPanel>
 
         </ScrollViewer>
-       
+
         <!--<StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu">
 
             <Button Name="btnHome" Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" 
@@ -695,7 +733,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"></ColumnDefinition>
@@ -742,11 +780,8 @@
                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Margin="0,5,0,0"
                       FontFamily="Bahnschrift SemiCondensed" VerticalContentAlignment= "Center"
                       HorizontalContentAlignment="Left" Checked="MinimizeCheckBox_Checked" 
-                      Unchecked="MinimizeCheckBox_Unchecked">
+                      Unchecked="MinimizeCheckBox_Unchecked"/>
 
-
-                </CheckBox>
-             
                 <CheckBox x:Name="chkBoxAlwaysOnTop" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Always on top" Foreground="AliceBlue"
                           Margin="0,5,0,0" Checked="AlwaysOnTopCheckBox_Checked" VerticalContentAlignment="Center"
                           HorizontalAlignment="Left" HorizontalContentAlignment="Left"
@@ -754,7 +789,7 @@
 
             </StackPanel>
 
-            
+
         </Grid>
 
         <!--#endregion-->
@@ -769,7 +804,7 @@
                 <ColumnDefinition Width="9*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-           
+
 
             <TextBlock Text="Recently Opened Items" Foreground="AliceBlue" Margin="10,10,0,0" Grid.Row="0" FontSize="18"
                      FontFamily="Bahnschrift SemiCondensed" x:Name="txtRecentlyOpenedItems"/>
@@ -802,49 +837,68 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10,0,10,10" Grid.Column="1" HorizontalAlignment="Center" Width="60">
-                <Button Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" x:Name="btnCopy" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                         Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" Click="CopyButton_Click">
-                    <Image Source="\Images\copy-white.png" HorizontalAlignment="Center" x:Name="imgCopy">
-                        <Image.Triggers>
-                            <EventTrigger x:Name="CopyButtonAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
+                <Button Style="{DynamicResource btnMenuStyle}" x:Name="btnCopy" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                          BorderBrush="Transparent" Margin="0,10,0,0" Click="CopyButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/copy-white.png"></ImageBrush>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnCopy"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnCopy"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
 
-                <Button Style="{DynamicResource btnRecentlyOpenedItemsButtonStyle}" x:Name="btnOpenInBrowser" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                         Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" Click="OpenInBrowserButton_Click">
+                <Button Style="{DynamicResource btnMenuStyle}" x:Name="btnOpenInBrowser" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                         BorderBrush="Transparent" Margin="0,10,0,0" Click="OpenInBrowserButton_Click">
 
-                    <Image Source="\Images\openinbrowser-white.png" HorizontalAlignment="Center" x:Name="imgOpenInBrowser">
-                        <Image.Triggers>
-                            <EventTrigger x:Name="OpenInBrowrserButtonAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard x:Name="OkClickedAnimation">
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:0.20" Storyboard.TargetProperty="Opacity" AutoReverse="True">
-
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-                    </Image>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/openinbrowser-white.png"></ImageBrush>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnOpenInBrowser"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnOpenInBrowser"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
 
             </StackPanel>
 
         </Grid>
-        
+
         <!--#endregion End of Recently Opened Items region-->
 
-        
+
         <!--#region Start Settings Content Grid-->
         <Grid x:Name="gridSettingsContent" Visibility="Hidden" Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
@@ -852,7 +906,7 @@
                 <RowDefinition Height="0.25*"></RowDefinition>
                 <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
-                
+
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -865,7 +919,7 @@
                      FontFamily="Bahnschrift SemiCondensed" Grid.ColumnSpan="2"
                        />
 
-            
+
 
             <!--<TextBlock x:Name="txtTheme" Text ="Theme" Foreground="AliceBlue" 
                 VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"
@@ -874,31 +928,29 @@
 
 
                 </TextBlock>-->
-        
-           
+
+
 
             <TextBlock x:Name="txtVersion" Width="100" Grid.Row="3" Grid.Column="0" Text="Version: " Foreground="AliceBlue" Margin="10,0,0,0"
                        FontSize="12" FontFamily="Bahnschrift SemiCondensed"
-                       VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left">
-                
-            </TextBlock>
-         
+                       VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
+
 
         </Grid>
         <!--#endregion End Settings Content Grid-->
 
         <!--#region Theme Start-->
-        <Grid Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,10,0,0" x:Name="gridColorPalette">
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="2.9*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="7*"></RowDefinition>
+                <RowDefinition Height="11*"></RowDefinition>
+                <RowDefinition Height="32*"></RowDefinition>
+                <RowDefinition Height="22*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border Background="Transparent"
                     BorderBrush="AliceBlue"
@@ -923,8 +975,8 @@
                        FontSize="18"
                        FontFamily="Bahnschrift SemiCondensed"
                        Grid.Column="0"/>
-            
-            
+
+
             <!--#region Radiobuttons-->
             <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2">
                 <CheckBox Content="Title Bar"
@@ -961,7 +1013,7 @@
                              Style="{DynamicResource chkBoxRounderCornerStyle}"
                             />
 
-                <CheckBox Content="Invert button colors"
+                <CheckBox Content="Button color"
                           FontSize="14"
                           FontFamily="Bahnschrift SemiCondensed"
                           Foreground="AliceBlue"
@@ -969,14 +1021,13 @@
                           Margin="0,0,0,0"
                           VerticalAlignment="Center"
                           VerticalContentAlignment="Center"
-                          x:Name="ChkBox_InvertButtonColors"
-                          Checked="InvertButtonColorsCheckBox_Checked"
-                          Unchecked="InvertButtonColorsCheckBox_Unchecked"
-                          
+                          x:Name="ChkBox_ButtonColors"
+                          Checked="ChkBox_ButtonColors_Checked"
+                          Unchecked="ChkBox_ButtonColors_Unchecked"
                           Style="{DynamicResource chkBoxRounderCornerStyle}"
                           />
 
-                <CheckBox Content="Invert text color"
+                <CheckBox Content="Text color"
                           FontSize="14"
                           FontFamily="Bahnschrift SemiCondensed"
                           Foreground="AliceBlue"
@@ -1031,11 +1082,11 @@
                            Margin="0 0,0,0" 
                            VerticalAlignment="Top" 
                            FontSize="14" FontFamily="Bahnschrift 
-                           SemiCondensed"></TextBlock>
+                           SemiCondensed"/>
 
             </StackPanel>
             <!--#endregion-->
-            
+
             <!--#region RGB Sliders-->
             <StackPanel Grid.Row="0" 
                         Grid.Column="2" 
@@ -1044,7 +1095,7 @@
                         Grid.RowSpan="3" 
                         Margin="10,10,0,0">
 
-                <Slider Width="160"
+                <Slider Width="120"
                         HorizontalAlignment="Left"
                         Height="20"
                         Background="Transparent"
@@ -1055,7 +1106,7 @@
                         Name="sliderRed"
                         ValueChanged="SliderRed_ValueChanged"
                          />
-                <Slider Width="160"
+                <Slider Width="120"
                         HorizontalAlignment="Left"
                         Height="20"
                         Background="Transparent"
@@ -1066,7 +1117,7 @@
                         Name="sliderGreen"
                         ValueChanged="SliderGreen_ValueChanged"/>
 
-                <Slider Width="160"
+                <Slider Width="120"
                         HorizontalAlignment="Left"
                         Height="20"
                         Background="Transparent"
@@ -1079,7 +1130,7 @@
 
                 <Slider x:Name="sliderOpacityValue" 
                         Height="20" 
-                        Width="160"                      
+                        Width="120"                      
                         ValueChanged="SliderOpacityValue_ValueChanged" 
                         Maximum="100" 
                         Value="100" 
@@ -1094,7 +1145,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" Margin="0,10,10,0">
 
-                
+
 
                 <Button Width="auto" 
                         Height="20"
@@ -1106,28 +1157,23 @@
                         Foreground="AliceBlue"
                         FontSize="14"
                         Name="btnResetToDefault"
-                        Style="{StaticResource btnRecentlyOpenedItemsButtonStyle}" Click="BtnResetToDefault_Click">
+                        Style="{StaticResource btnRecentlyOpenedItemsButtonStyle}" Click="BtnResetToDefault_Click"/>
 
-                </Button>
-       
-               
+
             </StackPanel>
 
             <StackPanel Grid.Row="3"
                         VerticalAlignment="Center" 
                         Margin="0,10,0,0" Grid.ColumnSpan="3" 
                         Width="200" 
-                        HorizontalAlignment="Left">
-                
-             
-            </StackPanel>
+                        HorizontalAlignment="Left"/>
            
-
+         
 
 
         </Grid>
-        
-        <!--#endregion Theme End-->
+
+      
 
     </Grid>
 </Window>
