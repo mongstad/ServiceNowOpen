@@ -156,7 +156,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                <!--<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>-->
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <!--<Setter Property="Background" TargetName="border" Value= "Transparent"/>-->
@@ -167,8 +167,9 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="#1C1C1F"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#1C1C1F"/>
+                                <!--<Setter Property="Background" TargetName="border" Value="#1C1C1F"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#1C1C1F"/>-->
+                                <Setter Property="BorderBrush" TargetName="border" Value="#8a78ff"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -757,20 +758,39 @@
                          Padding="5,0,0,0" 
                      Name="txtItem" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
                      TextChanged="ItemTextBox_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="ItemTextBox_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
-                <Button Style="{DynamicResource btnOKStyle}" Width="30" Click="OKButton_Click" Height="30"  Background="Transparent" Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
-                    <Image x:Name="imgOkBtn" Source="Images\checkmark-white.png">
-                        <Image.Triggers>
-                            <EventTrigger x:Name="ButtonAnimation" RoutedEvent="MouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="0.0" To="1" Duration="0:0:5" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                        <DoubleAnimation From="1" To="0.0" Duration="0:0:1" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                        <DoubleAnimation From="0.0" To="1" Duration="0:0:1" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-                    </Image>
+                <Button Style="{DynamicResource btnMenuStyle}" Width="30" Click="OKButton_Click" Height="30"  Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/checkmark-white.png" Stretch="Fill" TileMode ="None"/>
+                    </Button.Background>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnOK"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnHome"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <!--<EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="btnOK"
+                                      Storyboard.TargetProperty="Opacity"
+                                      From="1" To="0.2" Duration="0:0:0.3" a/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>-->
+                    </Button.Triggers>
                 </Button>
             </StackPanel>
 

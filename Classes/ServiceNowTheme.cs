@@ -27,11 +27,7 @@ namespace ServiceNow{
         private const string _titlebardefaulthexcolor = "#1C2C4D";
         private const string _mainwindowdefaulthexcolor = "#1E2330";
 
-        bool _titlebarimagesinverted = false;
-        bool _titlebartextcolorinverted = false;
-        bool _windowcontentimagesinverted = false;
-        bool _windowscontenttextcolorinverted = false;
-        bool _menupanelimagesinverted = false;
+       
 
 
         public ServiceNowTheme()
@@ -65,36 +61,7 @@ namespace ServiceNow{
             set { _opacity = value; }
         }
 
-        public bool TitleBarButtonImagesInverted
-        {
-            get { return _titlebarimagesinverted; }
-            set { _titlebarimagesinverted = value; }
-        }
-
-        public bool TitleBarTextColorInverted
-        {
-            get { return _titlebartextcolorinverted; }
-            set { _titlebartextcolorinverted = value; }
-        }
-
-        public bool WindowContentButtonImagesInverted
-        {
-            get { return _windowcontentimagesinverted; }
-            set { _windowcontentimagesinverted = value; }
-        }
-
-        public bool WindowContentTextColorInverted
-        {
-            get { return _windowscontenttextcolorinverted; }
-            set { _windowscontenttextcolorinverted = value; }
-        }
-
-        public bool MenuPanelImagesInverted
-        {
-            get { return _menupanelimagesinverted; }
-            set { _menupanelimagesinverted = value; }
-        }
-
+      
 
 
         public string TitleBarDefaultHexColor

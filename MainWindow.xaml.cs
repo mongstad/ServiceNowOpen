@@ -57,16 +57,16 @@ namespace ServiceNowOpen
             }
 
             serviceNowTheme.Opacity = snSettings.Opacity;
-            serviceNowTheme.TitleBarButtonImagesInverted = snSettings.TitleBarImagesInverted;
-            serviceNowTheme.TitleBarTextColorInverted = snSettings.TitleBarTextColorInverted;
-            serviceNowTheme.WindowContentButtonImagesInverted = snSettings.WindowContentImagesInverted;
-            serviceNowTheme.WindowContentTextColorInverted = snSettings.WindowContentTextColorInverted;
-            serviceNowTheme.MenuPanelImagesInverted = snSettings.MenuPanelImagesInverted;
+            //serviceNowTheme.TitleBarButtonImagesInverted = snSettings.TitleBarImagesInverted;
+            //serviceNowTheme.TitleBarTextColorInverted = snSettings.TitleBarTextColorInverted;
+            //serviceNowTheme.WindowContentButtonImagesInverted = snSettings.WindowContentImagesInverted;
+            //serviceNowTheme.WindowContentTextColorInverted = snSettings.WindowContentTextColorInverted;
+            //serviceNowTheme.MenuPanelImagesInverted = snSettings.MenuPanelImagesInverted;
 
             //SetWhiteButtonImages();
            // SetBlackButtonImages();
             SetWhiteText();
-            SetBlackText();
+            //SetBlackText();
 
 
             this.Top = snSettings.Top;
@@ -397,11 +397,6 @@ namespace ServiceNowOpen
                 SliderPosition = sliderOpacityValue.Value,
                 RecentItems = recentlyOpenedItems,
                 MinimizeToTray = (bool)chkMinimizeToSystemTray.IsChecked,
-                TitleBarImagesInverted = serviceNowTheme.TitleBarButtonImagesInverted,
-                TitleBarTextColorInverted = serviceNowTheme.TitleBarTextColorInverted,
-                WindowContentImagesInverted = serviceNowTheme.WindowContentButtonImagesInverted,
-                WindowContentTextColorInverted = serviceNowTheme.WindowContentTextColorInverted,
-                MenuPanelImagesInverted = serviceNowTheme.MenuPanelImagesInverted
                 
 
             };
@@ -728,361 +723,360 @@ namespace ServiceNowOpen
 
         }
 
-        private void SetBlackButtonImages()
-        {
+        //private void SetBlackButtonImages()
+        //{
 
-            if(serviceNowTheme.MenuPanelImagesInverted == true)
-            {
+        //    if(serviceNowTheme.MenuPanelImagesInverted == true)
+        //    {
 
-                //Home menu
-                BitmapImage bitImgHomeButton = new BitmapImage();
-                bitImgHomeButton.BeginInit();
-                bitImgHomeButton.UriSource = new Uri(@"\Images\home-black.png", UriKind.RelativeOrAbsolute);
-                bitImgHomeButton.EndInit();
+        //        //Home menu
+        //        BitmapImage bitImgHomeButton = new BitmapImage();
+        //        bitImgHomeButton.BeginInit();
+        //        bitImgHomeButton.UriSource = new Uri(@"\Images\home-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgHomeButton.EndInit();
 
-                Image imgImgHomeButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgHomeButton
-                };
+        //        Image imgImgHomeButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgHomeButton
+        //        };
 
-                btnHome.Content = imgImgHomeButton;
-                btnHome.Background = new ImageBrush(bitImgHomeButton);
+        //        btnHome.Content = imgImgHomeButton;
+        //        btnHome.Background = new ImageBrush(bitImgHomeButton);
 
-                //Recently Opened Items menu
-                BitmapImage bitImgRecentlyOpenedItemsButton = new BitmapImage();
-                bitImgRecentlyOpenedItemsButton.BeginInit();
-                bitImgRecentlyOpenedItemsButton.UriSource = new Uri(@"\Images\recentitems-black.png", UriKind.RelativeOrAbsolute);
-                bitImgRecentlyOpenedItemsButton.EndInit();
+        //        //Recently Opened Items menu
+        //        BitmapImage bitImgRecentlyOpenedItemsButton = new BitmapImage();
+        //        bitImgRecentlyOpenedItemsButton.BeginInit();
+        //        bitImgRecentlyOpenedItemsButton.UriSource = new Uri(@"\Images\recentitems-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgRecentlyOpenedItemsButton.EndInit();
 
-                Image imgRecentlyOpenedItemsButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgRecentlyOpenedItemsButton
-                };
+        //        Image imgRecentlyOpenedItemsButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgRecentlyOpenedItemsButton
+        //        };
 
-                btnHistory.Content = imgRecentlyOpenedItemsButton;
-                btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
+        //        btnHistory.Content = imgRecentlyOpenedItemsButton;
+        //        btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
 
-                //Theme Button
-                BitmapImage bitImgThemeButton = new BitmapImage();
-                bitImgThemeButton.BeginInit();
-                bitImgThemeButton.UriSource = new Uri(@"\Images\palette-black.png", UriKind.RelativeOrAbsolute);
-                bitImgThemeButton.EndInit();
+        //        //Theme Button
+        //        BitmapImage bitImgThemeButton = new BitmapImage();
+        //        bitImgThemeButton.BeginInit();
+        //        bitImgThemeButton.UriSource = new Uri(@"\Images\palette-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgThemeButton.EndInit();
 
-                Image imgThemeButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgThemeButton
-                };
+        //        Image imgThemeButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgThemeButton
+        //        };
 
-                btnThemes.Content = imgThemeButton;
-                btnThemes.Background = new ImageBrush(bitImgThemeButton);
+        //        btnThemes.Content = imgThemeButton;
+        //        btnThemes.Background = new ImageBrush(bitImgThemeButton);
 
 
-                //Settings menu
-                BitmapImage bitImgSettingsButton = new BitmapImage();
-                bitImgSettingsButton.BeginInit();
-                bitImgSettingsButton.UriSource = new Uri(@"\Images\settings-black.png", UriKind.RelativeOrAbsolute);
-                bitImgSettingsButton.EndInit();
+        //        //Settings menu
+        //        BitmapImage bitImgSettingsButton = new BitmapImage();
+        //        bitImgSettingsButton.BeginInit();
+        //        bitImgSettingsButton.UriSource = new Uri(@"\Images\settings-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgSettingsButton.EndInit();
 
-                Image imgSettingsButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgSettingsButton
-                };
+        //        Image imgSettingsButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgSettingsButton
+        //        };
 
-                btnSettings.Content = imgSettingsButton;
-                btnSettings.Background = new ImageBrush(bitImgSettingsButton);
+        //        btnSettings.Content = imgSettingsButton;
+        //        btnSettings.Background = new ImageBrush(bitImgSettingsButton);
 
-            }
+        //    }
 
-            if(serviceNowTheme.TitleBarButtonImagesInverted == true)
-            {
-                //Close Window Button
-                BitmapImage bitImgCloseWindowButton = new BitmapImage();
-                bitImgCloseWindowButton.BeginInit();
-                bitImgCloseWindowButton.UriSource = new Uri(@"\Images\power-black.png", UriKind.RelativeOrAbsolute);
-                bitImgCloseWindowButton.EndInit();
+        //    if(serviceNowTheme.TitleBarButtonImagesInverted == true)
+        //    {
+        //        //Close Window Button
+        //        BitmapImage bitImgCloseWindowButton = new BitmapImage();
+        //        bitImgCloseWindowButton.BeginInit();
+        //        bitImgCloseWindowButton.UriSource = new Uri(@"\Images\power-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgCloseWindowButton.EndInit();
 
-                Image imgCloseWindowButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgCloseWindowButton
-                };
+        //        Image imgCloseWindowButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgCloseWindowButton
+        //        };
 
-                btnClose.Content = imgCloseWindowButton;
-                btnClose.Background = new ImageBrush(bitImgCloseWindowButton);
+        //        btnClose.Content = imgCloseWindowButton;
+        //        btnClose.Background = new ImageBrush(bitImgCloseWindowButton);
 
-                //Minimize Window Button
-                BitmapImage bitImgMinimizeWindowButton = new BitmapImage();
-                bitImgMinimizeWindowButton.BeginInit();
-                bitImgMinimizeWindowButton.UriSource = new Uri(@"\Images\minimize-black.png", UriKind.RelativeOrAbsolute);
-                bitImgMinimizeWindowButton.EndInit();
+        //        //Minimize Window Button
+        //        BitmapImage bitImgMinimizeWindowButton = new BitmapImage();
+        //        bitImgMinimizeWindowButton.BeginInit();
+        //        bitImgMinimizeWindowButton.UriSource = new Uri(@"\Images\minimize-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgMinimizeWindowButton.EndInit();
 
-                Image imgMinimizeWindowButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgMinimizeWindowButton
-                };
+        //        Image imgMinimizeWindowButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgMinimizeWindowButton
+        //        };
 
-                btnMinimize.Content = imgMinimizeWindowButton;
-                btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
-            }
+        //        btnMinimize.Content = imgMinimizeWindowButton;
+        //        btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
+        //    }
            
-            if(serviceNowTheme.WindowContentButtonImagesInverted == true)
-            {
-                //Copy Button
-                BitmapImage bitImgCopyButton = new BitmapImage();
-                bitImgCopyButton.BeginInit();
-                bitImgCopyButton.UriSource = new Uri(@"\Images\copy-black.png", UriKind.RelativeOrAbsolute);
-                bitImgCopyButton.EndInit();
+        //    if(serviceNowTheme.WindowContentButtonImagesInverted == true)
+        //    {
+        //        //Copy Button
+        //        BitmapImage bitImgCopyButton = new BitmapImage();
+        //        bitImgCopyButton.BeginInit();
+        //        bitImgCopyButton.UriSource = new Uri(@"\Images\copy-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgCopyButton.EndInit();
 
-                Image imgCopyButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgCopyButton
-                };
+        //        Image imgCopyButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgCopyButton
+        //        };
 
-                btnCopy.Content = imgCopyButton;
-                btnCopy.Background = new ImageBrush(bitImgCopyButton);
+        //        btnCopy.Content = imgCopyButton;
+        //        btnCopy.Background = new ImageBrush(bitImgCopyButton);
 
-                //Open in Browser Button
-                BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
-                bitImgOpenInBrowserButton.BeginInit();
-                bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-black.png", UriKind.RelativeOrAbsolute);
-                bitImgOpenInBrowserButton.EndInit();
+        //        //Open in Browser Button
+        //        BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
+        //        bitImgOpenInBrowserButton.BeginInit();
+        //        bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgOpenInBrowserButton.EndInit();
 
-                Image imgOpenInBrowserButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgOpenInBrowserButton
-                };
+        //        Image imgOpenInBrowserButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgOpenInBrowserButton
+        //        };
 
-                btnOpenInBrowser.Content = imgOpenInBrowserButton;
-                btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
+        //        btnOpenInBrowser.Content = imgOpenInBrowserButton;
+        //        btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
 
 
                
 
-                //CheckMark Button
-                BitmapImage bitImgCheckMarkButton = new BitmapImage();
-                bitImgCheckMarkButton.BeginInit();
-                bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-black.png", UriKind.RelativeOrAbsolute);
-                bitImgCheckMarkButton.EndInit();
+        //        //CheckMark Button
+        //        BitmapImage bitImgCheckMarkButton = new BitmapImage();
+        //        bitImgCheckMarkButton.BeginInit();
+        //        bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-black.png", UriKind.RelativeOrAbsolute);
+        //        bitImgCheckMarkButton.EndInit();
 
-                Image imgCheckMarkButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgCheckMarkButton
-                };
+        //        Image imgCheckMarkButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgCheckMarkButton
+        //        };
 
-                btnOK.Content = imgCheckMarkButton;
-                btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
-            }
+        //        btnOK.Content = imgCheckMarkButton;
+        //        btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
+        //    }
 
-        }
+        //}
 
-        private void SetWhiteButtonImages()
-        {
+        //private void SetWhiteButtonImages()
+        //{
 
-            if(serviceNowTheme.MenuPanelImagesInverted == false)
-            {
-                //Home menu
-                BitmapImage bitImgHomeButton = new BitmapImage();
-                bitImgHomeButton.BeginInit();
-                bitImgHomeButton.UriSource = new Uri(@"\Images\home-white.png", UriKind.RelativeOrAbsolute);
-                bitImgHomeButton.EndInit();
+        //    if(serviceNowTheme.MenuPanelImagesInverted == false)
+        //    {
+        //        //Home menu
+        //        BitmapImage bitImgHomeButton = new BitmapImage();
+        //        bitImgHomeButton.BeginInit();
+        //        bitImgHomeButton.UriSource = new Uri(@"\Images\home-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgHomeButton.EndInit();
 
-                Image imgImgHomeButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgHomeButton
-                };
+        //        Image imgImgHomeButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgHomeButton
+        //        };
 
-                btnHome.Content = imgImgHomeButton;
-                btnHome.Background = new ImageBrush(bitImgHomeButton);
+        //        btnHome.Content = imgImgHomeButton;
+        //        btnHome.Background = new ImageBrush(bitImgHomeButton);
 
-                //Recently Opened Items menu
-                BitmapImage bitImgRecentlyOpenedItemsButton = new BitmapImage();
-                bitImgRecentlyOpenedItemsButton.BeginInit();
-                bitImgRecentlyOpenedItemsButton.UriSource = new Uri(@"\Images\recentitems-white.png", UriKind.RelativeOrAbsolute);
-                bitImgRecentlyOpenedItemsButton.EndInit();
+        //        //Recently Opened Items menu
+        //        BitmapImage bitImgRecentlyOpenedItemsButton = new BitmapImage();
+        //        bitImgRecentlyOpenedItemsButton.BeginInit();
+        //        bitImgRecentlyOpenedItemsButton.UriSource = new Uri(@"\Images\recentitems-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgRecentlyOpenedItemsButton.EndInit();
 
-                Image imgRecentlyOpenedItemsButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgRecentlyOpenedItemsButton
-                };
+        //        Image imgRecentlyOpenedItemsButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgRecentlyOpenedItemsButton
+        //        };
 
-                btnHistory.Content = imgRecentlyOpenedItemsButton;
-                btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
+        //        btnHistory.Content = imgRecentlyOpenedItemsButton;
+        //        btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
 
-                //Theme Button
-                BitmapImage bitImgThemeButton = new BitmapImage();
-                bitImgThemeButton.BeginInit();
-                bitImgThemeButton.UriSource = new Uri(@"\Images\palette-white.png", UriKind.RelativeOrAbsolute);
-                bitImgThemeButton.EndInit();
+        //        //Theme Button
+        //        BitmapImage bitImgThemeButton = new BitmapImage();
+        //        bitImgThemeButton.BeginInit();
+        //        bitImgThemeButton.UriSource = new Uri(@"\Images\palette-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgThemeButton.EndInit();
 
-                Image imgThemeButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgThemeButton
-                };
+        //        Image imgThemeButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgThemeButton
+        //        };
 
-                btnThemes.Content = imgThemeButton;
-                btnThemes.Background = new ImageBrush(bitImgThemeButton);
+        //        btnThemes.Content = imgThemeButton;
+        //        btnThemes.Background = new ImageBrush(bitImgThemeButton);
 
-                //Settings menu
-                BitmapImage bitImgSettingsButton = new BitmapImage();
-                bitImgSettingsButton.BeginInit();
-                bitImgSettingsButton.UriSource = new Uri(@"\Images\settings-white.png", UriKind.RelativeOrAbsolute);
-                bitImgSettingsButton.EndInit();
+        //        //Settings menu
+        //        BitmapImage bitImgSettingsButton = new BitmapImage();
+        //        bitImgSettingsButton.BeginInit();
+        //        bitImgSettingsButton.UriSource = new Uri(@"\Images\settings-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgSettingsButton.EndInit();
 
-                Image imgSettingsButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgSettingsButton
-                };
+        //        Image imgSettingsButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgSettingsButton
+        //        };
 
-                btnSettings.Content = imgSettingsButton;
-                btnSettings.Background = new ImageBrush(bitImgSettingsButton);
+        //        btnSettings.Content = imgSettingsButton;
+        //        btnSettings.Background = new ImageBrush(bitImgSettingsButton);
 
-            }
+        //    }
            
-            if(serviceNowTheme.TitleBarButtonImagesInverted == false)
-            {
-                //Close Window Button
-                BitmapImage bitImgCloseWindowButton = new BitmapImage();
-                bitImgCloseWindowButton.BeginInit();
-                bitImgCloseWindowButton.UriSource = new Uri(@"\Images\power-white.png", UriKind.RelativeOrAbsolute);
-                bitImgCloseWindowButton.EndInit();
+        //    if(serviceNowTheme.TitleBarButtonImagesInverted == false)
+        //    {
+        //        //Close Window Button
+        //        BitmapImage bitImgCloseWindowButton = new BitmapImage();
+        //        bitImgCloseWindowButton.BeginInit();
+        //        bitImgCloseWindowButton.UriSource = new Uri(@"\Images\power-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgCloseWindowButton.EndInit();
 
-                Image imgCloseWindowButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgCloseWindowButton
-                };
+        //        Image imgCloseWindowButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgCloseWindowButton
+        //        };
 
-                btnClose.Content = imgCloseWindowButton;
-                btnClose.Background = new ImageBrush(bitImgCloseWindowButton);
+        //        btnClose.Content = imgCloseWindowButton;
+        //        btnClose.Background = new ImageBrush(bitImgCloseWindowButton);
 
-                //Minimize Window Button
-                BitmapImage bitImgMinimizeWindowButton = new BitmapImage();
-                bitImgMinimizeWindowButton.BeginInit();
-                bitImgMinimizeWindowButton.UriSource = new Uri(@"\Images\minimize-white.png", UriKind.RelativeOrAbsolute);
-                bitImgMinimizeWindowButton.EndInit();
+        //        //Minimize Window Button
+        //        BitmapImage bitImgMinimizeWindowButton = new BitmapImage();
+        //        bitImgMinimizeWindowButton.BeginInit();
+        //        bitImgMinimizeWindowButton.UriSource = new Uri(@"\Images\minimize-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgMinimizeWindowButton.EndInit();
 
-                Image imgMinimizeWindowButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgMinimizeWindowButton
-                };
+        //        Image imgMinimizeWindowButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgMinimizeWindowButton
+        //        };
 
-                btnMinimize.Content = imgMinimizeWindowButton;
-                btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
-            }
+        //        btnMinimize.Content = imgMinimizeWindowButton;
+        //        btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
+        //    }
            
-            if(serviceNowTheme.WindowContentButtonImagesInverted == false)
-            {
-                //Copy Button
-                BitmapImage bitImgCopyButton = new BitmapImage();
-                bitImgCopyButton.BeginInit();
-                bitImgCopyButton.UriSource = new Uri(@"\Images\copy-white.png", UriKind.RelativeOrAbsolute);
-                bitImgCopyButton.EndInit();
+        //    if(serviceNowTheme.WindowContentButtonImagesInverted == false)
+        //    {
+        //        //Copy Button
+        //        BitmapImage bitImgCopyButton = new BitmapImage();
+        //        bitImgCopyButton.BeginInit();
+        //        bitImgCopyButton.UriSource = new Uri(@"\Images\copy-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgCopyButton.EndInit();
 
-                Image imgCopyButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgCopyButton
-                };
+        //        Image imgCopyButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgCopyButton
+        //        };
 
-                btnCopy.Content = imgCopyButton;
-                btnCopy.Background = new ImageBrush(bitImgCopyButton);
+        //        btnCopy.Content = imgCopyButton;
+        //        btnCopy.Background = new ImageBrush(bitImgCopyButton);
 
-                //Open in Browser Button
-                BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
-                bitImgOpenInBrowserButton.BeginInit();
-                bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-white.png", UriKind.RelativeOrAbsolute);
-                bitImgOpenInBrowserButton.EndInit();
+        //        //Open in Browser Button
+        //        BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
+        //        bitImgOpenInBrowserButton.BeginInit();
+        //        bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgOpenInBrowserButton.EndInit();
 
-                Image imgOpenInBrowserButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgOpenInBrowserButton
-                };
+        //        Image imgOpenInBrowserButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgOpenInBrowserButton
+        //        };
 
-                btnOpenInBrowser.Content = imgOpenInBrowserButton;
-                btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
+        //        btnOpenInBrowser.Content = imgOpenInBrowserButton;
+        //        btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
 
-                //CheckMark Button
-                BitmapImage bitImgCheckMarkButton = new BitmapImage();
-                bitImgCheckMarkButton.BeginInit();
-                bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-white.png", UriKind.RelativeOrAbsolute);
-                bitImgCheckMarkButton.EndInit();
+        //        //CheckMark Button
+        //        BitmapImage bitImgCheckMarkButton = new BitmapImage();
+        //        bitImgCheckMarkButton.BeginInit();
+        //        bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-white.png", UriKind.RelativeOrAbsolute);
+        //        bitImgCheckMarkButton.EndInit();
 
-                Image imgCheckMarkButton = new Image
-                {
-                    Stretch = Stretch.Fill,
-                    Source = bitImgCheckMarkButton
-                };
+        //        Image imgCheckMarkButton = new Image
+        //        {
+        //            Stretch = Stretch.Fill,
+        //            Source = bitImgCheckMarkButton
+        //        };
 
-                btnOK.Content = imgCheckMarkButton;
-                btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
-            }
+        //        btnOK.Content = imgCheckMarkButton;
+        //        btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
+        //    }
 
-        }
+        //}
 
-        private void SetBlackText()
-        {
-            if(serviceNowTheme.TitleBarTextColorInverted == true)
-            {
-                txtTitle.Foreground = serviceNowTheme.BlackBrush();
-            }
+        //private void SetBlackText()
+        //{
+        //    if(serviceNowTheme.TitleBarTextColorInverted == true)
+        //    {
+        //        txtTitle.Foreground = serviceNowTheme.BlackBrush();
+        //    }
 
-            //if(serviceNowTheme.MenuPanelImagesInverted == true)
-            //{
-            //    btnHome.Foreground = serviceNowTheme.BlackBrush();
-            //    btnHistory.Foreground = serviceNowTheme.BlackBrush();
-            //    btnSettings.Foreground = serviceNowTheme.BlackBrush();
-            //}
+        //    //if(serviceNowTheme.MenuPanelImagesInverted == true)
+        //    //{
+        //    //    btnHome.Foreground = serviceNowTheme.BlackBrush();
+        //    //    btnHistory.Foreground = serviceNowTheme.BlackBrush();
+        //    //    btnSettings.Foreground = serviceNowTheme.BlackBrush();
+        //    //}
 
-            if(serviceNowTheme.WindowContentTextColorInverted == true)
-            {
-                txt_Theme.Foreground = serviceNowTheme.BlackBrush();
-                chkTitleBarCheckBox.Foreground = serviceNowTheme.BlackBrush();
-                chkMenuCheckBox.Foreground = serviceNowTheme.BlackBrush();
-                chkWindowContentCheckBox.Foreground = serviceNowTheme.BlackBrush();
-                txtRed.Foreground = serviceNowTheme.BlackBrush();
-                txtGreen.Foreground = serviceNowTheme.BlackBrush();
-                txtBlue.Foreground = serviceNowTheme.BlackBrush();
-                txtOpacity.Foreground = serviceNowTheme.BlackBrush();
-                ChkBox_ButtonColors.Foreground = serviceNowTheme.BlackBrush();
-                ChkBox_InvertTextColors.Foreground = serviceNowTheme.BlackBrush();
-                sliderRed.Foreground = serviceNowTheme.BlackBrush();
-                sliderGreen.Foreground = serviceNowTheme.BlackBrush();
-                sliderBlue.Foreground = serviceNowTheme.BlackBrush();
-                borderSliders.BorderBrush = serviceNowTheme.BlackBrush();
-                btnResetToDefault.Foreground = serviceNowTheme.BlackBrush();
-                txtSettings.Foreground = serviceNowTheme.BlackBrush();
-                txtVersion.Foreground = serviceNowTheme.BlackBrush();
-                txtRecentlyOpenedItems.Foreground = serviceNowTheme.BlackBrush();
-                txtOpen.Foreground = serviceNowTheme.BlackBrush();
-                chkBoxFreeTextSearch.Foreground = serviceNowTheme.BlackBrush();
-                chkMinimizeToSystemTray.Foreground = serviceNowTheme.BlackBrush();
-                chkBoxAlwaysOnTop.Foreground = serviceNowTheme.BlackBrush();
-            }
+        //    if(serviceNowTheme.WindowContentTextColorInverted == true)
+        //    {
+        //        txt_Theme.Foreground = serviceNowTheme.BlackBrush();
+        //        chkTitleBarCheckBox.Foreground = serviceNowTheme.BlackBrush();
+        //        chkMenuCheckBox.Foreground = serviceNowTheme.BlackBrush();
+        //        chkWindowContentCheckBox.Foreground = serviceNowTheme.BlackBrush();
+        //        txtRed.Foreground = serviceNowTheme.BlackBrush();
+        //        txtGreen.Foreground = serviceNowTheme.BlackBrush();
+        //        txtBlue.Foreground = serviceNowTheme.BlackBrush();
+        //        txtOpacity.Foreground = serviceNowTheme.BlackBrush();
+        //        ChkBox_ButtonColors.Foreground = serviceNowTheme.BlackBrush();
+        //        ChkBox_InvertTextColors.Foreground = serviceNowTheme.BlackBrush();
+        //        sliderRed.Foreground = serviceNowTheme.BlackBrush();
+        //        sliderGreen.Foreground = serviceNowTheme.BlackBrush();
+        //        sliderBlue.Foreground = serviceNowTheme.BlackBrush();
+        //        borderSliders.BorderBrush = serviceNowTheme.BlackBrush();
+        //        btnResetToDefault.Foreground = serviceNowTheme.BlackBrush();
+        //        txtSettings.Foreground = serviceNowTheme.BlackBrush();
+        //        txtVersion.Foreground = serviceNowTheme.BlackBrush();
+        //        txtRecentlyOpenedItems.Foreground = serviceNowTheme.BlackBrush();
+        //        txtOpen.Foreground = serviceNowTheme.BlackBrush();
+        //        chkBoxFreeTextSearch.Foreground = serviceNowTheme.BlackBrush();
+        //        chkMinimizeToSystemTray.Foreground = serviceNowTheme.BlackBrush();
+        //        chkBoxAlwaysOnTop.Foreground = serviceNowTheme.BlackBrush();
+        //    }
 
 
-        }
+        //}
 
         private void SetWhiteText()
         {
-            if(serviceNowTheme.TitleBarTextColorInverted == false)
-            {
+            
+        
                 txtTitle.Foreground = serviceNowTheme.WhiteBrush();
-            }
-
+         
             //if(serviceNowTheme.MenuPanelImagesInverted == false)
             //{
             //    btnHome.Foreground = serviceNowTheme.WhiteBrush();
@@ -1090,8 +1084,6 @@ namespace ServiceNowOpen
             //    btnSettings.Foreground = serviceNowTheme.WhiteBrush();
             //}
 
-            if(serviceNowTheme.WindowContentTextColorInverted == false)
-            {
                 txt_Theme.Foreground = serviceNowTheme.WhiteBrush();
                 chkTitleBarCheckBox.Foreground = serviceNowTheme.WhiteBrush();
                 chkMenuCheckBox.Foreground = serviceNowTheme.WhiteBrush();
@@ -1114,7 +1106,7 @@ namespace ServiceNowOpen
                 chkBoxFreeTextSearch.Foreground = serviceNowTheme.WhiteBrush();
                 chkMinimizeToSystemTray.Foreground = serviceNowTheme.WhiteBrush();
                 chkBoxAlwaysOnTop.Foreground = serviceNowTheme.WhiteBrush();
-            }
+            
         }
 
         private void ThemesButton_Click(object sender, RoutedEventArgs e)
@@ -1218,6 +1210,36 @@ namespace ServiceNowOpen
 
             }
 
+            if(ChkBox_ButtonColors.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
+            {
+                //Copy Button
+                Image imgCopyButton = new Image();
+                imgCopyButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/copy-white.png");
+                ImageBrush backgroundCopyButton = new ImageBrush();
+                backgroundCopyButton.ImageSource = imgCopyButton.Source;
+                backgroundCopyButton.Stretch = Stretch.Fill;
+                backgroundCopyButton.TileMode = TileMode.None;
+                btnCopy.Background = backgroundCopyButton;
+
+                //Open In Browser Button
+                Image imgOpenInBrowserButton = new Image();
+                imgOpenInBrowserButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/openinbrowser-white.png");
+                ImageBrush backgroundOpenInBrowserButton = new ImageBrush();
+                backgroundOpenInBrowserButton.ImageSource = imgOpenInBrowserButton.Source;
+                backgroundOpenInBrowserButton.Stretch = Stretch.Fill;
+                backgroundOpenInBrowserButton.TileMode = TileMode.None;
+                btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
+
+                //OK (CheckMark) Button
+                Image imgOKButton = new Image();
+                imgOKButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/checkmark-white.png");
+                ImageBrush backgroundOKButton = new ImageBrush();
+                backgroundOKButton.ImageSource = imgOKButton.Source;
+                backgroundOKButton.Stretch = Stretch.Fill;
+                backgroundOKButton.TileMode = TileMode.None;
+                btnOK.Background = backgroundOKButton;
+            }
+
 
         }
 
@@ -1276,59 +1298,44 @@ namespace ServiceNowOpen
 
         }
 
-        private void InvertButtonColorsCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            if(chkTitleBarCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.TitleBarButtonImagesInverted = false;
-            }
+        //private void InvertButtonColorsCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    if(chkTitleBarCheckBox.IsChecked == true)
+        //    {
+        //        serviceNowTheme.TitleBarButtonImagesInverted = false;
+        //    }
 
-            if(chkMenuCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.MenuPanelImagesInverted = false;
-            }
+        //    if(chkMenuCheckBox.IsChecked == true)
+        //    {
+        //        serviceNowTheme.MenuPanelImagesInverted = false;
+        //    }
 
-            if(chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.WindowContentButtonImagesInverted = false;
-            }
+        //    if(chkWindowContentCheckBox.IsChecked == true)
+        //    {
+        //        serviceNowTheme.WindowContentButtonImagesInverted = false;
+        //    }
 
-           // SetWhiteButtonImages();
+        //   // SetWhiteButtonImages();
             
-        }
+        //}
 
         private void InvertTextColorsCheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
-            if(chkTitleBarCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.TitleBarTextColorInverted = true;
-            }
+          
 
 
-            if(chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.WindowContentTextColorInverted = true;
-            }
+           
 
-            SetBlackText();
+            //SetBlackText();
             //SetWhiteText();
         }
 
         private void InvertTextColorsCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            if(chkTitleBarCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.TitleBarTextColorInverted = false;
-            }
+            
 
-
-            if(chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.WindowContentTextColorInverted = false;
-            }
-
-            SetWhiteText();
+            //SetWhiteText();
         }
 
         private void TitleBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -1370,22 +1377,9 @@ namespace ServiceNowOpen
 
         private void ChkBox_ButtonColors_Checked(object sender, RoutedEventArgs e)
         {
-            if(chkTitleBarCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.TitleBarButtonImagesInverted = true;
-            }
+           
 
-            if(chkMenuCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.MenuPanelImagesInverted = true;
-            }
-
-            if(chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.WindowContentButtonImagesInverted = true;
-            }
-
-            // SetBlackButtonImages();
+          
         }
 
 
