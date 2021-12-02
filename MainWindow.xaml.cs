@@ -973,11 +973,9 @@ namespace ServiceNowOpen
             SetWindowColors();
             LoadTextColor();
             LoadDefaultImages();
-            //SetRGBSliderValues();
-
-            // LoadWindowColors();
-
-
+            serviceNowTheme.Opacity = 1;
+            this.Opacity = 1;
+           
         }
 
     
@@ -1014,7 +1012,7 @@ namespace ServiceNowOpen
             recentitemsButtonBrush.ImageSource = recentitemsImagetemp;
             btnHistory.Background = recentitemsButtonBrush;
 
-            Uri themeImageUri = new Uri("Images/palette-white.png", UriKind.Relative);
+            Uri themeImageUri = new Uri("Images/paint-brush-64.png", UriKind.Relative);
             StreamResourceInfo themeImagestreamInfo = Application.GetResourceStream(themeImageUri);
             BitmapFrame themeImagetemp = BitmapFrame.Create(themeImagestreamInfo.Stream);
             ImageBrush themeButtonBrush = new ImageBrush();
