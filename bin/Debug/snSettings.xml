@@ -1,158 +1,32 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TitleBarImagesInverted>false</TitleBarImagesInverted>
-  <TitleBarTextColorInverted>false</TitleBarTextColorInverted>
-  <WindowContentImagesInverted>false</WindowContentImagesInverted>
-  <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
-  <MenuPanelImagesInverted>false</MenuPanelImagesInverted>
-  <Opacity>0.8</Opacity>
-  <Inverted>false</Inverted>
+  <Opacity>0.95</Opacity>
+  <ServiceNowTheme>
+    <TitleBarTextColor>#ffffff</TitleBarTextColor>
+    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
+    <MainWindowTextColor>#ffffff</MainWindowTextColor>
+    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
+    <MenuButtonColor>#ffffff</MenuButtonColor>
+    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>/wAA</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>/wAA</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/wAA</TitleBarButtonsRGB>
+    <Opacity>0.95</Opacity>
+  </ServiceNowTheme>
   <MinimizeToTray>true</MinimizeToTray>
-  <TitleBarBrushString>#FFFF0000</TitleBarBrushString>
-  <MenuBrushString>#FF0013A1</MenuBrushString>
-  <CenterWindowBrushString>#FF0013EE</CenterWindowBrushString>
+  <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
+  <TitleBarTextColor />
+  <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+  <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
+  <MainWindowTextColor />
   <RecentItems>
-    <RecentItems>
-      <RecentlyOpenedItem>
-        <Item>ADFDFADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFDFADSF</Url>
-        <DateTimeOpened>01.12.2021 06:00</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>AFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=AFADF</Url>
-        <DateTimeOpened>01.12.2021 06:00</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADSF</Url>
-        <DateTimeOpened>01.12.2021 05:59</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ASDFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADF</Url>
-        <DateTimeOpened>01.12.2021 05:59</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ASDFAFD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFAFD</Url>
-        <DateTimeOpened>01.12.2021 05:59</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADF</Url>
-        <DateTimeOpened>01.12.2021 05:59</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFASFD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFASFD</Url>
-        <DateTimeOpened>01.12.2021 05:58</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFAFD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFAFD</Url>
-        <DateTimeOpened>01.12.2021 05:57</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFAAFD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFAAFD</Url>
-        <DateTimeOpened>01.12.2021 05:57</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADF</Url>
-        <DateTimeOpened>01.12.2021 05:57</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSF</Url>
-        <DateTimeOpened>01.12.2021 05:57</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSF</Url>
-        <DateTimeOpened>01.12.2021 05:54</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>DSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DSF</Url>
-        <DateTimeOpened>01.12.2021 05:53</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSF</Url>
-        <DateTimeOpened>01.12.2021 05:44</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>DASF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DASF</Url>
-        <DateTimeOpened>01.12.2021 05:42</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFADFAAFD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADFAAFD</Url>
-        <DateTimeOpened>01.12.2021 05:37</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>DFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DFADF</Url>
-        <DateTimeOpened>01.12.2021 05:33</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFADFAAFD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADFAAFD</Url>
-        <DateTimeOpened>01.12.2021 05:30</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADSF</Url>
-        <DateTimeOpened>01.12.2021 05:28</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSF</Url>
-        <DateTimeOpened>01.12.2021 05:28</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>DFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DFADF</Url>
-        <DateTimeOpened>01.12.2021 05:28</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFDSFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFDSFADF</Url>
-        <DateTimeOpened>01.12.2021 05:26</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>DAFVADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DAFVADF</Url>
-        <DateTimeOpened>01.12.2021 05:21</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>AD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=AD</Url>
-        <DateTimeOpened>01.12.2021 05:19</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSFVADSF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFVADSF</Url>
-        <DateTimeOpened>01.12.2021 05:17</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>WWW.HW.NO</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=WWW.HW.NO</Url>
-        <DateTimeOpened>30.11.2021 22:58</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFAD</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFAD</Url>
-        <DateTimeOpened>28.11.2021 10:36</DateTimeOpened>
-      </RecentlyOpenedItem>
-    </RecentItems>
+    <RecentItems />
   </RecentItems>
-  <FreeTextSearch>true</FreeTextSearch>
-  <SliderPosition>64.419026821657923</SliderPosition>
+  <FreeTextSearch>false</FreeTextSearch>
+  <SliderPosition>91.19496855345902</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>756</Top>
-  <Left>926</Left>
+  <Top>437</Top>
+  <Left>993</Left>
 </Settings>

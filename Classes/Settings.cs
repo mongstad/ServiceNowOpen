@@ -6,7 +6,6 @@ namespace ServiceNow
     public class Settings
     {
         double _opacity = 1.0;
-        bool _inverted = false;
         double _top = -1;
         double _left = -1;
         double _sliderPosition = 100;
@@ -14,52 +13,19 @@ namespace ServiceNow
         bool _freetextsearch = false;
         bool _minimizetotray = false;
         RecentlyOpenedItems _recentlyopeneditems = new RecentlyOpenedItems();
-        string _titlebarbrush = "";
-        string _menubrush = "";
-        string _centerwindowbrush = "";
+        string _titlebarbackgroundcolor = "";
+        string _menubackgroundcolor = "";
+        string _mainwindowbackgroundcolor = "";
 
-        bool _titlebarimagesinverted = false;
-        bool _titlebartextcolorinverted = false;
-        bool _windowcontentimagesinverted = false;
-        bool _windowscontenttextcolorinverted = false;
-        bool _menupanelimagesinverted = false;
+        string _titlebartextcolor = "";
+        string _mainwindowtextcolor = "";
+
+        ServiceNowTheme _servicenowtheme  = new ServiceNowTheme();
 
         public Settings()
         {
 
-            // BrushConverter brushConv = new BrushConverter();
-
-
-        }
-
-        public bool TitleBarImagesInverted
-        {
-            get { return _titlebarimagesinverted; }
-            set { _titlebarimagesinverted = value; }
-        }
-
-        public bool TitleBarTextColorInverted
-        {
-            get { return _titlebartextcolorinverted; }
-            set { _titlebartextcolorinverted = value; }
-        }
-
-        public bool WindowContentImagesInverted
-        {
-            get { return _windowcontentimagesinverted; }
-            set { _windowcontentimagesinverted = value; }
-        }
-
-        public bool WindowContentTextColorInverted
-        {
-            get { return _windowscontenttextcolorinverted; }
-            set { _windowscontenttextcolorinverted = value; }
-        }
-
-        public bool MenuPanelImagesInverted
-        {
-            get { return _menupanelimagesinverted; }
-            set { _menupanelimagesinverted = value; }
+            
         }
 
         public double Opacity
@@ -68,10 +34,10 @@ namespace ServiceNow
             set { _opacity = value; }
         }
 
-        public bool Inverted
+        public ServiceNowTheme ServiceNowTheme
         {
-            get { return _inverted; }
-            set { _inverted = value; }
+            get { return _servicenowtheme;}
+            set { _servicenowtheme = value;}
         }
 
         public bool MinimizeToTray
@@ -80,22 +46,34 @@ namespace ServiceNow
             set { _minimizetotray = value; }
         }
 
-        public string TitleBarBrushString
+        public string TitleBarBackgroundColor
         {
-            get { return _titlebarbrush; }
-            set { _titlebarbrush = value; }
+            get { return _titlebarbackgroundcolor; }
+            set { _titlebarbackgroundcolor = value; }
         }
 
-        public string MenuBrushString
+        public string TitleBarTextColor
         {
-            get { return _menubrush; }
-            set { _menubrush = value; }
+            get { return _titlebartextcolor; }
+            set { _titlebartextcolor = value; }
         }
 
-        public string CenterWindowBrushString
+        public string MenuBackgroundColor
         {
-            get { return _centerwindowbrush; }
-            set { _centerwindowbrush = value; }
+            get { return _menubackgroundcolor; }
+            set { _menubackgroundcolor = value; }
+        }
+
+        public string MainWindowBackgroundColor
+        {
+            get { return _mainwindowbackgroundcolor; }
+            set { _mainwindowbackgroundcolor = value; }
+        }
+
+        public string MainWindowTextColor
+        {
+            get { return _mainwindowtextcolor; }
+            set { _mainwindowtextcolor = value; }
         }
         public RecentlyOpenedItems RecentItems
         {

@@ -438,7 +438,7 @@
 
     </Window.Resources>
     <Grid Background="#1E2330"
-          Name="gridMasterContentGrid">
+          Name="gridMainWindow">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="8*"></ColumnDefinition>
@@ -457,7 +457,7 @@
         </Grid.Effect>
 
         <!--Title grid starts here-->
-        <Grid x:Name="gridTitleGrid" 
+        <Grid x:Name="gridTitleBar" 
               Grid.Column="0" 
               Grid.Row="0" 
               Grid.ColumnSpan="2" 
@@ -542,7 +542,7 @@
                       Grid.Column="0"
                       Grid.Row="2">
 
-            <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackPanelMenu" Height="180">
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackpanelMenu" Height="180">
 
 
                 <Button Name="btnHome"  Grid.Column="3" Grid.Row="2" Style="{DynamicResource btnMenuStyle}" BorderBrush="Transparent"
@@ -738,7 +738,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"></ColumnDefinition>
@@ -964,7 +964,7 @@
         <!--#endregion End Settings Content Grid-->
 
         <!--#region Theme Start-->
-        <Grid Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,10,0,0" x:Name="gridColorPalette">
+        <Grid Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,10,0,0" x:Name="gridColorPalette">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.9*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
@@ -1002,7 +1002,7 @@
 
 
             <!--#region Radiobuttons-->
-            <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" ContextMenuClosing="StackPanel_ContextMenuClosing">
                 <CheckBox Content="Title Bar"
                              Foreground="AliceBlue"
                              FontSize="14"
@@ -1037,7 +1037,7 @@
                              Style="{DynamicResource chkBoxRounderCornerStyle}"
                             />
 
-                <CheckBox Content="Button color"
+                <CheckBox Content="Button Color"
                           FontSize="14"
                           FontFamily="Bahnschrift SemiCondensed"
                           Foreground="AliceBlue"
@@ -1051,7 +1051,7 @@
                           Style="{DynamicResource chkBoxRounderCornerStyle}"
                           />
 
-                <CheckBox Content="Text color"
+                <CheckBox Content="Text Color"
                           FontSize="14"
                           FontFamily="Bahnschrift SemiCondensed"
                           Foreground="AliceBlue"
@@ -1059,9 +1059,9 @@
                           Margin="0,0,0,0"
                           VerticalAlignment="Center"
                           VerticalContentAlignment="Center"
-                          x:Name="ChkBox_InvertTextColors"
-                          Checked="InvertTextColorsCheckBox_Checked"
-                          Unchecked="InvertTextColorsCheckBox_Unchecked"
+                          x:Name="TextColorCheckBox"
+                          Checked="TextColorCheckBox_Checked"
+                          Unchecked="TextColorCheckBox_Unchecked"
                           Style="{DynamicResource chkBoxRounderCornerStyle}"
                           />
 
