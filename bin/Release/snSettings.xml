@@ -1,83 +1,38 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TitleBarImagesInverted>false</TitleBarImagesInverted>
-  <TitleBarTextColorInverted>false</TitleBarTextColorInverted>
-  <WindowContentImagesInverted>false</WindowContentImagesInverted>
-  <WindowContentTextColorInverted>false</WindowContentTextColorInverted>
-  <MenuPanelImagesInverted>false</MenuPanelImagesInverted>
   <Opacity>0.6</Opacity>
-  <Inverted>false</Inverted>
+  <ServiceNowTheme>
+    <TitleBarTextColor>#FFFFFF00</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFFFF00</TitleBarButtonColor>
+    <MainWindowTextColor>#ffffff</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
+    <MenuButtonColor>#ffffff</MenuButtonColor>
+    <MenuBackgroundColor>#FF0000BA</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>a/sA</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>a/sA</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>//8A</TitleBarButtonsRGB>
+    <Opacity>0.6</Opacity>
+  </ServiceNowTheme>
   <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBrushString>#FF7B0000</TitleBarBrushString>
-  <MenuBrushString>#FF7B0000</MenuBrushString>
-  <CenterWindowBrushString>#FF7B0000</CenterWindowBrushString>
+  <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
+  <TitleBarTextColor />
+  <MenuBackgroundColor>#FF0000BA</MenuBackgroundColor>
+  <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
+  <MainWindowTextColor />
   <RecentItems>
     <RecentItems>
       <RecentlyOpenedItem>
         <Item>D11765</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=D11765</Url>
-        <DateTimeOpened>28.11.2021 16:24</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADFDF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFDF</Url>
-        <DateTimeOpened>28.11.2021 16:24</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>COPY BUTTON</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=COPY BUTTON</Url>
-        <DateTimeOpened>28.11.2021 16:23</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L10734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10734</Url>
-        <DateTimeOpened>28.11.2021 16:23</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>L10734</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10734</Url>
-        <DateTimeOpened>28.11.2021 16:23</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>D11765</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=D11765</Url>
-        <DateTimeOpened>28.11.2021 16:23</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>DAFADF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DAFADF</Url>
-        <DateTimeOpened>28.11.2021 16:23</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSFAF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
-        <DateTimeOpened>28.11.2021 16:06</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSFAF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
-        <DateTimeOpened>28.11.2021 16:06</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item />
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=</Url>
-        <DateTimeOpened>28.11.2021 16:05</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>COPY BUTTON</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=COPY BUTTON</Url>
-        <DateTimeOpened>28.11.2021 16:05</DateTimeOpened>
-      </RecentlyOpenedItem>
-      <RecentlyOpenedItem>
-        <Item>ADSFAF</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
-        <DateTimeOpened>28.11.2021 16:05</DateTimeOpened>
+        <DateTimeOpened>02.12.2021 20:50</DateTimeOpened>
       </RecentlyOpenedItem>
     </RecentItems>
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>33.557046979865788</SliderPosition>
+  <SliderPosition>44.654088050314471</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>703</Top>
-  <Left>1448</Left>
+  <Top>855</Top>
+  <Left>1468</Left>
 </Settings>

@@ -6,7 +6,7 @@ using BrushConverter = System.Windows.Media.BrushConverter;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
-using System.Windows.Navigation;
+
 
 namespace ServiceNow{
   
@@ -14,20 +14,42 @@ namespace ServiceNow{
     public class ServiceNowTheme
     {
 
-        Brush _titlebarbackground;
-        Brush _menubackground;
-        Brush _centerwindowbackground;
+
+        //Backgroundcolors
+        string _titlebarbackgroundcolor = "";
+        string _menubackgroundcolor = "";
+        string _mainwindowbackgroundcolor = "";
+
+        //Textcolors
+        string _titlebartextcolor = "";
+        string _mainwindowtextcolor = "";
+
+        //Buttoncolors
+        string _mainwindowbuttoncolor = "";
+        string _menubuttoncolor = "";
+        string _titlebarbuttoncolor = "";
+
+
         byte _r_menupanelbuttons = 255;
         byte _g_menupanelbuttons = 255;
         byte _b_menupanelbuttons = 255;
 
-        double _opacity = 0;
-        //bool _invertedcolors = false;
-        private const string _menudefaulthexcolor = "#1C1C1F";
-        private const string _titlebardefaulthexcolor = "#1C2C4D";
-        private const string _mainwindowdefaulthexcolor = "#1E2330";
+        byte _r_titlebarbuttons = 255;
+        byte _g_titlebarbuttons = 255;
+        byte _b_titlebarbuttons = 255;
 
-       
+        byte _r_mainwindowbuttons = 255;
+        byte _g_mainwindowbuttons = 255;
+        byte _b_mainwindowbuttons = 255;
+
+        double _opacity = 0;
+
+        private const string _menudefaultbackgroundcolor = "#1C1C1F";
+        private const string _titlebardefaultbackgroundcolor = "#1C2C4D";
+        private const string _mainwindowdefaultbackgroundcolor = "#1E2330";
+        private const string _defaulttextcolor = "#ffffff";
+        private const string _defaultbuttoncolor = "#ffffff";
+
 
 
         public ServiceNowTheme()
@@ -35,6 +57,89 @@ namespace ServiceNow{
 
         }
 
+
+        public string MenuDefaultBackgroundColor
+        {
+            get{ return _menudefaultbackgroundcolor; }
+          
+        }
+
+        public string TitleBarDefaultBackgroundColor
+        {
+            get { return _titlebardefaultbackgroundcolor; }
+        }
+
+        public string MainWindowDefaultBackgroundColor
+        {
+            get { return _mainwindowdefaultbackgroundcolor; }
+        }
+
+      
+      
+        public string TitleBarTextColor
+        {
+            get{ return _titlebartextcolor; }
+            set{ _titlebartextcolor = value; }
+        }
+
+       
+
+        public string TitleBarBackgroundColor
+        {
+            get { return _titlebarbackgroundcolor; }
+            set { _titlebarbackgroundcolor = value; }
+        }
+
+       
+
+        public string TitleBarButtonColor
+        {
+            get { return _titlebarbuttoncolor; }    
+            set { _titlebarbuttoncolor = value; }
+        }
+
+
+        public string MainWindowTextColor
+        {
+            get { return _mainwindowtextcolor; }
+            set { _mainwindowtextcolor = value; }
+        }
+
+        public string MainWindowBackgroundColor
+        {
+            get { return _mainwindowbackgroundcolor; }
+            set { _mainwindowbackgroundcolor = value; }
+        }
+
+        public string MainWindowButtonColor
+        {
+            get { return _mainwindowbuttoncolor;}
+            set { _mainwindowbuttoncolor = value;}
+        }
+
+
+        public string MenuButtonColor
+        {
+            get { return _menubuttoncolor; }
+            set { _menubuttoncolor = value; }
+        }
+
+        public string MenuBackgroundColor
+        {
+            set { _menubackgroundcolor = value; }
+            get { return _menubackgroundcolor; }
+        }
+
+
+        public string DefaultTextColor
+        {
+            get { return _defaulttextcolor; }
+        }
+
+        public string DefaultButtonColor
+        {
+            get { return _defaultbuttoncolor; }
+        }
         public byte[] MenuPanelButtonsRGB
         {
           get
@@ -55,43 +160,65 @@ namespace ServiceNow{
 
         }
 
+        public byte[] MainWindowButtonsRGB
+        {
+            get
+            {
+                byte[] rgbArray = new byte[3];
+                rgbArray[0] = _r_mainwindowbuttons;
+                rgbArray[1] = _g_mainwindowbuttons;
+                rgbArray[2] = _b_mainwindowbuttons;
+
+                return rgbArray;
+            }
+
+            set
+            {
+                _r_mainwindowbuttons = value[0];
+                _g_mainwindowbuttons = value[1];
+                _b_mainwindowbuttons = value[2];
+            }
+
+        }
+
+        public byte[] TitleBarButtonsRGB
+        {
+            get
+            {
+                byte[] rgbArray = new byte[3];
+                rgbArray[0] = _r_titlebarbuttons;
+                rgbArray[1] = _g_titlebarbuttons;
+                rgbArray[2] = _b_titlebarbuttons;
+
+                return rgbArray;
+            }
+
+            set
+            {
+                _r_titlebarbuttons = value[0];
+                _g_titlebarbuttons = value[1];
+                _b_titlebarbuttons = value[2];
+            }
+
+        }
+
         public double Opacity
         {
             get { return _opacity; }
             set { _opacity = value; }
         }
 
-      
 
 
-        public string TitleBarDefaultHexColor
-        {
-            get { return _titlebardefaulthexcolor; }
-        }
-
-        public string MenuDefaultHexColor
-        {
-            get { return _menudefaulthexcolor; }
-        }
-
-        public string CenterWindowDefaultHexColor
-        {
-            get { return _mainwindowdefaulthexcolor; }
-        }
-
-
-        public Brush ConvertStringToBrush(string brushstring)
+        public Brush ConvertHexColorToBrush(string brushstring)
         {
             BrushConverter brushConverter = new BrushConverter();
             Brush getBrush = (Brush)brushConverter.ConvertFromString(brushstring);
             return getBrush;
         }
 
-        public Brush TitleBarBackground
-        {
-            get { return _titlebarbackground; }
-            set { _titlebarbackground = value; }
-        }
+
+
 
         public WriteableBitmap ConvertImageColor(byte red, byte green, byte blue, byte alpha, string imagepath)
         {
@@ -145,73 +272,7 @@ namespace ServiceNow{
             return bmp;
         }
 
-        public Brush MenuBackground
-        {
-            get { return _menubackground; }
-            set { _menubackground = value; }
-        }
-
-        public Brush CenterWindowBackground
-        {
-            get { return _centerwindowbackground; }
-            set { _centerwindowbackground = value; }
-        }
-
-        public void ResetToDefaultTheme()
-        {
-            System.Drawing.Color titleColor = ConvertFromHexToRGB(TitleBarDefaultHexColor);
-            Color defaultTitleColor = new Color
-            {
-                R = titleColor.R,
-                G = titleColor.G,
-                B = titleColor.B,
-                A = titleColor.A
-            };
-
-
-            Brush titleBrush = new SolidColorBrush(defaultTitleColor)
-            {
-                Opacity = 1,
-
-            };
-
-            _titlebarbackground = titleBrush;
-
-            System.Drawing.Color menuColor = ConvertFromHexToRGB(MenuDefaultHexColor);
-            Color defaultMenuColor = new Color
-            {
-                R = menuColor.R,
-                G = menuColor.G,
-                B = menuColor.B,
-                A = menuColor.A
-            };
-
-            Brush menuBrush = new SolidColorBrush(defaultMenuColor)
-            {
-                Opacity = 1
-            };
-            _menubackground = menuBrush;
-
-            System.Drawing.Color centerWindowColor = ConvertFromHexToRGB(CenterWindowDefaultHexColor);
-            Color defaultcenterWindowColor = new Color
-            {
-                R = centerWindowColor.R,
-                G = centerWindowColor.G,
-                B = centerWindowColor.B,
-                A = centerWindowColor.A
-            };
-            Brush centerWindowBrush = new SolidColorBrush(defaultcenterWindowColor)
-            {
-                Opacity = 1
-            };
-            _centerwindowbackground = centerWindowBrush;
-
-
-
-
-        }
-
-        public Brush ConvertRGBToBackgroundColor(byte r, byte g, byte b)
+        public Brush ConvertRGBToBrush(byte r, byte g, byte b)
         {
 
             Color newColor = System.Windows.Media.Color.FromRgb(r, g, b);
@@ -220,12 +281,51 @@ namespace ServiceNow{
 
         }
 
-        public string ConvertFromRGBToHex(byte r, byte g, byte b)
+        public Brush ConvertRGBToBrush(double r, double g, double b)
         {
-            Color myColor = Color.FromRgb(r, g, b);
-            string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
-            return hex;
+
+            Color newColor = System.Windows.Media.Color.FromRgb((byte)r, (byte)g, (byte)b);
+            Brush brush = new SolidColorBrush(newColor);
+            return brush;
+
         }
+
+      
+
+        public Brush ConvertRGBToBrush(int r, int g, int b)
+        {
+
+            Color newColor = System.Windows.Media.Color.FromRgb((byte)r, (byte)g, (byte)b);
+            Brush brush = new SolidColorBrush(newColor);
+            return brush;
+
+        }
+
+
+        public string ConvertRGBToHexColor(double r, double g, double b)
+        {
+            Color newColor = System.Windows.Media.Color.FromRgb((byte)r, (byte)g, (byte)b);
+            Brush brush = new SolidColorBrush(newColor);
+           
+            BrushConverter brushConverter = new BrushConverter();
+            string hexColor = brushConverter.ConvertToString(brush);
+           
+            return hexColor;
+        }
+
+
+        public string ConvertRGBToHexColor(byte r, byte g, byte b)
+        {
+            Color newColor = System.Windows.Media.Color.FromRgb((byte)r, (byte)g, (byte)b);
+            Brush brush = new SolidColorBrush(newColor);
+
+            BrushConverter brushConverter = new BrushConverter();
+            string hexColor = brushConverter.ConvertToString(brush);
+
+            return hexColor;
+        }
+
+
 
         public System.Drawing.Color ConvertFromHexToRGB(string hexcolorvalue)
         {
@@ -259,26 +359,15 @@ namespace ServiceNow{
             return whiteBrush;
         }
 
-        public Brush BlackBrush()
+        public void ReseTextColorandBackgroundColorToDefault()
         {
+            TitleBarBackgroundColor = TitleBarDefaultBackgroundColor;
+            MenuBackgroundColor = MenuDefaultBackgroundColor;
+            MainWindowBackgroundColor = MainWindowDefaultBackgroundColor;
+            
+            TitleBarTextColor = DefaultTextColor;
+            MainWindowTextColor = DefaultTextColor;
 
-            Color blackColor = new Color
-            {
-                R = 0,
-                G = 0,
-                B = 0,
-                A = 255
-
-            };
-
-            System.Windows.Media.Brush blackBrush = new SolidColorBrush(blackColor)
-            {
-                Opacity = 1,
-                Color = blackColor,
-
-            };
-
-            return blackBrush;
         }
 
     }
