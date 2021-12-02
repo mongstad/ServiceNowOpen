@@ -1,38 +1,32 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Opacity>0.6</Opacity>
+  <Opacity>1</Opacity>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FFFFFF00</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFFFFF00</TitleBarButtonColor>
+    <TitleBarTextColor>#ffffff</TitleBarTextColor>
+    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
+    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
     <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
     <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#FF0000BA</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>a/sA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>a/sA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>//8A</TitleBarButtonsRGB>
-    <Opacity>0.6</Opacity>
+    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>/wCY</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>/wCY</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/wCY</TitleBarButtonsRGB>
+    <Opacity>1</Opacity>
   </ServiceNowTheme>
   <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
+  <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
   <TitleBarTextColor />
-  <MenuBackgroundColor>#FF0000BA</MenuBackgroundColor>
-  <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
+  <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+  <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
   <MainWindowTextColor />
   <RecentItems>
-    <RecentItems>
-      <RecentlyOpenedItem>
-        <Item>D11765</Item>
-        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=D11765</Url>
-        <DateTimeOpened>02.12.2021 20:50</DateTimeOpened>
-      </RecentlyOpenedItem>
-    </RecentItems>
+    <RecentItems />
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>44.654088050314471</SliderPosition>
+  <SliderPosition>28.301886792452795</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>855</Top>
-  <Left>1468</Left>
+  <Top>576</Top>
+  <Left>1208</Left>
 </Settings>
