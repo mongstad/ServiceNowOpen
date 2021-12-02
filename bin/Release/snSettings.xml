@@ -1,32 +1,32 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Opacity>1</Opacity>
+  <Opacity>0.5</Opacity>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
-    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
+    <TitleBarTextColor>#FFFEFF00</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFEFF00</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
+    <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
     <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
     <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <MenuBackgroundColor>#FF0000AB</MenuBackgroundColor>
     <MenuPanelButtonsRGB>/wCY</MenuPanelButtonsRGB>
     <MainWindowButtonsRGB>/wCY</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/wCY</TitleBarButtonsRGB>
-    <Opacity>1</Opacity>
+    <TitleBarButtonsRGB>/v8A</TitleBarButtonsRGB>
+    <Opacity>0.5</Opacity>
   </ServiceNowTheme>
   <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
+  <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
   <TitleBarTextColor />
-  <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-  <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
+  <MenuBackgroundColor>#FF0000AB</MenuBackgroundColor>
+  <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
   <MainWindowTextColor />
   <RecentItems>
     <RecentItems />
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>28.301886792452795</SliderPosition>
+  <SliderPosition>23.899371069182351</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>576</Top>
-  <Left>1208</Left>
+  <Top>861</Top>
+  <Left>1461</Left>
 </Settings>
