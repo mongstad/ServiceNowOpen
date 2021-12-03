@@ -110,7 +110,7 @@
     <Compile Include="Classes\ServiceNowItem.cs" />
     <Compile Include="Classes\ServiceNowTheme.cs" />
     <Compile Include="Classes\Settings.cs" />
-    <Compile Include="Classes\WPFWindow.cs" />
+    <Compile Include="Classes\Monitor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

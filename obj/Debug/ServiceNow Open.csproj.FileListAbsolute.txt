@@ -59,3 +59,4 @@ D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpe
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.application
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.exe
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNowOpen.pdb
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\ServiceNow Open.csproj.AssemblyReference.cache

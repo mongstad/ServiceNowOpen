@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ServiceNow Open")]
+[assembly: AssemblyTitle("ServiceNowOpen")]
 [assembly: AssemblyDescription("Tool for quickly accessing records in ServiceNow")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("UiS")]
-[assembly: AssemblyProduct("ServiceNow Open")]
+[assembly: AssemblyProduct("ServiceNowOpen")]
 [assembly: AssemblyCopyright("Copyright © Johnny Mongstad 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
