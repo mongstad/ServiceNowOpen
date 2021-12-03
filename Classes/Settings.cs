@@ -13,15 +13,7 @@ namespace ServiceNow
         bool _freetextsearch = false;
         bool _minimizetotray = false;
         RecentlyOpenedItems _recentlyopeneditems = new RecentlyOpenedItems();
-        string _titlebarbackgroundcolor = "";
-        string _menubackgroundcolor = "";
-        string _mainwindowbackgroundcolor = "";
-
-        string _titlebartextcolor = "";
-        string _mainwindowtextcolor = "";
-
         ServiceNowTheme _servicenowtheme  = new ServiceNowTheme();
-
         public Settings()
         {
 
@@ -46,35 +38,6 @@ namespace ServiceNow
             set { _minimizetotray = value; }
         }
 
-        public string TitleBarBackgroundColor
-        {
-            get { return _titlebarbackgroundcolor; }
-            set { _titlebarbackgroundcolor = value; }
-        }
-
-        public string TitleBarTextColor
-        {
-            get { return _titlebartextcolor; }
-            set { _titlebartextcolor = value; }
-        }
-
-        public string MenuBackgroundColor
-        {
-            get { return _menubackgroundcolor; }
-            set { _menubackgroundcolor = value; }
-        }
-
-        public string MainWindowBackgroundColor
-        {
-            get { return _mainwindowbackgroundcolor; }
-            set { _mainwindowbackgroundcolor = value; }
-        }
-
-        public string MainWindowTextColor
-        {
-            get { return _mainwindowtextcolor; }
-            set { _mainwindowtextcolor = value; }
-        }
         public RecentlyOpenedItems RecentItems
         {
             get { return _recentlyopeneditems; }
