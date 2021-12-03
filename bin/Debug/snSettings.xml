@@ -1,32 +1,27 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Opacity>0.95</Opacity>
+  <Opacity>1</Opacity>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
-    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
+    <TitleBarTextColor>#FFEAFF00</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFD30000</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFEAFF00</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
+    <MainWindowBackgroundColor>#FF0000F3</MainWindowBackgroundColor>
     <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
     <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/wAA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>/wAA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/wAA</TitleBarButtonsRGB>
-    <Opacity>0.95</Opacity>
+    <MenuBackgroundColor>#FF00009D</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>/0n/</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>/0n/</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>6v8A</TitleBarButtonsRGB>
+    <Opacity>1</Opacity>
   </ServiceNowTheme>
   <MinimizeToTray>true</MinimizeToTray>
-  <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-  <TitleBarTextColor />
-  <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-  <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-  <MainWindowTextColor />
   <RecentItems>
     <RecentItems />
   </RecentItems>
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>91.19496855345902</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>437</Top>
-  <Left>993</Left>
+  <Top>813</Top>
+  <Left>1443</Left>
 </Settings>

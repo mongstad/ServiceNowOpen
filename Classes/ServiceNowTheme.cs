@@ -325,6 +325,17 @@ namespace ServiceNow{
             return hexColor;
         }
 
+        public string ConvertRGBToHexColor(int r, int g, int b)
+        {
+            Color newColor = System.Windows.Media.Color.FromRgb((byte)r, (byte)g, (byte)b);
+            Brush brush = new SolidColorBrush(newColor);
+
+            BrushConverter brushConverter = new BrushConverter();
+            string hexColor = brushConverter.ConvertToString(brush);
+
+            return hexColor;
+        }
+
 
 
         public System.Drawing.Color ConvertFromHexToRGB(string hexcolorvalue)
@@ -359,12 +370,11 @@ namespace ServiceNow{
             return whiteBrush;
         }
 
-        public void ReseTextColorandBackgroundColorToDefault()
+        public void ResetTextColorandBackgroundColorToDefault()
         {
             TitleBarBackgroundColor = TitleBarDefaultBackgroundColor;
             MenuBackgroundColor = MenuDefaultBackgroundColor;
             MainWindowBackgroundColor = MainWindowDefaultBackgroundColor;
-            
             TitleBarTextColor = DefaultTextColor;
             MainWindowTextColor = DefaultTextColor;
 

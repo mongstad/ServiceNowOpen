@@ -10,6 +10,7 @@ using System.Reflection;
 using Image = System.Windows.Controls.Image;
 using System.Windows.Navigation;
 using System.Windows.Resources;
+using WPFWindowFunctions = WPFWindow.WPFWindowFunctions;
 
 namespace ServiceNowOpen
 {
@@ -37,7 +38,7 @@ namespace ServiceNowOpen
             }
 
             LoadSettings();
-            LoadWindowColors();
+            SetWindowBackgroundColors();
             LoadButtonColors();
             LoadTextColor();
             //SetRGBSliderValues();
@@ -67,55 +68,10 @@ namespace ServiceNowOpen
             chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
             chkMinimizeToSystemTray.IsChecked = snSettings.MinimizeToTray;
             serviceNowTheme = snSettings.ServiceNowTheme;
-            //TODO load text colors 
-            //TODO load button colors
-
-
-           
-
-            ///
-            //if(snSettings.MainWindowBackgroundColor != "")
-            //{
-            //    serviceNowTheme.MainWindowBackgroundColor = snSettings.MainWindowBackgroundColor;
-
-            //}
-            //else
-            //{
-            //    serviceNowTheme.MainWindowBackgroundColor = serviceNowTheme.MainWindowDefaultBackgroundColor;
-
-            //}
-
-            //if(snSettings.MenuBackgroundColor != "")
-            //{
-            //    serviceNowTheme.MenuBackgroundColor = snSettings.MenuBackgroundColor;
-
-            //}
-            //else
-            //{
-            //    serviceNowTheme.MenuBackgroundColor = serviceNowTheme.MenuDefaultBackgroundColor;
-            //}
-
-            //if(snSettings.TitleBarBackgroundColor != "")
-            //{
-            //    serviceNowTheme.TitleBarBackgroundColor = snSettings.TitleBarBackgroundColor;
-
-            //}
-            //else
-            //{
-            //    serviceNowTheme.TitleBarBackgroundColor = serviceNowTheme.TitleBarDefaultBackgroundColor;
-            //}
-
-            //foreach(RecentlyOpenedItem item in snSettings.RecentItems.RecentItems)
-            //{
-            //    recentlyOpenedItems.RecentItems.Add(item);
-            //}
-
-
-
-
+          
         }
 
-        private void SetWindowColors()
+        private void SetWindowBackgroundColors()
         {
             //set the background colors for the different grid and stackpanels
 
@@ -144,52 +100,6 @@ namespace ServiceNowOpen
             {
                 this.Opacity = serviceNowTheme.Opacity;
             }
-         
-
-          
-
-        }
-
-
-        private void LoadWindowColors()
-        {
-            //set the background colors for the different grid and stackpanels
-
-            if(!(serviceNowTheme.MainWindowBackgroundColor == ""))
-            {
-                gridMainWindow.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowBackgroundColor);
-            }
-            else
-            {
-                gridMainWindow.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowDefaultBackgroundColor);
-            }
-
-
-
-            if(!(serviceNowTheme.TitleBarBackgroundColor == ""))
-            {
-                gridTitleBar.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarBackgroundColor);
-            }
-            else
-            {
-                gridTitleBar.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarDefaultBackgroundColor);
-            }
-
-            if(!(serviceNowTheme.MenuBackgroundColor == ""))
-            {
-                stackpanelMenu.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MenuBackgroundColor);
-            }
-            else
-            {
-                stackpanelMenu.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MenuDefaultBackgroundColor);
-            }
-
-            if(serviceNowTheme.Opacity != 0)
-            {
-                this.Opacity = serviceNowTheme.Opacity;
-            }
-
-
 
         }
 
@@ -233,11 +143,8 @@ namespace ServiceNowOpen
                     backgroundSettingsButton.Stretch = Stretch.Fill;
                     backgroundSettingsButton.TileMode = TileMode.None;
                     btnSettings.Background = backgroundSettingsButton;
-            }
-               
+                }
 
-
-                
                 if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
                 {
                     //Power Button
@@ -291,16 +198,12 @@ namespace ServiceNowOpen
                     btnOK.Background = backgroundOKButton;
 
             }
-               
 
-        
         }
 
         private void LoadTextColor()
         {
-         
 
-        
                 if(serviceNowTheme.MainWindowTextColor != "")
                 {   
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
@@ -363,12 +266,7 @@ namespace ServiceNowOpen
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
                     txtTitle.Foreground = textColor;
                 }
-               
-                //txt_Theme.Foreground = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-              
-                
-               
-            
+
         }
 
         //private void SetRGBSliderValues()
@@ -469,16 +367,26 @@ namespace ServiceNowOpen
         private void SetNotifyIconSettings()
         {
 
-            notifyIcon.Text = "ServiceNow Open";
+            notifyIcon.Text = "ServiceNowOpen";
             notifyIcon.Icon = new System.Drawing.Icon("now-agent-icon.ico");
             notifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(NotifyIcon_MouseDown);
 
+
+            System.Windows.Forms.MenuItem menuItemResetWindowPosition = new System.Windows.Forms.MenuItem();
+            contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemResetWindowPosition });
+            menuItemResetWindowPosition.Index = 0;
+            menuItemResetWindowPosition.Text = "Reset window position";
+            menuItemResetWindowPosition.Click += new System.EventHandler(ResetWindowPosition_Click);
+            notifyIcon.ContextMenu = contextMenu;
+
             System.Windows.Forms.MenuItem menuItemExit = new System.Windows.Forms.MenuItem();
             contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemExit });
-            menuItemExit.Index = 0;
+            menuItemExit.Index = 1;
             menuItemExit.Text = "E&xit";
             menuItemExit.Click += new System.EventHandler(MenuItemExit_Click);
             notifyIcon.ContextMenu = contextMenu;
+
+          
 
         }
 
@@ -512,6 +420,15 @@ namespace ServiceNowOpen
         {
 
             CloseApplication();
+        }
+
+        private void ResetWindowPosition_Click(object Sender, EventArgs e)
+        {
+
+            double[] centerScreenPos = WPFWindowFunctions.GetPrimaryMonitoriCenterPosition(this.Width, this.Height);
+            this.Left = centerScreenPos[0];
+            this.Top = centerScreenPos[1];
+
         }
 
         private void WindowGotMiniMizedActions()
@@ -652,13 +569,7 @@ namespace ServiceNowOpen
 
             };
 
-
-          
-            settingsServiceNow.TitleBarBackgroundColor = serviceNowTheme.TitleBarBackgroundColor;
-            settingsServiceNow.MenuBackgroundColor =serviceNowTheme.MenuBackgroundColor;
-            settingsServiceNow.MainWindowBackgroundColor = serviceNowTheme.MainWindowBackgroundColor;
             settingsServiceNow.Save();
-
 
         }
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -949,28 +860,28 @@ namespace ServiceNowOpen
             {
                 serviceNowTheme.TitleBarBackgroundColor  = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
                 
-                SetWindowColors();
+                SetWindowBackgroundColors();
                 
             }
 
             if(chkWindowContentCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
             {
                 serviceNowTheme.MainWindowBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                SetWindowColors();
+                SetWindowBackgroundColors();
             }
 
             if(chkMenuCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
             {
                 serviceNowTheme.MenuBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                SetWindowColors();
+                SetWindowBackgroundColors();
             }
 
         }
 
         private void BtnResetToDefault_Click(object sender, RoutedEventArgs e)
         {
-            serviceNowTheme.ReseTextColorandBackgroundColorToDefault();
-            SetWindowColors();
+            serviceNowTheme.ResetTextColorandBackgroundColorToDefault();
+            SetWindowBackgroundColors();
             LoadTextColor();
             LoadDefaultImages();
             serviceNowTheme.Opacity = 1;
@@ -1708,46 +1619,6 @@ namespace ServiceNowOpen
 
         }
 
-        //private void InvertButtonColorsCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        //{
-        //    if(chkTitleBarCheckBox.IsChecked == true)
-        //    {
-        //        serviceNowTheme.TitleBarButtonImagesInverted = false;
-        //    }
-
-        //    if(chkMenuCheckBox.IsChecked == true)
-        //    {
-        //        serviceNowTheme.MenuPanelImagesInverted = false;
-        //    }
-
-        //    if(chkWindowContentCheckBox.IsChecked == true)
-        //    {
-        //        serviceNowTheme.WindowContentButtonImagesInverted = false;
-        //    }
-
-        //   // SetWhiteButtonImages();
-            
-        //}
-
-      
-
-      
-
-        private void TitleBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
-        private void MenuPanelCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void WindowContentCheckBox_UnChecked(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
         private void OpenInBrowserButton_Click(object sender, RoutedEventArgs e)
         {
             if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
@@ -1770,35 +1641,8 @@ namespace ServiceNowOpen
             OpenItemInServiceNow(cleanedItem);
         }
 
-        private void ChkBox_ButtonColors_Checked(object sender, RoutedEventArgs e)
-        {
-           
+     
 
-          
-        }
-
-
-
-
-        private void ChkBox_ButtonColors_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StackPanel_ContextMenuClosing(object sender, ContextMenuEventArgs e)
-        {
-
-        }
-
-        private void TextColorCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TextColorCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
 
