@@ -28,7 +28,7 @@ namespace ServiceNowOpen
         public MainWindow()
         {
 
-            this.DataContext = recentlyOpenedItems;
+           
             InitializeComponent();
 
             if(txtItem.Text == "")
@@ -36,7 +36,7 @@ namespace ServiceNowOpen
                 btnOK.IsEnabled = false;
 
             }
-
+          
             LoadSettings();
             SetWindowBackgroundColors();
             LoadButtonColors();
@@ -68,7 +68,12 @@ namespace ServiceNowOpen
             chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
             chkMinimizeToSystemTray.IsChecked = snSettings.MinimizeToTray;
             serviceNowTheme = snSettings.ServiceNowTheme;
+            recentlyOpenedItems = snSettings.RecentItems;
+
+            this.DataContext = recentlyOpenedItems;
+            recentlyOpenedItems = snSettings.RecentItems;
           
+
         }
 
         private void SetWindowBackgroundColors()

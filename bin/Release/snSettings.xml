@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Opacity>0.5</Opacity>
+  <MinimizeToTray>false</MinimizeToTray>
+  <FreeTextSearch>false</FreeTextSearch>
+  <SliderPosition>23.899371069182351</SliderPosition>
+  <TopMost>false</TopMost>
+  <Top>861</Top>
+  <Left>1461</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#FFFEFF00</TitleBarTextColor>
     <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
@@ -15,18 +21,13 @@
     <TitleBarButtonsRGB>/v8A</TitleBarButtonsRGB>
     <Opacity>0.5</Opacity>
   </ServiceNowTheme>
-  <MinimizeToTray>false</MinimizeToTray>
-  <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
-  <TitleBarTextColor />
-  <MenuBackgroundColor>#FF0000AB</MenuBackgroundColor>
-  <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
-  <MainWindowTextColor />
   <RecentItems>
-    <RecentItems />
+    <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:47</DateTimeOpened>
+      </RecentlyOpenedItem>
+    </RecentItems>
   </RecentItems>
-  <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>23.899371069182351</SliderPosition>
-  <TopMost>false</TopMost>
-  <Top>861</Top>
-  <Left>1461</Left>
 </Settings>

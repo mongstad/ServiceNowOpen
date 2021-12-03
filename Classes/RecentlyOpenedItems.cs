@@ -4,18 +4,18 @@
 namespace ServiceNow{
     public class RecentlyOpenedItems
     {
-#pragma warning disable IDE0044 // Add readonly modifier
-        private ObservableCollection<RecentlyOpenedItem> _recentlyOpenedItems = new ObservableCollection<RecentlyOpenedItem>();
-#pragma warning restore IDE0044 // Add readonly modifier
+
+        private ObservableCollection<RecentlyOpenedItem> _recentitems = new ObservableCollection<RecentlyOpenedItem>();
+
         public RecentlyOpenedItems()
         {
-
+           
         }
 
         public ObservableCollection<RecentlyOpenedItem> RecentItems
         {
-            get { return _recentlyOpenedItems; }
-            //set { _recentlyOpenedItems = value; }
+            get { return _recentitems; }
+            set { _recentitems = value; }
         }
     }
 }
