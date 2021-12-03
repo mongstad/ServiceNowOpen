@@ -8,16 +8,12 @@ using System.Windows.Media.Imaging;
 using ServiceNow;
 using System.Reflection;
 using Image = System.Windows.Controls.Image;
-using System.Windows.Navigation;
 using System.Windows.Resources;
-using WPFWindowFunctions = WPFWindow.WPFWindowFunctions;
+using Monitor = Computer.Monitor;
 
 namespace ServiceNowOpen
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// 
+   
     public partial class MainWindow : Window
     {
 
@@ -28,23 +24,15 @@ namespace ServiceNowOpen
         public MainWindow()
         {
 
-            this.DataContext = recentlyOpenedItems;
+           
             InitializeComponent();
-
-            if(txtItem.Text == "")
-            {
-                btnOK.IsEnabled = false;
-
-            }
-
             LoadSettings();
             SetWindowBackgroundColors();
             LoadButtonColors();
-            LoadTextColor();
-            //SetRGBSliderValues();
+            LoadTextColors();   
             SetNotifyIconSettings();
             SetVersionInfo();
-
+            //SetRGBSliderValues();
         }
 
         private void LoadSettings()
@@ -66,15 +54,19 @@ namespace ServiceNowOpen
             sliderOpacityValue.Value = snSettings.SliderPosition;
             chkBoxAlwaysOnTop.IsChecked = snSettings.TopMost;
             chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
-            chkMinimizeToSystemTray.IsChecked = snSettings.MinimizeToTray;
+            HideFromTaskBarCheckBox.IsChecked = snSettings.MinimizeToTray;
             serviceNowTheme = snSettings.ServiceNowTheme;
+            recentlyOpenedItems = snSettings.RecentItems;
+
+            this.DataContext = recentlyOpenedItems;
+            recentlyOpenedItems = snSettings.RecentItems;
           
+
         }
 
         private void SetWindowBackgroundColors()
         {
-            //set the background colors for the different grid and stackpanels
-
+            
             if(!(serviceNowTheme.MainWindowBackgroundColor == ""))
             {
                 gridMainWindow.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowBackgroundColor);
@@ -109,60 +101,97 @@ namespace ServiceNowOpen
                 if(serviceNowTheme.MenuButtonColor != serviceNowTheme.DefaultButtonColor)
                 {
                     //Home Button
-                    Image imgHome = new Image();
-                    imgHome.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/home-white.png");
-                    ImageBrush backgroundHomeImage = new ImageBrush();
-                    backgroundHomeImage.ImageSource = imgHome.Source;
-                    backgroundHomeImage.Stretch = Stretch.Fill;
-                    backgroundHomeImage.TileMode = TileMode.None;
+                    Image imgHome = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/home-white.png")
+                    };
+
+                    ImageBrush backgroundHomeImage = new ImageBrush 
+                    {
+                        ImageSource = imgHome.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnHome.Background = backgroundHomeImage;
 
                     //Themes Button
-                    Image imgTheme = new Image();
-                    imgTheme.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/paint-brush-64.png");
-                    ImageBrush backgroundThemeImage = new ImageBrush();
-                    backgroundThemeImage.ImageSource = imgTheme.Source;
-                    backgroundThemeImage.Stretch = Stretch.Fill;
-                    backgroundThemeImage.TileMode = TileMode.None;
+                    Image imgTheme = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/paint-brush-64.png")
+                    };
+
+                    ImageBrush backgroundThemeImage = new ImageBrush
+                    {
+                        ImageSource = imgTheme.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnThemes.Background = backgroundThemeImage;
 
                     //Recently Opened Items Button
-                    Image imgRecentItems = new Image();
-                    imgRecentItems.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/recentitems-white.png");
-                    ImageBrush backgroundRecentItemsImage = new ImageBrush();
-                    backgroundRecentItemsImage.ImageSource = imgRecentItems.Source;
-                    backgroundRecentItemsImage.Stretch = Stretch.Fill;
-                    backgroundRecentItemsImage.TileMode = TileMode.None;
+                    Image imgRecentItems = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/recentitems-white.png")
+                    };
+
+                    ImageBrush backgroundRecentItemsImage = new ImageBrush
+                    {
+                        ImageSource = imgRecentItems.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnHistory.Background = backgroundRecentItemsImage;
 
                     //Settings Button
-                    Image imgSettingsButton = new Image();
-                    imgSettingsButton.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/settings-white.png");
-                    ImageBrush backgroundSettingsButton = new ImageBrush();
-                    backgroundSettingsButton.ImageSource = imgSettingsButton.Source;
-                    backgroundSettingsButton.Stretch = Stretch.Fill;
-                    backgroundSettingsButton.TileMode = TileMode.None;
+                    Image imgSettingsButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/settings-white.png")
+                    };
+
+                    ImageBrush backgroundSettingsButton = new ImageBrush
+                    {
+                        ImageSource = imgSettingsButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnSettings.Background = backgroundSettingsButton;
+
                 }
 
                 if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
                 {
                     //Power Button
-                    Image imgPowerButton = new Image();
-                    imgPowerButton.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/close.png");
-                    ImageBrush backgroundPowerButton = new ImageBrush();
-                    backgroundPowerButton.ImageSource = imgPowerButton.Source;
-                    backgroundPowerButton.Stretch = Stretch.Fill;
-                    backgroundPowerButton.TileMode = TileMode.None;
+                    Image imgPowerButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/close.png")
+                    };
+
+                    ImageBrush backgroundPowerButton = new ImageBrush
+                    {
+                        ImageSource = imgPowerButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnClose.Background = backgroundPowerButton;
 
                     //Minimize Button
-                    Image imgMinimizeButton = new Image();
-                    imgMinimizeButton.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/minimize-white.png");
-                    ImageBrush backgroundMinimizeButton = new ImageBrush();
-                    backgroundMinimizeButton.ImageSource = imgMinimizeButton.Source;
-                    backgroundMinimizeButton.Stretch = Stretch.Fill;
-                    backgroundMinimizeButton.TileMode = TileMode.None;
+                    Image imgMinimizeButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/minimize-white.png")
+                    };
+
+                    ImageBrush backgroundMinimizeButton = new ImageBrush
+                    {
+                        ImageSource = imgMinimizeButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnMinimize.Background = backgroundMinimizeButton;
                  }
               
@@ -171,37 +200,54 @@ namespace ServiceNowOpen
                 {
 
                     //Copy Button
-                    Image imgCopyButton = new Image();
-                    imgCopyButton.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/copy-white.png");
-                    ImageBrush backgroundCopyButton = new ImageBrush();
-                    backgroundCopyButton.ImageSource = imgCopyButton.Source;
-                    backgroundCopyButton.Stretch = Stretch.Fill;
-                    backgroundCopyButton.TileMode = TileMode.None;
+                    Image imgCopyButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/copy-white.png")
+                    };
+
+                    ImageBrush backgroundCopyButton = new ImageBrush
+                    {
+                        ImageSource = imgCopyButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnCopy.Background = backgroundCopyButton;
 
                     //Open In Browser Button
-                    Image imgOpenInBrowserButton = new Image();
-                    imgOpenInBrowserButton.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/openinbrowser-white.png");
-                    ImageBrush backgroundOpenInBrowserButton = new ImageBrush();
-                    backgroundOpenInBrowserButton.ImageSource = imgOpenInBrowserButton.Source;
-                    backgroundOpenInBrowserButton.Stretch = Stretch.Fill;
-                    backgroundOpenInBrowserButton.TileMode = TileMode.None;
+                    Image imgOpenInBrowserButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/openinbrowser-white.png")
+                    };
+
+                    ImageBrush backgroundOpenInBrowserButton = new ImageBrush
+                    {
+                        ImageSource = imgOpenInBrowserButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+
                     btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
 
                     //OK (CheckMark) Button
-                    Image imgOKButton = new Image();
-                    imgOKButton.Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/checkmark-white.png");
-                    ImageBrush backgroundOKButton = new ImageBrush();
-                    backgroundOKButton.ImageSource = imgOKButton.Source;
-                    backgroundOKButton.Stretch = Stretch.Fill;
-                    backgroundOKButton.TileMode = TileMode.None;
+                    Image imgOKButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/checkmark-white.png")
+                    };
+
+                    ImageBrush backgroundOKButton = new ImageBrush
+                    {
+                        ImageSource = imgOKButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
                     btnOK.Background = backgroundOKButton;
 
             }
 
         }
 
-        private void LoadTextColor()
+        private void LoadTextColors()
         {
 
                 if(serviceNowTheme.MainWindowTextColor != "")
@@ -227,7 +273,7 @@ namespace ServiceNowOpen
                     txtRecentlyOpenedItems.Foreground = textColor;
                     txtOpen.Foreground = textColor;
                     chkBoxFreeTextSearch.Foreground = textColor;
-                    chkMinimizeToSystemTray.Foreground = textColor;
+                    HideFromTaskBarCheckBox.Foreground = textColor;
                     chkBoxAlwaysOnTop.Foreground = textColor;
                     chkTitleBarCheckBox.Foreground = textColor;
                 }else{
@@ -252,7 +298,7 @@ namespace ServiceNowOpen
                     txtRecentlyOpenedItems.Foreground = textColor;
                     txtOpen.Foreground = textColor;
                     chkBoxFreeTextSearch.Foreground = textColor;
-                    chkMinimizeToSystemTray.Foreground = textColor;
+                    HideFromTaskBarCheckBox.Foreground = textColor;
                     chkBoxAlwaysOnTop.Foreground = textColor;
                     chkTitleBarCheckBox.Foreground = textColor;
                    
@@ -371,7 +417,6 @@ namespace ServiceNowOpen
             notifyIcon.Icon = new System.Drawing.Icon("now-agent-icon.ico");
             notifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(NotifyIcon_MouseDown);
 
-
             System.Windows.Forms.MenuItem menuItemResetWindowPosition = new System.Windows.Forms.MenuItem();
             contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemResetWindowPosition });
             menuItemResetWindowPosition.Index = 0;
@@ -386,7 +431,7 @@ namespace ServiceNowOpen
             menuItemExit.Click += new System.EventHandler(MenuItemExit_Click);
             notifyIcon.ContextMenu = contextMenu;
 
-          
+            notifyIcon.Visible = true;
 
         }
 
@@ -425,7 +470,7 @@ namespace ServiceNowOpen
         private void ResetWindowPosition_Click(object Sender, EventArgs e)
         {
 
-            double[] centerScreenPos = WPFWindowFunctions.GetPrimaryMonitoriCenterPosition(this.Width, this.Height);
+            double[] centerScreenPos = Monitor.GetPrimaryMonitorCenterPosition(this.Width, this.Height);
             this.Left = centerScreenPos[0];
             this.Top = centerScreenPos[1];
 
@@ -435,15 +480,15 @@ namespace ServiceNowOpen
         {
 
 
-            if(chkMinimizeToSystemTray.IsChecked == false)
+            if(HideFromTaskBarCheckBox.IsChecked == false)
             {
                 this.WindowState = WindowState.Minimized;
-                notifyIcon.Visible = false;
+                //notifyIcon.Visible = false;
                 this.ShowInTaskbar = true;
             }
             else
             {
-                notifyIcon.Visible = true;
+                //notifyIcon.Visible = true;
                 this.Visibility = Visibility.Hidden;
                 this.ShowInTaskbar = false;
 
@@ -564,7 +609,7 @@ namespace ServiceNowOpen
                 FreeTextSearch = (bool)chkBoxFreeTextSearch.IsChecked,
                 SliderPosition = sliderOpacityValue.Value,
                 RecentItems = recentlyOpenedItems,
-                MinimizeToTray = (bool)chkMinimizeToSystemTray.IsChecked,
+                MinimizeToTray = (bool)HideFromTaskBarCheckBox.IsChecked,
                
 
             };
@@ -634,7 +679,7 @@ namespace ServiceNowOpen
                 return 0.95;
             }
 
-            if(sliderValue > 80)
+            if(sliderValue > 85)
             {
                 return 0.90;
             }
@@ -668,7 +713,6 @@ namespace ServiceNowOpen
             {
                 return 0.55;
             }
-
             if(sliderValue > 20)
             {
                 return 0.50;
@@ -790,39 +834,24 @@ namespace ServiceNowOpen
             {
                 OpenSelectedItemInBrowser();
             }
-
-
         }
 
-        private void MinimizeCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            ProcessMinimizeToTrayState();
-        }
+     
 
-        private void MinimizeCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        private void ToggleHideFromTaskBar()
         {
-            ProcessMinimizeToTrayState();
-        }
-
-        private void ProcessMinimizeToTrayState()
-        {
-            if(chkMinimizeToSystemTray.IsChecked == true)
+            if(HideFromTaskBarCheckBox.IsChecked == true)
             {
-                notifyIcon.Visible = true;
+              
                 this.ShowInTaskbar = false;
             }
 
-            if(chkMinimizeToSystemTray.IsChecked == false)
+            if(HideFromTaskBarCheckBox.IsChecked == false)
             {
-                notifyIcon.Visible = false;
                 this.ShowInTaskbar = true;
             }
         }
 
-        private void RadioLeftMenuButton_Checked(object sender, RoutedEventArgs e)
-        {
-            //SetRGBSliderValues();
-        }
 
         private void SliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -882,82 +911,108 @@ namespace ServiceNowOpen
         {
             serviceNowTheme.ResetTextColorandBackgroundColorToDefault();
             SetWindowBackgroundColors();
-            LoadTextColor();
+            LoadTextColors();
             LoadDefaultImages();
             serviceNowTheme.Opacity = 1;
             this.Opacity = 1;
            
         }
-
-    
         private void LoadDefaultImages()
         {
-            //TitleBar Buttons
+            // Close Window Button
             Uri closeImageUri = new Uri("Images/close.png", UriKind.Relative);
             StreamResourceInfo closeImagestreamInfo = Application.GetResourceStream(closeImageUri);
             BitmapFrame closeImagetemp = BitmapFrame.Create(closeImagestreamInfo.Stream);
-            ImageBrush closeButtonBrush = new ImageBrush();
-            closeButtonBrush.ImageSource = closeImagetemp;
+            ImageBrush closeButtonBrush = new ImageBrush
+            {
+                ImageSource = closeImagetemp
+            };
+
             btnClose.Background = closeButtonBrush;
 
+            // Minimize Window Button
             Uri minimizeImageUri = new Uri("Images/minimize-white.png", UriKind.Relative);
             StreamResourceInfo minimizeImagestreamInfo = Application.GetResourceStream(minimizeImageUri);
             BitmapFrame minimizeImagetemp = BitmapFrame.Create(minimizeImagestreamInfo.Stream);
-            ImageBrush minimizeButtonBrush = new ImageBrush();
-            minimizeButtonBrush.ImageSource = minimizeImagetemp;
+            ImageBrush minimizeButtonBrush = new ImageBrush
+            {
+                ImageSource = minimizeImagetemp
+            };
             btnMinimize.Background = minimizeButtonBrush;
 
 
-            //Menu Buttons
+            // Home Menu Button
             Uri homeImageUri = new Uri("Images/home-white.png", UriKind.Relative);
             StreamResourceInfo homeImagestreamInfo = Application.GetResourceStream(homeImageUri);
             BitmapFrame homeImagetemp = BitmapFrame.Create(homeImagestreamInfo.Stream);
-            ImageBrush homeButtonBrush = new ImageBrush();
-            homeButtonBrush.ImageSource = homeImagetemp;
+            ImageBrush homeButtonBrush = new ImageBrush
+            {
+                ImageSource = homeImagetemp
+            };
+
             btnHome.Background = homeButtonBrush;
 
+            // Recent Items Menu Button
             Uri recentitemsImageUri = new Uri("Images/recentitems-white.png", UriKind.Relative);
             StreamResourceInfo recentitemsImagestreamInfo = Application.GetResourceStream(recentitemsImageUri);
             BitmapFrame recentitemsImagetemp = BitmapFrame.Create(recentitemsImagestreamInfo.Stream);
-            ImageBrush recentitemsButtonBrush = new ImageBrush();
-            recentitemsButtonBrush.ImageSource = recentitemsImagetemp;
+            ImageBrush recentitemsButtonBrush = new ImageBrush
+            {
+                ImageSource = recentitemsImagetemp
+            };
             btnHistory.Background = recentitemsButtonBrush;
 
+            // Themes Menu Button
             Uri themeImageUri = new Uri("Images/paint-brush-64.png", UriKind.Relative);
             StreamResourceInfo themeImagestreamInfo = Application.GetResourceStream(themeImageUri);
             BitmapFrame themeImagetemp = BitmapFrame.Create(themeImagestreamInfo.Stream);
-            ImageBrush themeButtonBrush = new ImageBrush();
-            themeButtonBrush.ImageSource = themeImagetemp;
+            ImageBrush themeButtonBrush = new ImageBrush
+            {
+                ImageSource = themeImagetemp
+            };
             btnThemes.Background = themeButtonBrush;
 
+            // Settings Button
             Uri settingsImageUri = new Uri("Images/settings-white.png", UriKind.Relative);
             StreamResourceInfo settingsImagestreamInfo = Application.GetResourceStream(settingsImageUri);
             BitmapFrame settingsImagetemp = BitmapFrame.Create(settingsImagestreamInfo.Stream);
-            ImageBrush settingsButtonBrush = new ImageBrush();
-            settingsButtonBrush.ImageSource = settingsImagetemp;
+            ImageBrush settingsButtonBrush = new ImageBrush
+            {
+                ImageSource = settingsImagetemp
+            };
             btnSettings.Background = settingsButtonBrush;
 
-            // Main Window buttons
-
+           
+            // Recent Items - Copy Button
             Uri copyImageUri = new Uri("Images/copy-white.png", UriKind.Relative);
             StreamResourceInfo copyImagestreamInfo = Application.GetResourceStream(copyImageUri);
             BitmapFrame copyImagetemp = BitmapFrame.Create(copyImagestreamInfo.Stream);
-            ImageBrush copyButtonBrush = new ImageBrush();
-            copyButtonBrush.ImageSource = copyImagetemp;
+            ImageBrush copyButtonBrush = new ImageBrush
+            {
+                ImageSource = copyImagetemp
+            };
+
             btnCopy.Background = copyButtonBrush;
 
+            // Recent Items OpenInBrowser Button
             Uri openinbrowserImageUri = new Uri("Images/openinbrowser-white.png", UriKind.Relative);
             StreamResourceInfo openinbrowserImagestreamInfo = Application.GetResourceStream(openinbrowserImageUri);
             BitmapFrame openinbrowserImagetemp = BitmapFrame.Create(openinbrowserImagestreamInfo.Stream);
-            ImageBrush openinbrowserButtonBrush = new ImageBrush();
-            openinbrowserButtonBrush.ImageSource = openinbrowserImagetemp;
+            ImageBrush openinbrowserButtonBrush = new ImageBrush
+            {
+                ImageSource = openinbrowserImagetemp
+            };
+
             btnOpenInBrowser.Background = openinbrowserButtonBrush;
 
+            // Checkmark Button
             Uri checkmarkImageUri = new Uri("Images/checkmark-white.png", UriKind.Relative);
             StreamResourceInfo checkmarkImagestreamInfo = Application.GetResourceStream(checkmarkImageUri);
             BitmapFrame checkmarkImagetemp = BitmapFrame.Create(checkmarkImagestreamInfo.Stream);
-            ImageBrush checkmarkButtonBrush = new ImageBrush();
-            checkmarkButtonBrush.ImageSource = checkmarkImagetemp;
+            ImageBrush checkmarkButtonBrush = new ImageBrush
+            {
+                ImageSource = checkmarkImagetemp
+            };
             btnOK.Background = checkmarkButtonBrush;
 
             serviceNowTheme.TitleBarButtonColor = serviceNowTheme.DefaultButtonColor;
@@ -967,400 +1022,10 @@ namespace ServiceNowOpen
 
         }
 
-
-
-
-
-
-        //private void SetBlackButtonImages()
-        //{
-
-        //    if(serviceNowTheme.MenuPanelImagesInverted == true)
-        //    {
-
-        //        //Home menu
-        //        BitmapImage bitImgHomeButton = new BitmapImage();
-        //        bitImgHomeButton.BeginInit();
-        //        bitImgHomeButton.UriSource = new Uri(@"\Images\home-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgHomeButton.EndInit();
-
-        //        Image imgImgHomeButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgHomeButton
-        //        };
-
-        //        btnHome.Content = imgImgHomeButton;
-        //        btnHome.Background = new ImageBrush(bitImgHomeButton);
-
-        //        //Recently Opened Items menu
-        //        BitmapImage bitImgRecentlyOpenedItemsButton = new BitmapImage();
-        //        bitImgRecentlyOpenedItemsButton.BeginInit();
-        //        bitImgRecentlyOpenedItemsButton.UriSource = new Uri(@"\Images\recentitems-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgRecentlyOpenedItemsButton.EndInit();
-
-        //        Image imgRecentlyOpenedItemsButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgRecentlyOpenedItemsButton
-        //        };
-
-        //        btnHistory.Content = imgRecentlyOpenedItemsButton;
-        //        btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
-
-        //        //Theme Button
-        //        BitmapImage bitImgThemeButton = new BitmapImage();
-        //        bitImgThemeButton.BeginInit();
-        //        bitImgThemeButton.UriSource = new Uri(@"\Images\palette-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgThemeButton.EndInit();
-
-        //        Image imgThemeButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgThemeButton
-        //        };
-
-        //        btnThemes.Content = imgThemeButton;
-        //        btnThemes.Background = new ImageBrush(bitImgThemeButton);
-
-
-        //        //Settings menu
-        //        BitmapImage bitImgSettingsButton = new BitmapImage();
-        //        bitImgSettingsButton.BeginInit();
-        //        bitImgSettingsButton.UriSource = new Uri(@"\Images\settings-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgSettingsButton.EndInit();
-
-        //        Image imgSettingsButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgSettingsButton
-        //        };
-
-        //        btnSettings.Content = imgSettingsButton;
-        //        btnSettings.Background = new ImageBrush(bitImgSettingsButton);
-
-        //    }
-
-        //    if(serviceNowTheme.TitleBarButtonImagesInverted == true)
-        //    {
-        //        //Close Window Button
-        //        BitmapImage bitImgCloseWindowButton = new BitmapImage();
-        //        bitImgCloseWindowButton.BeginInit();
-        //        bitImgCloseWindowButton.UriSource = new Uri(@"\Images\power-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgCloseWindowButton.EndInit();
-
-        //        Image imgCloseWindowButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgCloseWindowButton
-        //        };
-
-        //        btnClose.Content = imgCloseWindowButton;
-        //        btnClose.Background = new ImageBrush(bitImgCloseWindowButton);
-
-        //        //Minimize Window Button
-        //        BitmapImage bitImgMinimizeWindowButton = new BitmapImage();
-        //        bitImgMinimizeWindowButton.BeginInit();
-        //        bitImgMinimizeWindowButton.UriSource = new Uri(@"\Images\minimize-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgMinimizeWindowButton.EndInit();
-
-        //        Image imgMinimizeWindowButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgMinimizeWindowButton
-        //        };
-
-        //        btnMinimize.Content = imgMinimizeWindowButton;
-        //        btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
-        //    }
-           
-        //    if(serviceNowTheme.WindowContentButtonImagesInverted == true)
-        //    {
-        //        //Copy Button
-        //        BitmapImage bitImgCopyButton = new BitmapImage();
-        //        bitImgCopyButton.BeginInit();
-        //        bitImgCopyButton.UriSource = new Uri(@"\Images\copy-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgCopyButton.EndInit();
-
-        //        Image imgCopyButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgCopyButton
-        //        };
-
-        //        btnCopy.Content = imgCopyButton;
-        //        btnCopy.Background = new ImageBrush(bitImgCopyButton);
-
-        //        //Open in Browser Button
-        //        BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
-        //        bitImgOpenInBrowserButton.BeginInit();
-        //        bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgOpenInBrowserButton.EndInit();
-
-        //        Image imgOpenInBrowserButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgOpenInBrowserButton
-        //        };
-
-        //        btnOpenInBrowser.Content = imgOpenInBrowserButton;
-        //        btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
-
-
-               
-
-        //        //CheckMark Button
-        //        BitmapImage bitImgCheckMarkButton = new BitmapImage();
-        //        bitImgCheckMarkButton.BeginInit();
-        //        bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-black.png", UriKind.RelativeOrAbsolute);
-        //        bitImgCheckMarkButton.EndInit();
-
-        //        Image imgCheckMarkButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgCheckMarkButton
-        //        };
-
-        //        btnOK.Content = imgCheckMarkButton;
-        //        btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
-        //    }
-
-        //}
-
-        //private void SetWhiteButtonImages()
-        //{
-
-        //    if(serviceNowTheme.MenuPanelImagesInverted == false)
-        //    {
-        //        //Home menu
-        //        BitmapImage bitImgHomeButton = new BitmapImage();
-        //        bitImgHomeButton.BeginInit();
-        //        bitImgHomeButton.UriSource = new Uri(@"\Images\home-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgHomeButton.EndInit();
-
-        //        Image imgImgHomeButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgHomeButton
-        //        };
-
-        //        btnHome.Content = imgImgHomeButton;
-        //        btnHome.Background = new ImageBrush(bitImgHomeButton);
-
-        //        //Recently Opened Items menu
-        //        BitmapImage bitImgRecentlyOpenedItemsButton = new BitmapImage();
-        //        bitImgRecentlyOpenedItemsButton.BeginInit();
-        //        bitImgRecentlyOpenedItemsButton.UriSource = new Uri(@"\Images\recentitems-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgRecentlyOpenedItemsButton.EndInit();
-
-        //        Image imgRecentlyOpenedItemsButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgRecentlyOpenedItemsButton
-        //        };
-
-        //        btnHistory.Content = imgRecentlyOpenedItemsButton;
-        //        btnHistory.Background = new ImageBrush(bitImgRecentlyOpenedItemsButton);
-
-        //        //Theme Button
-        //        BitmapImage bitImgThemeButton = new BitmapImage();
-        //        bitImgThemeButton.BeginInit();
-        //        bitImgThemeButton.UriSource = new Uri(@"\Images\palette-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgThemeButton.EndInit();
-
-        //        Image imgThemeButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgThemeButton
-        //        };
-
-        //        btnThemes.Content = imgThemeButton;
-        //        btnThemes.Background = new ImageBrush(bitImgThemeButton);
-
-        //        //Settings menu
-        //        BitmapImage bitImgSettingsButton = new BitmapImage();
-        //        bitImgSettingsButton.BeginInit();
-        //        bitImgSettingsButton.UriSource = new Uri(@"\Images\settings-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgSettingsButton.EndInit();
-
-        //        Image imgSettingsButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgSettingsButton
-        //        };
-
-        //        btnSettings.Content = imgSettingsButton;
-        //        btnSettings.Background = new ImageBrush(bitImgSettingsButton);
-
-        //    }
-           
-        //    if(serviceNowTheme.TitleBarButtonImagesInverted == false)
-        //    {
-        //        //Close Window Button
-        //        BitmapImage bitImgCloseWindowButton = new BitmapImage();
-        //        bitImgCloseWindowButton.BeginInit();
-        //        bitImgCloseWindowButton.UriSource = new Uri(@"\Images\power-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgCloseWindowButton.EndInit();
-
-        //        Image imgCloseWindowButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgCloseWindowButton
-        //        };
-
-        //        btnClose.Content = imgCloseWindowButton;
-        //        btnClose.Background = new ImageBrush(bitImgCloseWindowButton);
-
-        //        //Minimize Window Button
-        //        BitmapImage bitImgMinimizeWindowButton = new BitmapImage();
-        //        bitImgMinimizeWindowButton.BeginInit();
-        //        bitImgMinimizeWindowButton.UriSource = new Uri(@"\Images\minimize-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgMinimizeWindowButton.EndInit();
-
-        //        Image imgMinimizeWindowButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgMinimizeWindowButton
-        //        };
-
-        //        btnMinimize.Content = imgMinimizeWindowButton;
-        //        btnMinimize.Background = new ImageBrush(bitImgMinimizeWindowButton);
-        //    }
-           
-        //    if(serviceNowTheme.WindowContentButtonImagesInverted == false)
-        //    {
-        //        //Copy Button
-        //        BitmapImage bitImgCopyButton = new BitmapImage();
-        //        bitImgCopyButton.BeginInit();
-        //        bitImgCopyButton.UriSource = new Uri(@"\Images\copy-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgCopyButton.EndInit();
-
-        //        Image imgCopyButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgCopyButton
-        //        };
-
-        //        btnCopy.Content = imgCopyButton;
-        //        btnCopy.Background = new ImageBrush(bitImgCopyButton);
-
-        //        //Open in Browser Button
-        //        BitmapImage bitImgOpenInBrowserButton = new BitmapImage();
-        //        bitImgOpenInBrowserButton.BeginInit();
-        //        bitImgOpenInBrowserButton.UriSource = new Uri(@"\Images\openinbrowser-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgOpenInBrowserButton.EndInit();
-
-        //        Image imgOpenInBrowserButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgOpenInBrowserButton
-        //        };
-
-        //        btnOpenInBrowser.Content = imgOpenInBrowserButton;
-        //        btnOpenInBrowser.Background = new ImageBrush(bitImgOpenInBrowserButton);
-
-        //        //CheckMark Button
-        //        BitmapImage bitImgCheckMarkButton = new BitmapImage();
-        //        bitImgCheckMarkButton.BeginInit();
-        //        bitImgCheckMarkButton.UriSource = new Uri(@"\Images\checkmark-white.png", UriKind.RelativeOrAbsolute);
-        //        bitImgCheckMarkButton.EndInit();
-
-        //        Image imgCheckMarkButton = new Image
-        //        {
-        //            Stretch = Stretch.Fill,
-        //            Source = bitImgCheckMarkButton
-        //        };
-
-        //        btnOK.Content = imgCheckMarkButton;
-        //        btnOK.Background = new ImageBrush(bitImgCheckMarkButton);
-        //    }
-
-        //}
-
-        //private void SetBlackText()
-        //{
-        //    if(serviceNowTheme.TitleBarTextColorInverted == true)
-        //    {
-        //        txtTitle.Foreground = serviceNowTheme.BlackBrush();
-        //    }
-
-        //    //if(serviceNowTheme.MenuPanelImagesInverted == true)
-        //    //{
-        //    //    btnHome.Foreground = serviceNowTheme.BlackBrush();
-        //    //    btnHistory.Foreground = serviceNowTheme.BlackBrush();
-        //    //    btnSettings.Foreground = serviceNowTheme.BlackBrush();
-        //    //}
-
-        //    if(serviceNowTheme.WindowContentTextColorInverted == true)
-        //    {
-        //        txt_Theme.Foreground = serviceNowTheme.BlackBrush();
-        //        chkTitleBarCheckBox.Foreground = serviceNowTheme.BlackBrush();
-        //        chkMenuCheckBox.Foreground = serviceNowTheme.BlackBrush();
-        //        chkWindowContentCheckBox.Foreground = serviceNowTheme.BlackBrush();
-        //        txtRed.Foreground = serviceNowTheme.BlackBrush();
-        //        txtGreen.Foreground = serviceNowTheme.BlackBrush();
-        //        txtBlue.Foreground = serviceNowTheme.BlackBrush();
-        //        txtOpacity.Foreground = serviceNowTheme.BlackBrush();
-        //        ChkBox_ButtonColors.Foreground = serviceNowTheme.BlackBrush();
-        //        ChkBox_InvertTextColors.Foreground = serviceNowTheme.BlackBrush();
-        //        sliderRed.Foreground = serviceNowTheme.BlackBrush();
-        //        sliderGreen.Foreground = serviceNowTheme.BlackBrush();
-        //        sliderBlue.Foreground = serviceNowTheme.BlackBrush();
-        //        borderSliders.BorderBrush = serviceNowTheme.BlackBrush();
-        //        btnResetToDefault.Foreground = serviceNowTheme.BlackBrush();
-        //        txtSettings.Foreground = serviceNowTheme.BlackBrush();
-        //        txtVersion.Foreground = serviceNowTheme.BlackBrush();
-        //        txtRecentlyOpenedItems.Foreground = serviceNowTheme.BlackBrush();
-        //        txtOpen.Foreground = serviceNowTheme.BlackBrush();
-        //        chkBoxFreeTextSearch.Foreground = serviceNowTheme.BlackBrush();
-        //        chkMinimizeToSystemTray.Foreground = serviceNowTheme.BlackBrush();
-        //        chkBoxAlwaysOnTop.Foreground = serviceNowTheme.BlackBrush();
-        //    }
-
-
-        //}
-
-        private void SetWhiteText()
-        {
-            
-        
-                txtTitle.Foreground = serviceNowTheme.WhiteBrush();
-         
-            //if(serviceNowTheme.MenuPanelImagesInverted == false)
-            //{
-            //    btnHome.Foreground = serviceNowTheme.WhiteBrush();
-            //    btnHistory.Foreground = serviceNowTheme.WhiteBrush();
-            //    btnSettings.Foreground = serviceNowTheme.WhiteBrush();
-            //}
-
-                txt_Theme.Foreground = serviceNowTheme.WhiteBrush();
-                chkTitleBarCheckBox.Foreground = serviceNowTheme.WhiteBrush();
-                chkMenuCheckBox.Foreground = serviceNowTheme.WhiteBrush();
-                chkWindowContentCheckBox.Foreground = serviceNowTheme.WhiteBrush();
-                txtRed.Foreground = serviceNowTheme.WhiteBrush();
-                txtGreen.Foreground = serviceNowTheme.WhiteBrush();
-                txtBlue.Foreground = serviceNowTheme.WhiteBrush();
-                txtOpacity.Foreground = serviceNowTheme.WhiteBrush();
-                ChkBox_ButtonColors.Foreground = serviceNowTheme.WhiteBrush();
-                TextColorCheckBox.Foreground = serviceNowTheme.WhiteBrush();
-                sliderRed.Foreground = serviceNowTheme.WhiteBrush();
-                sliderGreen.Foreground = serviceNowTheme.WhiteBrush();
-                sliderBlue.Foreground = serviceNowTheme.WhiteBrush();
-                borderSliders.BorderBrush = serviceNowTheme.WhiteBrush();
-                btnResetToDefault.Foreground = serviceNowTheme.WhiteBrush();
-                txtSettings.Foreground = serviceNowTheme.WhiteBrush();
-                txtVersion.Foreground = serviceNowTheme.WhiteBrush();
-                txtRecentlyOpenedItems.Foreground = serviceNowTheme.WhiteBrush();
-                txtOpen.Foreground = serviceNowTheme.WhiteBrush();
-                chkBoxFreeTextSearch.Foreground = serviceNowTheme.WhiteBrush();
-                chkMinimizeToSystemTray.Foreground = serviceNowTheme.WhiteBrush();
-                chkBoxAlwaysOnTop.Foreground = serviceNowTheme.WhiteBrush();
-            
-        }
-
         private void ChangeTextColor()
         {
-
+            
+            // Text in title bar
             if(TextColorCheckBox.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
             {
                 serviceNowTheme.TitleBarTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
@@ -1368,6 +1033,7 @@ namespace ServiceNowOpen
                 
             }
 
+            // Text in main window
             if(TextColorCheckBox.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
             {
                 serviceNowTheme.MainWindowTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
@@ -1393,35 +1059,9 @@ namespace ServiceNowOpen
                 txtRecentlyOpenedItems.Foreground = color;
                 txtOpen.Foreground = color;
                 chkBoxFreeTextSearch.Foreground = color;
-                chkMinimizeToSystemTray.Foreground = color;
+                HideFromTaskBarCheckBox.Foreground = color;
                 chkBoxAlwaysOnTop.Foreground = color;
             }
-
-
-
-
-            //txt_Theme.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //chkTitleBarCheckBox.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //chkMenuCheckBox.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //chkWindowContentCheckBox.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtRed.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtGreen.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtBlue.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtOpacity.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //ChkBox_ButtonColors.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //TextColorCheckBox.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //sliderRed.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //sliderGreen.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //sliderBlue.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //borderSliders.BorderBrush = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //btnResetToDefault.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtSettings.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtVersion.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtRecentlyOpenedItems.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //txtOpen.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //chkBoxFreeTextSearch.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //chkMinimizeToSystemTray.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-            //chkBoxAlwaysOnTop.Foreground = serviceNowTheme.ConvertRGBToBackgroundColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
 
         }
         private void ThemesButton_Click(object sender, RoutedEventArgs e)
@@ -1431,8 +1071,6 @@ namespace ServiceNowOpen
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Visible;
         }
-
-       
 
         private void MenuPanelCheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -1461,161 +1099,155 @@ namespace ServiceNowOpen
             colors[2] = (byte)sliderBlue.Value;
            
             
+            // Menu Button Colors
             if(ChkBox_ButtonColors.IsChecked == true && chkMenuCheckBox.IsChecked ==true)
             {
                 serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.MenuPanelButtonsRGB = colors;
 
                 //Home Button
-                Image imgHome = new Image();
-                imgHome.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/home-white.png");
-                ImageBrush backgroundHomeImage = new ImageBrush();
-                backgroundHomeImage.ImageSource = imgHome.Source;
-                backgroundHomeImage.Stretch = Stretch.Fill;
-                backgroundHomeImage.TileMode = TileMode.None;
+                Image imgHome = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/home-white.png")
+                };
+
+                ImageBrush backgroundHomeImage = new ImageBrush
+                {
+                    ImageSource = imgHome.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
                 btnHome.Background = backgroundHomeImage;
 
                 //Themes Button
-                Image imgTheme = new Image();
-                imgTheme.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/paint-brush-64.png");
-                ImageBrush backgroundThemeImage = new ImageBrush();
-                backgroundThemeImage.ImageSource = imgTheme.Source;
-                backgroundThemeImage.Stretch = Stretch.Fill;
-                backgroundThemeImage.TileMode = TileMode.None;
+                Image imgTheme = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/paint-brush-64.png")
+                };
+
+                ImageBrush backgroundThemeImage = new ImageBrush
+                {
+                    ImageSource = imgTheme.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
                 btnThemes.Background = backgroundThemeImage;
 
                 //Recently Opened Items Button
-                Image imgRecentItems = new Image();
-                imgRecentItems.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/recentitems-white.png");
-                ImageBrush backgroundRecentItemsImage = new ImageBrush();
-                backgroundRecentItemsImage.ImageSource = imgRecentItems.Source;
-                backgroundRecentItemsImage.Stretch = Stretch.Fill;
-                backgroundRecentItemsImage.TileMode = TileMode.None;
+                Image imgRecentItems = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/recentitems-white.png")
+                };
+
+                ImageBrush backgroundRecentItemsImage = new ImageBrush
+                {
+                    ImageSource = imgRecentItems.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
                 btnHistory.Background = backgroundRecentItemsImage;
 
                 //Settings Button
-                Image imgSettingsButton = new Image();
-                imgSettingsButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/settings-white.png");
-                ImageBrush backgroundSettingsButton = new ImageBrush();
-                backgroundSettingsButton.ImageSource = imgSettingsButton.Source;
-                backgroundSettingsButton.Stretch = Stretch.Fill;
-                backgroundSettingsButton.TileMode = TileMode.None;
+                Image imgSettingsButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/settings-white.png")
+                };
+
+                ImageBrush backgroundSettingsButton = new ImageBrush
+                {
+                    ImageSource = imgSettingsButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
                 btnSettings.Background = backgroundSettingsButton;
             }
 
+            // TitleBar Button Colors
             if( ChkBox_ButtonColors.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
             {
                 serviceNowTheme.TitleBarButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.TitleBarButtonsRGB = colors;
 
                 //Power Button
-                Image imgPowerButton = new Image();
-                imgPowerButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/close.png");
-                ImageBrush backgroundPowerButton = new ImageBrush();
-                backgroundPowerButton.ImageSource = imgPowerButton.Source;
-                backgroundPowerButton.Stretch = Stretch.Fill;
-                backgroundPowerButton.TileMode = TileMode.None;
+                Image imgPowerButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/close.png")
+                };
+
+                ImageBrush backgroundPowerButton = new ImageBrush
+                {
+                    ImageSource = imgPowerButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
                 btnClose.Background = backgroundPowerButton;
 
                 //Minimize Button
-                Image imgMinimizeButton = new Image();
-                imgMinimizeButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/minimize-white.png");
-                ImageBrush backgroundMinimizeButton = new ImageBrush();
-                backgroundMinimizeButton.ImageSource = imgMinimizeButton.Source;
-                backgroundMinimizeButton.Stretch = Stretch.Fill;
-                backgroundMinimizeButton.TileMode = TileMode.None;
+                Image imgMinimizeButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/minimize-white.png")
+                };
+                ImageBrush backgroundMinimizeButton = new ImageBrush
+                {
+                    ImageSource = imgMinimizeButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
                 btnMinimize.Background = backgroundMinimizeButton;
 
             }
 
+
+            // Main Window Button Colors
             if(ChkBox_ButtonColors.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
             {
                 serviceNowTheme.MainWindowButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.MainWindowButtonsRGB = colors;
 
                 //Copy Button
-                Image imgCopyButton = new Image();
-                imgCopyButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/copy-white.png");
-                ImageBrush backgroundCopyButton = new ImageBrush();
-                backgroundCopyButton.ImageSource = imgCopyButton.Source;
-                backgroundCopyButton.Stretch = Stretch.Fill;
-                backgroundCopyButton.TileMode = TileMode.None;
+                Image imgCopyButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/copy-white.png")
+                };
+                ImageBrush backgroundCopyButton = new ImageBrush
+                {
+                    ImageSource = imgCopyButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
                 btnCopy.Background = backgroundCopyButton;
 
                 //Open In Browser Button
-                Image imgOpenInBrowserButton = new Image();
-                imgOpenInBrowserButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/openinbrowser-white.png");
-                ImageBrush backgroundOpenInBrowserButton = new ImageBrush();
-                backgroundOpenInBrowserButton.ImageSource = imgOpenInBrowserButton.Source;
-                backgroundOpenInBrowserButton.Stretch = Stretch.Fill;
-                backgroundOpenInBrowserButton.TileMode = TileMode.None;
+                Image imgOpenInBrowserButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/openinbrowser-white.png")
+                };
+                ImageBrush backgroundOpenInBrowserButton = new ImageBrush
+                {
+                    ImageSource = imgOpenInBrowserButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
                 btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
 
                 //OK (CheckMark) Button
-                Image imgOKButton = new Image();
-                imgOKButton.Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/checkmark-white.png");
-                ImageBrush backgroundOKButton = new ImageBrush();
-                backgroundOKButton.ImageSource = imgOKButton.Source;
-                backgroundOKButton.Stretch = Stretch.Fill;
-                backgroundOKButton.TileMode = TileMode.None;
+                Image imgOKButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/checkmark-white.png")
+                };
+                ImageBrush backgroundOKButton = new ImageBrush
+                {
+                    ImageSource = imgOKButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
                 btnOK.Background = backgroundOKButton;
             }
 
-
-        }
-
-        public WriteableBitmap ConvertImageColors(byte red, byte green, byte blue, byte alpha, string imagename)
-        {
-
-            StreamResourceInfo x = Application.GetResourceStream(new Uri(BaseUriHelper.GetBaseUri(this), imagename));
-          
-                BitmapDecoder dec = BitmapDecoder.Create(x.Stream, BitmapCreateOptions.None, BitmapCacheOption.Default);
-                BitmapFrame image = dec.Frames[0];
-                byte[] pixels = new byte[image.PixelWidth * image.PixelHeight * 4];
-                image.CopyPixels(pixels, image.PixelWidth * 4, 0);
-
-                var bmp = new WriteableBitmap(image.PixelWidth, image.PixelHeight, image.DpiX, image.DpiY, PixelFormats.Pbgra32, null);
-
-                for(int i = 0; i < pixels.Length / 4; ++i)
-                {
-                    byte b = pixels[i * 4];
-                    byte g = pixels[i * 4 + 1];
-                    byte r = pixels[i * 4 + 2];
-                    byte a = pixels[i * 4 + 3];
-
-
-                    if((r == 255 &&
-                        g == 255 &&
-                        b == 255 &&
-                        a == 255) ||
-                    (a != 0 && a != 255 &&
-                        r == g && g == b && r != 0))
-                    {
-
-                        {
-
-                            r = red;
-                            g = green;
-                            b = blue;
-                            a = alpha;
-
-                            pixels[i * 4] = b;
-                            pixels[i * 4 + 1] = g;
-                            pixels[i * 4 + 2] = r;
-                            pixels[i * 4 + 3] = a;
-
-                        }
-
-                    }
-
-                    bmp.WritePixels(new Int32Rect(0, 0, image.PixelWidth, image.PixelHeight), pixels, image.PixelWidth * 4, 0);
-
-                    // Source: https://stackoverflow.com/questions/20856424/wpf-modifying-image-colors-on-the-fly-c
-                }
-                
-                return bmp;
-           
-          
 
         }
 
@@ -1626,6 +1258,7 @@ namespace ServiceNowOpen
                 OpenSelectedItemInBrowser();
             }
         }
+
 
         private void CopyButton_Click(object sender, RoutedEventArgs e)
         {
@@ -1641,8 +1274,15 @@ namespace ServiceNowOpen
             OpenItemInServiceNow(cleanedItem);
         }
 
-     
+        private void HideFromTaskBarCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ToggleHideFromTaskBar();
+        }
 
+        private void HideFromTaskBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ToggleHideFromTaskBar();
+        }
     }
 }
 

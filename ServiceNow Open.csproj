@@ -30,7 +30,7 @@
     <PublisherName>Johnny Mongstad</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>89</ApplicationRevision>
+    <ApplicationRevision>92</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -110,7 +110,7 @@
     <Compile Include="Classes\ServiceNowItem.cs" />
     <Compile Include="Classes\ServiceNowTheme.cs" />
     <Compile Include="Classes\Settings.cs" />
-    <Compile Include="Classes\WPFWindow.cs" />
+    <Compile Include="Classes\Monitor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

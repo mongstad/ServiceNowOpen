@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Debug\
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\
 ServiceNowOpen
 none
 false
-DEBUG;TRACE
+TRACE
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\App.xaml
 1219584333
 12055448943
-12-860668360
+111559894146
 15767508510
 MainWindow.xaml;
 
-True
+False
 

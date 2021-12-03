@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Opacity>1</Opacity>
+  <Opacity>0.7</Opacity>
+  <MinimizeToTray>false</MinimizeToTray>
+  <FreeTextSearch>false</FreeTextSearch>
+  <SliderPosition>52.830188679245275</SliderPosition>
+  <TopMost>false</TopMost>
+  <Top>660</Top>
+  <Left>1054</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FFEAFF00</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FFD30000</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFEAFF00</TitleBarButtonColor>
+    <TitleBarTextColor>#FF000000</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFFFFF00</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FF000000</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
     <MainWindowBackgroundColor>#FF0000F3</MainWindowBackgroundColor>
     <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
@@ -12,16 +18,341 @@
     <MenuBackgroundColor>#FF00009D</MenuBackgroundColor>
     <MenuPanelButtonsRGB>/0n/</MenuPanelButtonsRGB>
     <MainWindowButtonsRGB>/0n/</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>6v8A</TitleBarButtonsRGB>
-    <Opacity>1</Opacity>
+    <TitleBarButtonsRGB>AAAA</TitleBarButtonsRGB>
+    <Opacity>0.7</Opacity>
   </ServiceNowTheme>
-  <MinimizeToTray>true</MinimizeToTray>
   <RecentItems>
-    <RecentItems />
+    <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ADSFAF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
+        <DateTimeOpened>03.12.2021 20:48</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>03.12.2021 18:37</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>03.12.2021 18:29</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>SDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=SDFADSF</Url>
+        <DateTimeOpened>03.12.2021 18:23</DateTimeOpened>
+      </RecentlyOpenedItem>
+    </RecentItems>
   </RecentItems>
-  <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>91.19496855345902</SliderPosition>
-  <TopMost>false</TopMost>
-  <Top>813</Top>
-  <Left>1443</Left>
 </Settings>

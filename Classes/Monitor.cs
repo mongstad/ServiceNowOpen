@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 
-namespace WPFWindow{
+namespace Computer{
 
-   public static class WPFWindowFunctions
+   public static class Monitor
    {
-        public static double[] GetPrimaryMonitoriCenterPosition(double WindowWidth, double WindowHeight)
+        public static double[] GetPrimaryMonitorCenterPosition(double WindowWidth, double WindowHeight)
         {
 
             double screenWidth = SystemParameters.PrimaryScreenWidth;
@@ -17,7 +17,7 @@ namespace WPFWindow{
             position[0] = centerHorizontal;
             position[1] = centerVertical;
             return position;
-
+          
 
         }
     }

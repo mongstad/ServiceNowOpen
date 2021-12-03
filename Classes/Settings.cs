@@ -12,8 +12,9 @@ namespace ServiceNow
         bool _topmost = false;
         bool _freetextsearch = false;
         bool _minimizetotray = false;
+        ServiceNowTheme _servicenowtheme = new ServiceNowTheme();
         RecentlyOpenedItems _recentlyopeneditems = new RecentlyOpenedItems();
-        ServiceNowTheme _servicenowtheme  = new ServiceNowTheme();
+       
         public Settings()
         {
 
@@ -26,23 +27,13 @@ namespace ServiceNow
             set { _opacity = value; }
         }
 
-        public ServiceNowTheme ServiceNowTheme
-        {
-            get { return _servicenowtheme;}
-            set { _servicenowtheme = value;}
-        }
-
         public bool MinimizeToTray
         {
             get { return _minimizetotray; }
             set { _minimizetotray = value; }
         }
 
-        public RecentlyOpenedItems RecentItems
-        {
-            get { return _recentlyopeneditems; }
-            set { _recentlyopeneditems = value; }
-        }
+       
         public bool FreeTextSearch
         {
             get { return _freetextsearch; }
@@ -71,6 +62,18 @@ namespace ServiceNow
         {
             get { return _left; }
             set { _left = value; }
+        }
+
+        public ServiceNowTheme ServiceNowTheme
+        {
+            get { return _servicenowtheme; }
+            set { _servicenowtheme = value; }
+        }
+
+        public RecentlyOpenedItems RecentItems
+        {
+            get { return _recentlyopeneditems; }
+            set { _recentlyopeneditems = value; }
         }
 
         public void Save()
