@@ -24,7 +24,6 @@ namespace ServiceNowOpen
         public MainWindow()
         {
 
-           
             InitializeComponent();
             LoadSettings();
             SetWindowBackgroundColors();
@@ -63,7 +62,6 @@ namespace ServiceNowOpen
           
 
         }
-
         private void SetWindowBackgroundColors()
         {
             
@@ -94,7 +92,6 @@ namespace ServiceNowOpen
             }
 
         }
-
         private void LoadButtonColors()
         {
 
@@ -246,7 +243,6 @@ namespace ServiceNowOpen
             }
 
         }
-
         private void LoadTextColors()
         {
 
@@ -314,7 +310,39 @@ namespace ServiceNowOpen
                 }
 
         }
+        private void SetNotifyIconSettings()
+        {
 
+            notifyIcon.Text = "ServiceNowOpen";
+            notifyIcon.Icon = new System.Drawing.Icon("now-agent-icon.ico");
+            notifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(NotifyIcon_MouseDown);
+
+            System.Windows.Forms.MenuItem menuItemResetWindowPosition = new System.Windows.Forms.MenuItem();
+            contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemResetWindowPosition });
+            menuItemResetWindowPosition.Index = 0;
+            menuItemResetWindowPosition.Text = "Reset window position";
+            menuItemResetWindowPosition.Click += new System.EventHandler(ResetWindowPosition_Click);
+            notifyIcon.ContextMenu = contextMenu;
+
+            System.Windows.Forms.MenuItem menuItemExit = new System.Windows.Forms.MenuItem();
+            contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemExit });
+            menuItemExit.Index = 1;
+            menuItemExit.Text = "E&xit";
+            menuItemExit.Click += new System.EventHandler(MenuItemExit_Click);
+            notifyIcon.ContextMenu = contextMenu;
+
+            notifyIcon.Visible = true;
+
+        }
+        private void SetVersionInfo()
+        {
+
+            Assembly thisAssem = typeof(MainWindow).Assembly;
+            AssemblyName thisAssemName = thisAssem.GetName();
+
+            Version ver = thisAssemName.Version;
+            txtVersion.Text += ver.ToString();
+        }
         //private void SetRGBSliderValues()
         //{
         //    if(chkTitleBarCheckBox.IsChecked == true)
@@ -410,40 +438,6 @@ namespace ServiceNowOpen
 
         //}
 
-        private void SetNotifyIconSettings()
-        {
-
-            notifyIcon.Text = "ServiceNowOpen";
-            notifyIcon.Icon = new System.Drawing.Icon("now-agent-icon.ico");
-            notifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(NotifyIcon_MouseDown);
-
-            System.Windows.Forms.MenuItem menuItemResetWindowPosition = new System.Windows.Forms.MenuItem();
-            contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemResetWindowPosition });
-            menuItemResetWindowPosition.Index = 0;
-            menuItemResetWindowPosition.Text = "Reset window position";
-            menuItemResetWindowPosition.Click += new System.EventHandler(ResetWindowPosition_Click);
-            notifyIcon.ContextMenu = contextMenu;
-
-            System.Windows.Forms.MenuItem menuItemExit = new System.Windows.Forms.MenuItem();
-            contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItemExit });
-            menuItemExit.Index = 1;
-            menuItemExit.Text = "E&xit";
-            menuItemExit.Click += new System.EventHandler(MenuItemExit_Click);
-            notifyIcon.ContextMenu = contextMenu;
-
-            notifyIcon.Visible = true;
-
-        }
-
-        private void SetVersionInfo()
-        {
-
-            Assembly thisAssem = typeof(MainWindow).Assembly;
-            AssemblyName thisAssemName = thisAssem.GetName();
-
-            Version ver = thisAssemName.Version;
-            txtVersion.Text += ver.ToString();
-        }
 
         private void NotifyIcon_MouseDown(object Sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -453,6 +447,8 @@ namespace ServiceNowOpen
                 this.Activate();
             }
 
+
+
             if(e.Button == System.Windows.Forms.MouseButtons.Right)
             {
                 MethodInfo mi = typeof(System.Windows.Forms.NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -461,41 +457,25 @@ namespace ServiceNowOpen
             }
 
         }
-        private void MenuItemExit_Click(object Sender, EventArgs e)
-        {
-
-            CloseApplication();
-        }
-
         private void ResetWindowPosition_Click(object Sender, EventArgs e)
         {
 
+            ResetWindowPosition();
+
+        }
+        private void ResetWindowPosition()
+        {
             double[] centerScreenPos = Monitor.GetPrimaryMonitorCenterPosition(this.Width, this.Height);
             this.Left = centerScreenPos[0];
             this.Top = centerScreenPos[1];
-
         }
 
-        private void WindowGotMiniMizedActions()
-        {
-
-
-            if(HideFromTaskBarCheckBox.IsChecked == false)
-            {
-                this.WindowState = WindowState.Minimized;
-                //notifyIcon.Visible = false;
-                this.ShowInTaskbar = true;
-            }
-            else
-            {
-                //notifyIcon.Visible = true;
-                this.Visibility = Visibility.Hidden;
-                this.ShowInTaskbar = false;
-
-            }
-        }
 
         private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveWindow();
+        }
+        private void MoveWindow()
         {
             try
             {
@@ -508,7 +488,8 @@ namespace ServiceNowOpen
             }
         }
 
-        private void ItemTextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(txtItem.Text != "")
             {
@@ -516,23 +497,7 @@ namespace ServiceNowOpen
             }
             else { DisableOKButton(); }
         }
-
-        private void EnableOKButton()
-        {
-            btnOK.IsEnabled = true;
-            btnOK.Opacity = 1;
-
-        }
-
-        private void DisableOKButton()
-        {
-
-            btnOK.IsEnabled = false;
-            btnOK.Opacity = 0.2;
-
-        }
-
-        private void ItemTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void InputTextBox_KeyUp(object sender, KeyEventArgs e)
         {
 
             if(e.Key == Key.Escape)
@@ -541,7 +506,11 @@ namespace ServiceNowOpen
             }
 
         }
-
+        private void OKButton_Click(object sender, RoutedEventArgs e)
+        {
+            string cleanedItem = txtItem.Text.Trim();
+            OpenItemInServiceNow(cleanedItem);
+        }
         private void OpenItemInServiceNow(string item)
         {
 
@@ -563,7 +532,6 @@ namespace ServiceNowOpen
             txtItem.Focus();
 
         }
-
         private void RemoveOldEntries()
         {
             int recenItemsCount = recentlyOpenedItems.RecentItems.Count;
@@ -572,23 +540,31 @@ namespace ServiceNowOpen
                 recentlyOpenedItems.RecentItems.RemoveAt(recenItemsCount - 1);
             }
         }
-
-        private void AlwaysOnTopCheckBox_Checked(object sender, RoutedEventArgs e)
+        private void EnableOKButton()
         {
-            this.Topmost = true;
+            btnOK.IsEnabled = true;
+            btnOK.Opacity = 1;
+
+        }
+        private void DisableOKButton()
+        {
+
+            btnOK.IsEnabled = false;
+            btnOK.Opacity = 0.2;
+
         }
 
-        private void AlawaysOnTopCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            this.Topmost = false;
-        }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
 
             CloseApplication();
         }
+        private void MenuItemExit_Click(object Sender, EventArgs e)
+        {
 
+            CloseApplication();
+        }
         private void CloseApplication()
         {
 
@@ -596,7 +572,6 @@ namespace ServiceNowOpen
             notifyIcon.Dispose();
             this.Close();
         }
-
         private void SaveSettings()
         {
             Settings settingsServiceNow = new Settings
@@ -610,29 +585,12 @@ namespace ServiceNowOpen
                 SliderPosition = sliderOpacityValue.Value,
                 RecentItems = recentlyOpenedItems,
                 MinimizeToTray = (bool)HideFromTaskBarCheckBox.IsChecked,
-               
+
 
             };
 
             settingsServiceNow.Save();
 
-        }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
-        {
-            gridMainContent.Visibility = Visibility.Visible;
-            gridHistoryContent.Visibility = Visibility.Hidden;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Hidden;
-            FocusSearchBox();
-
-        }
-
-        private void HistoryButton_Click(object sender, RoutedEventArgs e)
-        {
-            gridMainContent.Visibility = Visibility.Hidden;
-            gridHistoryContent.Visibility = Visibility.Visible;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Hidden;
         }
 
 
@@ -641,7 +599,49 @@ namespace ServiceNowOpen
 
             WindowGotMiniMizedActions();
         }
+        private void WindowGotMiniMizedActions()
+        {
 
+
+            if(HideFromTaskBarCheckBox.IsChecked == false)
+            {
+                this.WindowState = WindowState.Minimized;
+                //notifyIcon.Visible = false;
+                this.ShowInTaskbar = true;
+            }
+            else
+            {
+                //notifyIcon.Visible = true;
+                this.Visibility = Visibility.Hidden;
+                this.ShowInTaskbar = false;
+
+            }
+        }
+
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            gridMainContent.Visibility = Visibility.Visible;
+            gridHistoryContent.Visibility = Visibility.Hidden;
+            gridSettingsContent.Visibility = Visibility.Hidden;
+            gridColorPalette.Visibility = Visibility.Hidden;
+            FocusInputTextBox();
+
+        }
+        private void RecentlyOpenedItemsButton_Click(object sender, RoutedEventArgs e)
+        {
+            gridMainContent.Visibility = Visibility.Hidden;
+            gridHistoryContent.Visibility = Visibility.Visible;
+            gridSettingsContent.Visibility = Visibility.Hidden;
+            gridColorPalette.Visibility = Visibility.Hidden;
+        }
+        private void ThemesButton_Click(object sender, RoutedEventArgs e)
+        {
+            gridMainContent.Visibility = Visibility.Hidden;
+            gridHistoryContent.Visibility = Visibility.Hidden;
+            gridSettingsContent.Visibility = Visibility.Hidden;
+            gridColorPalette.Visibility = Visibility.Visible;
+        }
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             gridMainContent.Visibility = Visibility.Hidden;
@@ -650,19 +650,405 @@ namespace ServiceNowOpen
             gridColorPalette.Visibility = Visibility.Hidden;
         }
 
+
+        private void MainWindow_Activated(object sender, EventArgs e)
+        {
+            FocusInputTextBox();
+        }
+        private void MainWindow_GotFocus(object sender, RoutedEventArgs e)
+        {
+            FocusInputTextBox();
+        }
+        private void FocusInputTextBox()
+        {
+            txtItem.Focus();
+
+        }
+
+
+        private void ListViewRecentlyOpenedItems_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+            if((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control) // Is Alt key pressed
+            {
+                if(Keyboard.IsKeyDown(Key.C))
+                {
+                    try
+                    {
+                        SetSelectedItemToClipBoard();
+                    }
+                    catch(Exception)
+                    {
+
+                    }
+                }
+            }
+
+
+            if(e.Key == Key.Enter || e.OriginalSource is System.Windows.Controls.TextBlock)
+            {
+                OpenSelectedItemInBrowser();
+            }
+
+        }
+        private void ListViewRecentlyOpenedItems_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if(e.OriginalSource is System.Windows.Controls.TextBlock)
+            {
+                OpenSelectedItemInBrowser();
+            }
+        }
+        private void CopyButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
+            {
+                SetSelectedItemToClipBoard();
+            }
+        }
+        private void OpenInBrowserButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
+            {
+                OpenSelectedItemInBrowser();
+            }
+        }
+        private void SetSelectedItemToClipBoard()
+        {
+            try
+            {
+                RecentlyOpenedItem selectedItem = GetSelectedItem();
+                Clipboard.SetText(selectedItem.Item);
+            }
+            catch(Exception)
+            {
+
+            }
+
+        }
+        private void OpenSelectedItemInBrowser()
+        {
+            try
+            {
+                RecentlyOpenedItem selectedItem = GetSelectedItem();
+                OpenItemInServiceNow(selectedItem.Item);
+            }
+            catch(Exception)
+            {
+
+            }
+            if(listViewRecentlyOpenedItems.Items.Count > 0)
+            {
+
+            }
+        }
+        private RecentlyOpenedItem GetSelectedItem()
+        {
+            try
+            {
+                int selectedItem = listViewRecentlyOpenedItems.SelectedIndex;
+                RecentlyOpenedItem item = recentlyOpenedItems.RecentItems.ElementAt(selectedItem);
+                return item;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+
+        }
+
+
+        private void AlwaysOnTopCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            this.Topmost = true;
+        }
+        private void AlawaysOnTopCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            this.Topmost = false;
+        }
+        private void HideFromTaskBarCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ToggleHideFromTaskBar();
+        }
+        private void HideFromTaskBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ToggleHideFromTaskBar();
+        }
+        private void ToggleHideFromTaskBar()
+        {
+            if(HideFromTaskBarCheckBox.IsChecked == true)
+            {
+              
+                this.ShowInTaskbar = false;
+            }
+
+            if(HideFromTaskBarCheckBox.IsChecked == false)
+            {
+                this.ShowInTaskbar = true;
+            }
+        }
+
+
+        private void SliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetWindowColorsToSelectSliderColor();
+            ChangeButtonColor();
+            ChangeTextColor();
+        }
+        private void SliderBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+            SetWindowColorsToSelectSliderColor();
+            ChangeButtonColor();
+            ChangeTextColor();
+        }
+        private void SliderGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+            SetWindowColorsToSelectSliderColor();
+            ChangeButtonColor();
+            ChangeTextColor();
+        }
+        private void SetWindowColorsToSelectSliderColor()
+        {
+
+            if(ChkBox_ButtonColors.IsChecked == true)
+            {
+
+                ChangeButtonColor();
+
+            }
+
+            if(chkTitleBarCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
+            {
+                serviceNowTheme.TitleBarBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+
+                SetWindowBackgroundColors();
+
+            }
+
+            if(chkWindowContentCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
+            {
+                serviceNowTheme.MainWindowBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+                SetWindowBackgroundColors();
+            }
+
+            if(chkMenuCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
+            {
+                serviceNowTheme.MenuBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
+                SetWindowBackgroundColors();
+            }
+
+        }
+        private void ChangeButtonColor()
+        {
+
+            byte[] colors = new byte[3];
+            colors[0] = (byte)sliderRed.Value;
+            colors[1] = (byte)sliderGreen.Value;
+            colors[2] = (byte)sliderBlue.Value;
+
+
+            // Menu Button Colors
+            if(ChkBox_ButtonColors.IsChecked == true && chkMenuCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
+                serviceNowTheme.MenuPanelButtonsRGB = colors;
+
+                //Home Button
+                Image imgHome = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/home-white.png")
+                };
+
+                ImageBrush backgroundHomeImage = new ImageBrush
+                {
+                    ImageSource = imgHome.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
+                btnHome.Background = backgroundHomeImage;
+
+                //Themes Button
+                Image imgTheme = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/paint-brush-64.png")
+                };
+
+                ImageBrush backgroundThemeImage = new ImageBrush
+                {
+                    ImageSource = imgTheme.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
+                btnThemes.Background = backgroundThemeImage;
+
+                //Recently Opened Items Button
+                Image imgRecentItems = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/recentitems-white.png")
+                };
+
+                ImageBrush backgroundRecentItemsImage = new ImageBrush
+                {
+                    ImageSource = imgRecentItems.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
+                btnHistory.Background = backgroundRecentItemsImage;
+
+                //Settings Button
+                Image imgSettingsButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/settings-white.png")
+                };
+
+                ImageBrush backgroundSettingsButton = new ImageBrush
+                {
+                    ImageSource = imgSettingsButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
+                btnSettings.Background = backgroundSettingsButton;
+            }
+
+            // TitleBar Button Colors
+            if(ChkBox_ButtonColors.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.TitleBarButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
+                serviceNowTheme.TitleBarButtonsRGB = colors;
+
+                //Power Button
+                Image imgPowerButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/close.png")
+                };
+
+                ImageBrush backgroundPowerButton = new ImageBrush
+                {
+                    ImageSource = imgPowerButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                btnClose.Background = backgroundPowerButton;
+
+                //Minimize Button
+                Image imgMinimizeButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/minimize-white.png")
+                };
+                ImageBrush backgroundMinimizeButton = new ImageBrush
+                {
+                    ImageSource = imgMinimizeButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                btnMinimize.Background = backgroundMinimizeButton;
+
+            }
+
+
+            // Main Window Button Colors
+            if(ChkBox_ButtonColors.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.MainWindowButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
+                serviceNowTheme.MainWindowButtonsRGB = colors;
+
+                //Copy Button
+                Image imgCopyButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/copy-white.png")
+                };
+                ImageBrush backgroundCopyButton = new ImageBrush
+                {
+                    ImageSource = imgCopyButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                btnCopy.Background = backgroundCopyButton;
+
+                //Open In Browser Button
+                Image imgOpenInBrowserButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/openinbrowser-white.png")
+                };
+                ImageBrush backgroundOpenInBrowserButton = new ImageBrush
+                {
+                    ImageSource = imgOpenInBrowserButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
+
+                //OK (CheckMark) Button
+                Image imgOKButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/checkmark-white.png")
+                };
+                ImageBrush backgroundOKButton = new ImageBrush
+                {
+                    ImageSource = imgOKButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                btnOK.Background = backgroundOKButton;
+            }
+
+
+        }
+        private void ChangeTextColor()
+        {
+
+            // Text in title bar
+            if(TextColorCheckBox.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.TitleBarTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
+                txtTitle.Foreground = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
+
+            }
+
+            // Text in main window
+            if(TextColorCheckBox.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
+            {
+                serviceNowTheme.MainWindowTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
+
+                Brush color = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
+                txt_Theme.Foreground = color;
+                chkTitleBarCheckBox.Foreground = color;
+                chkMenuCheckBox.Foreground = color;
+                chkWindowContentCheckBox.Foreground = color;
+                txtRed.Foreground = color;
+                txtGreen.Foreground = color;
+                txtBlue.Foreground = color;
+                txtOpacity.Foreground = color;
+                ChkBox_ButtonColors.Foreground = color;
+                TextColorCheckBox.Foreground = color;
+                sliderRed.Foreground = color;
+                sliderGreen.Foreground = color;
+                sliderBlue.Foreground = color;
+                borderSliders.BorderBrush = color;
+                btnResetToDefault.Foreground = color;
+                txtSettings.Foreground = color;
+                txtVersion.Foreground = color;
+                txtRecentlyOpenedItems.Foreground = color;
+                txtOpen.Foreground = color;
+                chkBoxFreeTextSearch.Foreground = color;
+                HideFromTaskBarCheckBox.Foreground = color;
+                chkBoxAlwaysOnTop.Foreground = color;
+            }
+
+        }
+
+
         private void SliderOpacityValue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
             double selectedOpacityValue = GetOpacityValue();
             SetOpacity(selectedOpacityValue);
-
-        }
-
-        private void SetOpacity(double opacity)
-        {
-
-            serviceNowTheme.Opacity = opacity;
-            this.Opacity = serviceNowTheme.Opacity;
 
         }
         private double GetOpacityValue()
@@ -737,177 +1123,16 @@ namespace ServiceNowOpen
             return 0.3;
 
         }
-
-        private void FocusSearchBox()
-        {
-            txtItem.Focus();
-
-        }
-
-        private void MainWindow1_Activated(object sender, EventArgs e)
-        {
-            FocusSearchBox();
-        }
-
-        private void MainWindow1_GotFocus(object sender, RoutedEventArgs e)
-        {
-            FocusSearchBox();
-        }
-
-       
-        private void SetSelectedItemToClipBoard()
-        {
-            try
-            {
-                RecentlyOpenedItem selectedItem = GetSelectedItem();
-                Clipboard.SetText(selectedItem.Item);
-            }
-            catch(Exception)
-            {
-
-            }
-
-        }
-
-        private void OpenSelectedItemInBrowser()
-        {
-            try
-            {
-                RecentlyOpenedItem selectedItem = GetSelectedItem();
-                OpenItemInServiceNow(selectedItem.Item);
-            }
-            catch(Exception)
-            {
-
-            }
-            if(listViewRecentlyOpenedItems.Items.Count > 0)
-            {
-
-            }
-        }
-
-        private RecentlyOpenedItem GetSelectedItem()
-        {
-            try
-            {
-                int selectedItem = listViewRecentlyOpenedItems.SelectedIndex;
-                RecentlyOpenedItem item = recentlyOpenedItems.RecentItems.ElementAt(selectedItem);
-                return item;
-            }
-            catch(Exception)
-            {
-                return null;
-            }
-
-        }
-
-        private void ListViewRecentlyOpenedItems_KeyDown(object sender, KeyEventArgs e)
+        private void SetOpacity(double opacity)
         {
 
-
-            if((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control) // Is Alt key pressed
-            {
-                if(Keyboard.IsKeyDown(Key.C))
-                {
-                    try
-                    {
-                        SetSelectedItemToClipBoard();
-                    }
-                    catch(Exception)
-                    {
-
-                    }
-                }
-            }
-
-
-            if(e.Key == Key.Enter || e.OriginalSource is System.Windows.Controls.TextBlock)
-            {
-                OpenSelectedItemInBrowser();
-            }
+            serviceNowTheme.Opacity = opacity;
+            this.Opacity = serviceNowTheme.Opacity;
 
         }
+        
 
-        private void ListViewRecentlyOpenedItems_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if(e.OriginalSource is System.Windows.Controls.TextBlock)
-            {
-                OpenSelectedItemInBrowser();
-            }
-        }
-
-     
-
-        private void ToggleHideFromTaskBar()
-        {
-            if(HideFromTaskBarCheckBox.IsChecked == true)
-            {
-              
-                this.ShowInTaskbar = false;
-            }
-
-            if(HideFromTaskBarCheckBox.IsChecked == false)
-            {
-                this.ShowInTaskbar = true;
-            }
-        }
-
-
-        private void SliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            SetWindowColorsToSelectSliderColor();
-            ChangeButtonColor();
-            ChangeTextColor();
-        }
-
-        private void SliderBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-            SetWindowColorsToSelectSliderColor();
-            ChangeButtonColor();
-            ChangeTextColor();
-        }
-        private void SliderGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-            SetWindowColorsToSelectSliderColor();
-            ChangeButtonColor();
-            ChangeTextColor();
-        }
-
-        private void SetWindowColorsToSelectSliderColor()
-        {
-
-            if(ChkBox_ButtonColors.IsChecked == true) 
-            {
-
-                ChangeButtonColor();
-
-            }
-
-            if(chkTitleBarCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
-            {
-                serviceNowTheme.TitleBarBackgroundColor  = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                
-                SetWindowBackgroundColors();
-                
-            }
-
-            if(chkWindowContentCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
-            {
-                serviceNowTheme.MainWindowBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                SetWindowBackgroundColors();
-            }
-
-            if(chkMenuCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
-            {
-                serviceNowTheme.MenuBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
-                SetWindowBackgroundColors();
-            }
-
-        }
-
-        private void BtnResetToDefault_Click(object sender, RoutedEventArgs e)
+        private void ResetToDefaultButton_Click(object sender, RoutedEventArgs e)
         {
             serviceNowTheme.ResetTextColorandBackgroundColorToDefault();
             SetWindowBackgroundColors();
@@ -1022,267 +1247,24 @@ namespace ServiceNowOpen
 
         }
 
-        private void ChangeTextColor()
+
+        // TODO Add logic to set sliderbar positions for current color values on the UI
+        private void TitleBarCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            
-            // Text in title bar
-            if(TextColorCheckBox.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.TitleBarTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-                txtTitle.Foreground = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-                
-            }
-
-            // Text in main window
-            if(TextColorCheckBox.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.MainWindowTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-
-                Brush color = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-                txt_Theme.Foreground = color;
-                chkTitleBarCheckBox.Foreground = color;
-                chkMenuCheckBox.Foreground = color;
-                chkWindowContentCheckBox.Foreground = color;
-                txtRed.Foreground = color;
-                txtGreen.Foreground = color;
-                txtBlue.Foreground = color;
-                txtOpacity.Foreground = color;
-                ChkBox_ButtonColors.Foreground = color;
-                TextColorCheckBox.Foreground = color;
-                sliderRed.Foreground = color;
-                sliderGreen.Foreground = color;
-                sliderBlue.Foreground = color;
-                borderSliders.BorderBrush = color;
-                btnResetToDefault.Foreground = color;
-                txtSettings.Foreground = color;
-                txtVersion.Foreground = color;
-                txtRecentlyOpenedItems.Foreground = color;
-                txtOpen.Foreground = color;
-                chkBoxFreeTextSearch.Foreground = color;
-                HideFromTaskBarCheckBox.Foreground = color;
-                chkBoxAlwaysOnTop.Foreground = color;
-            }
 
         }
-        private void ThemesButton_Click(object sender, RoutedEventArgs e)
-        {
-            gridMainContent.Visibility = Visibility.Hidden;
-            gridHistoryContent.Visibility = Visibility.Hidden;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Visible;
-        }
-
         private void MenuPanelCheckBox_Checked(object sender, RoutedEventArgs e)
         {
            
 
         }
-
         private void WindowContentCheckBox_Checked(object sender, RoutedEventArgs e)
         {
           
 
         }
 
-        private void TitleBarCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
-       
-        private void ChangeButtonColor()
-        {
-
-            byte[] colors = new byte[3];
-            colors[0] = (byte)sliderRed.Value;
-            colors[1] = (byte)sliderGreen.Value;
-            colors[2] = (byte)sliderBlue.Value;
-           
-            
-            // Menu Button Colors
-            if(ChkBox_ButtonColors.IsChecked == true && chkMenuCheckBox.IsChecked ==true)
-            {
-                serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
-                serviceNowTheme.MenuPanelButtonsRGB = colors;
-
-                //Home Button
-                Image imgHome = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/home-white.png")
-                };
-
-                ImageBrush backgroundHomeImage = new ImageBrush
-                {
-                    ImageSource = imgHome.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-
-                btnHome.Background = backgroundHomeImage;
-
-                //Themes Button
-                Image imgTheme = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/paint-brush-64.png")
-                };
-
-                ImageBrush backgroundThemeImage = new ImageBrush
-                {
-                    ImageSource = imgTheme.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-
-                btnThemes.Background = backgroundThemeImage;
-
-                //Recently Opened Items Button
-                Image imgRecentItems = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/recentitems-white.png")
-                };
-
-                ImageBrush backgroundRecentItemsImage = new ImageBrush
-                {
-                    ImageSource = imgRecentItems.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-
-                btnHistory.Background = backgroundRecentItemsImage;
-
-                //Settings Button
-                Image imgSettingsButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/settings-white.png")
-                };
-
-                ImageBrush backgroundSettingsButton = new ImageBrush
-                {
-                    ImageSource = imgSettingsButton.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-
-                btnSettings.Background = backgroundSettingsButton;
-            }
-
-            // TitleBar Button Colors
-            if( ChkBox_ButtonColors.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.TitleBarButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
-                serviceNowTheme.TitleBarButtonsRGB = colors;
-
-                //Power Button
-                Image imgPowerButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/close.png")
-                };
-
-                ImageBrush backgroundPowerButton = new ImageBrush
-                {
-                    ImageSource = imgPowerButton.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-                btnClose.Background = backgroundPowerButton;
-
-                //Minimize Button
-                Image imgMinimizeButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/minimize-white.png")
-                };
-                ImageBrush backgroundMinimizeButton = new ImageBrush
-                {
-                    ImageSource = imgMinimizeButton.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-                btnMinimize.Background = backgroundMinimizeButton;
-
-            }
-
-
-            // Main Window Button Colors
-            if(ChkBox_ButtonColors.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
-            {
-                serviceNowTheme.MainWindowButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
-                serviceNowTheme.MainWindowButtonsRGB = colors;
-
-                //Copy Button
-                Image imgCopyButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/copy-white.png")
-                };
-                ImageBrush backgroundCopyButton = new ImageBrush
-                {
-                    ImageSource = imgCopyButton.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-                btnCopy.Background = backgroundCopyButton;
-
-                //Open In Browser Button
-                Image imgOpenInBrowserButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/openinbrowser-white.png")
-                };
-                ImageBrush backgroundOpenInBrowserButton = new ImageBrush
-                {
-                    ImageSource = imgOpenInBrowserButton.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-                btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
-
-                //OK (CheckMark) Button
-                Image imgOKButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/checkmark-white.png")
-                };
-                ImageBrush backgroundOKButton = new ImageBrush
-                {
-                    ImageSource = imgOKButton.Source,
-                    Stretch = Stretch.Fill,
-                    TileMode = TileMode.None
-                };
-                btnOK.Background = backgroundOKButton;
-            }
-
-
-        }
-
-        private void OpenInBrowserButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
-            {
-                OpenSelectedItemInBrowser();
-            }
-        }
-
-
-        private void CopyButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(listViewRecentlyOpenedItems.Items.Count > 0 && listViewRecentlyOpenedItems.SelectedIndex >= 0)
-            {
-                SetSelectedItemToClipBoard();
-            }
-        }
-
-        private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
-            string cleanedItem = txtItem.Text.Trim();
-            OpenItemInServiceNow(cleanedItem);
-        }
-
-        private void HideFromTaskBarCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            ToggleHideFromTaskBar();
-        }
-
-        private void HideFromTaskBarCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            ToggleHideFromTaskBar();
-        }
     }
 }
 
