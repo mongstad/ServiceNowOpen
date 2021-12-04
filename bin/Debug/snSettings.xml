@@ -1,28 +1,83 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Opacity>0.7</Opacity>
+  <Opacity>1</Opacity>
   <MinimizeToTray>false</MinimizeToTray>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>52.830188679245275</SliderPosition>
+  <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>660</Top>
-  <Left>1054</Left>
+  <Top>668</Top>
+  <Left>1379</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FF000000</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FFFFFF00</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FF000000</TitleBarButtonColor>
-    <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#FF0000F3</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
-    <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#FF00009D</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/0n/</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>/0n/</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>AAAA</TitleBarButtonsRGB>
-    <Opacity>0.7</Opacity>
+    <TitleBarTextColor>#FF31B219</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FF314E19</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFD85171</TitleBarButtonColor>
+    <MainWindowTextColor>#FF31B219</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF314E19</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFD85171</MainWindowButtonColor>
+    <MenuButtonColor>#FFD85171</MenuButtonColor>
+    <MenuBackgroundColor>#FF314E19</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>2FFx</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>2FFx</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>2FFx</TitleBarButtonsRGB>
+    <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ASDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
+        <DateTimeOpened>04.12.2021 07:15</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
+        <DateTimeOpened>04.12.2021 07:06</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
+        <DateTimeOpened>04.12.2021 06:46</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFASDF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
+        <DateTimeOpened>04.12.2021 06:35</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>DSAFASF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=DSAFASF</Url>
+        <DateTimeOpened>04.12.2021 06:35</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>04.12.2021 06:15</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>04.12.2021 06:15</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>04.12.2021 06:15</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>04.12.2021 06:15</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>04.12.2021 06:15</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ADFSADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFSADSF</Url>
+        <DateTimeOpened>04.12.2021 06:14</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ADSFAF</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADSFAF</Url>
