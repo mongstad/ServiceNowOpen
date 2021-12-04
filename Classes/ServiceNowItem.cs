@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-
+using System.Text.RegularExpressions;
 namespace ServiceNow
 {
     public class ServiceNowItem
@@ -49,258 +49,215 @@ namespace ServiceNow
         }
         private void CheckIfIncident(string item)
         {
-            if(item.Length > 3)
+
+            Regex regex = new Regex(@"^(INC)\d{7}$" , RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string threeLetterPrefix = item.Substring(0, 3);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int threeLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(3, 1), out threeLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(threeLetterPrefix.ToUpper() == "INC")
-                {
-                    if(isThreeLetterPrefixSuffixNumeric)
-                    {
-                        _isIncident = true;
-
-                    }
-                    else { _isIncident = false; }
-
-                }
+                _isIncident = true;
+            }
+            else
+            {
+                _isIncident = false;
             }
 
         }
         private void CheckIfKBArticle(string item)
         {
-            if(item.Length > 2)
+            Regex regex = new Regex(@"^(KB)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string twoLetterPrefix = item.Substring(0, 2);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int twoLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(2, 1), out twoLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(twoLetterPrefix.ToUpper() == "KB")
-                {
-                    if(isThreeLetterPrefixSuffixNumeric)
-                    {
-                        _isKBArticle = true;
-
-                    }
-                    else { _isKBArticle = false; }
-
-                }
-
+                _isKBArticle = true;
             }
-
+            else
+            {
+                _isKBArticle = false;
+            }
 
         }
 
+
+        //private void CheckIfKBArticle(string item)
+        //{
+        //    if(item.Length > 2)
+        //    {
+        //        string twoLetterPrefix = item.Substring(0, 2);
+
+        //        int twoLetterSuffix;
+
+        //        if(twoLetterPrefix.ToUpper() == "KB")
+        //        {
+        //            if(Int32.TryParse(item.Substring(2, 1), out twoLetterSuffix))
+        //            {
+        //                _isKBArticle = true;
+
+        //            }
+        //            else { _isKBArticle = false; }
+        //        }
+
+        //    }
+
+
+        //}
+
+        //private void CheckIfKBArticle(string item)
+        //{
+        //    if(item.Length > 2)
+        //    {
+        //        string twoLetterPrefix = item.Substring(0, 2);
+
+        //        int twoLetterSuffix;
+
+
+        //        bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(2, 1), out twoLetterSuffix);
+
+
+        //        if(twoLetterPrefix.ToUpper() == "KB")
+        //        {
+        //            if(isThreeLetterPrefixSuffixNumeric)
+        //            {
+        //                _isKBArticle = true;
+
+        //            }
+        //            else { _isKBArticle = false; }
+
+        //        }
+
+        //    }
+
+
+        //}
+
+
         private void CheckIfRequest(string item)
         {
-            if(item.Length > 3)
+            Regex regex = new Regex(@"^(REQ)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string threeLetterPrefix = item.Substring(0, 3);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int threeLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(3, 1), out threeLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(threeLetterPrefix.ToUpper() == "REQ")
-                {
-                    if(isThreeLetterPrefixSuffixNumeric)
-                    {
-                        _isRequest = true;
-
-                    }
-                    else { _isRequest = false; }
-                }
+                _isRequest = true;
+            }
+            else
+            {
+                _isRequest = false;
             }
 
         }
 
         private void CheckIfRequestedItem(string item)
         {
-            if(item.Length > 4)
+            Regex regex = new Regex(@"^(RITM)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string fourLetterPrefix = item.Substring(0, 4);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int fourLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isFourLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(4, 1), out fourLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(fourLetterPrefix.ToUpper() == "RITM")
-                {
-                    if(isFourLetterPrefixSuffixNumeric)
-                    {
-                        _isRequestedItem = true;
-
-                    }
-                    else { _isRequestedItem = false; }
-
-                }
+                _isRequestedItem = true;
             }
-
+            else
+            {
+                _isRequestedItem = false;
+            }
 
         }
 
         private void CheckIfProblem(string item)
         {
-            if(item.Length > 3)
+            Regex regex = new Regex(@"^(PRB)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string threeLetterPrefix = item.Substring(0, 3);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int threeLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(3, 1), out threeLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(threeLetterPrefix.ToUpper() == "PRB")
-                {
-                    if(isThreeLetterPrefixSuffixNumeric)
-                    {
-                        _isProblem = true;
-
-                    }
-                    else { _isProblem = false; }
-
-                }
+                _isProblem = true;
+            }
+            else
+            {
+                _isProblem = false;
             }
 
         }
         private void CheckIfTask(string item)
         {
-            if(item.Length > 4)
+            Regex regex = new Regex(@"^(TASK)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string fourLetterPrefix = item.Substring(0, 4);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int fourLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isThreeLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(4, 1), out fourLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(fourLetterPrefix.ToUpper() == "TASK")
-                {
-                    if(isThreeLetterPrefixSuffixNumeric)
-                    {
-                        _isTask = true;
-
-                    }
-                    else { _isTask = false; }
-
-                }
+                _isTask = true;
             }
+            else
+            {
+                _isTask = false;
+            }
+
 
         }
         private void CheckIfPrivateTask(string item)
         {
-            if(item.Length > 4)
+            Regex regex = new Regex(@"^(PTSK)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string fourLetterPrefix = item.Substring(0, 4);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int fourLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isFourLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(4, 1), out fourLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(fourLetterPrefix.ToUpper() == "PTSK")
-                {
-                    if(isFourLetterPrefixSuffixNumeric)
-                    {
-                        _isPrivateTask = true;
-
-                    }
-                    else { _isPrivateTask = false; }
-
-                }
+                _isPrivateTask = true;
             }
-
-
+            else
+            {
+                _isPrivateTask = false;
+            }
         }
         private void CheckIfMonitor(string item)
         {
-            if(item.Length > 1)
+            Regex regex = new Regex(@"^(M)\d{5}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
-                string oneLetterPrefix = item.Substring(0, 1);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int threeLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isoneLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(1, 1), out threeLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-
-                if(oneLetterPrefix.ToUpper() == "M")
-                {
-                    if(isoneLetterPrefixSuffixNumeric)
-                    {
-                        _isMonitor = true;
-
-                    }
-                    else { _isMonitor = false; }
-
-                }
+                _isMonitor = true;
+            }
+            else
+            {
+                _isMonitor = false;
             }
 
         }
 
         private void CheckIfComputer(string item)
         {
-            if(item.Length > 1)
+            Regex regexOldNames = new Regex(@"^(L|D)\d{5}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regexOldNames.IsMatch(item))
             {
+                _isComputer = true;
+                return;
+            }
+            else
+            {
+                _isComputer = false;
+               
+            }
 
-                string oneLetterPrefix = item.Substring(0, 1);
-#pragma warning disable IDE0018 // Inline variable declaration
-                int oneLetterSuffix;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-                bool isoneLetterPrefixSuffixNumeric = Int32.TryParse(item.Substring(1, 1), out oneLetterSuffix);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
+            Regex regExNewLaptopNames = new Regex(@"^(LAPTOP)([A-Za-z]|\d){9}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-                if(oneLetterPrefix.ToUpper() == "L" || oneLetterPrefix.ToUpper() == "D")
-                {
-                    if(isoneLetterPrefixSuffixNumeric)
-                    {
-                        _isComputer = true;
-
-                    }
-                    else { _isComputer = false; }
-
-                }
+            if(regExNewLaptopNames.IsMatch(item))
+            {
+                _isComputer = true;
+                return;
+            }
+            else
+            {
+                _isComputer = false;
 
             }
 
-            if(item.Length > 6)
-            {
-                string laptopPrefix = item.Substring(0, 6);
-                if(laptopPrefix.ToUpper() == "LAPTOP")
-                {
-                    _isComputer = true;
-                }
-
-            }
         }
         private void CheckIfUserName(string item)
         {
-#pragma warning disable IDE0018 // Inline variable declaration
-            int intfromString;
-#pragma warning restore IDE0018 // Inline variable declaration
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            bool isStringNumber = System.Int32.TryParse(item, out intfromString);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-            if(isStringNumber)
+
+            Regex regex = new Regex(@"^\d{6}", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            if(regex.IsMatch(item))
             {
                 _isUserName = true;
+            }
+            else
+            {
+                _isUserName = false;
             }
 
         }

@@ -3,22 +3,22 @@
   <Opacity>1</Opacity>
   <MinimizeToTray>false</MinimizeToTray>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>100</SliderPosition>
+  <SliderPosition>85.534591194968527</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>668</Top>
-  <Left>1379</Left>
+  <Top>681</Top>
+  <Left>925</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FF31B219</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FF314E19</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFD85171</TitleBarButtonColor>
-    <MainWindowTextColor>#FF31B219</MainWindowTextColor>
-    <MainWindowBackgroundColor>#FF314E19</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#FFD85171</MainWindowButtonColor>
-    <MenuButtonColor>#FFD85171</MenuButtonColor>
-    <MenuBackgroundColor>#FF314E19</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>2FFx</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>2FFx</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>2FFx</TitleBarButtonsRGB>
+    <TitleBarTextColor>#ffffff</TitleBarTextColor>
+    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFFD500</TitleBarButtonColor>
+    <MainWindowTextColor>#FFC10000</MainWindowTextColor>
+    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFC10000</MainWindowButtonColor>
+    <MenuButtonColor>#FFC10000</MenuButtonColor>
+    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>wQAA</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>wQAA</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/9UA</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>
