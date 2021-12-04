@@ -1,28 +1,143 @@
 <?xml version="1.0"?>
-<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Opacity>0.5</Opacity>
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Opacity>1</Opacity>
   <MinimizeToTray>false</MinimizeToTray>
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>23.899371069182351</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>861</Top>
-  <Left>1461</Left>
+  <Top>628</Top>
+  <Left>970</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FFFEFF00</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFFEFF00</TitleBarButtonColor>
+    <TitleBarTextColor>#ffffff</TitleBarTextColor>
+    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#FF0000FF</MainWindowBackgroundColor>
+    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
     <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
     <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#FF0000AB</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/wCY</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>/wCY</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/v8A</TitleBarButtonsRGB>
-    <Opacity>0.5</Opacity>
+    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>ff8A</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>ff8A</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>ff8A</TitleBarButtonsRGB>
+    <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>TOPLAP9F8LIQUTB</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=TOPLAP9F8LIQUTB</Url>
+        <DateTimeOpened>04.12.2021 20:48</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L10734</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10734</Url>
+        <DateTimeOpened>04.12.2021 20:47</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP918LIQUTB</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOP918LIQUTB</Url>
+        <DateTimeOpened>04.12.2021 20:45</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTBV</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=LAPTOP9F8LIQUTBV</Url>
+        <DateTimeOpened>04.12.2021 20:45</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTB7</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=LAPTOP9F8LIQUTB7</Url>
+        <DateTimeOpened>04.12.2021 20:45</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUT1</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOP9F8LIQUT1</Url>
+        <DateTimeOpened>04.12.2021 20:45</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTBD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=LAPTOP9F8LIQUTBD</Url>
+        <DateTimeOpened>04.12.2021 20:45</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTB</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOP9F8LIQUTB</Url>
+        <DateTimeOpened>04.12.2021 20:44</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP123456789</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOP123456789</Url>
+        <DateTimeOpened>04.12.2021 20:44</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L13841</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L13841</Url>
+        <DateTimeOpened>04.12.2021 19:33</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L13841D</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=L13841D</Url>
+        <DateTimeOpened>04.12.2021 19:33</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L138413</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=L138413</Url>
+        <DateTimeOpened>04.12.2021 19:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L13841</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L13841</Url>
+        <DateTimeOpened>04.12.2021 19:32</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTB</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=LAPTOP9F8LIQUTB</Url>
+        <DateTimeOpened>04.12.2021 19:21</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>230545</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=user_name=230545</Url>
+        <DateTimeOpened>04.12.2021 19:12</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>290909</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=user_name=290909</Url>
+        <DateTimeOpened>04.12.2021 19:12</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>2909090</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=user_name=2909090</Url>
+        <DateTimeOpened>04.12.2021 19:11</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>PTSK0007296</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=vtb_task.do?sysparm_query=number=PTSK0007296</Url>
+        <DateTimeOpened>04.12.2021 13:08</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>PRB0040309</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=problem.do?sysparm_query=number=PRB0040309</Url>
+        <DateTimeOpened>04.12.2021 13:08</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>NC0192366</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=NC0192366</Url>
+        <DateTimeOpened>04.12.2021 13:08</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>INC0192366</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=incident.do?sysparm_query=number=INC0192366</Url>
+        <DateTimeOpened>04.12.2021 13:08</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>TASK0046198</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=sc_task.do?sysparm_query=number=TASK0046198</Url>
+        <DateTimeOpened>04.12.2021 13:08</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>KB0012127</Item>
+        <Url>https://uis.service-now.com/sp?id=kb_article&amp;sys_id=KB0012127</Url>
+        <DateTimeOpened>04.12.2021 12:58</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ASDFASDF</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>

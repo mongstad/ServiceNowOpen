@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ServiceNowOpen.exe" version="1.0.0.92" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ServiceNowOpen.exe" version="1.0.0.97" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <description asmv2:iconFile="now-agent-icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ServiceNowOpen" version="1.0.0.88" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ServiceNowOpen" version="1.0.0.88" language="neutral" processorArchitecture="amd64" />
     <commandLine file="ServiceNowOpen.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServiceNowOpen.exe" size="205312">
-      <assemblyIdentity name="ServiceNowOpen" version="1.0.0.88" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="ServiceNowOpen" version="1.0.0.88" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5P3w5ljbiuN6JxvXuBdX+BPmvPBZW9oXwiHXWVucI9Q=</dsig:DigestValue>
+        <dsig:DigestValue>tOtKShvkTlBLXBOdEqlMLKRtROLr4eFj5+qjC/0RhLI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
