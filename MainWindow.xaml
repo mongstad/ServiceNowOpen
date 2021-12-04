@@ -869,16 +869,16 @@
                              FontFamily="Bahnschrift SemiCondensed"
                              Height="20"
                              IsChecked="false"
-                             Name="chkTitleBarCheckBox"
+                             Name="TitleBarCheckBox"
                              Checked="TitleBarCheckBox_Checked"
                              Style="{DynamicResource chkBoxRounderCornerStyle}"
                            />
-                <CheckBox Content="Menu Panel"
+                <CheckBox Content="Left Menu"
                              Foreground="AliceBlue"
                              FontSize="14"
                              FontFamily="Bahnschrift SemiCondensed"
                              Height="20"
-                             Name="chkMenuCheckBox"
+                             Name="LeftMenuCheckBox"
                              IsChecked="False"
                              Checked="MenuPanelCheckBox_Checked"
                              Style="{DynamicResource chkBoxRounderCornerStyle}"
@@ -888,7 +888,7 @@
                              FontSize="14"
                              FontFamily="Bahnschrift SemiCondensed"
                              Height="20"
-                             Name="chkWindowContentCheckBox"
+                             Name="WindowContentCheckBox"
                              IsChecked="False"
                              Checked="WindowContentCheckBox_Checked"
                              Style="{DynamicResource chkBoxRounderCornerStyle}"
@@ -902,7 +902,7 @@
                           Margin="0,0,0,0"
                           VerticalAlignment="Center"
                           VerticalContentAlignment="Center"
-                          x:Name="ChkBox_ButtonColors"
+                          x:Name="ButtonColorCheckBox"
                           Style="{DynamicResource chkBoxRounderCornerStyle}"
                           />
 
@@ -1036,11 +1036,7 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="3"
-                        VerticalAlignment="Center" 
-                        Margin="0,10,0,0" Grid.ColumnSpan="3" 
-                        Width="200" 
-                        HorizontalAlignment="Left"/>
+           
 
         </Grid>
 

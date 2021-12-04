@@ -251,13 +251,13 @@ namespace ServiceNowOpen
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
 
                     txt_Theme.Foreground = textColor;
-                    chkMenuCheckBox.Foreground = textColor;
-                    chkWindowContentCheckBox.Foreground = textColor;
+                    LeftMenuCheckBox.Foreground = textColor;
+                    WindowContentCheckBox.Foreground = textColor;
                     txtRed.Foreground = textColor;
                     txtGreen.Foreground = textColor;
                     txtBlue.Foreground = textColor;
                     txtOpacity.Foreground = textColor;
-                    ChkBox_ButtonColors.Foreground = textColor;
+                    ButtonColorCheckBox.Foreground = textColor;
                     TextColorCheckBox.Foreground = textColor;
                     sliderRed.Foreground = textColor;
                     sliderGreen.Foreground = textColor;
@@ -271,18 +271,18 @@ namespace ServiceNowOpen
                     FreeTextSearchCheckBox.Foreground = textColor;
                     HideFromTaskBarCheckBox.Foreground = textColor;
                     AlwaysOnTopCheckBox.Foreground = textColor;
-                    chkTitleBarCheckBox.Foreground = textColor;
+                    TitleBarCheckBox.Foreground = textColor;
                 }else{
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
 
                     txt_Theme.Foreground = textColor;
-                    chkMenuCheckBox.Foreground = textColor;
-                    chkWindowContentCheckBox.Foreground = textColor;
+                    LeftMenuCheckBox.Foreground = textColor;
+                    WindowContentCheckBox.Foreground = textColor;
                     txtRed.Foreground = textColor;
                     txtGreen.Foreground = textColor;
                     txtBlue.Foreground = textColor;
                     txtOpacity.Foreground = textColor;
-                    ChkBox_ButtonColors.Foreground = textColor;
+                    ButtonColorCheckBox.Foreground = textColor;
                     TextColorCheckBox.Foreground = textColor;
                     sliderRed.Foreground = textColor;
                     sliderGreen.Foreground = textColor;
@@ -296,7 +296,7 @@ namespace ServiceNowOpen
                     FreeTextSearchCheckBox.Foreground = textColor;
                     HideFromTaskBarCheckBox.Foreground = textColor;
                     AlwaysOnTopCheckBox.Foreground = textColor;
-                    chkTitleBarCheckBox.Foreground = textColor;
+                    TitleBarCheckBox.Foreground = textColor;
                    
                 }
 
@@ -345,7 +345,7 @@ namespace ServiceNowOpen
         }
         //private void SetRGBSliderValues()
         //{
-        //    if(chkTitleBarCheckBox.IsChecked == true)
+        //    if(TitleBarCheckBox.IsChecked == true)
         //    {
 
 
@@ -379,7 +379,7 @@ namespace ServiceNowOpen
         //        }
         //    }
 
-        //    if(chkMenuCheckBox.IsChecked == true)
+        //    if(LeftMenuCheckBox.IsChecked == true)
         //    {
 
         //        System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(stackpanelMenu.Background.ToString());
@@ -407,7 +407,7 @@ namespace ServiceNowOpen
 
         //    }
 
-        //    if(chkWindowContentCheckBox.IsChecked == true)
+        //    if(WindowContentCheckBox.IsChecked == true)
         //    {
 
         //        System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(gridMainWindow.Background.ToString());
@@ -812,14 +812,14 @@ namespace ServiceNowOpen
         private void SetWindowColorsToSelectSliderColor()
         {
 
-            if(ChkBox_ButtonColors.IsChecked == true)
+            if(ButtonColorCheckBox.IsChecked == true)
             {
 
                 ChangeButtonColor();
 
             }
 
-            if(chkTitleBarCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
+            if(TitleBarCheckBox.IsChecked == true && ButtonColorCheckBox.IsChecked == false && TextColorCheckBox.IsChecked == false)
             {
                 serviceNowTheme.TitleBarBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
 
@@ -827,13 +827,13 @@ namespace ServiceNowOpen
 
             }
 
-            if(chkWindowContentCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
+            if(WindowContentCheckBox.IsChecked == true && ButtonColorCheckBox.IsChecked == false && TextColorCheckBox.IsChecked == false)
             {
                 serviceNowTheme.MainWindowBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
                 SetWindowBackgroundColors();
             }
 
-            if(chkMenuCheckBox.IsChecked == true && ChkBox_ButtonColors.IsChecked == false && TextColorCheckBox.IsChecked == false)
+            if(LeftMenuCheckBox.IsChecked == true && ButtonColorCheckBox.IsChecked == false && TextColorCheckBox.IsChecked == false)
             {
                 serviceNowTheme.MenuBackgroundColor = serviceNowTheme.ConvertRGBToHexColor((byte)sliderRed.Value, (byte)sliderGreen.Value, (byte)sliderBlue.Value);
                 SetWindowBackgroundColors();
@@ -850,7 +850,7 @@ namespace ServiceNowOpen
 
 
             // Menu Button Colors
-            if(ChkBox_ButtonColors.IsChecked == true && chkMenuCheckBox.IsChecked == true)
+            if(ButtonColorCheckBox.IsChecked == true && LeftMenuCheckBox.IsChecked == true)
             {
                 serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.MenuPanelButtonsRGB = colors;
@@ -917,7 +917,7 @@ namespace ServiceNowOpen
             }
 
             // TitleBar Button Colors
-            if(ChkBox_ButtonColors.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
+            if(ButtonColorCheckBox.IsChecked == true && TitleBarCheckBox.IsChecked == true)
             {
                 serviceNowTheme.TitleBarButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.TitleBarButtonsRGB = colors;
@@ -953,7 +953,7 @@ namespace ServiceNowOpen
 
 
             // Main Window Button Colors
-            if(ChkBox_ButtonColors.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
+            if(ButtonColorCheckBox.IsChecked == true && WindowContentCheckBox.IsChecked == true)
             {
                 serviceNowTheme.MainWindowButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.MainWindowButtonsRGB = colors;
@@ -1004,7 +1004,7 @@ namespace ServiceNowOpen
         {
 
             // Text in title bar
-            if(TextColorCheckBox.IsChecked == true && chkTitleBarCheckBox.IsChecked == true)
+            if(TextColorCheckBox.IsChecked == true && TitleBarCheckBox.IsChecked == true)
             {
                 serviceNowTheme.TitleBarTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
                 txtTitle.Foreground = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
@@ -1012,20 +1012,20 @@ namespace ServiceNowOpen
             }
 
             // Text in main window
-            if(TextColorCheckBox.IsChecked == true && chkWindowContentCheckBox.IsChecked == true)
+            if(TextColorCheckBox.IsChecked == true && WindowContentCheckBox.IsChecked == true)
             {
                 serviceNowTheme.MainWindowTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
 
                 Brush color = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
                 txt_Theme.Foreground = color;
-                chkTitleBarCheckBox.Foreground = color;
-                chkMenuCheckBox.Foreground = color;
-                chkWindowContentCheckBox.Foreground = color;
+                TitleBarCheckBox.Foreground = color;
+                LeftMenuCheckBox.Foreground = color;
+                WindowContentCheckBox.Foreground = color;
                 txtRed.Foreground = color;
                 txtGreen.Foreground = color;
                 txtBlue.Foreground = color;
                 txtOpacity.Foreground = color;
-                ChkBox_ButtonColors.Foreground = color;
+                ButtonColorCheckBox.Foreground = color;
                 TextColorCheckBox.Foreground = color;
                 sliderRed.Foreground = color;
                 sliderGreen.Foreground = color;

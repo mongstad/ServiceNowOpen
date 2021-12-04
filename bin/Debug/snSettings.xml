@@ -3,26 +3,31 @@
   <Opacity>1</Opacity>
   <MinimizeToTray>false</MinimizeToTray>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>40.251572327044</SliderPosition>
+  <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>656</Top>
-  <Left>1415</Left>
+  <Top>668</Top>
+  <Left>1379</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
-    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
-    <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
-    <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>zQAA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>zQAA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>zQAA</TitleBarButtonsRGB>
+    <TitleBarTextColor>#FF31B219</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FF314E19</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFD85171</TitleBarButtonColor>
+    <MainWindowTextColor>#FF31B219</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF314E19</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFD85171</MainWindowButtonColor>
+    <MenuButtonColor>#FFD85171</MenuButtonColor>
+    <MenuBackgroundColor>#FF314E19</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>2FFx</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>2FFx</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>2FFx</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ASDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
+        <DateTimeOpened>04.12.2021 07:15</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ASDFADSF</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
