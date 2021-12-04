@@ -415,7 +415,7 @@
                            Margin="10,0,0,0" Grid.ColumnSpan="2" />
             <StackPanel Orientation="Horizontal" Margin="0,0,10,0"  Grid.Column="1"   HorizontalAlignment="Right" VerticalAlignment="Center">
 
-                <Button Name="btnMinimize" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
+                <Button Name="MinimizeButton" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
                     HorizontalAlignment="Right" Margin="0,0,10,0"
                     BorderBrush="Transparent" Click="MinimizeButton_Click" >
                     <Button.Background>
@@ -426,7 +426,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnMinimize"
+                                    <DoubleAnimation Storyboard.TargetName="MinimizeButton"
                                       Storyboard.TargetProperty="Height"
                                       From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -435,7 +435,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnMinimize"
+                                    <DoubleAnimation Storyboard.TargetName="MinimizeButton"
                                       Storyboard.TargetProperty="Width"
                                       From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -444,7 +444,7 @@
                     </Button.Triggers>
                 </Button>
 
-                <Button Name="btnClose" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
+                <Button Name="CloseButton" Style="{DynamicResource btnMenuStyle}" Width="25" Height="25" 
                     HorizontalAlignment="Right"
                     BorderBrush="Transparent" Click="CloseButton_Click" >
                     <Button.Background>
@@ -454,7 +454,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnClose"
+                                    <DoubleAnimation Storyboard.TargetName="CloseButton"
                                       Storyboard.TargetProperty="Height"
                                       From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -463,7 +463,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnClose"
+                                    <DoubleAnimation Storyboard.TargetName="CloseButton"
                                       Storyboard.TargetProperty="Width"
                                       From="25" To="20" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -490,7 +490,7 @@
             <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackpanelMenu" Height="180">
 
 
-                <Button Name="btnHome"  Grid.Column="3" Grid.Row="2" Style="{DynamicResource btnMenuStyle}" BorderBrush="Transparent"
+                <Button Name="HomeMenuButton"  Grid.Column="3" Grid.Row="2" Style="{DynamicResource btnMenuStyle}" BorderBrush="Transparent"
                     Height="30" Width="30" Margin="0,10,0,0" Click="HomeButton_Click" >
                     <Button.Background>
                         <ImageBrush ImageSource="/Images/home-white.png" Stretch="Fill" TileMode ="None"/>
@@ -499,7 +499,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnHome"
+                                    <DoubleAnimation Storyboard.TargetName="HomeMenuButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -508,7 +508,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnHome"
+                                    <DoubleAnimation Storyboard.TargetName="HomeMenuButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -520,7 +520,7 @@
                 </Button>
 
 
-                <Button Name="btnHistory" Style="{DynamicResource btnMenuStyle}"
+                <Button Name="RecentItemsMenuButton" Style="{DynamicResource btnMenuStyle}"
                 BorderBrush="Transparent"  Grid.Column="3" Grid.Row="2"  
                    Height="30" Width="30" Margin="0,10,0,0" Click="RecentlyOpenedItemsButton_Click">
                     <Button.Background>
@@ -530,7 +530,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnHistory"
+                                    <DoubleAnimation Storyboard.TargetName="RecentItemsMenuButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -539,7 +539,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnHistory"
+                                    <DoubleAnimation Storyboard.TargetName="RecentItemsMenuButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -549,7 +549,7 @@
                     </Button.Triggers>
                 </Button>
 
-                <Button Name="btnThemes" Style="{DynamicResource btnMenuStyle}"
+                <Button Name="ThemesMenuButton" Style="{DynamicResource btnMenuStyle}"
                 BorderBrush="Transparent"  Grid.Column="3" Grid.Row="2"  
                    Height="30" Width="30" Margin="0,10,0,0" Click="ThemesButton_Click">
                     <Button.Background>
@@ -559,7 +559,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnThemes"
+                                    <DoubleAnimation Storyboard.TargetName="ThemesMenuButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -568,7 +568,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnThemes"
+                                    <DoubleAnimation Storyboard.TargetName="ThemesMenuButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -579,7 +579,7 @@
                 </Button>
 
 
-                <Button Name="btnSettings"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" Visibility="Visible"
+                <Button Name="SettingsMenuButton"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" Visibility="Visible"
                     Height="30" Width="30" Margin="0,10,0,0" Click="SettingsButton_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="\Images\settings-white.png"></ImageBrush>
@@ -589,7 +589,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnSettings"
+                                    <DoubleAnimation Storyboard.TargetName="SettingsMenuButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -598,7 +598,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnSettings"
+                                    <DoubleAnimation Storyboard.TargetName="SettingsMenuButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -638,9 +638,9 @@
 
                 <TextBox Style="{DynamicResource txtItemStyle}" MaxLength="100"  Height="30" Width="275" Margin="10" MaxLines="1" TextWrapping="NoWrap"
                          Padding="5,0,0,0" 
-                     Name="txtItem" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
-                     TextChanged="InputTextBox_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="InputTextBox_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
-                <Button Style="{DynamicResource btnMenuStyle}" IsEnabled="False" Width="30" Click="OKButton_Click" Height="30"  Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="btnOK" IsDefault="True">
+                     Name="UserInputTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontWeight="DemiBold"
+                     TextChanged="UserInputTextBox_TextChanged" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" KeyUp="UserInputTextBox_KeyUp"  CharacterCasing="Upper"  FontFamily="Segoe UI"/>
+                <Button Style="{DynamicResource btnMenuStyle}" IsEnabled="False" Width="30" Click="OKButton_Click" Height="30"  Opacity="0.2" BorderThickness="0" BorderBrush="Transparent" Name="GoButton" IsDefault="True">
                     <Button.Background>
                         <ImageBrush ImageSource="/Images/checkmark-white.png" Stretch="Fill" TileMode ="None"/>
                     </Button.Background>
@@ -648,7 +648,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnOK"
+                                    <DoubleAnimation Storyboard.TargetName="GOButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -657,7 +657,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnHome"
+                                    <DoubleAnimation Storyboard.TargetName="HomeMenuButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -668,7 +668,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="0" Grid.Row="2" Margin="10,0,0,0">
-                <CheckBox x:Name="chkBoxFreeTextSearch" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Use free text search" Foreground="AliceBlue"
+                <CheckBox x:Name="FreeTextSearchCheckBox" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Use free text search" Foreground="AliceBlue"
                           FontSize="14" FontFamily="Bahnschrift SemiCondensed" VerticalContentAlignment="Center"
                           HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
 
@@ -679,7 +679,7 @@
                       HorizontalContentAlignment="Left" Checked="HideFromTaskBarCheckBox_Checked" Unchecked="HideFromTaskBarCheckBox_Unchecked" 
                       />
 
-                <CheckBox x:Name="chkBoxAlwaysOnTop" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Always on top" Foreground="AliceBlue"
+                <CheckBox x:Name="AlwaysOnTopCheckBox" Style="{DynamicResource chkBoxRounderCornerStyle}" Content="Always on top" Foreground="AliceBlue"
                           Margin="0,5,0,0" Checked="AlwaysOnTopCheckBox_Checked" VerticalContentAlignment="Center"
                           HorizontalAlignment="Left" HorizontalContentAlignment="Left"
                           Unchecked="AlawaysOnTopCheckBox_Unchecked" FontSize="14" FontFamily="Bahnschrift SemiCondensed"/>
@@ -734,7 +734,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10,0,10,10" Grid.Column="1" HorizontalAlignment="Center" Width="60">
-                <Button Style="{DynamicResource btnMenuStyle}" x:Name="btnCopy" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                <Button Style="{DynamicResource btnMenuStyle}" x:Name="CopyButton" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
                           BorderBrush="Transparent" Margin="0,10,0,0" Click="CopyButton_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Images/copy-white.png"></ImageBrush>
@@ -743,7 +743,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnCopy"
+                                    <DoubleAnimation Storyboard.TargetName="CopyButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -752,7 +752,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnCopy"
+                                    <DoubleAnimation Storyboard.TargetName="CopyButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -761,7 +761,7 @@
                     </Button.Triggers>
                 </Button>
 
-                <Button Style="{DynamicResource btnMenuStyle}" x:Name="btnOpenInBrowser" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                <Button Style="{DynamicResource btnMenuStyle}" x:Name="OpenInBrowserButton" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Top" 
                          BorderBrush="Transparent" Margin="0,10,0,0" Click="OpenInBrowserButton_Click">
 
                     <Button.Background>
@@ -771,7 +771,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnOpenInBrowser"
+                                    <DoubleAnimation Storyboard.TargetName="OpenInBrowserButton"
                                       Storyboard.TargetProperty="Height"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -780,7 +780,7 @@
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="btnOpenInBrowser"
+                                    <DoubleAnimation Storyboard.TargetName="OpenInBrowserButton"
                                       Storyboard.TargetProperty="Width"
                                       From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
                                 </Storyboard>
@@ -1030,7 +1030,7 @@
                         FontFamily="Bahnschrift SemiCondensed"
                         Foreground="AliceBlue"
                         FontSize="14"
-                        Name="btnResetToDefault"
+                        Name="ResetToDefaultButton"
                         Style="{StaticResource btnRecentlyOpenedItemsButtonStyle}" Click="ResetToDefaultButton_Click"/>
 
 

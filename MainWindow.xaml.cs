@@ -51,8 +51,8 @@ namespace ServiceNowOpen
             this.Top = snSettings.Top;
             this.Left = snSettings.Left;
             sliderOpacityValue.Value = snSettings.SliderPosition;
-            chkBoxAlwaysOnTop.IsChecked = snSettings.TopMost;
-            chkBoxFreeTextSearch.IsChecked = snSettings.FreeTextSearch;
+            AlwaysOnTopCheckBox.IsChecked = snSettings.TopMost;
+            FreeTextSearchCheckBox.IsChecked = snSettings.FreeTextSearch;
             HideFromTaskBarCheckBox.IsChecked = snSettings.MinimizeToTray;
             serviceNowTheme = snSettings.ServiceNowTheme;
             recentlyOpenedItems = snSettings.RecentItems;
@@ -110,7 +110,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnHome.Background = backgroundHomeImage;
+                HomeMenuButton.Background = backgroundHomeImage;
 
                     //Themes Button
                     Image imgTheme = new Image
@@ -125,7 +125,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnThemes.Background = backgroundThemeImage;
+                    ThemesMenuButton.Background = backgroundThemeImage;
 
                     //Recently Opened Items Button
                     Image imgRecentItems = new Image
@@ -140,7 +140,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnHistory.Background = backgroundRecentItemsImage;
+                    RecentItemsMenuButton.Background = backgroundRecentItemsImage;
 
                     //Settings Button
                     Image imgSettingsButton = new Image
@@ -155,7 +155,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnSettings.Background = backgroundSettingsButton;
+                    SettingsMenuButton.Background = backgroundSettingsButton;
 
                 }
 
@@ -174,7 +174,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnClose.Background = backgroundPowerButton;
+                    CloseButton.Background = backgroundPowerButton;
 
                     //Minimize Button
                     Image imgMinimizeButton = new Image
@@ -189,7 +189,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnMinimize.Background = backgroundMinimizeButton;
+                    MinimizeButton.Background = backgroundMinimizeButton;
                  }
               
 
@@ -209,7 +209,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnCopy.Background = backgroundCopyButton;
+                    CopyButton.Background = backgroundCopyButton;
 
                     //Open In Browser Button
                     Image imgOpenInBrowserButton = new Image
@@ -224,7 +224,7 @@ namespace ServiceNowOpen
                         TileMode = TileMode.None
                     };
 
-                    btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
+                    OpenInBrowserButton.Background = backgroundOpenInBrowserButton;
 
                     //OK (CheckMark) Button
                     Image imgOKButton = new Image
@@ -238,7 +238,7 @@ namespace ServiceNowOpen
                         Stretch = Stretch.Fill,
                         TileMode = TileMode.None
                     };
-                    btnOK.Background = backgroundOKButton;
+                    GoButton.Background = backgroundOKButton;
 
             }
 
@@ -263,14 +263,14 @@ namespace ServiceNowOpen
                     sliderGreen.Foreground = textColor;
                     sliderBlue.Foreground = textColor;
                     borderSliders.BorderBrush = textColor;
-                    btnResetToDefault.Foreground = textColor;
+                    ResetToDefaultButton.Foreground = textColor;
                     txtSettings.Foreground = textColor;
                     txtVersion.Foreground = textColor;
                     txtRecentlyOpenedItems.Foreground = textColor;
                     txtOpen.Foreground = textColor;
-                    chkBoxFreeTextSearch.Foreground = textColor;
+                    FreeTextSearchCheckBox.Foreground = textColor;
                     HideFromTaskBarCheckBox.Foreground = textColor;
-                    chkBoxAlwaysOnTop.Foreground = textColor;
+                    AlwaysOnTopCheckBox.Foreground = textColor;
                     chkTitleBarCheckBox.Foreground = textColor;
                 }else{
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
@@ -288,14 +288,14 @@ namespace ServiceNowOpen
                     sliderGreen.Foreground = textColor;
                     sliderBlue.Foreground = textColor;
                     borderSliders.BorderBrush = textColor;
-                    btnResetToDefault.Foreground = textColor;
+                    ResetToDefaultButton.Foreground = textColor;
                     txtSettings.Foreground = textColor;
                     txtVersion.Foreground = textColor;
                     txtRecentlyOpenedItems.Foreground = textColor;
                     txtOpen.Foreground = textColor;
-                    chkBoxFreeTextSearch.Foreground = textColor;
+                    FreeTextSearchCheckBox.Foreground = textColor;
                     HideFromTaskBarCheckBox.Foreground = textColor;
-                    chkBoxAlwaysOnTop.Foreground = textColor;
+                    AlwaysOnTopCheckBox.Foreground = textColor;
                     chkTitleBarCheckBox.Foreground = textColor;
                    
                 }
@@ -489,37 +489,37 @@ namespace ServiceNowOpen
         }
 
 
-        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void UserInputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(txtItem.Text != "")
+            if(UserInputTextBox.Text != "")
             {
                 EnableOKButton();
             }
             else { DisableOKButton(); }
         }
-        private void InputTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void UserInputTextBox_KeyUp(object sender, KeyEventArgs e)
         {
 
             if(e.Key == Key.Escape)
             {
-                txtItem.Clear();
+                UserInputTextBox.Clear();
             }
 
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            string cleanedItem = txtItem.Text.Trim();
-            OpenItemInServiceNow(cleanedItem);
+            string cleanedItem = UserInputTextBox.Text.Trim();
+            OpenUserInputInServiceNow(cleanedItem);
         }
-        private void OpenItemInServiceNow(string item)
+        private void OpenUserInputInServiceNow(string item)
         {
 
-            txtItem.Clear();
+            UserInputTextBox.Clear();
 
-            RemoveOldEntries();
+            RemoveOldEntriesFromListView();
             ServiceNowItem newSNItem = new ServiceNowItem(item);
 
-            if(chkBoxFreeTextSearch.IsChecked == true)
+            if(FreeTextSearchCheckBox.IsChecked == true)
             {
                 newSNItem.ForceFreeTextSearch = true;
             }
@@ -529,10 +529,10 @@ namespace ServiceNowOpen
             newSNItem.ExecuteProcess();
             RecentlyOpenedItem newRecentItem = new RecentlyOpenedItem(newSNItem.Item, newSNItem.Url, DateTime.Now);
             recentlyOpenedItems.RecentItems.Insert(0, newRecentItem);
-            txtItem.Focus();
+            UserInputTextBox.Focus();
 
         }
-        private void RemoveOldEntries()
+        private void RemoveOldEntriesFromListView()
         {
             int recenItemsCount = recentlyOpenedItems.RecentItems.Count;
             if(recenItemsCount >= 100)
@@ -542,15 +542,15 @@ namespace ServiceNowOpen
         }
         private void EnableOKButton()
         {
-            btnOK.IsEnabled = true;
-            btnOK.Opacity = 1;
+            GoButton.IsEnabled = true;
+            GoButton.Opacity = 1;
 
         }
         private void DisableOKButton()
         {
 
-            btnOK.IsEnabled = false;
-            btnOK.Opacity = 0.2;
+            GoButton.IsEnabled = false;
+            GoButton.Opacity = 0.2;
 
         }
 
@@ -580,8 +580,8 @@ namespace ServiceNowOpen
                 Opacity = this.Opacity,
                 Left = this.Left,
                 Top = this.Top,
-                TopMost = (bool)chkBoxAlwaysOnTop.IsChecked,
-                FreeTextSearch = (bool)chkBoxFreeTextSearch.IsChecked,
+                TopMost = (bool)AlwaysOnTopCheckBox.IsChecked,
+                FreeTextSearch = (bool)FreeTextSearchCheckBox.IsChecked,
                 SliderPosition = sliderOpacityValue.Value,
                 RecentItems = recentlyOpenedItems,
                 MinimizeToTray = (bool)HideFromTaskBarCheckBox.IsChecked,
@@ -661,7 +661,7 @@ namespace ServiceNowOpen
         }
         private void FocusInputTextBox()
         {
-            txtItem.Focus();
+            UserInputTextBox.Focus();
 
         }
 
@@ -731,7 +731,7 @@ namespace ServiceNowOpen
             try
             {
                 RecentlyOpenedItem selectedItem = GetSelectedItem();
-                OpenItemInServiceNow(selectedItem.Item);
+                OpenUserInputInServiceNow(selectedItem.Item);
             }
             catch(Exception)
             {
@@ -868,7 +868,7 @@ namespace ServiceNowOpen
                     TileMode = TileMode.None
                 };
 
-                btnHome.Background = backgroundHomeImage;
+                HomeMenuButton.Background = backgroundHomeImage;
 
                 //Themes Button
                 Image imgTheme = new Image
@@ -883,7 +883,7 @@ namespace ServiceNowOpen
                     TileMode = TileMode.None
                 };
 
-                btnThemes.Background = backgroundThemeImage;
+                ThemesMenuButton.Background = backgroundThemeImage;
 
                 //Recently Opened Items Button
                 Image imgRecentItems = new Image
@@ -898,7 +898,7 @@ namespace ServiceNowOpen
                     TileMode = TileMode.None
                 };
 
-                btnHistory.Background = backgroundRecentItemsImage;
+                RecentItemsMenuButton.Background = backgroundRecentItemsImage;
 
                 //Settings Button
                 Image imgSettingsButton = new Image
@@ -913,7 +913,7 @@ namespace ServiceNowOpen
                     TileMode = TileMode.None
                 };
 
-                btnSettings.Background = backgroundSettingsButton;
+                SettingsMenuButton.Background = backgroundSettingsButton;
             }
 
             // TitleBar Button Colors
@@ -934,7 +934,7 @@ namespace ServiceNowOpen
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
-                btnClose.Background = backgroundPowerButton;
+                CloseButton.Background = backgroundPowerButton;
 
                 //Minimize Button
                 Image imgMinimizeButton = new Image
@@ -947,7 +947,7 @@ namespace ServiceNowOpen
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
-                btnMinimize.Background = backgroundMinimizeButton;
+                MinimizeButton.Background = backgroundMinimizeButton;
 
             }
 
@@ -969,7 +969,7 @@ namespace ServiceNowOpen
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
-                btnCopy.Background = backgroundCopyButton;
+                CopyButton.Background = backgroundCopyButton;
 
                 //Open In Browser Button
                 Image imgOpenInBrowserButton = new Image
@@ -982,7 +982,7 @@ namespace ServiceNowOpen
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
-                btnOpenInBrowser.Background = backgroundOpenInBrowserButton;
+                OpenInBrowserButton.Background = backgroundOpenInBrowserButton;
 
                 //OK (CheckMark) Button
                 Image imgOKButton = new Image
@@ -995,7 +995,7 @@ namespace ServiceNowOpen
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
-                btnOK.Background = backgroundOKButton;
+                GoButton.Background = backgroundOKButton;
             }
 
 
@@ -1031,14 +1031,14 @@ namespace ServiceNowOpen
                 sliderGreen.Foreground = color;
                 sliderBlue.Foreground = color;
                 borderSliders.BorderBrush = color;
-                btnResetToDefault.Foreground = color;
+                ResetToDefaultButton.Foreground = color;
                 txtSettings.Foreground = color;
                 txtVersion.Foreground = color;
                 txtRecentlyOpenedItems.Foreground = color;
                 txtOpen.Foreground = color;
-                chkBoxFreeTextSearch.Foreground = color;
+                FreeTextSearchCheckBox.Foreground = color;
                 HideFromTaskBarCheckBox.Foreground = color;
-                chkBoxAlwaysOnTop.Foreground = color;
+                AlwaysOnTopCheckBox.Foreground = color;
             }
 
         }
@@ -1153,7 +1153,7 @@ namespace ServiceNowOpen
                 ImageSource = closeImagetemp
             };
 
-            btnClose.Background = closeButtonBrush;
+            CloseButton.Background = closeButtonBrush;
 
             // Minimize Window Button
             Uri minimizeImageUri = new Uri("Images/minimize-white.png", UriKind.Relative);
@@ -1163,7 +1163,7 @@ namespace ServiceNowOpen
             {
                 ImageSource = minimizeImagetemp
             };
-            btnMinimize.Background = minimizeButtonBrush;
+            MinimizeButton.Background = minimizeButtonBrush;
 
 
             // Home Menu Button
@@ -1175,7 +1175,7 @@ namespace ServiceNowOpen
                 ImageSource = homeImagetemp
             };
 
-            btnHome.Background = homeButtonBrush;
+            HomeMenuButton.Background = homeButtonBrush;
 
             // Recent Items Menu Button
             Uri recentitemsImageUri = new Uri("Images/recentitems-white.png", UriKind.Relative);
@@ -1185,7 +1185,7 @@ namespace ServiceNowOpen
             {
                 ImageSource = recentitemsImagetemp
             };
-            btnHistory.Background = recentitemsButtonBrush;
+            RecentItemsMenuButton.Background = recentitemsButtonBrush;
 
             // Themes Menu Button
             Uri themeImageUri = new Uri("Images/paint-brush-64.png", UriKind.Relative);
@@ -1195,7 +1195,7 @@ namespace ServiceNowOpen
             {
                 ImageSource = themeImagetemp
             };
-            btnThemes.Background = themeButtonBrush;
+            ThemesMenuButton.Background = themeButtonBrush;
 
             // Settings Button
             Uri settingsImageUri = new Uri("Images/settings-white.png", UriKind.Relative);
@@ -1205,7 +1205,7 @@ namespace ServiceNowOpen
             {
                 ImageSource = settingsImagetemp
             };
-            btnSettings.Background = settingsButtonBrush;
+            SettingsMenuButton.Background = settingsButtonBrush;
 
            
             // Recent Items - Copy Button
@@ -1217,7 +1217,7 @@ namespace ServiceNowOpen
                 ImageSource = copyImagetemp
             };
 
-            btnCopy.Background = copyButtonBrush;
+            CopyButton.Background = copyButtonBrush;
 
             // Recent Items OpenInBrowser Button
             Uri openinbrowserImageUri = new Uri("Images/openinbrowser-white.png", UriKind.Relative);
@@ -1228,7 +1228,7 @@ namespace ServiceNowOpen
                 ImageSource = openinbrowserImagetemp
             };
 
-            btnOpenInBrowser.Background = openinbrowserButtonBrush;
+            OpenInBrowserButton.Background = openinbrowserButtonBrush;
 
             // Checkmark Button
             Uri checkmarkImageUri = new Uri("Images/checkmark-white.png", UriKind.Relative);
@@ -1238,7 +1238,7 @@ namespace ServiceNowOpen
             {
                 ImageSource = checkmarkImagetemp
             };
-            btnOK.Background = checkmarkButtonBrush;
+            GoButton.Background = checkmarkButtonBrush;
 
             serviceNowTheme.TitleBarButtonColor = serviceNowTheme.DefaultButtonColor;
             serviceNowTheme.MainWindowButtonColor = serviceNowTheme.DefaultButtonColor;

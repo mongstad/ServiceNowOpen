@@ -5,8 +5,8 @@
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>40.251572327044</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>836</Top>
-  <Left>1455</Left>
+  <Top>656</Top>
+  <Left>1415</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
@@ -23,6 +23,16 @@
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ASDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
+        <DateTimeOpened>04.12.2021 07:06</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>ASDFADSF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>
+        <DateTimeOpened>04.12.2021 06:46</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ASDFASDF</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFASDF</Url>
