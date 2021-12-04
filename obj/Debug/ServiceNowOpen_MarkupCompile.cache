@@ -12,9 +12,13 @@ DEBUG;TRACE
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\App.xaml
 1219584333
 12055448943
+<<<<<<< HEAD
 111512520815
+=======
+12-860668360
+>>>>>>> dc1a0c676600d2fe80eed35262a5bd2976eb13ac
 15767508510
 MainWindow.xaml;
 
-False
+True
 
