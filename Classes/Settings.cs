@@ -14,11 +14,39 @@ namespace ServiceNow
         bool _minimizetotray = false;
         ServiceNowTheme _servicenowtheme = new ServiceNowTheme();
         RecentlyOpenedItems _recentlyopeneditems = new RecentlyOpenedItems();
+        string _urlservicenowportal = "";
+        string _regexconfigurationitems = "";
+        string _regexperipherals = "";
+        string _regexusernames = "";
        
         public Settings()
         {
 
             
+        }
+
+        public string URLServiceNowPortal
+        {
+            get { return _urlservicenowportal; }
+            set { _urlservicenowportal = value;}
+        }
+
+        public string RegExConfigurationItems
+        {
+            get { return _regexconfigurationitems; }
+            set { _regexconfigurationitems = value;}
+        }
+
+        public string RegExPeripherals
+        {
+            get { return _regexperipherals; }
+            set { _regexperipherals = value;}
+        }
+
+        public string RegExUsernames
+        {
+            get { return _regexusernames; }
+            set { _regexusernames = value;}
         }
 
         public double Opacity
