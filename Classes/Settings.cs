@@ -107,16 +107,11 @@ namespace ServiceNow
         public void Save()
         {
 
-
-
             using(FileStream fs = new FileStream("snSettings.xml", FileMode.Create))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(Settings));
                 xml.Serialize(fs, this);
             }
-
-
-
 
         }
 

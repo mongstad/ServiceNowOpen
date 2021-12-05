@@ -31,7 +31,7 @@
     <PublisherName>Johnny Mongstad</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -106,6 +106,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ServiceNowConfig.cs" />
     <Compile Include="Classes\RecentlyOpenedItem.cs" />
     <Compile Include="Classes\RecentlyOpenedItems.cs" />
     <Compile Include="Classes\ServiceNowItem.cs" />
@@ -204,7 +205,6 @@
     <Resource Include="Images\about.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\LoadFile.png" />
     <Resource Include="Images\SaveToFile.png" />
     <Resource Include="Images\BrowseForFile.png" />
     <Content Include="ServiceNow.ico">

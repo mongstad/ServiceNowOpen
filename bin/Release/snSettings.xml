@@ -5,12 +5,12 @@
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?</RegExUsernames>
   <Opacity>1</Opacity>
-  <MinimizeToTray>false</MinimizeToTray>
-  <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>53.2012578616352</SliderPosition>
+  <MinimizeToTray>true</MinimizeToTray>
+  <FreeTextSearch>true</FreeTextSearch>
+  <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>829</Top>
-  <Left>1438</Left>
+  <Top>622</Top>
+  <Left>1216</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
@@ -27,6 +27,16 @@
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>JOHNNY MONGSTAD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=name=JOHNNY MONGSTAD</Url>
+        <DateTimeOpened>05.12.2021 18:02</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>JOHNNY MONGSTAD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=name=JOHNNY MONGSTAD</Url>
+        <DateTimeOpened>05.12.2021 18:00</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>JOHNNY MONGSTAD</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=name=JOHNNY MONGSTAD</Url>
