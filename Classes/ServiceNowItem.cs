@@ -17,20 +17,49 @@ namespace ServiceNow
         bool _isKBArticle = false;
         bool _forceFreeTextSearch = false;
         string _searchText = "";
+        string _regexconfigurationitems = "";
+        string _regexusernames = "";
+        string _regexperipherals = "";
         string _item = "";
         string _url = "";
 
 
-        public ServiceNowItem(string item)
+        public ServiceNowItem(string item, string regex_ci , string regex_peripherals, string regex_usernames)
         {
             _searchText = item;
+            _regexconfigurationitems = regex_ci;
+            _regexusernames = regex_usernames;
+            _regexperipherals = regex_peripherals;
             _item = item.ToUpper();
             RunAllChecks();
+        }
+
+        public ServiceNowItem()
+        {
+            
         }
 
         public string Item
         {
             get { return _item; }
+        }
+
+        public string RegExConfigurationItems
+        {
+            get { return _regexconfigurationitems;}
+            set { _regexconfigurationitems = value;}
+        }
+
+        public string RegExPeripherals
+        {
+            get { return _regexperipherals;}
+            set { _regexperipherals = value;}
+        }
+
+        public string RegExUserNames
+        {
+            get { return _regexusernames;}
+            set { _regexusernames = value;}
         }
 
         public string Url
@@ -202,9 +231,9 @@ namespace ServiceNow
                 _isPrivateTask = false;
             }
         }
-        private void CheckIfMonitor(string item)
+        private void CheckIfMonitor(string item, string regularexpression)
         {
-            Regex regex = new Regex(@"^(M)\d{5}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex regex = new Regex(regularexpression, RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             if(regex.IsMatch(item))
             {
@@ -217,9 +246,9 @@ namespace ServiceNow
 
         }
 
-        private void CheckIfComputer(string item)
+        private void CheckIfComputer(string item, string regularexpression)
         {
-            Regex regexOldNames = new Regex(@"^(L|D)\d{5}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex regexOldNames = new Regex(regularexpression, RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             if(regexOldNames.IsMatch(item))
             {
@@ -232,24 +261,13 @@ namespace ServiceNow
                
             }
 
-            Regex regExNewLaptopNames = new Regex(@"^(LAPTOP)([A-Za-z]|\d){9}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-            if(regExNewLaptopNames.IsMatch(item))
-            {
-                _isComputer = true;
-                return;
-            }
-            else
-            {
-                _isComputer = false;
-
-            }
+         
 
         }
-        private void CheckIfUserName(string item)
+        private void CheckIfUserName(string item, string regularexpression)
         {
 
-            Regex regex = new Regex(@"^\d{6}", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex regex = new Regex(regularexpression, RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             if(regex.IsMatch(item))
             {
@@ -265,11 +283,11 @@ namespace ServiceNow
         private void RunAllChecks()
         {
             CheckIfIncident(SearchText);
-            CheckIfComputer(SearchText);
+            CheckIfComputer(SearchText, RegExConfigurationItems);
             CheckIfKBArticle(SearchText);
-            CheckIfMonitor(SearchText);
+            CheckIfMonitor(SearchText, RegExConfigurationItems);
             CheckIfPrivateTask(SearchText);
-            CheckIfUserName(SearchText);
+            CheckIfUserName(SearchText, RegExConfigurationItems);
             CheckIfPrivateTask(SearchText);
             CheckIfRequest(SearchText);
             CheckIfRequestedItem(SearchText);

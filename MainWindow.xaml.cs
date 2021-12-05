@@ -157,7 +157,23 @@ namespace ServiceNowOpen
 
                     SettingsMenuButton.Background = backgroundSettingsButton;
 
-                }
+
+                //About Button
+                Image imgAboutButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/about.png")
+                };
+
+                ImageBrush backgroundAboutButton = new ImageBrush
+                {
+                    ImageSource = imgAboutButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
+                AboutMenuButton.Background = backgroundAboutButton;
+
+            }
 
                 if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
                 {
@@ -250,7 +266,7 @@ namespace ServiceNowOpen
                 {   
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
 
-                    txt_Theme.Foreground = textColor;
+                    //txt_Theme.Foreground = textColor;
                     LeftMenuCheckBox.Foreground = textColor;
                     WindowContentCheckBox.Foreground = textColor;
                     txtRed.Foreground = textColor;
@@ -264,18 +280,23 @@ namespace ServiceNowOpen
                     sliderBlue.Foreground = textColor;
                     borderSliders.BorderBrush = textColor;
                     ResetToDefaultButton.Foreground = textColor;
-                    txtSettings.Foreground = textColor;
+                    //txtSettings.Foreground = textColor;
                     txtVersion.Foreground = textColor;
-                    txtRecentlyOpenedItems.Foreground = textColor;
+                    //txtRecentlyOpenedItems.Foreground = textColor;
                     txtOpen.Foreground = textColor;
                     FreeTextSearchCheckBox.Foreground = textColor;
                     HideFromTaskBarCheckBox.Foreground = textColor;
                     AlwaysOnTopCheckBox.Foreground = textColor;
                     TitleBarCheckBox.Foreground = textColor;
-                }else{
+                    txtUsernames.Foreground = textColor;
+                    txtPeripherals.Foreground = textColor;
+                    txtConfigurationItems.Foreground = textColor;
+                    txtServiceNowURL.Foreground = textColor;
+            }
+            else{
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
 
-                    txt_Theme.Foreground = textColor;
+                    //txt_Theme.Foreground = textColor;
                     LeftMenuCheckBox.Foreground = textColor;
                     WindowContentCheckBox.Foreground = textColor;
                     txtRed.Foreground = textColor;
@@ -289,16 +310,20 @@ namespace ServiceNowOpen
                     sliderBlue.Foreground = textColor;
                     borderSliders.BorderBrush = textColor;
                     ResetToDefaultButton.Foreground = textColor;
-                    txtSettings.Foreground = textColor;
+                    //txtSettings.Foreground = textColor;
                     txtVersion.Foreground = textColor;
-                    txtRecentlyOpenedItems.Foreground = textColor;
+                    //txtRecentlyOpenedItems.Foreground = textColor;
                     txtOpen.Foreground = textColor;
                     FreeTextSearchCheckBox.Foreground = textColor;
                     HideFromTaskBarCheckBox.Foreground = textColor;
                     AlwaysOnTopCheckBox.Foreground = textColor;
                     TitleBarCheckBox.Foreground = textColor;
-                   
-                }
+                    txtUsernames.Foreground = textColor;
+                    txtPeripherals.Foreground = textColor;
+                    txtConfigurationItems.Foreground = textColor;
+                    txtServiceNowURL.Foreground = textColor;
+
+            }
 
                 if(!(serviceNowTheme.TitleBarTextColor == ""))
                 {
@@ -517,7 +542,7 @@ namespace ServiceNowOpen
             UserInputTextBox.Clear();
 
             RemoveOldEntriesFromListView();
-            ServiceNowItem newSNItem = new ServiceNowItem(item);
+            ServiceNowItem newSNItem = new ServiceNowItem(item, CIPrefixTextBox.Text, PeripheralPrefixTextBox.Text, UserNamesPrefixTextBox.Text);
 
             if(FreeTextSearchCheckBox.IsChecked == true)
             {
@@ -621,32 +646,48 @@ namespace ServiceNowOpen
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
+            txtTitle.Text = "ServiceNowOpen";
             gridMainContent.Visibility = Visibility.Visible;
             gridHistoryContent.Visibility = Visibility.Hidden;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
+            gridAbout.Visibility = Visibility.Hidden;
             FocusInputTextBox();
 
         }
         private void RecentlyOpenedItemsButton_Click(object sender, RoutedEventArgs e)
         {
+            txtTitle.Text = "Recently Opened Items";
             gridMainContent.Visibility = Visibility.Hidden;
             gridHistoryContent.Visibility = Visibility.Visible;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
+            gridAbout.Visibility = Visibility.Hidden;
         }
         private void ThemesButton_Click(object sender, RoutedEventArgs e)
         {
+            txtTitle.Text = "Theme";
             gridMainContent.Visibility = Visibility.Hidden;
             gridHistoryContent.Visibility = Visibility.Hidden;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Visible;
+            gridAbout.Visibility = Visibility.Hidden;
         }
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
+            txtTitle.Text = "Settings";
+            gridSettingsContent.Visibility = Visibility.Visible;
             gridMainContent.Visibility = Visibility.Hidden;
             gridHistoryContent.Visibility = Visibility.Hidden;
-            gridSettingsContent.Visibility = Visibility.Visible;
+            gridColorPalette.Visibility = Visibility.Hidden;
+        }
+        private void AboutMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            txtTitle.Text ="About ServiceNowOpen";
+            gridAbout.Visibility = Visibility.Visible;
+            gridSettingsContent.Visibility = Visibility.Hidden;
+            gridMainContent.Visibility = Visibility.Hidden;
+            gridHistoryContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
         }
 
@@ -914,6 +955,22 @@ namespace ServiceNowOpen
                 };
 
                 SettingsMenuButton.Background = backgroundSettingsButton;
+
+
+                //About Button
+                Image imgAboutButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/about.png")
+                };
+
+                ImageBrush backgroundAboutButton = new ImageBrush
+                {
+                    ImageSource = imgAboutButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+
+                AboutMenuButton.Background = backgroundAboutButton;
             }
 
             // TitleBar Button Colors
@@ -1017,7 +1074,7 @@ namespace ServiceNowOpen
                 serviceNowTheme.MainWindowTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
 
                 Brush color = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
-                txt_Theme.Foreground = color;
+                //txt_Theme.Foreground = color;
                 TitleBarCheckBox.Foreground = color;
                 LeftMenuCheckBox.Foreground = color;
                 WindowContentCheckBox.Foreground = color;
@@ -1032,9 +1089,9 @@ namespace ServiceNowOpen
                 sliderBlue.Foreground = color;
                 borderSliders.BorderBrush = color;
                 ResetToDefaultButton.Foreground = color;
-                txtSettings.Foreground = color;
+                //txtSettings.Foreground = color;
                 txtVersion.Foreground = color;
-                txtRecentlyOpenedItems.Foreground = color;
+                //txtRecentlyOpenedItems.Foreground = color;
                 txtOpen.Foreground = color;
                 FreeTextSearchCheckBox.Foreground = color;
                 HideFromTaskBarCheckBox.Foreground = color;
@@ -1264,7 +1321,34 @@ namespace ServiceNowOpen
 
         }
 
+       
 
+        private void PeripheralPrefixTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(PeripheralPrefixTextBox.Text == "")
+            {
+                PeripheralPrefixTextBox.Text = "Enter regex prefix for peripherals";
+            }
+        }
+
+        private void CIPrefixTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(CIPrefixTextBox.Text == "")
+            {
+                CIPrefixTextBox.Text = "Enter regex prefix for configuration items";
+            }
+        }
+
+    
+
+        private void ServiceNowPortalTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(ServiceNowPortalTextBox.Text == "")
+            {
+                ServiceNowPortalTextBox.Text = "Enter url ServiceNow portal";
+        }
+        }
+         
     }
 }
 

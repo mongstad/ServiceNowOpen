@@ -5,8 +5,8 @@
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>23.899371069182351</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>628</Top>
-  <Left>970</Left>
+  <Top>625</Top>
+  <Left>1052</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
@@ -23,6 +23,36 @@
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTB</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOP9F8LIQUTB</Url>
+        <DateTimeOpened>05.12.2021 04:26</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L10734</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10734</Url>
+        <DateTimeOpened>05.12.2021 04:26</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTBD</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=LAPTOP9F8LIQUTBD</Url>
+        <DateTimeOpened>05.12.2021 04:24</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>LAPTOP9F8LIQUTB</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=LAPTOP9F8LIQUTB</Url>
+        <DateTimeOpened>05.12.2021 04:24</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L13841</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L13841</Url>
+        <DateTimeOpened>05.12.2021 04:24</DateTimeOpened>
+      </RecentlyOpenedItem>
+      <RecentlyOpenedItem>
+        <Item>L13572</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L13572</Url>
+        <DateTimeOpened>05.12.2021 04:22</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>TOPLAP9F8LIQUTB</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=TOPLAP9F8LIQUTB</Url>
