@@ -26,7 +26,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\fil02\prog01\_w7_apps\ServiceNow Open\</UpdateUrl>
-    <ProductName>ServiceNow Open</ProductName>
+    <SupportUrl>https://github.com/mongstad</SupportUrl>
+    <ProductName>ServiceNowOpen</ProductName>
     <PublisherName>Johnny Mongstad</PublisherName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
@@ -68,7 +69,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>now-agent-icon.ico</ApplicationIcon>
+    <ApplicationIcon>ServiceNow.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>ServiceNowOpen.App</StartupObject>
@@ -203,7 +204,10 @@
     <Resource Include="Images\about.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="now-agent-icon.ico">
+    <Resource Include="Images\LoadFile.png" />
+    <Resource Include="Images\SaveToFile.png" />
+    <Resource Include="Images\BrowseForFile.png" />
+    <Content Include="ServiceNow.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

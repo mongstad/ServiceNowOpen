@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceNow Open", "ServiceNow Open.csproj", "{F46ED661-EA39-4040-8AD7-AF19DF55FDDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceNowOpen", "ServiceNowOpen.csproj", "{F46ED661-EA39-4040-8AD7-AF19DF55FDDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BA6DD71-4784-411D-A8CD-2492B5269670}"
 	ProjectSection(SolutionItems) = preProject

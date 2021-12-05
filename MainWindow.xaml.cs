@@ -98,67 +98,67 @@ namespace ServiceNowOpen
         private void LoadButtonColors()
         {
 
-                if(serviceNowTheme.MenuButtonColor != serviceNowTheme.DefaultButtonColor)
+            if(serviceNowTheme.MenuButtonColor != serviceNowTheme.DefaultButtonColor)
+            {
+                //Home Button
+                Image imgHome = new Image
                 {
-                    //Home Button
-                    Image imgHome = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/home-white.png")
-                    };
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/home-white.png")
+                };
 
-                    ImageBrush backgroundHomeImage = new ImageBrush 
-                    {
-                        ImageSource = imgHome.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                ImageBrush backgroundHomeImage = new ImageBrush 
+                {
+                    ImageSource = imgHome.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
                 HomeMenuButton.Background = backgroundHomeImage;
 
-                    //Themes Button
-                    Image imgTheme = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/paint-brush-64.png")
-                    };
+                //Themes Button
+                Image imgTheme = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/paint-brush-64.png")
+                };
 
-                    ImageBrush backgroundThemeImage = new ImageBrush
-                    {
-                        ImageSource = imgTheme.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                ImageBrush backgroundThemeImage = new ImageBrush
+                {
+                    ImageSource = imgTheme.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    ThemesMenuButton.Background = backgroundThemeImage;
+                ThemesMenuButton.Background = backgroundThemeImage;
 
-                    //Recently Opened Items Button
-                    Image imgRecentItems = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/recentitems-white.png")
-                    };
+                //Recently Opened Items Button
+                Image imgRecentItems = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/recentitems-white.png")
+                };
 
-                    ImageBrush backgroundRecentItemsImage = new ImageBrush
-                    {
-                        ImageSource = imgRecentItems.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                ImageBrush backgroundRecentItemsImage = new ImageBrush
+                {
+                    ImageSource = imgRecentItems.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    RecentItemsMenuButton.Background = backgroundRecentItemsImage;
+                RecentItemsMenuButton.Background = backgroundRecentItemsImage;
 
-                    //Settings Button
-                    Image imgSettingsButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/settings-white.png")
-                    };
+                //Settings Button
+                Image imgSettingsButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/settings-white.png")
+                };
 
-                    ImageBrush backgroundSettingsButton = new ImageBrush
-                    {
-                        ImageSource = imgSettingsButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                ImageBrush backgroundSettingsButton = new ImageBrush
+                {
+                    ImageSource = imgSettingsButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    SettingsMenuButton.Background = backgroundSettingsButton;
+                SettingsMenuButton.Background = backgroundSettingsButton;
 
 
                 //About Button
@@ -178,7 +178,7 @@ namespace ServiceNowOpen
 
             }
 
-                if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
+            if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
                 {
                     //Power Button
                     Image imgPowerButton = new Image
@@ -212,7 +212,7 @@ namespace ServiceNowOpen
                  }
               
 
-                if(serviceNowTheme.MainWindowButtonColor != serviceNowTheme.DefaultButtonColor)
+            if(serviceNowTheme.MainWindowButtonColor != serviceNowTheme.DefaultButtonColor)
                 {
 
                     //Copy Button
@@ -259,6 +259,34 @@ namespace ServiceNowOpen
                     };
                     GoButton.Background = backgroundOKButton;
 
+                    //Load File Button
+                    Image imgLoadFileButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/BrowseForFile.png")
+                    };
+
+                    ImageBrush backgroundLoadFileButton = new ImageBrush
+                    {
+                        ImageSource = imgLoadFileButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+                    LoadFileButton.Background = backgroundLoadFileButton;
+
+                    //Save To File Button
+                    Image imgSaveToFileButton = new Image
+                    {
+                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/SaveToFile.png")
+                    };
+
+                    ImageBrush backgroundSaveToFileButton = new ImageBrush
+                    {
+                        ImageSource = imgSaveToFileButton.Source,
+                        Stretch = Stretch.Fill,
+                        TileMode = TileMode.None
+                    };
+                    SaveToFileButton.Background = backgroundSaveToFileButton;
+
             }
 
         }
@@ -293,6 +321,9 @@ namespace ServiceNowOpen
                     txtPeripherals.Foreground = textColor;
                     txtConfigurationItems.Foreground = textColor;
                     txtServiceNowURL.Foreground = textColor;
+                    txtServiceNowOpen.Foreground = textColor;
+                    txtDevelopedBy.Foreground = textColor;
+                    txtVersion.Foreground = textColor;
             }
             else{
                     Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
@@ -321,6 +352,9 @@ namespace ServiceNowOpen
                     txtPeripherals.Foreground = textColor;
                     txtConfigurationItems.Foreground = textColor;
                     txtServiceNowURL.Foreground = textColor;
+                    txtServiceNowOpen.Foreground = textColor;
+                    txtDevelopedBy.Foreground = textColor;
+                    txtVersion.Foreground = textColor;
 
             }
 
@@ -338,7 +372,7 @@ namespace ServiceNowOpen
         {
 
             notifyIcon.Text = "ServiceNowOpen";
-            notifyIcon.Icon = new System.Drawing.Icon("now-agent-icon.ico");
+            notifyIcon.Icon = new System.Drawing.Icon("ServiceNow.ico");
             notifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(NotifyIcon_MouseDown);
 
             System.Windows.Forms.MenuItem menuItemResetWindowPosition = new System.Windows.Forms.MenuItem();
@@ -634,12 +668,10 @@ namespace ServiceNowOpen
             if(HideFromTaskBarCheckBox.IsChecked == false)
             {
                 this.WindowState = WindowState.Minimized;
-                //notifyIcon.Visible = false;
                 this.ShowInTaskbar = true;
             }
             else
             {
-                //notifyIcon.Visible = true;
                 this.Visibility = Visibility.Hidden;
                 this.ShowInTaskbar = false;
 
@@ -651,7 +683,7 @@ namespace ServiceNowOpen
         {
             txtTitle.Text = "ServiceNowOpen";
             gridMainContent.Visibility = Visibility.Visible;
-            gridHistoryContent.Visibility = Visibility.Hidden;
+            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
             gridAbout.Visibility = Visibility.Hidden;
@@ -662,7 +694,7 @@ namespace ServiceNowOpen
         {
             txtTitle.Text = "Recently Opened Items";
             gridMainContent.Visibility = Visibility.Hidden;
-            gridHistoryContent.Visibility = Visibility.Visible;
+            gridRecentlyOpenedItems.Visibility = Visibility.Visible;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
             gridAbout.Visibility = Visibility.Hidden;
@@ -671,7 +703,7 @@ namespace ServiceNowOpen
         {
             txtTitle.Text = "Theme";
             gridMainContent.Visibility = Visibility.Hidden;
-            gridHistoryContent.Visibility = Visibility.Hidden;
+            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Visible;
             gridAbout.Visibility = Visibility.Hidden;
@@ -681,7 +713,7 @@ namespace ServiceNowOpen
             txtTitle.Text = "Settings";
             gridSettingsContent.Visibility = Visibility.Visible;
             gridMainContent.Visibility = Visibility.Hidden;
-            gridHistoryContent.Visibility = Visibility.Hidden;
+            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
             gridAbout.Visibility = Visibility.Hidden;
         }
@@ -691,7 +723,7 @@ namespace ServiceNowOpen
             gridAbout.Visibility = Visibility.Visible;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridMainContent.Visibility = Visibility.Hidden;
-            gridHistoryContent.Visibility = Visibility.Hidden;
+            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
             gridColorPalette.Visibility = Visibility.Hidden;
         }
 
@@ -1057,6 +1089,32 @@ namespace ServiceNowOpen
                     TileMode = TileMode.None
                 };
                 GoButton.Background = backgroundOKButton;
+
+                //Load File Button
+                Image imgLoadFileButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/BrowseForFile.png")
+                };
+                ImageBrush backgroundLoadFileButton = new ImageBrush
+                {
+                    ImageSource = imgLoadFileButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                LoadFileButton.Background = backgroundLoadFileButton;
+
+                //Save To File Button
+                Image imgSaveToFileButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/SaveToFile.png")
+                };
+                ImageBrush backgroundSaveToFileButton = new ImageBrush
+                {
+                    ImageSource = imgSaveToFileButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                SaveToFileButton.Background = backgroundSaveToFileButton;
             }
 
 
@@ -1101,6 +1159,10 @@ namespace ServiceNowOpen
                 txtPeripherals.Foreground = color;
                 txtConfigurationItems.Foreground = color;
                 txtServiceNowURL.Foreground = color;
+                txtServiceNowOpen.Foreground = color;
+                txtDevelopedBy.Foreground = color;
+                txtVersion.Foreground = color;
+
             }
 
         }
@@ -1312,10 +1374,35 @@ namespace ServiceNowOpen
             };
             GoButton.Background = checkmarkButtonBrush;
 
+           
+
+            // Load File Button
+            Uri LoadFileImageUri = new Uri("Images/BrowseForFile.png", UriKind.Relative);
+            StreamResourceInfo LoadFileImagestreamInfo = Application.GetResourceStream(LoadFileImageUri);
+            BitmapFrame LoadFileImagetemp = BitmapFrame.Create(LoadFileImagestreamInfo.Stream);
+            ImageBrush LoadFileButtonBrush = new ImageBrush
+            {
+                ImageSource = LoadFileImagetemp
+            };
+            LoadFileButton.Background = LoadFileButtonBrush;
+
+
+            // Save To File Button
+            Uri SaveToFileFileImageUri = new Uri("Images/SaveToFile.png", UriKind.Relative);
+            StreamResourceInfo SaveToFileImagestreamInfo = Application.GetResourceStream(SaveToFileFileImageUri);
+            BitmapFrame SaveToFileImagetemp = BitmapFrame.Create(SaveToFileImagestreamInfo.Stream);
+            ImageBrush SaveToFileButtonBrush = new ImageBrush
+            {
+                ImageSource = SaveToFileImagetemp
+            };
+            SaveToFileButton.Background = SaveToFileButtonBrush;
+
+
+
             serviceNowTheme.TitleBarButtonColor = serviceNowTheme.DefaultButtonColor;
             serviceNowTheme.MainWindowButtonColor = serviceNowTheme.DefaultButtonColor;
             serviceNowTheme.MenuButtonColor = serviceNowTheme.DefaultButtonColor;
-            
+
 
         }
 
@@ -1348,23 +1435,33 @@ namespace ServiceNowOpen
         {
             if(CIPrefixTextBox.Text == "")
             {
-                CIPrefixTextBox.Text = "Enter regex prefix for configuration items";
+                CIPrefixTextBox.Text = "Enter a regex pattern for configuration items";
             }
         }
         private void PeripheralPrefixTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(PeripheralPrefixTextBox.Text == "")
             {
-                PeripheralPrefixTextBox.Text = "Enter regex prefix for peripherals";
+                PeripheralPrefixTextBox.Text = "Enter a regex pattern for peripherals";
             }
         }
         private void UserNamesPrefixTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(UserNamesPrefixTextBox.Text == "")
             {
-                UserNamesPrefixTextBox.Text = "Enter regex prefix for usernames";
+                UserNamesPrefixTextBox.Text = "Enter a regex pattern for usernames";
             }
            
+        }
+
+        private void LoadFileButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveToFileButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

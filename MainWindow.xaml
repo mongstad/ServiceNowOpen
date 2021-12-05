@@ -8,7 +8,7 @@
         Height="175" Width="450"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStyle="None" Activated="MainWindow_Activated" GotFocus="MainWindow_GotFocus" ResizeMode="NoResize" Icon="/now-agent-icon.ico">
+        WindowStyle="None" Activated="MainWindow_Activated" GotFocus="MainWindow_GotFocus" ResizeMode="NoResize" Icon="/ServiceNow.ico">
 
 
     <Window.Resources>
@@ -695,7 +695,7 @@
 
         <!--#region Start Main Window Region-->
 
-        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Visible">
+        <Grid Grid.Column="1" Grid.Row="1" Name="gridMainContent" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"></ColumnDefinition>
@@ -767,7 +767,7 @@
         <!--#endregion-->
 
         <!--#region START Recently Opened Items Content-->
-        <Grid x:Name="gridHistoryContent" Visibility="Hidden" Grid.Column="1" Grid.Row="1">
+        <Grid x:Name="gridRecentlyOpenedItems" Visibility="Hidden" Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="3*"></RowDefinition>
@@ -869,21 +869,22 @@
 
 
         <!--#region Start Settings Content Grid-->
-        <Grid x:Name="gridSettingsContent" Visibility="Hidden" Grid.Column="1" Grid.Row="1" Margin="5,5,0,0" ScrollViewer.CanContentScroll="True">
-            <Grid.RowDefinitions>
+        <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+            <Grid x:Name="gridSettingsContent" Visibility="Visible" Grid.Column="1" Grid.Row="1" Margin="5,5,0,0" Height="180">
+                <Grid.RowDefinitions>
 
-                <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
 
 
 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-                <ColumnDefinition Width="5*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Margin="0,2,0,0" VerticalAlignment="Top">
-                <TextBlock 
+                <StackPanel Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Margin="0,2,0,0" VerticalAlignment="Top">
+                    <TextBlock 
                             Text="ServiceNow URL"  
                             Name="txtServiceNowURL"
                             Height="20"  
@@ -892,9 +893,9 @@
                             Margin="0,5,0,0"
                             FontSize="14">
 
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock 
+                    <TextBlock 
                             Text="Configuration Items"
                             Name="txtConfigurationItems"
                             Height="20"  
@@ -903,9 +904,9 @@
                             FontSize="14"
                             Margin="0,12,0,0">
 
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock 
+                    <TextBlock 
                             Text="Peripherals"
                             Name="txtPeripherals"
                             Height="20"  
@@ -914,10 +915,10 @@
                             FontSize="14"
                             Margin="0,15,0,0">
 
-                </TextBlock>
+                    </TextBlock>
 
-                <TextBlock 
-                            Text="Usernames"
+                    <TextBlock 
+                            Text="Users"
                             Name="txtUsernames"
                             Height="20"  
                             Foreground="AliceBlue"  
@@ -925,23 +926,24 @@
                             FontSize="14"
                             Margin="0,15,0,0">
 
-                </TextBlock>
+                    </TextBlock>
 
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel Grid.Row="1" Width="265"  VerticalAlignment="Top" Grid.ColumnSpan="2"
+                <StackPanel Grid.Row="1" Width="265"  VerticalAlignment="Top" Grid.ColumnSpan="2"
                         Grid.Column="1" 
                         Margin="5,0,0,0" HorizontalAlignment="Left">
 
-                <TextBox Text="https://uis.service-now.com"
+                    <TextBox 
                          x:Name="ServiceNowPortalTextBox" 
+                         Text="Enter url to ServiceNow portal"
                          Style="{DynamicResource SettingsTextBoxStyle}" 
                          Height="25" FontSize="14" TextChanged="ServiceNowPortalTextBox_TextChanged"
                          VerticalContentAlignment="Center"
                          Foreground="Gray"  FontFamily="Bahnschrift SemiCondensed" VerticalAlignment="Top"></TextBox>
 
-                <TextBox x:Name="CIPrefixTextBox"
-                         Text="^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$"
+                    <TextBox x:Name="CIPrefixTextBox"       
+                         Text="Enter regex pattern for configuration items"
                          Style="{DynamicResource SettingsTextBoxStyle}" 
                          Height="25" FontSize="14" 
                          Foreground="Gray" Margin="0,10,0,0"
@@ -950,19 +952,19 @@
                          TextChanged="CIPrefixTextBox_TextChanged"
                          VerticalAlignment="Top"></TextBox>
 
-                <TextBox x:Name="PeripheralPrefixTextBox"
-                         Text="^M\d{5}$"
+                    <TextBox x:Name="PeripheralPrefixTextBox" 
+                         Text="Enter regex pattern for peripherals"
                          Style="{DynamicResource SettingsTextBoxStyle}" 
                          Height="25" FontSize="14" 
                          Foreground="Gray" Margin="0,10,0,0"
                          VerticalContentAlignment="Center"
                          TextChanged="PeripheralPrefixTextBox_TextChanged"
                          FontFamily="Bahnschrift SemiCondensed" 
-                         VerticalAlignment="Top"></TextBox>
+                         VerticalAlignment="Top"/>
 
 
-                <TextBox x:Name="UserNamesPrefixTextBox"
-                         Text="^\d{6}\d?"
+                    <TextBox x:Name="UserNamesPrefixTextBox"
+                         Text="Enter regex pattern for usernames"
                          Style="{DynamicResource SettingsTextBoxStyle}" 
                          Height="25" FontSize="14" 
                          Foreground="Gray" Margin="0,10,0,0"
@@ -970,14 +972,89 @@
                          TextChanged="UserNamesPrefixTextBox_TextChanged"
                          FontFamily="Bahnschrift SemiCondensed" 
                          VerticalAlignment="Top"></TextBox>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,0">
+                        
+                        <Button Name="LoadFileButton"  Grid.Column="3" 
+                                Grid.Row="2" Style="{DynamicResource btnMenuStyle}" 
+                                BorderBrush="Transparent"
+                                Height="30" Width="30" Click="LoadFileButton_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Images/BrowseForFile.png" Stretch="Fill" TileMode ="None"/>
+                            </Button.Background>
+                            
+                            <Button.Triggers>
+                                
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="LoadFileButton"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="LoadFileButton"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
 
-            </StackPanel>
+                            </Button.Triggers>
+
+                        </Button>
+
+                        <Button Name="SaveToFileButton"  Grid.Column="3" 
+                                Grid.Row="2" Style="{DynamicResource btnMenuStyle}" 
+                                BorderBrush="Transparent"
+                                Height="30" Width="30" Click="SaveToFileButton_Click" Margin="15,0,0,0">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Images/SaveToFile.png" Stretch="Fill" TileMode ="None"/>
+                            </Button.Background>
+
+                            <Button.Triggers>
+
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="SaveToFileButton"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="SaveToFileButton"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                            </Button.Triggers>
+
+                        </Button>
+
+                    </StackPanel>
+                  
+
+                </StackPanel>
 
 
 
 
 
-        </Grid>
+            </Grid>
+        </ScrollViewer>
+     
         <!--#endregion End Settings Content Grid-->
 
         <!--#region Theme Start-->
@@ -1191,7 +1268,7 @@
                 <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
 
-                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
