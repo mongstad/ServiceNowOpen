@@ -9,8 +9,8 @@
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>53.2012578616352</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>651</Top>
-  <Left>1112</Left>
+  <Top>829</Top>
+  <Left>1438</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
@@ -21,7 +21,7 @@
     <MenuButtonColor>#ffffff</MenuButtonColor>
     <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
     <MenuPanelButtonsRGB>WboA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>WboA</MainWindowButtonsRGB>
+    <MainWindowButtonsRGB>0IUA</MainWindowButtonsRGB>
     <TitleBarButtonsRGB>WboA</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>

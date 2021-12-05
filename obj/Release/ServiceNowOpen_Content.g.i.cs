@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("now-agent-icon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("servicenow.ico")]
 
 
