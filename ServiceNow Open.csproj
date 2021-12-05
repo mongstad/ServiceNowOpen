@@ -200,6 +200,9 @@
     <Resource Include="Images\close.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\about.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="now-agent-icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

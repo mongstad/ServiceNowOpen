@@ -61,18 +61,18 @@ D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\Serv
 D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.exe
 D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNowOpen.pdb
 D:\OneDrive\Dokumenter\Programming\source\repos\ServiceNow Open\obj\Release\ServiceNow Open.csproj.AssemblyReference.cache
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\now-agent-icon.ico
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe.config
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe.manifest
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.application
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.pdb
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNow Open.csproj.SuggestedBindingRedirects.cache
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\MainWindow.g.cs
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\App.g.cs
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen_Content.g.cs
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen_MarkupCompile.cache
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen_MarkupCompile.lref
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\now-agent-icon.ico
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe.config
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe.manifest
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.application
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.exe
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\ServiceNowOpen.pdb
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\MainWindow.baml
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.g.resources
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.Properties.Resources.resources
@@ -82,4 +82,3 @@ D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowO
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.application
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.exe
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.pdb
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNow Open.csproj.AssemblyReference.cache

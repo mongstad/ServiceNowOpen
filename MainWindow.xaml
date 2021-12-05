@@ -531,7 +531,7 @@
                       Grid.Column="0"
                       Grid.Row="2">
 
-            <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackpanelMenu" Height="180">
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Background="#1C1C1F" Name="stackpanelMenu" Height="230">
 
 
                 <Button Name="HomeMenuButton"  Grid.Column="3" Grid.Row="2" Style="{DynamicResource btnMenuStyle}" BorderBrush="Transparent"
@@ -652,7 +652,34 @@
                     </Button.Triggers>
                 </Button>
 
+                <Button Name="AboutMenuButton"  Style="{DynamicResource btnMenuStyle}"  BorderBrush="Transparent" Visibility="Visible"
+                    Height="30" Width="30" Margin="0,10,0,0" Click="AboutMenuButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="\Images\about.png"></ImageBrush>
+                    </Button.Background>
 
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="SettingsMenuButton"
+                                      Storyboard.TargetProperty="Height"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="SettingsMenuButton"
+                                      Storyboard.TargetProperty="Width"
+                                      From="30" To="25" Duration="0:0:0.20" AutoReverse="True" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </Button.Triggers>
+                </Button>
 
 
             </StackPanel>
@@ -841,34 +868,34 @@
 
 
         <!--#region Start Settings Content Grid-->
-        <Grid x:Name="gridSettingsContent" Visibility="Visible" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0">
+        <Grid x:Name="gridSettingsContent" Visibility="Visible" Grid.Column="1" Grid.Row="1" Margin="5,10,0,0" ScrollViewer.CanContentScroll="True">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
+              
                 <RowDefinition Height="4*"></RowDefinition>
                
-                <RowDefinition Height="2*"></RowDefinition>
+             
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
 
 
-            <TextBlock x:Name="txtSettings" 
+            <!--<TextBlock x:Name="txtSettings" 
                        Text="Settings" 
                        Foreground="AliceBlue" 
                        Margin="0,10,0,0" 
                        Grid.Row="0" 
                        FontSize="18"
                        FontFamily="Bahnschrift SemiCondensed" 
-                       Grid.ColumnSpan="2"/>
+                       Grid.ColumnSpan="2"/>-->
 
 
-            <StackPanel Grid.Row="1" Width="75" HorizontalAlignment="Left" Grid.Column="0" Margin="0,2,0,0">
+            <StackPanel Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Margin="0,2,0,0">
                 <TextBlock 
-                            Text="ServiceNow URL:"
+                            Text="ServiceNow URL"
                             Height="15"  
                             Foreground="AliceBlue"  
                             FontFamily="Bahnschrift SemiCondensed"   
@@ -877,7 +904,7 @@
                 </TextBlock>
 
                 <TextBlock 
-                            Text="CI Prefixes:"
+                            Text="Configuration Items"
                             Height="15"  
                             Foreground="AliceBlue"  
                             FontFamily="Bahnschrift SemiCondensed"   
@@ -885,33 +912,72 @@
                             Margin="0,10,0,0">
 
                 </TextBlock>
+
+                <TextBlock 
+                            Text="Peripherals"
+                            Height="15"  
+                            Foreground="AliceBlue"  
+                            FontFamily="Bahnschrift SemiCondensed"   
+                            FontSize="14"
+                            Margin="0,10,0,0">
+
+                </TextBlock>
+
+                <TextBlock 
+                            Text="Usernames"
+                            Height="15"  
+                            Foreground="AliceBlue"  
+                            FontFamily="Bahnschrift SemiCondensed"   
+                            FontSize="14"
+                            Margin="0,10,0,0">
+
+                </TextBlock>
+                
             </StackPanel>
             
-            <StackPanel Grid.Row="1" Width="300"  VerticalAlignment="Top" Grid.ColumnSpan="2"
+            <StackPanel Grid.Row="1" Width="265"  VerticalAlignment="Top" Grid.ColumnSpan="2"
                         Grid.Column="1" 
                         Margin="5,0,0,0" HorizontalAlignment="Left">
                 
-                <TextBox Text="Enter your oganization's url to the ServiceNow portal here"
-                         x:Name="OrganizationURLTextBox" 
+                <TextBox Text="Enter url ServiceNow portal"
+                         x:Name="ServiceNowPortalTextBox" 
                          Style="{DynamicResource SettingsTextBoxStyle}" 
-                         Height="20" FontSize="15" 
+                         Height="20" FontSize="15" TextChanged="ServiceNowPortalTextBox_TextChanged"
                          Foreground="Gray"  FontFamily="Bahnschrift SemiCondensed" VerticalAlignment="Top"></TextBox>
 
-                <TextBox x:Name="CIPrefixesTextBox"
-                         Text="Enter regex matching prefixes for your organizations CI's separated by comma"
+                <TextBox x:Name="CIPrefixTextBox"
+                         Text="Enter regex prefix for configuration items"
                          Style="{DynamicResource SettingsTextBoxStyle}" 
                          Height="20" FontSize="15" 
                          Foreground="Gray" Margin="0,5,0,0"
                          FontFamily="Bahnschrift SemiCondensed" 
+                         TextChanged="CIPrefixTextBox_TextChanged"
                          VerticalAlignment="Top"></TextBox>
-                
+
+                <TextBox x:Name="PeripheralPrefixTextBox"
+                         Text="Enter regex prefix for peripherals"
+                         Style="{DynamicResource SettingsTextBoxStyle}" 
+                         Height="20" FontSize="15" 
+                         Foreground="Gray" Margin="0,5,0,0"
+                         TextChanged="PeripheralPrefixTextBox_TextChanged"
+                         FontFamily="Bahnschrift SemiCondensed" 
+                         VerticalAlignment="Top"></TextBox>
+
+
+                <TextBox x:Name="UserNamesPrefixTextBox"
+                         Text="Enter regex prefix for usernames"
+                         Style="{DynamicResource SettingsTextBoxStyle}" 
+                         Height="20" FontSize="15" 
+                         Foreground="Gray" Margin="0,5,0,0"
+                         TextChanged="PeripheralPrefixTextBox_TextChanged"
+                         FontFamily="Bahnschrift SemiCondensed" 
+                         VerticalAlignment="Top"></TextBox>
+
             </StackPanel>
 
           
 
-            <TextBlock x:Name="txtVersion" Width="100" Grid.Row="3" Grid.Column="0" Text="Version: " Foreground="AliceBlue" Margin="0,0,0,0"
-                       FontSize="12" FontFamily="Bahnschrift SemiCondensed"
-                       VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
+           
 
         </Grid>
         <!--#endregion End Settings Content Grid-->
@@ -1130,6 +1196,31 @@
             </StackPanel>
 
            
+
+        </Grid>
+
+
+        <Grid x:Name="gridAbout" Visibility="Hidden" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0" ScrollViewer.CanContentScroll="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+
+                <RowDefinition Height="2*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock x:Name="txtVersion" Width="100" Grid.Row="3" Grid.Column="0" Text="Version: " Foreground="AliceBlue" Margin="0,10,0,0"
+                       FontSize="12" FontFamily="Bahnschrift SemiCondensed"
+                       VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
+
+
+
+
 
         </Grid>
 
