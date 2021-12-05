@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ServiceNowConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <URLServiceNowPortal>https://uib.service-now.com</URLServiceNowPortal>
+  <RegExPatternCI>Enter a regex patteradfadsfn for configuration items</RegExPatternCI>
+  <RegExPatternPeripherals>Enter a regex pattern fadsfasdfor peripherals</RegExPatternPeripherals>
+  <RegExPatternUsers>adsf</RegExPatternUsers>
+</ServiceNowConfig>

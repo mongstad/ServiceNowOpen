@@ -1,28 +1,37 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
+  <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
+  <RegExPeripherals>^M\d{5}$</RegExPeripherals>
+  <RegExUsernames>^\d{6}\d?</RegExUsernames>
   <Opacity>1</Opacity>
   <MinimizeToTray>false</MinimizeToTray>
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>85.534591194968527</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>681</Top>
-  <Left>925</Left>
+  <Top>453</Top>
+  <Left>735</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
-    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFFFD500</TitleBarButtonColor>
-    <MainWindowTextColor>#FFC10000</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#FFC10000</MainWindowButtonColor>
-    <MenuButtonColor>#FFC10000</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>wQAA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>wQAA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/9UA</TitleBarButtonsRGB>
+    <TitleBarTextColor>#FFFFFA00</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFB30000</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FF230000</TitleBarButtonColor>
+    <MainWindowTextColor>#FFFFFA00</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FFB30000</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FF230000</MainWindowButtonColor>
+    <MenuButtonColor>#FF230000</MenuButtonColor>
+    <MenuBackgroundColor>#FFB30000</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>IwAA</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>IwAA</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>IwAA</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>L10734</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=cmdb_ci_computer.do?sysparm_query=name=L10734</Url>
+        <DateTimeOpened>05.12.2021 22:08</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ASDFADSF</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ASDFADSF</Url>

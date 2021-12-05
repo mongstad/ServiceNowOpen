@@ -10,13 +10,14 @@ using System.Reflection;
 using Image = System.Windows.Controls.Image;
 using System.Windows.Resources;
 using Monitor = Computer.Monitor;
+using Microsoft.Win32;
 
 namespace ServiceNowOpen
 {
    
     public partial class MainWindow : Window
     {
-
+    
         RecentlyOpenedItems recentlyOpenedItems = new RecentlyOpenedItems();
         System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
         System.Windows.Forms.ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
@@ -1453,14 +1454,40 @@ namespace ServiceNowOpen
             }
            
         }
-
         private void LoadFileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            LoadFile();
         }
-
         private void SaveToFileButton_Click(object sender, RoutedEventArgs e)
         {
+            SaveToFile();
+        }
+        private void SaveToFile()
+        {
+                ServiceNowConfig snConfig = new ServiceNowConfig
+                {
+                    URLServiceNowPortal = ServiceNowPortalTextBox.Text,
+                    RegExPatternCI = CIPrefixTextBox.Text,
+                    RegExPatternPeripherals = PeripheralPrefixTextBox.Text,
+                    RegExPatternUsers = UserNamesPrefixTextBox.Text,
+                };
+
+                snConfig.Save();
+
+        }
+        private void LoadFile()
+        {
+
+            ServiceNowConfig snConfigLoad = new ServiceNowConfig();
+            ServiceNowConfig snConfigLoaded = snConfigLoad.Load();
+
+            if(snConfigLoaded != null)
+            {
+                ServiceNowPortalTextBox.Text = snConfigLoaded.URLServiceNowPortal;
+                CIPrefixTextBox.Text = snConfigLoaded.RegExPatternCI;
+                PeripheralPrefixTextBox.Text = snConfigLoaded.RegExPatternPeripherals;
+                UserNamesPrefixTextBox.Text = snConfigLoaded.RegExPatternUsers;
+            }
 
         }
     }
