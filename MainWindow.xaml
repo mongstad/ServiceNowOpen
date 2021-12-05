@@ -774,8 +774,8 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock Text="Recently Opened Items" Foreground="AliceBlue" Margin="10,10,0,0" Grid.Row="0" FontSize="18"
-                     FontFamily="Bahnschrift SemiCondensed" x:Name="txtRecentlyOpenedItems"/>
+            <!--<TextBlock Text="Recently Opened Items" Foreground="AliceBlue" Margin="10,10,0,0" Grid.Row="0" FontSize="18"
+                     FontFamily="Bahnschrift SemiCondensed" x:Name="txtRecentlyOpenedItems"/>-->
             <StackPanel Grid.RowSpan="3" Grid.Row="1" Grid.Column="0">
 
                 <ListView ItemsSource="{Binding RecentItems}" Style="{DynamicResource listRecentlyOpenedItemsStyle}"  Name="listViewRecentlyOpenedItems" 
@@ -896,6 +896,7 @@
             <StackPanel Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Margin="0,2,0,0">
                 <TextBlock 
                             Text="ServiceNow URL"
+                            Name="txtServiceNowURL"
                             Height="15"  
                             Foreground="AliceBlue"  
                             FontFamily="Bahnschrift SemiCondensed"   
@@ -905,6 +906,7 @@
 
                 <TextBlock 
                             Text="Configuration Items"
+                            Name="txtConfigurationItems"
                             Height="15"  
                             Foreground="AliceBlue"  
                             FontFamily="Bahnschrift SemiCondensed"   
@@ -915,6 +917,7 @@
 
                 <TextBlock 
                             Text="Peripherals"
+                            Name="txtPeripherals"
                             Height="15"  
                             Foreground="AliceBlue"  
                             FontFamily="Bahnschrift SemiCondensed"   
@@ -925,6 +928,7 @@
 
                 <TextBlock 
                             Text="Usernames"
+                            Name="txtUsernames"
                             Height="15"  
                             Foreground="AliceBlue"  
                             FontFamily="Bahnschrift SemiCondensed"   
@@ -1010,14 +1014,14 @@
                     Padding="20,20,0,0"
                     x:Name="borderSliders"
                     />
-            <TextBlock Text="Theme"
+            <!--<TextBlock Text="Theme"
                        x:Name="txt_Theme"
                        Foreground="AliceBlue" 
                       
                        Grid.Row="0" 
                        FontSize="18"
                        FontFamily="Bahnschrift SemiCondensed"
-                       Grid.Column="0"/>
+                       Grid.Column="0"/>-->
 
 
             <!--#region Radiobuttons-->
