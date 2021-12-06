@@ -3,7 +3,8 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace ServiceNow{
+namespace ServiceNow
+{
 
     public class ServiceNowConfig
     {
@@ -11,7 +12,7 @@ namespace ServiceNow{
         string _regexpatternci = "";
         string _regexpatternperipherals = "";
         string _regexpatternusers = "";
-       public ServiceNowConfig(string urlservicenowportal, string regexpatternci, string regexpatternperipherals, string regexpatternusers)
+        public ServiceNowConfig(string urlservicenowportal, string regexpatternci, string regexpatternperipherals, string regexpatternusers)
         {
             _urlservicenowportal = urlservicenowportal;
             _regexpatternci = regexpatternci;
@@ -28,12 +29,12 @@ namespace ServiceNow{
         public string URLServiceNowPortal
         {
             get { return _urlservicenowportal; }
-            set { _urlservicenowportal = value;}
+            set { _urlservicenowportal = value; }
         }
 
         public string RegExPatternCI
         {
-            get {  return _regexpatternci; }
+            get { return _regexpatternci; }
             set { _regexpatternci = value; }
         }
 
@@ -46,7 +47,7 @@ namespace ServiceNow{
         public string RegExPatternUsers
         {
             get { return _regexpatternusers; }
-            set{ _regexpatternusers = value; }
+            set { _regexpatternusers = value; }
         }
 
         public void Save()
@@ -58,8 +59,8 @@ namespace ServiceNow{
                 DefaultExt = ".xml",
                 Filter = "XML files|*.xml"
             };
-         
-           
+
+
             Nullable<bool> result = dlgSaveToFile.ShowDialog();
 
             if(result == true)
@@ -96,11 +97,11 @@ namespace ServiceNow{
                     XmlSerializer xml = new XmlSerializer(typeof(ServiceNowConfig));
                     return (ServiceNowConfig)xml.Deserialize(fs);
                 }
-               
-                   
+
+
             }
 
-           return null;
+            return null;
 
         }
 

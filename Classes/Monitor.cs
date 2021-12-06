@@ -1,9 +1,10 @@
 ﻿using System.Windows;
 
-namespace Computer{
+namespace Computer
+{
 
-   public static class Monitor
-   {
+    public static class Monitor
+    {
         public static double[] GetPrimaryMonitorCenterPosition(double WindowWidth, double WindowHeight)
         {
 
@@ -17,12 +18,8 @@ namespace Computer{
             position[0] = centerHorizontal;
             position[1] = centerVertical;
             return position;
-          
+
 
         }
     }
-
-   
-
-
 }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PublishUrlHistory>D:\OneDrive\Dokumenter\Programming\Publish\ServiceNow Open\|\\FIL02\prog01\_w7_apps\ServiceNow Open\|h\|\\fil02\prog01\_w7_apps\ServiceNow Open\|\\fil02\prog01\_w7_apps\ServiceNow OpenItem\</PublishUrlHistory>
     <InstallUrlHistory />
-    <SupportUrlHistory />
+    <SupportUrlHistory>https://github.com/mongstad</SupportUrlHistory>
     <UpdateUrlHistory>\\fil02\prog01\_w7_apps\ServiceNow Open\|\\fil02\prog01\_w7_apps\ServiceNow OpenItem\</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />

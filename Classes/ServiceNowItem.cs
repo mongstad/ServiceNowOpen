@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
 namespace ServiceNow
 {
@@ -26,7 +25,7 @@ namespace ServiceNow
         string _url = "";
 
 
-        public ServiceNowItem(string item, string regex_ci , string regex_peripherals, string regex_usernames, string urlservicenowportal)
+        public ServiceNowItem(string item, string regex_ci, string regex_peripherals, string regex_usernames, string urlservicenowportal)
         {
             _searchText = item;
             _regexconfigurationitems = regex_ci;
@@ -39,7 +38,7 @@ namespace ServiceNow
 
         public ServiceNowItem()
         {
-            
+
         }
 
         public string Item
@@ -49,26 +48,26 @@ namespace ServiceNow
 
         public string URLServiceNowPortal
         {
-            get { return _urlservicenowportal;}
+            get { return _urlservicenowportal; }
             set { _urlservicenowportal = value; }
         }
 
         public string RegExConfigurationItems
         {
-            get { return _regexconfigurationitems;}
-            set { _regexconfigurationitems = value;}
+            get { return _regexconfigurationitems; }
+            set { _regexconfigurationitems = value; }
         }
 
         public string RegExPeripherals
         {
-            get { return _regexperipherals;}
-            set { _regexperipherals = value;}
+            get { return _regexperipherals; }
+            set { _regexperipherals = value; }
         }
 
         public string RegExUserNames
         {
-            get { return _regexusernames;}
-            set { _regexusernames = value;}
+            get { return _regexusernames; }
+            set { _regexusernames = value; }
         }
 
         public string Url
@@ -88,7 +87,7 @@ namespace ServiceNow
         private void CheckIfIncident(string item)
         {
 
-            Regex regex = new Regex(@"^(INC)\d{7}$" , RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex regex = new Regex(@"^(INC)\d{7}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             if(regex.IsMatch(item))
             {
@@ -215,10 +214,10 @@ namespace ServiceNow
             else
             {
                 _isComputer = false;
-               
+
             }
 
-         
+
 
         }
         private void CheckIfUserName(string item)
@@ -301,7 +300,7 @@ namespace ServiceNow
                 launched = true;
             }
 
-            
+
 
             if(_isComputer)
             {

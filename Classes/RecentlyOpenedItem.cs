@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace ServiceNow {
+namespace ServiceNow
+{
     public class RecentlyOpenedItem
     {
         string _item = "";

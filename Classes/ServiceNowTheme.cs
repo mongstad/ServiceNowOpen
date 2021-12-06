@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Windows.Media;
-using Brush = System.Windows.Media.Brush;
-using Color = System.Windows.Media.Color;
-using BrushConverter = System.Windows.Media.BrushConverter;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
+using Brush = System.Windows.Media.Brush;
+using BrushConverter = System.Windows.Media.BrushConverter;
+using Color = System.Windows.Media.Color;
 
 
-namespace ServiceNow{
-  
-    
+namespace ServiceNow
+{
+
+
     public class ServiceNowTheme
     {
 
@@ -60,8 +61,8 @@ namespace ServiceNow{
 
         public string MenuDefaultBackgroundColor
         {
-            get{ return _menudefaultbackgroundcolor; }
-          
+            get { return _menudefaultbackgroundcolor; }
+
         }
 
         public string TitleBarDefaultBackgroundColor
@@ -74,15 +75,15 @@ namespace ServiceNow{
             get { return _mainwindowdefaultbackgroundcolor; }
         }
 
-      
-      
+
+
         public string TitleBarTextColor
         {
-            get{ return _titlebartextcolor; }
-            set{ _titlebartextcolor = value; }
+            get { return _titlebartextcolor; }
+            set { _titlebartextcolor = value; }
         }
 
-       
+
 
         public string TitleBarBackgroundColor
         {
@@ -90,11 +91,11 @@ namespace ServiceNow{
             set { _titlebarbackgroundcolor = value; }
         }
 
-       
+
 
         public string TitleBarButtonColor
         {
-            get { return _titlebarbuttoncolor; }    
+            get { return _titlebarbuttoncolor; }
             set { _titlebarbuttoncolor = value; }
         }
 
@@ -113,8 +114,8 @@ namespace ServiceNow{
 
         public string MainWindowButtonColor
         {
-            get { return _mainwindowbuttoncolor;}
-            set { _mainwindowbuttoncolor = value;}
+            get { return _mainwindowbuttoncolor; }
+            set { _mainwindowbuttoncolor = value; }
         }
 
 
@@ -142,7 +143,7 @@ namespace ServiceNow{
         }
         public byte[] MenuPanelButtonsRGB
         {
-          get
+            get
             {
                 byte[] rgbArray = new byte[3];
                 rgbArray[0] = _r_menupanelbuttons;
@@ -152,7 +153,8 @@ namespace ServiceNow{
                 return rgbArray;
             }
 
-            set{
+            set
+            {
                 _r_menupanelbuttons = value[0];
                 _g_menupanelbuttons = value[1];
                 _b_menupanelbuttons = value[2];
@@ -217,9 +219,6 @@ namespace ServiceNow{
             return getBrush;
         }
 
-
-
-
         public WriteableBitmap ConvertImageColor(byte red, byte green, byte blue, byte alpha, string imagepath)
         {
             Uri uri = new Uri(imagepath, UriKind.Relative);
@@ -231,7 +230,7 @@ namespace ServiceNow{
             image.CopyPixels(pixels, image.PixelWidth * 4, 0);
 
             var bmp = new WriteableBitmap(image.PixelWidth, image.PixelHeight, image.DpiX, image.DpiY, PixelFormats.Pbgra32, null);
-            
+
             for(int i = 0; i < pixels.Length / 4; ++i)
             {
                 byte b = pixels[i * 4];
@@ -263,7 +262,7 @@ namespace ServiceNow{
                     }
 
                 }
-                
+
                 bmp.WritePixels(new Int32Rect(0, 0, image.PixelWidth, image.PixelHeight), pixels, image.PixelWidth * 4, 0);
 
                 // Source: https://stackoverflow.com/questions/20856424/wpf-modifying-image-colors-on-the-fly-c
@@ -344,7 +343,7 @@ namespace ServiceNow{
 
         }
 
-      
+
 
         public Brush ConvertRGBToBrush(int r, int g, int b)
         {
@@ -360,10 +359,10 @@ namespace ServiceNow{
         {
             Color newColor = System.Windows.Media.Color.FromRgb((byte)r, (byte)g, (byte)b);
             Brush brush = new SolidColorBrush(newColor);
-           
+
             BrushConverter brushConverter = new BrushConverter();
             string hexColor = brushConverter.ConvertToString(brush);
-           
+
             return hexColor;
         }
 
