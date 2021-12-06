@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
+  <URLServiceNowPortal>dfdfEnter url ServiceNow portal</URLServiceNowPortal>
   <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?</RegExUsernames>
   <Opacity>1</Opacity>
-  <MinimizeToTray>true</MinimizeToTray>
-  <FreeTextSearch>true</FreeTextSearch>
+  <HideFromTaskbar>false</HideFromTaskbar>
+  <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>622</Top>
-  <Left>1216</Left>
+  <Top>798</Top>
+  <Left>1397</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>

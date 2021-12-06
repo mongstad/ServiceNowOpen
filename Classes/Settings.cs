@@ -11,7 +11,7 @@ namespace ServiceNow
         double _sliderPosition = 100;
         bool _topmost = false;
         bool _freetextsearch = false;
-        bool _minimizetotray = false;
+        bool _hidefromtaskbar = false;
         ServiceNowTheme _servicenowtheme = new ServiceNowTheme();
         RecentlyOpenedItems _recentlyopeneditems = new RecentlyOpenedItems();
         string _urlservicenowportal = "";
@@ -55,10 +55,10 @@ namespace ServiceNow
             set { _opacity = value; }
         }
 
-        public bool MinimizeToTray
+        public bool HideFromTaskbar
         {
-            get { return _minimizetotray; }
-            set { _minimizetotray = value; }
+            get { return _hidefromtaskbar; }
+            set { _hidefromtaskbar = value; }
         }
 
        

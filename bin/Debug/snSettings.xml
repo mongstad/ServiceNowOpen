@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
+  <URLServiceNowPortal>afd</URLServiceNowPortal>
   <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?</RegExUsernames>
   <Opacity>1</Opacity>
-  <MinimizeToTray>false</MinimizeToTray>
+  <HideFromTaskbar>false</HideFromTaskbar>
   <FreeTextSearch>false</FreeTextSearch>
   <SliderPosition>85.534591194968527</SliderPosition>
   <TopMost>false</TopMost>

@@ -52,10 +52,13 @@ namespace ServiceNow{
         public void Save()
         {
 
-            SaveFileDialog dlgSaveToFile = new SaveFileDialog();
-            dlgSaveToFile.FileName = "ServiceNowOpenConfig";
-            dlgSaveToFile.DefaultExt = ".xml";
-            dlgSaveToFile.Filter = "XML files|*.xml";
+            SaveFileDialog dlgSaveToFile = new SaveFileDialog
+            {
+                FileName = "config",
+                DefaultExt = ".xml",
+                Filter = "XML files|*.xml"
+            };
+         
            
             Nullable<bool> result = dlgSaveToFile.ShowDialog();
 
@@ -70,7 +73,6 @@ namespace ServiceNow{
 
             }
 
-
         }
 
         public ServiceNowConfig Load()
@@ -80,7 +82,7 @@ namespace ServiceNow{
             {
                 Filter = "XML files|*.xml",
                 DefaultExt = ".xml",
-                FileName = "ServiceNowOpenConfig"
+                FileName = "config"
             };
 
             Nullable<bool> result = dlgOpenFile.ShowDialog();

@@ -54,7 +54,7 @@ namespace ServiceNowOpen
             sliderOpacityValue.Value = snSettings.SliderPosition;
             AlwaysOnTopCheckBox.IsChecked = snSettings.TopMost;
             FreeTextSearchCheckBox.IsChecked = snSettings.FreeTextSearch;
-            HideFromTaskBarCheckBox.IsChecked = snSettings.MinimizeToTray;
+            HideFromTaskBarCheckBox.IsChecked = snSettings.HideFromTaskbar;
             serviceNowTheme = snSettings.ServiceNowTheme;
             recentlyOpenedItems = snSettings.RecentItems;
             this.DataContext = recentlyOpenedItems;
@@ -502,11 +502,18 @@ namespace ServiceNowOpen
         {
             if(e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                this.Visibility = Visibility.Visible;
-                this.Activate();
+
+                if(this.ShowInTaskbar == false)
+                {
+                    this.Visibility = Visibility.Visible;
+                    this.Activate();
+                }else{
+                   
+                    this.WindowState = WindowState.Normal;
+                    this.Activate();
+                }
+
             }
-
-
 
             if(e.Button == System.Windows.Forms.MouseButtons.Right)
             {
@@ -528,25 +535,6 @@ namespace ServiceNowOpen
             this.Left = centerScreenPos[0];
             this.Top = centerScreenPos[1];
         }
-
-
-        private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            MoveWindow();
-        }
-        private void MoveWindow()
-        {
-            try
-            {
-                DragMove();
-            }
-            catch(Exception)
-            {
-
-                throw;
-            }
-        }
-
 
         private void UserInputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -614,6 +602,23 @@ namespace ServiceNowOpen
         }
 
 
+
+        private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveWindow();
+        }
+        private void MoveWindow()
+        {
+            try
+            {
+                DragMove();
+            }
+            catch(Exception)
+            {
+
+                throw;
+            }
+        }
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -643,7 +648,7 @@ namespace ServiceNowOpen
                 FreeTextSearch = (bool)FreeTextSearchCheckBox.IsChecked,
                 SliderPosition = sliderOpacityValue.Value,
                 RecentItems = recentlyOpenedItems,
-                MinimizeToTray = (bool)HideFromTaskBarCheckBox.IsChecked,
+                HideFromTaskbar = (bool)HideFromTaskBarCheckBox.IsChecked,
                 URLServiceNowPortal = ServiceNowPortalTextBox.Text,
                 RegExConfigurationItems = CIPrefixTextBox.Text,
                 RegExPeripherals = PeripheralPrefixTextBox.Text,
@@ -656,26 +661,22 @@ namespace ServiceNowOpen
 
         }
 
-
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
 
-            WindowGotMiniMizedActions();
+            WindowMinimized();
         }
-        private void WindowGotMiniMizedActions()
+        private void WindowMinimized()
         {
 
-
-            if(HideFromTaskBarCheckBox.IsChecked == false)
-            {
-                this.WindowState = WindowState.Minimized;
-                this.ShowInTaskbar = true;
-            }
-            else
+   
+            if(HideFromTaskBarCheckBox.IsChecked == true)
             {
                 this.Visibility = Visibility.Hidden;
-                this.ShowInTaskbar = false;
+              
 
+            }else{
+                this.WindowState = WindowState.Minimized;   
             }
         }
 
@@ -1427,9 +1428,10 @@ namespace ServiceNowOpen
 
         private void ServiceNowPortalTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
             if(ServiceNowPortalTextBox.Text == "")
             {
-                ServiceNowPortalTextBox.Text = "Enter url ServiceNow portal";
+                ServiceNowPortalTextBox.Text = "Enter url to ServiceNow portal";
             }
         }
         private void CIPrefixTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -1490,6 +1492,8 @@ namespace ServiceNowOpen
             }
 
         }
+
+    
     }
 }
 
