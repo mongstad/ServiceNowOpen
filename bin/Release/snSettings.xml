@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
+  <URLServiceNowPortal>dfdfEnter url ServiceNow portal</URLServiceNowPortal>
   <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?</RegExUsernames>
   <Opacity>1</Opacity>
-  <MinimizeToTray>true</MinimizeToTray>
+  <HideFromTaskbar>true</HideFromTaskbar>
   <FreeTextSearch>true</FreeTextSearch>
   <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>622</Top>
-  <Left>1216</Left>
+  <Top>481</Top>
+  <Left>844</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
+    <TitleBarButtonColor>#FFFF0000</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
     <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
-    <MenuButtonColor>#ffffff</MenuButtonColor>
+    <MainWindowButtonColor>#FFFF0000</MainWindowButtonColor>
+    <MenuButtonColor>#FFFF0000</MenuButtonColor>
     <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>WboA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>0IUA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>WboA</TitleBarButtonsRGB>
+    <MenuPanelButtonsRGB>/wAA</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>/wAA</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/wAA</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>

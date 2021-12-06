@@ -1,23 +1,22 @@
-﻿using System;
+﻿using ServiceNow;
+using System;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using ServiceNow;
-using System.Reflection;
-using Image = System.Windows.Controls.Image;
 using System.Windows.Resources;
+using Image = System.Windows.Controls.Image;
 using Monitor = Computer.Monitor;
-using Microsoft.Win32;
 
 namespace ServiceNowOpen
 {
-   
+
     public partial class MainWindow : Window
     {
-    
+
         RecentlyOpenedItems recentlyOpenedItems = new RecentlyOpenedItems();
         System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
         System.Windows.Forms.ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
@@ -29,7 +28,7 @@ namespace ServiceNowOpen
             LoadSettings();
             SetWindowBackgroundColors();
             LoadButtonColors();
-            LoadTextColors();   
+            LoadTextColors();
             SetNotifyIconSettings();
             SetVersionInfo();
             //SetRGBSliderValues();
@@ -54,7 +53,7 @@ namespace ServiceNowOpen
             sliderOpacityValue.Value = snSettings.SliderPosition;
             AlwaysOnTopCheckBox.IsChecked = snSettings.TopMost;
             FreeTextSearchCheckBox.IsChecked = snSettings.FreeTextSearch;
-            HideFromTaskBarCheckBox.IsChecked = snSettings.MinimizeToTray;
+            HideFromTaskBarCheckBox.IsChecked = snSettings.HideFromTaskbar;
             serviceNowTheme = snSettings.ServiceNowTheme;
             recentlyOpenedItems = snSettings.RecentItems;
             this.DataContext = recentlyOpenedItems;
@@ -63,33 +62,39 @@ namespace ServiceNowOpen
             CIPrefixTextBox.Text = snSettings.RegExConfigurationItems;
             PeripheralPrefixTextBox.Text = snSettings.RegExPeripherals;
             UserNamesPrefixTextBox.Text = snSettings.RegExUsernames;
-          
+
 
         }
         private void SetWindowBackgroundColors()
         {
-            
+
             if(!(serviceNowTheme.MainWindowBackgroundColor == ""))
             {
                 gridMainWindow.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowBackgroundColor);
-            }else{
+            }
+            else
+            {
                 gridMainWindow.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowDefaultBackgroundColor);
             }
-            
+
             if(!(serviceNowTheme.TitleBarBackgroundColor == ""))
             {
                 gridTitleBar.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarBackgroundColor);
-            }else{
+            }
+            else
+            {
                 gridTitleBar.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarDefaultBackgroundColor);
             }
 
-            if(!(serviceNowTheme.MenuBackgroundColor ==""))
+            if(!(serviceNowTheme.MenuBackgroundColor == ""))
             {
                 stackpanelMenu.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MenuBackgroundColor);
-            }else{
+            }
+            else
+            {
                 stackpanelMenu.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MenuDefaultBackgroundColor);
             }
-         
+
             if(serviceNowTheme.Opacity != 0)
             {
                 this.Opacity = serviceNowTheme.Opacity;
@@ -107,7 +112,7 @@ namespace ServiceNowOpen
                     Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/home-white.png")
                 };
 
-                ImageBrush backgroundHomeImage = new ImageBrush 
+                ImageBrush backgroundHomeImage = new ImageBrush
                 {
                     ImageSource = imgHome.Source,
                     Stretch = Stretch.Fill,
@@ -180,113 +185,113 @@ namespace ServiceNowOpen
             }
 
             if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
+            {
+                //Power Button
+                Image imgPowerButton = new Image
                 {
-                    //Power Button
-                    Image imgPowerButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/close.png")
-                    };
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/close.png")
+                };
 
-                    ImageBrush backgroundPowerButton = new ImageBrush
-                    {
-                        ImageSource = imgPowerButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                ImageBrush backgroundPowerButton = new ImageBrush
+                {
+                    ImageSource = imgPowerButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    CloseButton.Background = backgroundPowerButton;
+                CloseButton.Background = backgroundPowerButton;
 
-                    //Minimize Button
-                    Image imgMinimizeButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/minimize-white.png")
-                    };
+                //Minimize Button
+                Image imgMinimizeButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/minimize-white.png")
+                };
 
-                    ImageBrush backgroundMinimizeButton = new ImageBrush
-                    {
-                        ImageSource = imgMinimizeButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                ImageBrush backgroundMinimizeButton = new ImageBrush
+                {
+                    ImageSource = imgMinimizeButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    MinimizeButton.Background = backgroundMinimizeButton;
-                 }
-              
+                MinimizeButton.Background = backgroundMinimizeButton;
+            }
+
 
             if(serviceNowTheme.MainWindowButtonColor != serviceNowTheme.DefaultButtonColor)
+            {
+
+                //Copy Button
+                Image imgCopyButton = new Image
                 {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/copy-white.png")
+                };
 
-                    //Copy Button
-                    Image imgCopyButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/copy-white.png")
-                    };
+                ImageBrush backgroundCopyButton = new ImageBrush
+                {
+                    ImageSource = imgCopyButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    ImageBrush backgroundCopyButton = new ImageBrush
-                    {
-                        ImageSource = imgCopyButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                CopyButton.Background = backgroundCopyButton;
 
-                    CopyButton.Background = backgroundCopyButton;
+                //Open In Browser Button
+                Image imgOpenInBrowserButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/openinbrowser-white.png")
+                };
 
-                    //Open In Browser Button
-                    Image imgOpenInBrowserButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/openinbrowser-white.png")
-                    };
+                ImageBrush backgroundOpenInBrowserButton = new ImageBrush
+                {
+                    ImageSource = imgOpenInBrowserButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
 
-                    ImageBrush backgroundOpenInBrowserButton = new ImageBrush
-                    {
-                        ImageSource = imgOpenInBrowserButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
+                OpenInBrowserButton.Background = backgroundOpenInBrowserButton;
 
-                    OpenInBrowserButton.Background = backgroundOpenInBrowserButton;
+                //OK (CheckMark) Button
+                Image imgOKButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/checkmark-white.png")
+                };
 
-                    //OK (CheckMark) Button
-                    Image imgOKButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/checkmark-white.png")
-                    };
+                ImageBrush backgroundOKButton = new ImageBrush
+                {
+                    ImageSource = imgOKButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                GoButton.Background = backgroundOKButton;
 
-                    ImageBrush backgroundOKButton = new ImageBrush
-                    {
-                        ImageSource = imgOKButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
-                    GoButton.Background = backgroundOKButton;
+                //Load File Button
+                Image imgLoadFileButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/BrowseForFile.png")
+                };
 
-                    //Load File Button
-                    Image imgLoadFileButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/BrowseForFile.png")
-                    };
+                ImageBrush backgroundLoadFileButton = new ImageBrush
+                {
+                    ImageSource = imgLoadFileButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                LoadFileButton.Background = backgroundLoadFileButton;
 
-                    ImageBrush backgroundLoadFileButton = new ImageBrush
-                    {
-                        ImageSource = imgLoadFileButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
-                    LoadFileButton.Background = backgroundLoadFileButton;
+                //Save To File Button
+                Image imgSaveToFileButton = new Image
+                {
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/SaveToFile.png")
+                };
 
-                    //Save To File Button
-                    Image imgSaveToFileButton = new Image
-                    {
-                        Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/SaveToFile.png")
-                    };
-
-                    ImageBrush backgroundSaveToFileButton = new ImageBrush
-                    {
-                        ImageSource = imgSaveToFileButton.Source,
-                        Stretch = Stretch.Fill,
-                        TileMode = TileMode.None
-                    };
-                    SaveToFileButton.Background = backgroundSaveToFileButton;
+                ImageBrush backgroundSaveToFileButton = new ImageBrush
+                {
+                    ImageSource = imgSaveToFileButton.Source,
+                    Stretch = Stretch.Fill,
+                    TileMode = TileMode.None
+                };
+                SaveToFileButton.Background = backgroundSaveToFileButton;
 
             }
 
@@ -294,79 +299,82 @@ namespace ServiceNowOpen
         private void LoadTextColors()
         {
 
-                if(serviceNowTheme.MainWindowTextColor != "")
-                {   
-                    Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
+            if(serviceNowTheme.MainWindowTextColor != "")
+            {
+                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
 
-                    //txt_Theme.Foreground = textColor;
-                    LeftMenuCheckBox.Foreground = textColor;
-                    WindowContentCheckBox.Foreground = textColor;
-                    txtRed.Foreground = textColor;
-                    txtGreen.Foreground = textColor;
-                    txtBlue.Foreground = textColor;
-                    txtOpacity.Foreground = textColor;
-                    ButtonColorCheckBox.Foreground = textColor;
-                    TextColorCheckBox.Foreground = textColor;
-                    sliderRed.Foreground = textColor;
-                    sliderGreen.Foreground = textColor;
-                    sliderBlue.Foreground = textColor;
-                    borderSliders.BorderBrush = textColor;
-                    ResetToDefaultButton.Foreground = textColor;
-                    txtVersion.Foreground = textColor;
-                    txtOpen.Foreground = textColor;
-                    FreeTextSearchCheckBox.Foreground = textColor;
-                    HideFromTaskBarCheckBox.Foreground = textColor;
-                    AlwaysOnTopCheckBox.Foreground = textColor;
-                    TitleBarCheckBox.Foreground = textColor;
-                    txtUsernames.Foreground = textColor;
-                    txtPeripherals.Foreground = textColor;
-                    txtConfigurationItems.Foreground = textColor;
-                    txtServiceNowURL.Foreground = textColor;
-                    txtServiceNowOpen.Foreground = textColor;
-                    txtDevelopedBy.Foreground = textColor;
-                    txtVersion.Foreground = textColor;
+                //txt_Theme.Foreground = textColor;
+                LeftMenuCheckBox.Foreground = textColor;
+                WindowContentCheckBox.Foreground = textColor;
+                txtRed.Foreground = textColor;
+                txtGreen.Foreground = textColor;
+                txtBlue.Foreground = textColor;
+                txtOpacity.Foreground = textColor;
+                ButtonColorCheckBox.Foreground = textColor;
+                TextColorCheckBox.Foreground = textColor;
+                sliderRed.Foreground = textColor;
+                sliderGreen.Foreground = textColor;
+                sliderBlue.Foreground = textColor;
+                borderSliders.BorderBrush = textColor;
+                ResetToDefaultButton.Foreground = textColor;
+                txtVersion.Foreground = textColor;
+                txtOpen.Foreground = textColor;
+                FreeTextSearchCheckBox.Foreground = textColor;
+                HideFromTaskBarCheckBox.Foreground = textColor;
+                AlwaysOnTopCheckBox.Foreground = textColor;
+                TitleBarCheckBox.Foreground = textColor;
+                txtUsernames.Foreground = textColor;
+                txtPeripherals.Foreground = textColor;
+                txtConfigurationItems.Foreground = textColor;
+                txtServiceNowURL.Foreground = textColor;
+                txtServiceNowOpen.Foreground = textColor;
+                txtDevelopedBy.Foreground = textColor;
+                txtVersion.Foreground = textColor;
             }
-            else{
-                    Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
+            else
+            {
+                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
 
-                    
-                    LeftMenuCheckBox.Foreground = textColor;
-                    WindowContentCheckBox.Foreground = textColor;
-                    txtRed.Foreground = textColor;
-                    txtGreen.Foreground = textColor;
-                    txtBlue.Foreground = textColor;
-                    txtOpacity.Foreground = textColor;
-                    ButtonColorCheckBox.Foreground = textColor;
-                    TextColorCheckBox.Foreground = textColor;
-                    sliderRed.Foreground = textColor;
-                    sliderGreen.Foreground = textColor;
-                    sliderBlue.Foreground = textColor;
-                    borderSliders.BorderBrush = textColor;
-                    ResetToDefaultButton.Foreground = textColor;
-                    txtVersion.Foreground = textColor;
-                    txtOpen.Foreground = textColor;
-                    FreeTextSearchCheckBox.Foreground = textColor;
-                    HideFromTaskBarCheckBox.Foreground = textColor;
-                    AlwaysOnTopCheckBox.Foreground = textColor;
-                    TitleBarCheckBox.Foreground = textColor;
-                    txtUsernames.Foreground = textColor;
-                    txtPeripherals.Foreground = textColor;
-                    txtConfigurationItems.Foreground = textColor;
-                    txtServiceNowURL.Foreground = textColor;
-                    txtServiceNowOpen.Foreground = textColor;
-                    txtDevelopedBy.Foreground = textColor;
-                    txtVersion.Foreground = textColor;
+
+                LeftMenuCheckBox.Foreground = textColor;
+                WindowContentCheckBox.Foreground = textColor;
+                txtRed.Foreground = textColor;
+                txtGreen.Foreground = textColor;
+                txtBlue.Foreground = textColor;
+                txtOpacity.Foreground = textColor;
+                ButtonColorCheckBox.Foreground = textColor;
+                TextColorCheckBox.Foreground = textColor;
+                sliderRed.Foreground = textColor;
+                sliderGreen.Foreground = textColor;
+                sliderBlue.Foreground = textColor;
+                borderSliders.BorderBrush = textColor;
+                ResetToDefaultButton.Foreground = textColor;
+                txtVersion.Foreground = textColor;
+                txtOpen.Foreground = textColor;
+                FreeTextSearchCheckBox.Foreground = textColor;
+                HideFromTaskBarCheckBox.Foreground = textColor;
+                AlwaysOnTopCheckBox.Foreground = textColor;
+                TitleBarCheckBox.Foreground = textColor;
+                txtUsernames.Foreground = textColor;
+                txtPeripherals.Foreground = textColor;
+                txtConfigurationItems.Foreground = textColor;
+                txtServiceNowURL.Foreground = textColor;
+                txtServiceNowOpen.Foreground = textColor;
+                txtDevelopedBy.Foreground = textColor;
+                txtVersion.Foreground = textColor;
 
             }
 
-                if(!(serviceNowTheme.TitleBarTextColor == ""))
-                {
-                    Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarTextColor);
-                    txtTitle.Foreground = textColor;
-                }else{
-                    Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
-                    txtTitle.Foreground = textColor;
-                }
+            if(!(serviceNowTheme.TitleBarTextColor == ""))
+            {
+                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarTextColor);
+                txtTitle.Foreground = textColor;
+            }
+            else
+            {
+                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
+                txtTitle.Foreground = textColor;
+            }
 
         }
         private void SetNotifyIconSettings()
@@ -502,11 +510,20 @@ namespace ServiceNowOpen
         {
             if(e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                this.Visibility = Visibility.Visible;
-                this.Activate();
+
+                if(this.ShowInTaskbar == false)
+                {
+                    this.Visibility = Visibility.Visible;
+                    this.Activate();
+                }
+                else
+                {
+
+                    this.WindowState = WindowState.Normal;
+                    this.Activate();
+                }
+
             }
-
-
 
             if(e.Button == System.Windows.Forms.MouseButtons.Right)
             {
@@ -528,25 +545,6 @@ namespace ServiceNowOpen
             this.Left = centerScreenPos[0];
             this.Top = centerScreenPos[1];
         }
-
-
-        private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            MoveWindow();
-        }
-        private void MoveWindow()
-        {
-            try
-            {
-                DragMove();
-            }
-            catch(Exception)
-            {
-
-                throw;
-            }
-        }
-
 
         private void UserInputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -614,6 +612,23 @@ namespace ServiceNowOpen
         }
 
 
+
+        private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveWindow();
+        }
+        private void MoveWindow()
+        {
+            try
+            {
+                DragMove();
+            }
+            catch(Exception)
+            {
+
+                throw;
+            }
+        }
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -643,7 +658,7 @@ namespace ServiceNowOpen
                 FreeTextSearch = (bool)FreeTextSearchCheckBox.IsChecked,
                 SliderPosition = sliderOpacityValue.Value,
                 RecentItems = recentlyOpenedItems,
-                MinimizeToTray = (bool)HideFromTaskBarCheckBox.IsChecked,
+                HideFromTaskbar = (bool)HideFromTaskBarCheckBox.IsChecked,
                 URLServiceNowPortal = ServiceNowPortalTextBox.Text,
                 RegExConfigurationItems = CIPrefixTextBox.Text,
                 RegExPeripherals = PeripheralPrefixTextBox.Text,
@@ -656,26 +671,24 @@ namespace ServiceNowOpen
 
         }
 
-
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
 
-            WindowGotMiniMizedActions();
+            WindowMinimized();
         }
-        private void WindowGotMiniMizedActions()
+        private void WindowMinimized()
         {
 
 
-            if(HideFromTaskBarCheckBox.IsChecked == false)
+            if(HideFromTaskBarCheckBox.IsChecked == true)
             {
-                this.WindowState = WindowState.Minimized;
-                this.ShowInTaskbar = true;
+                this.Visibility = Visibility.Hidden;
+
+
             }
             else
             {
-                this.Visibility = Visibility.Hidden;
-                this.ShowInTaskbar = false;
-
+                this.WindowState = WindowState.Minimized;
             }
         }
 
@@ -720,7 +733,7 @@ namespace ServiceNowOpen
         }
         private void AboutMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            txtTitle.Text ="About ServiceNowOpen";
+            txtTitle.Text = "About ServiceNowOpen";
             gridAbout.Visibility = Visibility.Visible;
             gridSettingsContent.Visibility = Visibility.Hidden;
             gridMainContent.Visibility = Visibility.Hidden;
@@ -856,7 +869,7 @@ namespace ServiceNowOpen
         {
             if(HideFromTaskBarCheckBox.IsChecked == true)
             {
-              
+
                 this.ShowInTaskbar = false;
             }
 
@@ -1255,7 +1268,7 @@ namespace ServiceNowOpen
             this.Opacity = serviceNowTheme.Opacity;
 
         }
-        
+
 
         private void ResetToDefaultButton_Click(object sender, RoutedEventArgs e)
         {
@@ -1265,7 +1278,7 @@ namespace ServiceNowOpen
             LoadDefaultImages();
             serviceNowTheme.Opacity = 1;
             this.Opacity = 1;
-           
+
         }
         private void LoadDefaultImages()
         {
@@ -1375,7 +1388,7 @@ namespace ServiceNowOpen
             };
             GoButton.Background = checkmarkButtonBrush;
 
-           
+
 
             // Load File Button
             Uri LoadFileImageUri = new Uri("Images/BrowseForFile.png", UriKind.Relative);
@@ -1415,21 +1428,22 @@ namespace ServiceNowOpen
         }
         private void MenuPanelCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-           
+
 
         }
         private void WindowContentCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-          
+
 
         }
 
 
         private void ServiceNowPortalTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+
             if(ServiceNowPortalTextBox.Text == "")
             {
-                ServiceNowPortalTextBox.Text = "Enter url ServiceNow portal";
+                ServiceNowPortalTextBox.Text = "Enter url to ServiceNow portal";
             }
         }
         private void CIPrefixTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -1452,7 +1466,7 @@ namespace ServiceNowOpen
             {
                 UserNamesPrefixTextBox.Text = "Enter a regex pattern for usernames";
             }
-           
+
         }
         private void LoadFileButton_Click(object sender, RoutedEventArgs e)
         {
@@ -1464,15 +1478,15 @@ namespace ServiceNowOpen
         }
         private void SaveToFile()
         {
-                ServiceNowConfig snConfig = new ServiceNowConfig
-                {
-                    URLServiceNowPortal = ServiceNowPortalTextBox.Text,
-                    RegExPatternCI = CIPrefixTextBox.Text,
-                    RegExPatternPeripherals = PeripheralPrefixTextBox.Text,
-                    RegExPatternUsers = UserNamesPrefixTextBox.Text,
-                };
+            ServiceNowConfig snConfig = new ServiceNowConfig
+            {
+                URLServiceNowPortal = ServiceNowPortalTextBox.Text,
+                RegExPatternCI = CIPrefixTextBox.Text,
+                RegExPatternPeripherals = PeripheralPrefixTextBox.Text,
+                RegExPatternUsers = UserNamesPrefixTextBox.Text,
+            };
 
-                snConfig.Save();
+            snConfig.Save();
 
         }
         private void LoadFile()
@@ -1490,6 +1504,8 @@ namespace ServiceNowOpen
             }
 
         }
+
+        
     }
 }
 

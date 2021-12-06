@@ -4,26 +4,26 @@
   <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?</RegExUsernames>
-  <Opacity>1</Opacity>
-  <MinimizeToTray>false</MinimizeToTray>
+  <Opacity>0.8</Opacity>
+  <HideFromTaskbar>false</HideFromTaskbar>
   <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>85.534591194968527</SliderPosition>
+  <SliderPosition>67.2955974842767</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>453</Top>
-  <Left>735</Left>
+  <Top>857</Top>
+  <Left>1460</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FFFFFA00</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FFB30000</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FF230000</TitleBarButtonColor>
-    <MainWindowTextColor>#FFFFFA00</MainWindowTextColor>
-    <MainWindowBackgroundColor>#FFB30000</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#FF230000</MainWindowButtonColor>
-    <MenuButtonColor>#FF230000</MenuButtonColor>
-    <MenuBackgroundColor>#FFB30000</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>IwAA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>IwAA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>IwAA</TitleBarButtonsRGB>
-    <Opacity>1</Opacity>
+    <TitleBarTextColor>#FFFF5463</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FF1B1031</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFF3B63</TitleBarButtonColor>
+    <MainWindowTextColor>#FFFF5463</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF1B1031</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFFF3B63</MainWindowButtonColor>
+    <MenuButtonColor>#FFFF3B63</MenuButtonColor>
+    <MenuBackgroundColor>#FF1B1031</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>/ztj</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>/ztj</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/ztj</TitleBarButtonsRGB>
+    <Opacity>0.8</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>

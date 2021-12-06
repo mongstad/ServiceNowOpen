@@ -1,7 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 
 
-namespace ServiceNow{
+namespace ServiceNow
+{
     public class RecentlyOpenedItems
     {
 
@@ -9,7 +10,7 @@ namespace ServiceNow{
 
         public RecentlyOpenedItems()
         {
-           
+
         }
 
         public ObservableCollection<RecentlyOpenedItem> RecentItems
