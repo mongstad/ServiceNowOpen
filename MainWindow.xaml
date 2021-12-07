@@ -1092,7 +1092,7 @@
                          MinLines="5" TextWrapping="Wrap"
                          Width="380" 
                          Background="LightGray"
-                         VerticalScrollBarVisibility="Hidden"
+                         VerticalScrollBarVisibility="Visible"
                          FontSize="12" 
                          FontFamily="Constantia"  
                          IsReadOnly="True"

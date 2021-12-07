@@ -1,6 +1,6 @@
 A copy of the GNU GENERAL PUBLIC LICENSE is appended to this file.
 
-ServiceNowOpen Version 1.0.1.10
+ServiceNowOpen Version 1.0.1.11
 Copyright (C) 2021 Johnny Mongstad (mongstad@outlook.com)
 Homepage: https://github.com/mongstad/ServiceNowOpen
 
