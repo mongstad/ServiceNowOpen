@@ -1,32 +1,37 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <URLServiceNowPortal>dfdfEnter url ServiceNow portal</URLServiceNowPortal>
-  <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
+  <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
+  <RegExConfigurationItems>^(L|D|A)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
-  <RegExUsernames>^\d{6}\d?</RegExUsernames>
-  <Opacity>1</Opacity>
-  <HideFromTaskbar>true</HideFromTaskbar>
+  <RegExUsernames>^\d{6}\d?$</RegExUsernames>
+  <Opacity>0.9</Opacity>
+  <HideFromTaskbar>false</HideFromTaskbar>
   <FreeTextSearch>true</FreeTextSearch>
-  <SliderPosition>100</SliderPosition>
+  <SliderPosition>89.937106918239024</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>708</Top>
-  <Left>1452</Left>
+  <Top>833</Top>
+  <Left>1447</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#FFFFFF00</TitleBarTextColor>
-    <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFFFFF00</TitleBarButtonColor>
-    <MainWindowTextColor>#FFFF0000</MainWindowTextColor>
-    <MainWindowBackgroundColor>#FF002CFF</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
-    <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#FF002CC2</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/wAA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>/wAA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>//8A</TitleBarButtonsRGB>
-    <Opacity>1</Opacity>
+    <TitleBarTextColor>#FFFF141C</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FF14131E</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFF141C</TitleBarButtonColor>
+    <MainWindowTextColor>#FFFF141C</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF16141C</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFFF141C</MainWindowButtonColor>
+    <MenuButtonColor>#FFFF141C</MenuButtonColor>
+    <MenuBackgroundColor>#FF16141C</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>/xQc</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>/xQc</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/xQc</TitleBarButtonsRGB>
+    <Opacity>0.9</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>ADFADF</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADF</Url>
+        <DateTimeOpened>08.12.2021 00:26</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>JOHNNY MONGSTAD</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=sys_user.do?sysparm_query=name=JOHNNY MONGSTAD</Url>
