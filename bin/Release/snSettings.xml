@@ -4,13 +4,13 @@
   <RegExConfigurationItems>^(L|D|A)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?$</RegExUsernames>
-  <Opacity>0.9</Opacity>
+  <Opacity>0.85</Opacity>
   <HideFromTaskbar>false</HideFromTaskbar>
   <FreeTextSearch>true</FreeTextSearch>
-  <SliderPosition>89.937106918239024</SliderPosition>
+  <SliderPosition>74.213836477987471</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>833</Top>
-  <Left>1447</Left>
+  <Top>855</Top>
+  <Left>1468</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#FFFF141C</TitleBarTextColor>
     <TitleBarBackgroundColor>#FF14131E</TitleBarBackgroundColor>
@@ -23,7 +23,7 @@
     <MenuPanelButtonsRGB>/xQc</MenuPanelButtonsRGB>
     <MainWindowButtonsRGB>/xQc</MainWindowButtonsRGB>
     <TitleBarButtonsRGB>/xQc</TitleBarButtonsRGB>
-    <Opacity>0.9</Opacity>
+    <Opacity>0.85</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
