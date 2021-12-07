@@ -1036,11 +1036,11 @@
 
         <Grid x:Name="gridAbout" Visibility="Hidden" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0" ScrollViewer.CanContentScroll="True">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
 
-                <RowDefinition Height="3*"></RowDefinition>
-
+                
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -1050,22 +1050,57 @@
 
 
 
-            <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical" Grid.ColumnSpan="2" Margin="5,0,0,0">
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="3" Margin="5,5,0,0">
 
 
-                <TextBlock x:Name="txtServiceNowOpen" Text="ServiceNowOpen" Foreground="AliceBlue" Margin="0,5,0,0"
-                       FontSize="16" FontFamily="Bahnschrift SemiCondensed" FontWeight="DemiBold"
+                <TextBlock x:Name="txtServiceNowOpen" Text="ServiceNowOpen" Foreground="AliceBlue" 
+                       FontSize="14" FontFamily="Arial Rounded MT Bold"  FontWeight="DemiBold"
                        VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
 
-                <TextBlock x:Name="txtDevelopedBy" Text="Copryright © 2021 Johnny Mongstad" Foreground="AliceBlue" Margin="0,5,0,0"
-                       FontSize="12" FontFamily="Bahnschrift SemiCondensed" 
-                       VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
+                <TextBlock x:Name="txtVersion" Text="Version: " Foreground="AliceBlue" Grid.Column="1"
+                       FontSize="14" FontFamily="Arial Rounded MT Bold"  Margin="10,0,0,0"
+                       VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left"/>
+            </StackPanel>
 
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,0,0,0">
+                <TextBlock x:Name="txtDevelopedBy" Text="Copryright © 2021 Johnny Mongstad (mongstad@outlook.com)" Foreground="AliceBlue"
+                       FontSize="10" FontFamily="Arial Rounded MT Bold" 
+                        TextAlignment="Left"/>
 
-                <TextBlock x:Name="txtVersion" Width="100" Text="Version: " Foreground="AliceBlue" Margin="0,5,0,0"
-                       FontSize="12" FontFamily="Bahnschrift SemiCondensed"
-                       VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock x:Name="txtHomePage" Text="Homepage:" Foreground="AliceBlue"
+                       FontSize="10" FontFamily="Arial Rounded MT Bold" 
+                        TextAlignment="Left"/>
 
+                    <TextBlock Text="" Name="HomePageTextBlock"
+                               Foreground="AliceBlue" 
+                               FontSize="10" 
+                               FontFamily="Arial Rounded MT Bold" 
+                               Margin="3,0,0,0" PreviewMouseLeftButtonDown="HomePageTextBlock_PreviewMouseLeftButtonDown" >
+                   
+                    </TextBlock>
+                    
+                    
+
+                </StackPanel>
+                
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5,5,0,0" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                <TextBox Height="75" 
+                         MinLines="5" TextWrapping="Wrap"
+                         Width="365" 
+                         Background="LightGray"
+                         VerticalScrollBarVisibility="Visible"
+                         FontSize="10" 
+                         FontFamily="Arial Rounded MT Bold"  
+                         IsReadOnly="True"
+                         BorderThickness="2,2,2,2"
+                        Text="This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the 
+Free Software Foundation, either version 3 of the License, or (at your option) any later version. &#x0a; &#x0a;This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. &#x0a; &#x0a;You should have received a copy of the GNU General Public License
+along with this program. If not, see https://www.gnu.org/licenses."  />
             </StackPanel>
 
 

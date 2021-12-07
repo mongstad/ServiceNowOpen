@@ -9,20 +9,20 @@
   <FreeTextSearch>true</FreeTextSearch>
   <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>481</Top>
-  <Left>844</Left>
+  <Top>708</Top>
+  <Left>1452</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
-    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFFF0000</TitleBarButtonColor>
-    <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#FFFF0000</MainWindowButtonColor>
-    <MenuButtonColor>#FFFF0000</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <TitleBarTextColor>#FFFFFF00</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFFF0000</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFFFF00</TitleBarButtonColor>
+    <MainWindowTextColor>#FFFF0000</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF002CFF</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
+    <MenuButtonColor>#ffffff</MenuButtonColor>
+    <MenuBackgroundColor>#FF002CC2</MenuBackgroundColor>
     <MenuPanelButtonsRGB>/wAA</MenuPanelButtonsRGB>
     <MainWindowButtonsRGB>/wAA</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/wAA</TitleBarButtonsRGB>
+    <TitleBarButtonsRGB>//8A</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>

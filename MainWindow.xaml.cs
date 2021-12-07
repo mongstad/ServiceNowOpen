@@ -1,9 +1,11 @@
 ﻿using ServiceNow;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -31,6 +33,8 @@ namespace ServiceNowOpen
             LoadTextColors();
             SetNotifyIconSettings();
             SetVersionInfo();
+            AddHomepageLink();
+
             //SetRGBSliderValues();
         }
 
@@ -62,9 +66,10 @@ namespace ServiceNowOpen
             CIPrefixTextBox.Text = snSettings.RegExConfigurationItems;
             PeripheralPrefixTextBox.Text = snSettings.RegExPeripherals;
             UserNamesPrefixTextBox.Text = snSettings.RegExUsernames;
-
+          
 
         }
+       
         private void SetWindowBackgroundColors()
         {
 
@@ -330,6 +335,7 @@ namespace ServiceNowOpen
                 txtServiceNowOpen.Foreground = textColor;
                 txtDevelopedBy.Foreground = textColor;
                 txtVersion.Foreground = textColor;
+                txtHomePage.Foreground = textColor;
             }
             else
             {
@@ -409,6 +415,12 @@ namespace ServiceNowOpen
 
             Version ver = thisAssemName.Version;
             txtVersion.Text += ver.ToString();
+        }
+        public void AddHomepageLink()
+        {
+            var homePageLink = new Hyperlink();
+            homePageLink.Inlines.Add("https://github.com/mongstad/ServiceNowOpen");
+            HomePageTextBlock.Inlines.Add(homePageLink);
         }
         //private void SetRGBSliderValues()
         //{
@@ -639,6 +651,26 @@ namespace ServiceNowOpen
 
             CloseApplication();
         }
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            WindowMinimized();
+        }
+        private void WindowMinimized()
+        {
+
+
+            if(HideFromTaskBarCheckBox.IsChecked == true)
+            {
+                this.Visibility = Visibility.Hidden;
+
+
+            }
+            else
+            {
+                this.WindowState = WindowState.Minimized;
+            }
+        }
         private void CloseApplication()
         {
 
@@ -670,28 +702,7 @@ namespace ServiceNowOpen
             settingsServiceNow.Save();
 
         }
-
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            WindowMinimized();
-        }
-        private void WindowMinimized()
-        {
-
-
-            if(HideFromTaskBarCheckBox.IsChecked == true)
-            {
-                this.Visibility = Visibility.Hidden;
-
-
-            }
-            else
-            {
-                this.WindowState = WindowState.Minimized;
-            }
-        }
-
+       
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -1176,11 +1187,11 @@ namespace ServiceNowOpen
                 txtServiceNowOpen.Foreground = color;
                 txtDevelopedBy.Foreground = color;
                 txtVersion.Foreground = color;
+                txtHomePage.Foreground = color;
 
             }
 
         }
-
 
         private void SliderOpacityValue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -1268,8 +1279,6 @@ namespace ServiceNowOpen
             this.Opacity = serviceNowTheme.Opacity;
 
         }
-
-
         private void ResetToDefaultButton_Click(object sender, RoutedEventArgs e)
         {
             serviceNowTheme.ResetTextColorandBackgroundColorToDefault();
@@ -1505,7 +1514,15 @@ namespace ServiceNowOpen
 
         }
 
-        
+
+        private void HomePageTextBlock_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenHomepage();
+        }
+        private void OpenHomepage()
+        {
+            Process.Start("https://github.com/mongstad/ServiceNowOpen");
+        }
     }
 }
 

@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("license.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("servicenow.ico")]
 
 
