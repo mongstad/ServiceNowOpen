@@ -1054,28 +1054,28 @@
 
 
                 <TextBlock x:Name="txtServiceNowOpen" Text="ServiceNowOpen" Foreground="AliceBlue" 
-                       FontSize="14" FontFamily="Arial Rounded MT Bold"  FontWeight="DemiBold"
+                       FontSize="16" FontFamily="Bahnschrift SemiLight SemiCondensed"  
                        VerticalAlignment="Top" HorizontalAlignment="Left"  TextAlignment="Left"/>
 
-                <TextBlock x:Name="txtVersion" Text="Version: " Foreground="AliceBlue" Grid.Column="1"
-                       FontSize="14" FontFamily="Arial Rounded MT Bold"  Margin="10,0,0,0"
+                <TextBlock x:Name="txtVersion" Text="Version " Foreground="AliceBlue" Grid.Column="1"
+                       FontSize="16" FontFamily="Bahnschrift SemiLight SemiCondensed"    Margin="5,0,0,0"
                        VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left"/>
             </StackPanel>
 
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,0,0,0">
-                <TextBlock x:Name="txtDevelopedBy" Text="Copryright © 2021 Johnny Mongstad (mongstad@outlook.com)" Foreground="AliceBlue"
-                       FontSize="10" FontFamily="Arial Rounded MT Bold" 
+                <TextBlock x:Name="txtDevelopedBy" Text="Copyright © 2021 Johnny Mongstad (mongstad@outlook.com)" Foreground="AliceBlue"
+                       FontSize="14" FontFamily="Bahnschrift SemiLight SemiCondensed"  
                         TextAlignment="Left"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                    <TextBlock x:Name="txtHomePage" Text="Homepage:" Foreground="AliceBlue"
-                       FontSize="10" FontFamily="Arial Rounded MT Bold" 
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                    <TextBlock x:Name="txtHomePage" Text="Project Page:" Foreground="AliceBlue"
+                       FontSize="14" FontFamily="Bahnschrift SemiLight SemiCondensed"  
                         TextAlignment="Left"/>
 
                     <TextBlock Text="" Name="HomePageTextBlock"
                                Foreground="AliceBlue" 
-                               FontSize="10" 
-                               FontFamily="Arial Rounded MT Bold" 
+                               FontSize="14" 
+                              FontFamily="Bahnschrift SemiLight SemiCondensed"  
                                Margin="3,0,0,0" PreviewMouseLeftButtonDown="HomePageTextBlock_PreviewMouseLeftButtonDown" >
                    
                     </TextBlock>
@@ -1090,11 +1090,11 @@
             <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5,5,0,0" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
                 <TextBox Height="75" 
                          MinLines="5" TextWrapping="Wrap"
-                         Width="365" 
+                         Width="380" 
                          Background="LightGray"
-                         VerticalScrollBarVisibility="Visible"
-                         FontSize="10" 
-                         FontFamily="Arial Rounded MT Bold"  
+                         VerticalScrollBarVisibility="Hidden"
+                         FontSize="12" 
+                         FontFamily="Constantia"  
                          IsReadOnly="True"
                          BorderThickness="2,2,2,2"
                         Text="This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the 

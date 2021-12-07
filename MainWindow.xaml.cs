@@ -523,17 +523,34 @@ namespace ServiceNowOpen
             if(e.Button == System.Windows.Forms.MouseButtons.Left)
             {
 
-                if(this.ShowInTaskbar == false)
+                if(this.ShowInTaskbar == false && this.Visibility == Visibility.Hidden)
                 {
                     this.Visibility = Visibility.Visible;
                     this.Activate();
+                    return;
                 }
-                else
-                {
 
+                if(this.ShowInTaskbar == false && this.Visibility == Visibility.Visible)
+                {
+                    this.Visibility = Visibility.Hidden;
+                    return;
+                }
+
+                if(this.ShowInTaskbar == true && this.WindowState == WindowState.Normal)
+                {
+                    this.WindowState = WindowState.Minimized;
+                    return;
+                }
+
+                if(this.ShowInTaskbar == true && this.WindowState == WindowState.Minimized)
+                {
+                   
                     this.WindowState = WindowState.Normal;
                     this.Activate();
+                    return;
                 }
+
+              
 
             }
 
