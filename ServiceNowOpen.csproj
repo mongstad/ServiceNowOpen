@@ -25,7 +25,7 @@
     <UpdatePeriodically>true</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <SupportUrl>https://github.com/mongstad</SupportUrl>
+    <SupportUrl>https://github.com/mongstad/ServiceNowOpen</SupportUrl>
     <ProductName>ServiceNowOpen</ProductName>
     <PublisherName>Johnny Mongstad</PublisherName>
     <WebPage>publish.htm</WebPage>
@@ -158,63 +158,49 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\servicenow.png">
+    <Resource Include="Images\Settings.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\settings-white.png">
+    <Resource Include="Images\RecentlyOpenedItems.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\recentitems-white.png">
+    <Resource Include="Images\Copy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\copy-white.png">
+    <Resource Include="Images\OpenInBrowser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\openinbrowser-white.png">
+    <Resource Include="Images\Checkmark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\checkmark-white.png">
+    <Resource Include="Images\Theme.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\paint-brush-64.png">
+    <Resource Include="Images\Home.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\home-white.png">
+    <Resource Include="Images\Close.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\power-white.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\close.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\about.png">
+    <Resource Include="Images\About.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\SaveToFile.png" />
     <Resource Include="Images\BrowseForFile.png" />
-    <Resource Include="Images\home-whit - Copy.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="LICENSE.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="ServiceNow.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\minimize-white.png">
+    <Resource Include="Images\Minimize.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

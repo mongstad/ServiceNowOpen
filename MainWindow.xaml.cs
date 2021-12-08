@@ -84,11 +84,11 @@ namespace ServiceNowOpen
 
             if(!(serviceNowTheme.TitleBarBackgroundColor == ""))
             {
-                gridTitleBar.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarBackgroundColor);
+                TitleBarGrid.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarBackgroundColor);
             }
             else
             {
-                gridTitleBar.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarDefaultBackgroundColor);
+                TitleBarGrid.Background = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarDefaultBackgroundColor);
             }
 
             if(!(serviceNowTheme.MenuBackgroundColor == ""))
@@ -114,7 +114,7 @@ namespace ServiceNowOpen
                 //Home Button
                 Image imgHome = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/home-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/Home.png")
                 };
 
                 ImageBrush backgroundHomeImage = new ImageBrush
@@ -129,7 +129,7 @@ namespace ServiceNowOpen
                 //Themes Button
                 Image imgTheme = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/paint-brush-64.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/Theme.png")
                 };
 
                 ImageBrush backgroundThemeImage = new ImageBrush
@@ -144,7 +144,7 @@ namespace ServiceNowOpen
                 //Recently Opened Items Button
                 Image imgRecentItems = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/recentitems-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/RecentlyOpenedItems.png")
                 };
 
                 ImageBrush backgroundRecentItemsImage = new ImageBrush
@@ -159,7 +159,7 @@ namespace ServiceNowOpen
                 //Settings Button
                 Image imgSettingsButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/settings-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/Settings.png")
                 };
 
                 ImageBrush backgroundSettingsButton = new ImageBrush
@@ -175,7 +175,7 @@ namespace ServiceNowOpen
                 //About Button
                 Image imgAboutButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/about.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/About.png")
                 };
 
                 ImageBrush backgroundAboutButton = new ImageBrush
@@ -194,7 +194,7 @@ namespace ServiceNowOpen
                 //Power Button
                 Image imgPowerButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/close.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/Close.png")
                 };
 
                 ImageBrush backgroundPowerButton = new ImageBrush
@@ -209,7 +209,7 @@ namespace ServiceNowOpen
                 //Minimize Button
                 Image imgMinimizeButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/minimize-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/Minimize.png")
                 };
 
                 ImageBrush backgroundMinimizeButton = new ImageBrush
@@ -229,7 +229,7 @@ namespace ServiceNowOpen
                 //Copy Button
                 Image imgCopyButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/copy-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/Copy.png")
                 };
 
                 ImageBrush backgroundCopyButton = new ImageBrush
@@ -244,7 +244,7 @@ namespace ServiceNowOpen
                 //Open In Browser Button
                 Image imgOpenInBrowserButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/openinbrowser-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/OpenInBrowser.png")
                 };
 
                 ImageBrush backgroundOpenInBrowserButton = new ImageBrush
@@ -259,7 +259,7 @@ namespace ServiceNowOpen
                 //OK (CheckMark) Button
                 Image imgOKButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/checkmark-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/Checkmark.png")
                 };
 
                 ImageBrush backgroundOKButton = new ImageBrush
@@ -570,7 +570,7 @@ namespace ServiceNowOpen
         }
         private void ResetWindowPosition()
         {
-            double[] centerScreenPos = Monitor.GetPrimaryMonitorCenterPosition(this.Width, this.Height);
+            double[] centerScreenPos = Monitor.GetProgramCenterWindowPosition(this.Width, this.Height);
             this.Left = centerScreenPos[0];
             this.Top = centerScreenPos[1];
         }
@@ -724,49 +724,49 @@ namespace ServiceNowOpen
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             txtTitle.Text = "ServiceNowOpen";
-            gridMainContent.Visibility = Visibility.Visible;
-            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Hidden;
-            gridAbout.Visibility = Visibility.Hidden;
+            HomeGrid.Visibility = Visibility.Visible;
+            RecentlyOpenedItemsGrid.Visibility = Visibility.Hidden;
+            SettingsGrid.Visibility = Visibility.Hidden;
+            ThemeGrid.Visibility = Visibility.Hidden;
+            AboutGrid.Visibility = Visibility.Hidden;
             FocusInputTextBox();
 
         }
         private void RecentlyOpenedItemsButton_Click(object sender, RoutedEventArgs e)
         {
             txtTitle.Text = "Recently Opened Items";
-            gridMainContent.Visibility = Visibility.Hidden;
-            gridRecentlyOpenedItems.Visibility = Visibility.Visible;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Hidden;
-            gridAbout.Visibility = Visibility.Hidden;
+            HomeGrid.Visibility = Visibility.Hidden;
+            RecentlyOpenedItemsGrid.Visibility = Visibility.Visible;
+            SettingsGrid.Visibility = Visibility.Hidden;
+            ThemeGrid.Visibility = Visibility.Hidden;
+            AboutGrid.Visibility = Visibility.Hidden;
         }
         private void ThemesButton_Click(object sender, RoutedEventArgs e)
         {
             txtTitle.Text = "Theme";
-            gridMainContent.Visibility = Visibility.Hidden;
-            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Visible;
-            gridAbout.Visibility = Visibility.Hidden;
+            HomeGrid.Visibility = Visibility.Hidden;
+            RecentlyOpenedItemsGrid.Visibility = Visibility.Hidden;
+            SettingsGrid.Visibility = Visibility.Hidden;
+            ThemeGrid.Visibility = Visibility.Visible;
+            AboutGrid.Visibility = Visibility.Hidden;
         }
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             txtTitle.Text = "Settings";
-            gridSettingsContent.Visibility = Visibility.Visible;
-            gridMainContent.Visibility = Visibility.Hidden;
-            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Hidden;
-            gridAbout.Visibility = Visibility.Hidden;
+            SettingsGrid.Visibility = Visibility.Visible;
+            HomeGrid.Visibility = Visibility.Hidden;
+            RecentlyOpenedItemsGrid.Visibility = Visibility.Hidden;
+            ThemeGrid.Visibility = Visibility.Hidden;
+            AboutGrid.Visibility = Visibility.Hidden;
         }
         private void AboutMenuButton_Click(object sender, RoutedEventArgs e)
         {
             txtTitle.Text = "About ServiceNowOpen";
-            gridAbout.Visibility = Visibility.Visible;
-            gridSettingsContent.Visibility = Visibility.Hidden;
-            gridMainContent.Visibility = Visibility.Hidden;
-            gridRecentlyOpenedItems.Visibility = Visibility.Hidden;
-            gridColorPalette.Visibility = Visibility.Hidden;
+            AboutGrid.Visibility = Visibility.Visible;
+            SettingsGrid.Visibility = Visibility.Hidden;
+            HomeGrid.Visibility = Visibility.Hidden;
+            RecentlyOpenedItemsGrid.Visibility = Visibility.Hidden;
+            ThemeGrid.Visibility = Visibility.Hidden;
         }
 
 
@@ -977,7 +977,7 @@ namespace ServiceNowOpen
                 //Home Button
                 Image imgHome = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/home-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Home.png")
                 };
 
                 ImageBrush backgroundHomeImage = new ImageBrush
@@ -992,7 +992,7 @@ namespace ServiceNowOpen
                 //Themes Button
                 Image imgTheme = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/paint-brush-64.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Theme.png")
                 };
 
                 ImageBrush backgroundThemeImage = new ImageBrush
@@ -1007,7 +1007,7 @@ namespace ServiceNowOpen
                 //Recently Opened Items Button
                 Image imgRecentItems = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/recentitems-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/RecentlyOpenedItems.png")
                 };
 
                 ImageBrush backgroundRecentItemsImage = new ImageBrush
@@ -1022,7 +1022,7 @@ namespace ServiceNowOpen
                 //Settings Button
                 Image imgSettingsButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/settings-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Settings.png")
                 };
 
                 ImageBrush backgroundSettingsButton = new ImageBrush
@@ -1038,7 +1038,7 @@ namespace ServiceNowOpen
                 //About Button
                 Image imgAboutButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/about.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/About.png")
                 };
 
                 ImageBrush backgroundAboutButton = new ImageBrush
@@ -1060,7 +1060,7 @@ namespace ServiceNowOpen
                 //Power Button
                 Image imgPowerButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/close.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Close.png")
                 };
 
                 ImageBrush backgroundPowerButton = new ImageBrush
@@ -1074,7 +1074,7 @@ namespace ServiceNowOpen
                 //Minimize Button
                 Image imgMinimizeButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/minimize-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Minimize.png")
                 };
                 ImageBrush backgroundMinimizeButton = new ImageBrush
                 {
@@ -1096,7 +1096,7 @@ namespace ServiceNowOpen
                 //Copy Button
                 Image imgCopyButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/copy-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Copy.png")
                 };
                 ImageBrush backgroundCopyButton = new ImageBrush
                 {
@@ -1109,7 +1109,7 @@ namespace ServiceNowOpen
                 //Open In Browser Button
                 Image imgOpenInBrowserButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/openinbrowser-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/OpenInBrowser.png")
                 };
                 ImageBrush backgroundOpenInBrowserButton = new ImageBrush
                 {
@@ -1122,7 +1122,7 @@ namespace ServiceNowOpen
                 //OK (CheckMark) Button
                 Image imgOKButton = new Image
                 {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/checkmark-white.png")
+                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Checkmark.png")
                 };
                 ImageBrush backgroundOKButton = new ImageBrush
                 {
@@ -1309,7 +1309,7 @@ namespace ServiceNowOpen
         private void LoadDefaultImages()
         {
             // Close Window Button
-            Uri closeImageUri = new Uri("Images/close.png", UriKind.Relative);
+            Uri closeImageUri = new Uri("Images/Close.png", UriKind.Relative);
             StreamResourceInfo closeImagestreamInfo = Application.GetResourceStream(closeImageUri);
             BitmapFrame closeImagetemp = BitmapFrame.Create(closeImagestreamInfo.Stream);
             ImageBrush closeButtonBrush = new ImageBrush
@@ -1320,7 +1320,7 @@ namespace ServiceNowOpen
             CloseButton.Background = closeButtonBrush;
 
             // Minimize Window Button
-            Uri minimizeImageUri = new Uri("Images/minimize-white.png", UriKind.Relative);
+            Uri minimizeImageUri = new Uri("Images/Minimize.png", UriKind.Relative);
             StreamResourceInfo minimizeImagestreamInfo = Application.GetResourceStream(minimizeImageUri);
             BitmapFrame minimizeImagetemp = BitmapFrame.Create(minimizeImagestreamInfo.Stream);
             ImageBrush minimizeButtonBrush = new ImageBrush
@@ -1331,7 +1331,7 @@ namespace ServiceNowOpen
 
 
             // Home Menu Button
-            Uri homeImageUri = new Uri("Images/home-white.png", UriKind.Relative);
+            Uri homeImageUri = new Uri("Images/Home.png", UriKind.Relative);
             StreamResourceInfo homeImagestreamInfo = Application.GetResourceStream(homeImageUri);
             BitmapFrame homeImagetemp = BitmapFrame.Create(homeImagestreamInfo.Stream);
             ImageBrush homeButtonBrush = new ImageBrush
@@ -1342,7 +1342,7 @@ namespace ServiceNowOpen
             HomeMenuButton.Background = homeButtonBrush;
 
             // Recent Items Menu Button
-            Uri recentitemsImageUri = new Uri("Images/recentitems-white.png", UriKind.Relative);
+            Uri recentitemsImageUri = new Uri("Images/RecentlyOpenedItems.png", UriKind.Relative);
             StreamResourceInfo recentitemsImagestreamInfo = Application.GetResourceStream(recentitemsImageUri);
             BitmapFrame recentitemsImagetemp = BitmapFrame.Create(recentitemsImagestreamInfo.Stream);
             ImageBrush recentitemsButtonBrush = new ImageBrush
@@ -1352,7 +1352,7 @@ namespace ServiceNowOpen
             RecentItemsMenuButton.Background = recentitemsButtonBrush;
 
             // Themes Menu Button
-            Uri themeImageUri = new Uri("Images/paint-brush-64.png", UriKind.Relative);
+            Uri themeImageUri = new Uri("Images/Theme.png", UriKind.Relative);
             StreamResourceInfo themeImagestreamInfo = Application.GetResourceStream(themeImageUri);
             BitmapFrame themeImagetemp = BitmapFrame.Create(themeImagestreamInfo.Stream);
             ImageBrush themeButtonBrush = new ImageBrush
@@ -1362,7 +1362,7 @@ namespace ServiceNowOpen
             ThemesMenuButton.Background = themeButtonBrush;
 
             // Settings Button
-            Uri settingsImageUri = new Uri("Images/settings-white.png", UriKind.Relative);
+            Uri settingsImageUri = new Uri("Images/Settings.png", UriKind.Relative);
             StreamResourceInfo settingsImagestreamInfo = Application.GetResourceStream(settingsImageUri);
             BitmapFrame settingsImagetemp = BitmapFrame.Create(settingsImagestreamInfo.Stream);
             ImageBrush settingsButtonBrush = new ImageBrush
@@ -1372,7 +1372,7 @@ namespace ServiceNowOpen
             SettingsMenuButton.Background = settingsButtonBrush;
 
             // About Button
-            Uri aboutImageUri = new Uri("Images/about.png", UriKind.Relative);
+            Uri aboutImageUri = new Uri("Images/About.png", UriKind.Relative);
             StreamResourceInfo aboutImagestreamInfo = Application.GetResourceStream(aboutImageUri);
             BitmapFrame aboutImagetemp = BitmapFrame.Create(aboutImagestreamInfo.Stream);
             ImageBrush aboutButtonBrush = new ImageBrush
@@ -1383,7 +1383,7 @@ namespace ServiceNowOpen
 
 
             // Recent Items - Copy Button
-            Uri copyImageUri = new Uri("Images/copy-white.png", UriKind.Relative);
+            Uri copyImageUri = new Uri("Images/Copy.png", UriKind.Relative);
             StreamResourceInfo copyImagestreamInfo = Application.GetResourceStream(copyImageUri);
             BitmapFrame copyImagetemp = BitmapFrame.Create(copyImagestreamInfo.Stream);
             ImageBrush copyButtonBrush = new ImageBrush
@@ -1394,7 +1394,7 @@ namespace ServiceNowOpen
             CopyButton.Background = copyButtonBrush;
 
             // Recent Items OpenInBrowser Button
-            Uri openinbrowserImageUri = new Uri("Images/openinbrowser-white.png", UriKind.Relative);
+            Uri openinbrowserImageUri = new Uri("Images/OpenInBrowser.png", UriKind.Relative);
             StreamResourceInfo openinbrowserImagestreamInfo = Application.GetResourceStream(openinbrowserImageUri);
             BitmapFrame openinbrowserImagetemp = BitmapFrame.Create(openinbrowserImagestreamInfo.Stream);
             ImageBrush openinbrowserButtonBrush = new ImageBrush
@@ -1405,7 +1405,7 @@ namespace ServiceNowOpen
             OpenInBrowserButton.Background = openinbrowserButtonBrush;
 
             // Checkmark Button
-            Uri checkmarkImageUri = new Uri("Images/checkmark-white.png", UriKind.Relative);
+            Uri checkmarkImageUri = new Uri("Images/Checkmark.png", UriKind.Relative);
             StreamResourceInfo checkmarkImagestreamInfo = Application.GetResourceStream(checkmarkImageUri);
             BitmapFrame checkmarkImagetemp = BitmapFrame.Create(checkmarkImagestreamInfo.Stream);
             ImageBrush checkmarkButtonBrush = new ImageBrush

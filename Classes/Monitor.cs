@@ -5,7 +5,7 @@ namespace Computer
 
     public static class Monitor
     {
-        public static double[] GetPrimaryMonitorCenterPosition(double WindowWidth, double WindowHeight)
+        public static double[] GetProgramCenterWindowPosition(double WindowWidth, double WindowHeight)
         {
 
             double screenWidth = SystemParameters.PrimaryScreenWidth;
