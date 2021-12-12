@@ -7,22 +7,22 @@
   <Opacity>1</Opacity>
   <HideFromTaskbar>false</HideFromTaskbar>
   <FreeTextSearch>true</FreeTextSearch>
-  <SliderPosition>74.213836477987471</SliderPosition>
+  <SliderPosition>100</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>516</Top>
-  <Left>1132</Left>
+  <Top>559</Top>
+  <Left>1379</Left>
   <ServiceNowTheme>
     <TitleBarTextColor>#ffffff</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFFF0000</TitleBarButtonColor>
+    <TitleBarButtonColor>#FFEB1613</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
     <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
-    <MenuButtonColor>#FFFF0000</MenuButtonColor>
+    <MainWindowButtonColor>#FFEB1613</MainWindowButtonColor>
+    <MenuButtonColor>#FFFFFFFF</MenuButtonColor>
     <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/wAA</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>//8A</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/wAA</TitleBarButtonsRGB>
+    <MenuPanelButtonsRGB>////</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>6xYT</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>6xYT</TitleBarButtonsRGB>
     <Opacity>1</Opacity>
   </ServiceNowTheme>
   <RecentItems>

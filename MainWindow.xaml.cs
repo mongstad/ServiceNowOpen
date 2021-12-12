@@ -70,7 +70,6 @@ namespace ServiceNowOpen
           
 
         }
-       
         private void SetWindowBackgroundColors()
         {
 
@@ -635,7 +634,6 @@ namespace ServiceNowOpen
         }
 
 
-
         private void TitleGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MoveWindow();
@@ -1179,60 +1177,84 @@ namespace ServiceNowOpen
 
             if(sliderValue > 85)
             {
-                return 0.90;
+                return 0.925;
             }
 
+            if(sliderValue > 80)
+            {
+                return 0.9;
+            }
+
+            if(sliderValue > 75)
+            {
+                return 0.875;
+            }
             if(sliderValue > 70)
             {
                 return 0.85;
             }
-
-            if(sliderValue > 60)
+            if(sliderValue > 65)
             {
-                return 0.80;
+                return 0.825;
             }
             if(sliderValue > 60)
             {
-                return 0.75;
+                return 0.8;
+            }
+            if(sliderValue > 55)
+            {
+                return 0.775;
             }
             if(sliderValue > 50)
             {
-                return 0.70;
+                return 0.750;
             }
             if(sliderValue > 45)
             {
-                return 0.65;
+                return 0.725;
+            }
+            if(sliderValue > 40)
+            {
+                return 0.7;
+            }
+            if(sliderValue > 35)
+            {
+                return 0.675;
             }
             if(sliderValue > 30)
             {
-                return 0.60;
+                return 0.65;
             }
             if(sliderValue > 25)
             {
-                return 0.55;
+                return 0.625;
             }
             if(sliderValue > 20)
             {
-                return 0.50;
+                return 0.6;
+            }
+            if(sliderValue > 20)
+            {
+                return 0.575;
             }
             if(sliderValue > 15)
             {
-                return 0.45;
+                return 0.55;
             }
             if(sliderValue > 10)
             {
-                return 0.40;
+                return 0.525;
             }
             if(sliderValue > 5)
             {
-                return 0.35;
+                return 0.5;
             }
-            if(sliderValue == 0)
+            if(sliderValue >= 0)
             {
-                return 0.3;
+                return 0.475;
             }
 
-            return 0.3;
+            return 0.45;
 
         }
         private void SetOpacity(double opacity)
@@ -1244,152 +1266,29 @@ namespace ServiceNowOpen
         }
         private void ResetToDefaultButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            ResetTheme();
+          
+        }
+        private void ResetTheme()
+        {
+            ResetButtonColors();
             serviceNowTheme.ResetTextColorandBackgroundColorToDefault();
-            SetWindowBackgroundColors();
             LoadTextColors();
-            LoadDefaultImages();
-            serviceNowTheme.Opacity = 1;
+            SetWindowBackgroundColors();
             this.Opacity = 1;
 
         }
-        private void LoadDefaultImages()
+        private void ResetButtonColors()
         {
-            // Close Window Button
-            Uri closeImageUri = new Uri("Images/Close.png", UriKind.Relative);
-            StreamResourceInfo closeImagestreamInfo = Application.GetResourceStream(closeImageUri);
-            BitmapFrame closeImagetemp = BitmapFrame.Create(closeImagestreamInfo.Stream);
-            ImageBrush closeButtonBrush = new ImageBrush
-            {
-                ImageSource = closeImagetemp
-            };
+            byte[] colors = new byte[3];
+            colors[0] = serviceNowTheme.ConvertFromHexToRGB(serviceNowTheme.DefaultButtonColor).R;
+            colors[1] = serviceNowTheme.ConvertFromHexToRGB(serviceNowTheme.DefaultButtonColor).R;
+            colors[2] = serviceNowTheme.ConvertFromHexToRGB(serviceNowTheme.DefaultButtonColor).R;
 
-            CloseButton.Background = closeButtonBrush;
-
-            // Minimize Window Button
-            Uri minimizeImageUri = new Uri("Images/Minimize.png", UriKind.Relative);
-            StreamResourceInfo minimizeImagestreamInfo = Application.GetResourceStream(minimizeImageUri);
-            BitmapFrame minimizeImagetemp = BitmapFrame.Create(minimizeImagestreamInfo.Stream);
-            ImageBrush minimizeButtonBrush = new ImageBrush
-            {
-                ImageSource = minimizeImagetemp
-            };
-            MinimizeButton.Background = minimizeButtonBrush;
-
-
-            // Home Menu Button
-            Uri homeImageUri = new Uri("Images/Home.png", UriKind.Relative);
-            StreamResourceInfo homeImagestreamInfo = Application.GetResourceStream(homeImageUri);
-            BitmapFrame homeImagetemp = BitmapFrame.Create(homeImagestreamInfo.Stream);
-            ImageBrush homeButtonBrush = new ImageBrush
-            {
-                ImageSource = homeImagetemp
-            };
-
-            HomeMenuButton.Background = homeButtonBrush;
-
-            // Recent Items Menu Button
-            Uri recentitemsImageUri = new Uri("Images/RecentlyOpenedItems.png", UriKind.Relative);
-            StreamResourceInfo recentitemsImagestreamInfo = Application.GetResourceStream(recentitemsImageUri);
-            BitmapFrame recentitemsImagetemp = BitmapFrame.Create(recentitemsImagestreamInfo.Stream);
-            ImageBrush recentitemsButtonBrush = new ImageBrush
-            {
-                ImageSource = recentitemsImagetemp
-            };
-            RecentItemsMenuButton.Background = recentitemsButtonBrush;
-
-            // Themes Menu Button
-            Uri themeImageUri = new Uri("Images/Theme.png", UriKind.Relative);
-            StreamResourceInfo themeImagestreamInfo = Application.GetResourceStream(themeImageUri);
-            BitmapFrame themeImagetemp = BitmapFrame.Create(themeImagestreamInfo.Stream);
-            ImageBrush themeButtonBrush = new ImageBrush
-            {
-                ImageSource = themeImagetemp
-            };
-            ThemesMenuButton.Background = themeButtonBrush;
-
-            // Settings Button
-            Uri settingsImageUri = new Uri("Images/Settings.png", UriKind.Relative);
-            StreamResourceInfo settingsImagestreamInfo = Application.GetResourceStream(settingsImageUri);
-            BitmapFrame settingsImagetemp = BitmapFrame.Create(settingsImagestreamInfo.Stream);
-            ImageBrush settingsButtonBrush = new ImageBrush
-            {
-                ImageSource = settingsImagetemp
-            };
-            SettingsMenuButton.Background = settingsButtonBrush;
-
-            // About Button
-            Uri aboutImageUri = new Uri("Images/About.png", UriKind.Relative);
-            StreamResourceInfo aboutImagestreamInfo = Application.GetResourceStream(aboutImageUri);
-            BitmapFrame aboutImagetemp = BitmapFrame.Create(aboutImagestreamInfo.Stream);
-            ImageBrush aboutButtonBrush = new ImageBrush
-            {
-                ImageSource = aboutImagetemp
-            };
-            AboutMenuButton.Background = aboutButtonBrush;
-
-
-            // Recent Items - Copy Button
-            Uri copyImageUri = new Uri("Images/Copy.png", UriKind.Relative);
-            StreamResourceInfo copyImagestreamInfo = Application.GetResourceStream(copyImageUri);
-            BitmapFrame copyImagetemp = BitmapFrame.Create(copyImagestreamInfo.Stream);
-            ImageBrush copyButtonBrush = new ImageBrush
-            {
-                ImageSource = copyImagetemp
-            };
-
-            CopyButton.Background = copyButtonBrush;
-
-            // Recent Items OpenInBrowser Button
-            Uri openinbrowserImageUri = new Uri("Images/OpenInBrowser.png", UriKind.Relative);
-            StreamResourceInfo openinbrowserImagestreamInfo = Application.GetResourceStream(openinbrowserImageUri);
-            BitmapFrame openinbrowserImagetemp = BitmapFrame.Create(openinbrowserImagestreamInfo.Stream);
-            ImageBrush openinbrowserButtonBrush = new ImageBrush
-            {
-                ImageSource = openinbrowserImagetemp
-            };
-
-            OpenInBrowserButton.Background = openinbrowserButtonBrush;
-
-            // Checkmark Button
-            Uri checkmarkImageUri = new Uri("Images/Checkmark.png", UriKind.Relative);
-            StreamResourceInfo checkmarkImagestreamInfo = Application.GetResourceStream(checkmarkImageUri);
-            BitmapFrame checkmarkImagetemp = BitmapFrame.Create(checkmarkImagestreamInfo.Stream);
-            ImageBrush checkmarkButtonBrush = new ImageBrush
-            {
-                ImageSource = checkmarkImagetemp
-            };
-            GoButton.Background = checkmarkButtonBrush;
-
-
-
-            // Load File Button
-            Uri LoadFileImageUri = new Uri("Images/BrowseForFile.png", UriKind.Relative);
-            StreamResourceInfo LoadFileImagestreamInfo = Application.GetResourceStream(LoadFileImageUri);
-            BitmapFrame LoadFileImagetemp = BitmapFrame.Create(LoadFileImagestreamInfo.Stream);
-            ImageBrush LoadFileButtonBrush = new ImageBrush
-            {
-                ImageSource = LoadFileImagetemp
-            };
-            LoadFileButton.Background = LoadFileButtonBrush;
-
-
-            // Save To File Button
-            Uri SaveToFileFileImageUri = new Uri("Images/SaveToFile.png", UriKind.Relative);
-            StreamResourceInfo SaveToFileImagestreamInfo = Application.GetResourceStream(SaveToFileFileImageUri);
-            BitmapFrame SaveToFileImagetemp = BitmapFrame.Create(SaveToFileImagestreamInfo.Stream);
-            ImageBrush SaveToFileButtonBrush = new ImageBrush
-            {
-                ImageSource = SaveToFileImagetemp
-            };
-            SaveToFileButton.Background = SaveToFileButtonBrush;
-
-
-
-            serviceNowTheme.TitleBarButtonColor = serviceNowTheme.DefaultButtonColor;
-            serviceNowTheme.MainWindowButtonColor = serviceNowTheme.DefaultButtonColor;
-            serviceNowTheme.MenuButtonColor = serviceNowTheme.DefaultButtonColor;
-
-
+            serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
+            serviceNowTheme.MenuPanelButtonsRGB = colors;
+            LoadButtonColors();
         }
 
 
