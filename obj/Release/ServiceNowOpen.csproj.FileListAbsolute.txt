@@ -19,5 +19,15 @@ D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowO
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.application
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.exe
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.pdb
-D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.csproj.AssemblyReference.cache
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Settings.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\RecentlyOpenedItems.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Copy.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\OpenInBrowser.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Checkmark.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Theme.png
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Home.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Close.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\About.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\BrowseForFile.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Minimize.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\SaveToFile.png

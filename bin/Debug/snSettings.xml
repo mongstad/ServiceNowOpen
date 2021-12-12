@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
   <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
@@ -17,11 +17,11 @@
     <TitleBarButtonColor>#FFFF0099</TitleBarButtonColor>
     <MainWindowTextColor>#FFFF0099</MainWindowTextColor>
     <MainWindowBackgroundColor>#FF2E0000</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#FFFF0099</MainWindowButtonColor>
-    <MenuButtonColor>#FFFF0099</MenuButtonColor>
+    <MainWindowButtonColor>#FFE85BFF</MainWindowButtonColor>
+    <MenuButtonColor>#FFE85BFF</MenuButtonColor>
     <MenuBackgroundColor>#FF2E0000</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/wCZ</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>/wCZ</MainWindowButtonsRGB>
+    <MenuPanelButtonsRGB>6Fv/</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>6Fv/</MainWindowButtonsRGB>
     <TitleBarButtonsRGB>/wCZ</TitleBarButtonsRGB>
     <Opacity>0.95</Opacity>
   </ServiceNowTheme>

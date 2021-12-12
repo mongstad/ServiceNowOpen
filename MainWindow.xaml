@@ -821,7 +821,7 @@
             </Grid>
         </ScrollViewer>
 
-        <Grid  x:Name="ThemeGrid" Grid.Row="1" Grid.Column="1" Visibility="Visible"  Margin="10,15,0,0">
+        <Grid  x:Name="ThemeGrid" Grid.Row="1" Grid.Column="1" Visibility="Hidden"  Margin="10,15,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.9*"></ColumnDefinition>
                 <ColumnDefinition Width="1.5*"></ColumnDefinition>
@@ -1210,7 +1210,7 @@ along with this program. If not, see https://www.gnu.org/licenses."  />
 
         </Grid>
         
-        <Grid Grid.Column="1" Grid.Row="1" x:Name="HomeGrid" Visibility="Hidden">
+        <Grid Grid.Column="1" Grid.Row="1" x:Name="HomeGrid" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*"/>
