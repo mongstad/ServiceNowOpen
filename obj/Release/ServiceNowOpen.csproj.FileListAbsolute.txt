@@ -31,3 +31,4 @@ D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Abou
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\BrowseForFile.png
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\Minimize.png
 D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\bin\Release\Images\SaveToFile.png
+D:\OneDrive\Dokumenter\Programming\GitHub\ServiceNowOpen\obj\Release\ServiceNowOpen.csproj.AssemblyReference.cache
