@@ -105,6 +105,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ImageManipulation.cs" />
     <Compile Include="Classes\ServiceNowConfig.cs" />
     <Compile Include="Classes\RecentlyOpenedItem.cs" />
     <Compile Include="Classes\RecentlyOpenedItems.cs" />

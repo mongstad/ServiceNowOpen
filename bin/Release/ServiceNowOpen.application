@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ServiceNowOpen.exe.manifest" size="3985">
+    <dependentAssembly dependencyType="install" codebase="ServiceNowOpen.exe.manifest" size="4378">
       <assemblyIdentity name="ServiceNowOpen.exe" version="1.0.1.12" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UupdoUHirLtu+Vao6IvHRSHxbbadgI5njo89MsubDEk=</dsig:DigestValue>
+        <dsig:DigestValue>nKS6MuRbaYjIIb8BXBn4FQtijRJKiD5Bt72nF5qoKtI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
