@@ -171,7 +171,7 @@ namespace ServiceNowOpen
                 //Power Button @"Images\Close.png"
                 ImageBrush backgroundPowerButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Close.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], @"Images\Close.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -181,7 +181,7 @@ namespace ServiceNowOpen
                 //Minimize Button @"Images\Minimize.png"
                 ImageBrush backgroundMinimizeButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Minimize.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], @"Images\Minimize.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -196,7 +196,7 @@ namespace ServiceNowOpen
                 //Copy Button @"Image\Copy.png"
                 ImageBrush backgroundCopyButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Copy.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], @"Images\Copy.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -206,7 +206,7 @@ namespace ServiceNowOpen
                 //Open In Browser Button  @"Images\OpenInBrowser.png"
                 ImageBrush backgroundOpenInBrowserButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\OpenInBrowser.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], @"Images\OpenInBrowser.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -216,7 +216,7 @@ namespace ServiceNowOpen
                 //OK (CheckMark) Button @"Images\Checkmark.png"
                 ImageBrush backgroundOKButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Checkmark.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], @"Images\Checkmark.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -225,7 +225,7 @@ namespace ServiceNowOpen
                 //Load File Button @"Images\BrowseForFile.png" 
                 ImageBrush backgroundLoadFileButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\BrowseForFile.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], @"Images\BrowseForFile.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -234,7 +234,7 @@ namespace ServiceNowOpen
                 //Save To File Button @"Images\SaveToFile.png"
                 ImageBrush backgroundSaveToFileButton = new ImageBrush
                 {
-                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\SaveToFile.png"),
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], @"Images\SaveToFile.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -604,10 +604,19 @@ namespace ServiceNowOpen
             }
             else { newSNItem.ForceFreeTextSearch = false; }
 
-
-            newSNItem.ExecuteProcess();
-            RecentlyOpenedItem newRecentItem = new RecentlyOpenedItem(newSNItem.Item, newSNItem.Url, DateTime.Now);
-            recentlyOpenedItems.RecentItems.Insert(0, newRecentItem);
+            try
+            {
+                newSNItem.ExecuteProcess();
+                RecentlyOpenedItem newRecentItem = new RecentlyOpenedItem(newSNItem.Item, newSNItem.Url, DateTime.Now);
+                recentlyOpenedItems.RecentItems.Insert(0, newRecentItem);
+            }
+            catch(Exception ex)
+            {
+               
+            }
+          
+          
+            
             UserInputTextBox.Focus();
 
         }
@@ -1288,6 +1297,10 @@ namespace ServiceNowOpen
 
             serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
             serviceNowTheme.MenuPanelButtonsRGB = colors;
+            serviceNowTheme.TitleBarButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
+            serviceNowTheme.TitleBarButtonsRGB = colors;
+            serviceNowTheme.MainWindowButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
+            serviceNowTheme.MainWindowButtonsRGB = colors;
             LoadButtonColors();
         }
 
@@ -1357,22 +1370,39 @@ namespace ServiceNowOpen
                 RegExPatternUsers = UserNamesPrefixTextBox.Text,
             };
 
-            snConfig.Save();
+            try{
+                snConfig.Save();
+            }
+            catch(Exception ex)
+            {
+
+            }
+           
 
         }
         private void LoadFile()
         {
 
             ServiceNowConfig snConfigLoad = new ServiceNowConfig();
-            ServiceNowConfig snConfigLoaded = snConfigLoad.Load();
 
-            if(snConfigLoaded != null)
-            {
-                ServiceNowPortalTextBox.Text = snConfigLoaded.URLServiceNowPortal;
-                CIPrefixTextBox.Text = snConfigLoaded.RegExPatternCI;
-                PeripheralPrefixTextBox.Text = snConfigLoaded.RegExPatternPeripherals;
-                UserNamesPrefixTextBox.Text = snConfigLoaded.RegExPatternUsers;
+            try{
+
+                ServiceNowConfig snConfigLoaded = snConfigLoad.Load();
+
+                if(snConfigLoaded != null)
+                {
+                    ServiceNowPortalTextBox.Text = snConfigLoaded.URLServiceNowPortal;
+                    CIPrefixTextBox.Text = snConfigLoaded.RegExPatternCI;
+                    PeripheralPrefixTextBox.Text = snConfigLoaded.RegExPatternPeripherals;
+                    UserNamesPrefixTextBox.Text = snConfigLoaded.RegExPatternUsers;
+                }
+
             }
+            catch(Exception ex)
+            {
+               
+            }
+           
 
         }
 

@@ -4,29 +4,34 @@
   <RegExConfigurationItems>^(L|D|A)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?$</RegExUsernames>
-  <Opacity>1</Opacity>
+  <Opacity>0.9</Opacity>
   <HideFromTaskbar>false</HideFromTaskbar>
   <FreeTextSearch>true</FreeTextSearch>
-  <SliderPosition>100</SliderPosition>
+  <SliderPosition>84.27672955974846</SliderPosition>
   <TopMost>false</TopMost>
-  <Top>559</Top>
-  <Left>1379</Left>
+  <Top>439</Top>
+  <Left>823</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
-    <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#FFEB1613</TitleBarButtonColor>
+    <TitleBarTextColor>#FFFFFF00</TitleBarTextColor>
+    <TitleBarBackgroundColor>#FFBE0000</TitleBarBackgroundColor>
+    <TitleBarButtonColor>#FFFFFF00</TitleBarButtonColor>
     <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#FFEB1613</MainWindowButtonColor>
+    <MainWindowBackgroundColor>#FF0058FF</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFFFFFFF</MainWindowButtonColor>
     <MenuButtonColor>#FFFFFFFF</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
+    <MenuBackgroundColor>#FF0063FF</MenuBackgroundColor>
     <MenuPanelButtonsRGB>////</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>6xYT</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>6xYT</TitleBarButtonsRGB>
-    <Opacity>1</Opacity>
+    <MainWindowButtonsRGB>////</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>//8A</TitleBarButtonsRGB>
+    <Opacity>0.9</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>
+      <RecentlyOpenedItem>
+        <Item>L13275</Item>
+        <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=L13275</Url>
+        <DateTimeOpened>12.12.2021 21:58</DateTimeOpened>
+      </RecentlyOpenedItem>
       <RecentlyOpenedItem>
         <Item>ADFADF</Item>
         <Url>https://uis.service-now.com/nav_to.do?uri=textsearch.do?sysparm_search=ADFADF</Url>

@@ -28,9 +28,10 @@
     <SupportUrl>https://github.com/mongstad/ServiceNowOpen</SupportUrl>
     <ProductName>ServiceNowOpen</ProductName>
     <PublisherName>Johnny Mongstad</PublisherName>
+    <SuiteName>ServiceNowOpen</SuiteName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
