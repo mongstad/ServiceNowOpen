@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -6,7 +8,7 @@ using System.Windows.Resources;
 using Brush = System.Windows.Media.Brush;
 using BrushConverter = System.Windows.Media.BrushConverter;
 using Color = System.Windows.Media.Color;
-
+using Point = System.Drawing.Point;
 
 namespace ServiceNow
 {
@@ -219,7 +221,7 @@ namespace ServiceNow
             return getBrush;
         }
 
-        public WriteableBitmap ConvertImageColor(byte red, byte green, byte blue, byte alpha, string imagepath)
+        public WriteableBitmap ConvertImageColor(byte alpha, byte red, byte green, byte blue, string imagepath)
         {
             Uri uri = new Uri(imagepath, UriKind.Relative);
             StreamResourceInfo resourceInfo = Application.GetResourceStream(uri);
@@ -243,7 +245,7 @@ namespace ServiceNow
                     g == 255 &&
                     b == 255 &&
                     a >= 0) ||
-                (a >= 0 && a >= 255 &&
+                (a >= 0 && a <= 255 &&
                     r == g && g == b && r == 255))
                 {
 
@@ -262,7 +264,7 @@ namespace ServiceNow
                     }
 
                 }
-
+               
                 bmp.WritePixels(new Int32Rect(0, 0, image.PixelWidth, image.PixelHeight), pixels, image.PixelWidth * 4, 0);
 
                 // Source: https://stackoverflow.com/questions/20856424/wpf-modifying-image-colors-on-the-fly-c
@@ -322,8 +324,66 @@ namespace ServiceNow
 
         //    return bmp;
         //}
+        public Bitmap ConvertedImage(int alpha, int red, int green, int blue, string filename)
+        {
+            System.Drawing.Color newColor = System.Drawing.Color.FromArgb( alpha, red, green, blue);    
+            Image originalImage = Image.FromFile(filename);
+            Bitmap newImage = ToColorTone(originalImage, newColor);
 
+            return newImage;
 
+        }
+
+        private Bitmap ToColorTone(Image image, System.Drawing.Color color)
+        {
+
+            //creating a new bitmap image with selected color.
+
+            int brightness = color.A;
+            float scale = brightness;
+
+            float r = color.R / 255f * scale;
+            float g = color.G / 255f * scale;
+            float b = color.B / 255f * scale;
+
+            // Color Matrix
+            ColorMatrix cm = new ColorMatrix(new float[][]
+            {
+                new float[] {r, 0, 0, 0, 0},
+                new float[] {0, g, 0, 0, 0},
+                new float[] {0, 0, b, 0, 0},
+                new float[] {0, 0, 0, 1, 0},
+                new float[] {0, 0, 0, 0, 1}
+            });
+            ImageAttributes ImAttribute = new ImageAttributes();
+            ImAttribute.SetColorMatrix(cm);
+
+            //Color Matrix on new bitmap image
+            Point[] points =
+            {
+                new Point(0, 0),
+                new Point(image.Width - 1, 0),
+                new Point(0, image.Height - 1),
+            };
+            Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
+
+            Bitmap myBitmap = new Bitmap(image.Width, image.Height);
+            using(Graphics graphics = Graphics.FromImage(myBitmap))
+            {
+                graphics.DrawImage(image, points, rect, GraphicsUnit.Pixel, ImAttribute);
+            }
+            return myBitmap;
+        }
+
+        public static ImageSource BitmapFromUri(Uri source)
+        {
+            var bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = source;
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.EndInit();
+            return bitmap;
+        }
 
         public Brush ConvertRGBToBrush(byte r, byte g, byte b)
         {

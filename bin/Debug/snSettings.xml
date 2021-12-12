@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
-<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
   <RegExConfigurationItems>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExConfigurationItems>
   <RegExPeripherals>^M\d{5}$</RegExPeripherals>
   <RegExUsernames>^\d{6}\d?</RegExUsernames>
-  <Opacity>1</Opacity>
-  <HideFromTaskbar>false</HideFromTaskbar>
-  <FreeTextSearch>false</FreeTextSearch>
-  <SliderPosition>100</SliderPosition>
-  <TopMost>false</TopMost>
-  <Top>811</Top>
-  <Left>1430</Left>
+  <Opacity>0.95</Opacity>
+  <HideFromTaskbar>true</HideFromTaskbar>
+  <FreeTextSearch>true</FreeTextSearch>
+  <SliderPosition>92.452830188679272</SliderPosition>
+  <TopMost>true</TopMost>
+  <Top>337</Top>
+  <Left>695</Left>
   <ServiceNowTheme>
-    <TitleBarTextColor>#ffffff</TitleBarTextColor>
+    <TitleBarTextColor>#FFFF0099</TitleBarTextColor>
     <TitleBarBackgroundColor>#1C2C4D</TitleBarBackgroundColor>
-    <TitleBarButtonColor>#ffffff</TitleBarButtonColor>
-    <MainWindowTextColor>#ffffff</MainWindowTextColor>
-    <MainWindowBackgroundColor>#1E2330</MainWindowBackgroundColor>
-    <MainWindowButtonColor>#ffffff</MainWindowButtonColor>
-    <MenuButtonColor>#ffffff</MenuButtonColor>
-    <MenuBackgroundColor>#1C1C1F</MenuBackgroundColor>
-    <MenuPanelButtonsRGB>/ztj</MenuPanelButtonsRGB>
-    <MainWindowButtonsRGB>/ztj</MainWindowButtonsRGB>
-    <TitleBarButtonsRGB>/ztj</TitleBarButtonsRGB>
-    <Opacity>1</Opacity>
+    <TitleBarButtonColor>#FFFF0099</TitleBarButtonColor>
+    <MainWindowTextColor>#FFFF0099</MainWindowTextColor>
+    <MainWindowBackgroundColor>#FF2E0000</MainWindowBackgroundColor>
+    <MainWindowButtonColor>#FFE85BFF</MainWindowButtonColor>
+    <MenuButtonColor>#FFE85BFF</MenuButtonColor>
+    <MenuBackgroundColor>#FF2E0000</MenuBackgroundColor>
+    <MenuPanelButtonsRGB>6Fv/</MenuPanelButtonsRGB>
+    <MainWindowButtonsRGB>6Fv/</MainWindowButtonsRGB>
+    <TitleBarButtonsRGB>/wCZ</TitleBarButtonsRGB>
+    <Opacity>0.95</Opacity>
   </ServiceNowTheme>
   <RecentItems>
     <RecentItems>

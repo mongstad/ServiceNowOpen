@@ -8,6 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/recentlyopeneditems.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/copy.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/openinbrowser.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/checkmark.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/theme.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/home.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/close.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/about.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/savetofile.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/browseforfile.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("servicenow.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/minimize.png")]
 
 

@@ -1,6 +1,7 @@
 ﻿using ServiceNow;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -111,60 +112,42 @@ namespace ServiceNowOpen
 
             if(serviceNowTheme.MenuButtonColor != serviceNowTheme.DefaultButtonColor)
             {
-                //Home Button
-                Image imgHome = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/Home.png")
-                };
 
+                //Home Button @"Images\Home.png"
                 ImageBrush backgroundHomeImage = new ImageBrush
                 {
-                    ImageSource = imgHome.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Home.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 HomeMenuButton.Background = backgroundHomeImage;
 
-                //Themes Button
-                Image imgTheme = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/Theme.png")
-                };
 
+                //Themes Button @"Images\Theme.png"
                 ImageBrush backgroundThemeImage = new ImageBrush
                 {
-                    ImageSource = imgTheme.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Theme.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 ThemesMenuButton.Background = backgroundThemeImage;
 
-                //Recently Opened Items Button
-                Image imgRecentItems = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/RecentlyOpenedItems.png")
-                };
-
+                //Recently Opened Items Button @"Images\RecentlyOpenedItems.png"
                 ImageBrush backgroundRecentItemsImage = new ImageBrush
                 {
-                    ImageSource = imgRecentItems.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\RecentlyOpenedItems.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 RecentItemsMenuButton.Background = backgroundRecentItemsImage;
 
-                //Settings Button
-                Image imgSettingsButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/Settings.png")
-                };
-
+                //Settings Button @"Images\Settings.png"
                 ImageBrush backgroundSettingsButton = new ImageBrush
                 {
-                    ImageSource = imgSettingsButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Settings.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -172,15 +155,10 @@ namespace ServiceNowOpen
                 SettingsMenuButton.Background = backgroundSettingsButton;
 
 
-                //About Button
-                Image imgAboutButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], 255, @"/Images/About.png")
-                };
-
+                //About Button @"Images\About.png"
                 ImageBrush backgroundAboutButton = new ImageBrush
                 {
-                    ImageSource = imgAboutButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\About.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -191,30 +169,20 @@ namespace ServiceNowOpen
 
             if(serviceNowTheme.TitleBarButtonColor != serviceNowTheme.DefaultButtonColor)
             {
-                //Power Button
-                Image imgPowerButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/Close.png")
-                };
-
+                //Power Button @"Images\Close.png"
                 ImageBrush backgroundPowerButton = new ImageBrush
                 {
-                    ImageSource = imgPowerButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Close.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 CloseButton.Background = backgroundPowerButton;
 
-                //Minimize Button
-                Image imgMinimizeButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.TitleBarButtonsRGB[0], serviceNowTheme.TitleBarButtonsRGB[1], serviceNowTheme.TitleBarButtonsRGB[2], 255, @"/Images/Minimize.png")
-                };
-
+                //Minimize Button @"Images\Minimize.png"
                 ImageBrush backgroundMinimizeButton = new ImageBrush
                 {
-                    ImageSource = imgMinimizeButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Minimize.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -226,73 +194,48 @@ namespace ServiceNowOpen
             if(serviceNowTheme.MainWindowButtonColor != serviceNowTheme.DefaultButtonColor)
             {
 
-                //Copy Button
-                Image imgCopyButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/Copy.png")
-                };
-
+                //Copy Button @"Image\Copy.png"
                 ImageBrush backgroundCopyButton = new ImageBrush
                 {
-                    ImageSource = imgCopyButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Copy.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 CopyButton.Background = backgroundCopyButton;
 
-                //Open In Browser Button
-                Image imgOpenInBrowserButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/OpenInBrowser.png")
-                };
-
+                //Open In Browser Button  @"Images\OpenInBrowser.png"
                 ImageBrush backgroundOpenInBrowserButton = new ImageBrush
                 {
-                    ImageSource = imgOpenInBrowserButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\OpenInBrowser.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 OpenInBrowserButton.Background = backgroundOpenInBrowserButton;
 
-                //OK (CheckMark) Button
-                Image imgOKButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/Checkmark.png")
-                };
-
+                //OK (CheckMark) Button @"Images\Checkmark.png"
                 ImageBrush backgroundOKButton = new ImageBrush
                 {
-                    ImageSource = imgOKButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\Checkmark.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
                 GoButton.Background = backgroundOKButton;
 
-                //Load File Button
-                Image imgLoadFileButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/BrowseForFile.png")
-                };
-
+                //Load File Button @"Images\BrowseForFile.png" 
                 ImageBrush backgroundLoadFileButton = new ImageBrush
                 {
-                    ImageSource = imgLoadFileButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\BrowseForFile.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
                 LoadFileButton.Background = backgroundLoadFileButton;
 
-                //Save To File Button
-                Image imgSaveToFileButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(serviceNowTheme.MainWindowButtonsRGB[0], serviceNowTheme.MainWindowButtonsRGB[1], serviceNowTheme.MainWindowButtonsRGB[2], 255, @"/Images/SaveToFile.png")
-                };
-
+                //Save To File Button @"Images\SaveToFile.png"
                 ImageBrush backgroundSaveToFileButton = new ImageBrush
                 {
-                    ImageSource = imgSaveToFileButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, serviceNowTheme.MenuPanelButtonsRGB[0], serviceNowTheme.MenuPanelButtonsRGB[1], serviceNowTheme.MenuPanelButtonsRGB[2], @"Images\SaveToFile.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -306,7 +249,7 @@ namespace ServiceNowOpen
 
             if(serviceNowTheme.MainWindowTextColor != "")
             {
-                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
+                System.Windows.Media.Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.MainWindowTextColor);
 
                 //txt_Theme.Foreground = textColor;
                 LeftMenuCheckBox.Foreground = textColor;
@@ -339,7 +282,7 @@ namespace ServiceNowOpen
             }
             else
             {
-                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
+                System.Windows.Media.Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
 
 
                 LeftMenuCheckBox.Foreground = textColor;
@@ -373,12 +316,12 @@ namespace ServiceNowOpen
 
             if(!(serviceNowTheme.TitleBarTextColor == ""))
             {
-                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarTextColor);
+                System.Windows.Media.Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.TitleBarTextColor);
                 txtTitle.Foreground = textColor;
             }
             else
             {
-                Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
+                System.Windows.Media.Brush textColor = serviceNowTheme.ConvertHexColorToBrush(serviceNowTheme.DefaultTextColor);
                 txtTitle.Foreground = textColor;
             }
 
@@ -515,6 +458,57 @@ namespace ServiceNowOpen
 
         //    }
 
+        //}
+
+
+
+        //private void ChangeColor2()
+        //{
+        //    try
+        //    {
+        //        // Retrieve the image.
+        //        System.Drawing.Bitmap image2 = new Bitmap(@"Images\house-64.png", true);
+
+        //        int x, y;
+
+        //        // Loop through the images pixels to reset color.
+        //        for(x = 0; x < image2.Width; x++)
+        //        {
+        //            for(y = 0; y < image2.Height; y++)
+        //            {
+        //                if(image2.GetPixel(x, y).R >= 100 && image2.GetPixel(x, y).G >= 100 && image2.GetPixel(x, y).B >= 100 && image2.GetPixel(x, y).A >= 0)
+        //                {
+        //                    System.Drawing.Color pixelColor = image2.GetPixel(x, y);
+        //                    System.Drawing.Color newColor = System.Drawing.Color.FromArgb(image2.GetPixel(x, y).A, 0, 150, 255);
+        //                    image2.SetPixel(x, y, newColor);
+        //                }
+
+        //            }
+        //        }
+
+        //        image2.Save("test.png");
+
+        //        // Set the PictureBox to display the image.
+
+        //        image3.Source = BitmapFromUri(new Uri(@"test.png", UriKind.Relative));
+
+        //        // Display the pixel format in Label1.
+
+        //    }
+        //    catch(ArgumentException)
+        //    {
+        //        MessageBox.Show("There was an error." +
+        //            "Check the path to the image file.");
+        //    }
+        //}
+        //public static ImageSource BitmapFromUri(Uri source)
+        //{
+        //    var bitmap = new BitmapImage();
+        //    bitmap.BeginInit();
+        //    bitmap.UriSource = new Uri(@"test.png", UriKind.Relative);
+        //    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+        //    bitmap.EndInit();
+        //    return bitmap;
         //}
 
 
@@ -730,6 +724,7 @@ namespace ServiceNowOpen
             ThemeGrid.Visibility = Visibility.Hidden;
             AboutGrid.Visibility = Visibility.Hidden;
             FocusInputTextBox();
+         
 
         }
         private void RecentlyOpenedItemsButton_Click(object sender, RoutedEventArgs e)
@@ -912,6 +907,7 @@ namespace ServiceNowOpen
         {
             SetWindowColorsToSelectSliderColor();
             ChangeButtonColor();
+          
             ChangeTextColor();
         }
         private void SliderBlue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -919,6 +915,7 @@ namespace ServiceNowOpen
 
             SetWindowColorsToSelectSliderColor();
             ChangeButtonColor();
+          
             ChangeTextColor();
         }
         private void SliderGreen_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -974,60 +971,39 @@ namespace ServiceNowOpen
                 serviceNowTheme.MenuButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.MenuPanelButtonsRGB = colors;
 
-                //Home Button
-                Image imgHome = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Home.png")
-                };
-
                 ImageBrush backgroundHomeImage = new ImageBrush
                 {
-                    ImageSource = imgHome.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255,colors[0],colors[1], colors[2], @"Images\Home.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
-
+               
                 HomeMenuButton.Background = backgroundHomeImage;
 
-                //Themes Button
-                Image imgTheme = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Theme.png")
-                };
-
+                //Themes Button @"Images\Theme.png"
                 ImageBrush backgroundThemeImage = new ImageBrush
                 {
-                    ImageSource = imgTheme.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\Theme.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 ThemesMenuButton.Background = backgroundThemeImage;
 
-                //Recently Opened Items Button
-                Image imgRecentItems = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/RecentlyOpenedItems.png")
-                };
-
+                //Recently Opened Items Button @"Images\RecentlyOpenedItems.png"
                 ImageBrush backgroundRecentItemsImage = new ImageBrush
                 {
-                    ImageSource = imgRecentItems.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\RecentlyOpenedItems.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
 
                 RecentItemsMenuButton.Background = backgroundRecentItemsImage;
 
-                //Settings Button
-                Image imgSettingsButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Settings.png")
-                };
-
+                //Settings Button @"Images\Settings.png"
                 ImageBrush backgroundSettingsButton = new ImageBrush
                 {
-                    ImageSource = imgSettingsButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\Settings.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -1035,15 +1011,10 @@ namespace ServiceNowOpen
                 SettingsMenuButton.Background = backgroundSettingsButton;
 
 
-                //About Button
-                Image imgAboutButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/About.png")
-                };
-
+                //About Button @"Images\About.png"
                 ImageBrush backgroundAboutButton = new ImageBrush
                 {
-                    ImageSource = imgAboutButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\About.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -1057,31 +1028,24 @@ namespace ServiceNowOpen
                 serviceNowTheme.TitleBarButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.TitleBarButtonsRGB = colors;
 
-                //Power Button
-                Image imgPowerButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Close.png")
-                };
-
+                //Power Button @"Images\Close.png"
                 ImageBrush backgroundPowerButton = new ImageBrush
                 {
-                    ImageSource = imgPowerButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\Close.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
+
                 CloseButton.Background = backgroundPowerButton;
 
-                //Minimize Button
-                Image imgMinimizeButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Minimize.png")
-                };
+                //Minimize Button @"Images\Minimize.png"
                 ImageBrush backgroundMinimizeButton = new ImageBrush
                 {
-                    ImageSource = imgMinimizeButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\Minimize.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
+
                 MinimizeButton.Background = backgroundMinimizeButton;
 
             }
@@ -1093,66 +1057,48 @@ namespace ServiceNowOpen
                 serviceNowTheme.MainWindowButtonColor = serviceNowTheme.ConvertRGBToHexColor(colors[0], colors[1], colors[2]);
                 serviceNowTheme.MainWindowButtonsRGB = colors;
 
-                //Copy Button
-                Image imgCopyButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Copy.png")
-                };
+                //Copy Button @"Image\Copy.png"
                 ImageBrush backgroundCopyButton = new ImageBrush
                 {
-                    ImageSource = imgCopyButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\Copy.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
+
                 CopyButton.Background = backgroundCopyButton;
 
-                //Open In Browser Button
-                Image imgOpenInBrowserButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/OpenInBrowser.png")
-                };
+                //Open In Browser Button  @"Images\OpenInBrowser.png"
                 ImageBrush backgroundOpenInBrowserButton = new ImageBrush
                 {
-                    ImageSource = imgOpenInBrowserButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\OpenInBrowser.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
+
                 OpenInBrowserButton.Background = backgroundOpenInBrowserButton;
 
-                //OK (CheckMark) Button
-                Image imgOKButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/Checkmark.png")
-                };
+                //OK (CheckMark) Button @"Images\Checkmark.png"
                 ImageBrush backgroundOKButton = new ImageBrush
                 {
-                    ImageSource = imgOKButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\Checkmark.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
                 GoButton.Background = backgroundOKButton;
 
-                //Load File Button
-                Image imgLoadFileButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/BrowseForFile.png")
-                };
+                //Load File Button @"Images\BrowseForFile.png" 
                 ImageBrush backgroundLoadFileButton = new ImageBrush
                 {
-                    ImageSource = imgLoadFileButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\BrowseForFile.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
                 LoadFileButton.Background = backgroundLoadFileButton;
 
-                //Save To File Button
-                Image imgSaveToFileButton = new Image
-                {
-                    Source = serviceNowTheme.ConvertImageColor(colors[0], colors[1], colors[2], 255, @"/Images/SaveToFile.png")
-                };
+                //Save To File Button @"Images\SaveToFile.png"
                 ImageBrush backgroundSaveToFileButton = new ImageBrush
                 {
-                    ImageSource = imgSaveToFileButton.Source,
+                    ImageSource = ImageManipulation.ChangeImageColor(255, colors[0], colors[1], colors[2], @"Images\SaveToFile.png"),
                     Stretch = Stretch.Fill,
                     TileMode = TileMode.None
                 };
@@ -1177,7 +1123,7 @@ namespace ServiceNowOpen
             {
                 serviceNowTheme.MainWindowTextColor = serviceNowTheme.ConvertRGBToHexColor(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
 
-                Brush color = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
+                System.Windows.Media.Brush color = serviceNowTheme.ConvertRGBToBrush(sliderRed.Value, sliderGreen.Value, sliderBlue.Value);
                 TitleBarCheckBox.Foreground = color;
                 LeftMenuCheckBox.Foreground = color;
                 WindowContentCheckBox.Foreground = color;
