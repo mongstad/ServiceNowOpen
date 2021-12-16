@@ -7,7 +7,7 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ServiceNowOpen.exe.manifest" size="8754">
+    <dependentAssembly dependencyType="install" codebase="Application Files\ServiceNowOpen_1_0_1_17\ServiceNowOpen.exe.manifest" size="8754">
       <assemblyIdentity name="ServiceNowOpen.exe" version="1.0.1.17" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
