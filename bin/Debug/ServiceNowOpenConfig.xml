@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<ServiceNowConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <URLServiceNowPortal>https://uis.service-now.com</URLServiceNowPortal>
-  <RegExPatternCI>^(L|D)\d{5}$|^(LAPTOP)([A-Za-z]|\d){9}$</RegExPatternCI>
-  <RegExPatternPeripherals>^M\d{5}$</RegExPatternPeripherals>
-  <RegExPatternUsers>^\d{6}\d?</RegExPatternUsers>
-</ServiceNowConfig>
