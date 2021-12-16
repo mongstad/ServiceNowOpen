@@ -8,7 +8,9 @@
         Height="175" Width="450"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStyle="None" Activated="MainWindow_Activated" GotFocus="MainWindow_GotFocus" ResizeMode="NoResize" Icon="/ServiceNow.ico">
+        WindowStyle="None" Activated="MainWindow_Activated" GotFocus="MainWindow_GotFocus"
+        Title="ServiceNowOpen"
+        ResizeMode="NoResize" Icon="/ServiceNow.ico">
 
 
     <Window.Resources>
