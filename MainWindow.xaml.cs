@@ -364,152 +364,6 @@ namespace ServiceNowOpen
             homePageLink.Inlines.Add("https://github.com/mongstad/ServiceNowOpen");
             HomePageTextBlock.Inlines.Add(homePageLink);
         }
-        //private void SetRGBSliderValues()
-        //{
-        //    if(TitleBarCheckBox.IsChecked == true)
-        //    {
-
-
-        //        System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(gridTitleBar.Background.ToString());
-
-
-        //        int intSliderRedValue = 0;
-
-        //        bool redOk = Int32.TryParse(selectedOptionColor.R.ToString(), out intSliderRedValue);
-        //        if(redOk)
-        //        {
-        //            sliderRed.Value = intSliderRedValue;
-        //        }
-
-
-        //        int intSliderGreenValue = 0;
-
-        //        bool greenOk = Int32.TryParse(selectedOptionColor.G.ToString(), out intSliderGreenValue);
-        //        if(greenOk)
-        //        {
-        //            sliderGreen.Value = intSliderGreenValue;
-        //        }
-
-
-        //        int intSliderBlueValue = 0;
-
-        //        bool blueOk = Int32.TryParse(selectedOptionColor.B.ToString(), out intSliderBlueValue);
-        //        if(blueOk)
-        //        {
-        //            sliderBlue.Value = intSliderBlueValue;
-        //        }
-        //    }
-
-        //    if(LeftMenuCheckBox.IsChecked == true)
-        //    {
-
-        //        System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(stackpanelMenu.Background.ToString());
-
-        //        int intSliderRedValue = 0;
-        //        bool redOk = Int32.TryParse(selectedOptionColor.R.ToString(), out intSliderRedValue);
-        //        if(redOk)
-        //        {
-        //            sliderRed.Value = intSliderRedValue;
-        //        }
-
-        //        int intSliderGreenValue = 0;
-        //        bool greenOk = Int32.TryParse(selectedOptionColor.G.ToString(), out intSliderGreenValue);
-        //        if(greenOk)
-        //        {
-        //            sliderGreen.Value = intSliderGreenValue;
-        //        }
-
-        //        int intSliderBlueValue = 0;
-        //        bool blueOk = Int32.TryParse(selectedOptionColor.B.ToString(), out intSliderBlueValue);
-        //        if(blueOk)
-        //        {
-        //            sliderBlue.Value = intSliderBlueValue;
-        //        }
-
-        //    }
-
-        //    if(WindowContentCheckBox.IsChecked == true)
-        //    {
-
-        //        System.Drawing.Color selectedOptionColor = serviceNowTheme.ConvertFromHexToRGB(gridMainWindow.Background.ToString());
-
-        //        int intSliderRedValue = 0;
-        //        bool redOk = Int32.TryParse(selectedOptionColor.R.ToString(), out intSliderRedValue);
-        //        if(redOk)
-        //        {
-        //            sliderRed.Value = intSliderRedValue;
-        //        }
-
-        //        int intSliderGreenValue = 0;
-
-        //        bool greenOk = Int32.TryParse(selectedOptionColor.G.ToString(), out intSliderGreenValue);
-        //        if(greenOk)
-        //        {
-        //            sliderGreen.Value = intSliderGreenValue;
-        //        }
-
-        //        int intSliderBlueValue = 0;
-        //        bool blueOk = Int32.TryParse(selectedOptionColor.B.ToString(), out intSliderBlueValue);
-        //        if(blueOk)
-        //        {
-        //            sliderBlue.Value = intSliderBlueValue;
-        //        }
-
-        //    }
-
-        //}
-
-
-
-        //private void ChangeColor2()
-        //{
-        //    try
-        //    {
-        //        // Retrieve the image.
-        //        System.Drawing.Bitmap image2 = new Bitmap(@"Images\house-64.png", true);
-
-        //        int x, y;
-
-        //        // Loop through the images pixels to reset color.
-        //        for(x = 0; x < image2.Width; x++)
-        //        {
-        //            for(y = 0; y < image2.Height; y++)
-        //            {
-        //                if(image2.GetPixel(x, y).R >= 100 && image2.GetPixel(x, y).G >= 100 && image2.GetPixel(x, y).B >= 100 && image2.GetPixel(x, y).A >= 0)
-        //                {
-        //                    System.Drawing.Color pixelColor = image2.GetPixel(x, y);
-        //                    System.Drawing.Color newColor = System.Drawing.Color.FromArgb(image2.GetPixel(x, y).A, 0, 150, 255);
-        //                    image2.SetPixel(x, y, newColor);
-        //                }
-
-        //            }
-        //        }
-
-        //        image2.Save("test.png");
-
-        //        // Set the PictureBox to display the image.
-
-        //        image3.Source = BitmapFromUri(new Uri(@"test.png", UriKind.Relative));
-
-        //        // Display the pixel format in Label1.
-
-        //    }
-        //    catch(ArgumentException)
-        //    {
-        //        MessageBox.Show("There was an error." +
-        //            "Check the path to the image file.");
-        //    }
-        //}
-        //public static ImageSource BitmapFromUri(Uri source)
-        //{
-        //    var bitmap = new BitmapImage();
-        //    bitmap.BeginInit();
-        //    bitmap.UriSource = new Uri(@"test.png", UriKind.Relative);
-        //    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-        //    bitmap.EndInit();
-        //    return bitmap;
-        //}
-
 
         private void NotifyIcon_MouseDown(object Sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -610,7 +464,7 @@ namespace ServiceNowOpen
                 RecentlyOpenedItem newRecentItem = new RecentlyOpenedItem(newSNItem.Item, newSNItem.Url, DateTime.Now);
                 recentlyOpenedItems.RecentItems.Insert(0, newRecentItem);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                
             }
@@ -910,6 +764,7 @@ namespace ServiceNowOpen
         }
 
 
+        // TODO Add logic to set sliderbar positions for current color values on the UI
         private void SliderRed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SetWindowColorsToSelectSliderColor();
@@ -1162,7 +1017,6 @@ namespace ServiceNowOpen
             }
 
         }
-
         private void SliderOpacityValue_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
@@ -1303,9 +1157,6 @@ namespace ServiceNowOpen
             serviceNowTheme.MainWindowButtonsRGB = colors;
             LoadButtonColors();
         }
-
-
-        // TODO Add logic to set sliderbar positions for current color values on the UI
         private void TitleBarCheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -1373,7 +1224,7 @@ namespace ServiceNowOpen
             try{
                 snConfig.Save();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }
@@ -1398,15 +1249,13 @@ namespace ServiceNowOpen
                 }
 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                
             }
            
 
         }
-
-
         private void HomePageTextBlock_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             OpenHomepage();

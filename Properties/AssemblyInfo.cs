@@ -6,9 +6,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ServiceNowOpen")]
-[assembly: AssemblyDescription("Tool for quickly accessing records in ServiceNow")]
+[assembly: AssemblyDescription("Desktop application for opening records in the ServiceNow portal.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("UiS")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ServiceNowOpen")]
 [assembly: AssemblyCopyright("Copyright © Johnny Mongstad 2021")]
 [assembly: AssemblyTrademark("")]
@@ -49,5 +49,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.16")]
-[assembly: AssemblyFileVersion("1.0.1.16")]
+[assembly: AssemblyVersion("1.0.1.17")]
+[assembly: AssemblyFileVersion("1.0.1.17")]
